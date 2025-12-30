@@ -1,0 +1,1042 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<link rel="icon" href="favicon.ico" type="image/x-icon"/>
+
+<title>HR expenses</title>
+
+<!-- Bootstrap Core and vandor -->
+<link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+<!-- Core css -->
+<link rel="stylesheet" href="../assets/css/main.css"/>
+<link rel="stylesheet" href="../assets/css/theme1.css"/>
+</head>
+
+<body class="font-jakarta theme1">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+        </div>
+    </div>
+
+    <div id="main_content">
+
+        <div id="header_top" class="header_top">
+            <div class="container">
+                <div class="hleft">
+                    <a class="header-brand" href="index.html"><i class="fe fe-command brand-logo"></i></a>
+                    <div class="dropdown">
+                        <a href="page-search.html" class="nav-link icon" data-toggle="tooltip" data-placement="right" title="Search">
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round" ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
+                        </a>                    
+                        <a href="app-calendar.html"  class="nav-link icon app_inbox xs-hide" data-toggle="tooltip" data-placement="right" title="Calender">
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round" ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" /><path d="M16 3v4" /><path d="M8 3v4" /><path d="M4 11h16" /><path d="M7 14h.013" /><path d="M10.01 14h.005" /><path d="M13.01 14h.005" /><path d="M16.015 14h.005" /><path d="M13.015 17h.005" /><path d="M7.01 17h.005" /><path d="M10.01 17h.005" /></svg>
+                        </a>
+                        <a href="app-contact.html"  class="nav-link icon xs-hide" data-toggle="tooltip" data-placement="right" title="Contact">
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 6v12a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2z" /><path d="M10 16h6" /><path d="M13 11m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M4 8h3" /><path d="M4 12h3" /><path d="M4 16h3" /></svg>
+                        </a>
+                        <a href="app-chat.html"  class="nav-link icon xs-hide" data-toggle="tooltip" data-placement="right" title="Chat">
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" /><path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" /></svg>
+                        </a>
+                        <a href="app-filemanager.html"  class="nav-link icon app_file xs-hide" data-toggle="tooltip" data-placement="right" title="File Manager">
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 3h3l2 2h5a2 2 0 0 1 2 2v7a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-9a2 2 0 0 1 2 -2" /><path d="M17 16v2a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-9a2 2 0 0 1 2 -2h2" /></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="hright">
+                    <div class="dropdown">
+                        <a href="javascript:void(0)" class="nav-link icon theme_btn" data-toggle="tooltip" data-placement="right" title="Themes">
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 3m0 2a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2z" /><path d="M19 6h1a2 2 0 0 1 2 2a5 5 0 0 1 -5 5l-5 0v2" /><path d="M10 15m0 1a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1z" /></svg>
+                        </a>
+                        <a href="javascript:void(0)" class="nav-link icon settingbar" data-toggle="tooltip" data-placement="right" title="Settings">
+                            <svg class="fa-spin"  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /></svg>
+                        </a>
+                        <a href="javascript:void(0)" class="nav-link user_btn" data-toggle="tooltip" data-placement="right" title="User Menu"/><img class="avatar" src="../assets/images/user.jpg" alt="" ></a>
+                        <a href="javascript:void(0)" class="nav-link icon menu_toggle" data-toggle="tooltip" data-placement="right" title="Toggle">
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6h16" /><path d="M7 12h13" /><path d="M10 18h10" /></svg>
+                        </a>
+                    </div>            
+                </div>
+            </div>
+        </div>
+
+        <div id="rightsidebar" class="right_sidebar">
+            <a href="javascript:void(0)" class="p-3 settingbar float-right">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
+            </a>
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Settings" aria-expanded="true">Settings</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#activity" aria-expanded="false">Activity</a></li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane vivify fadeIn active" id="Settings" aria-expanded="true">
+                    <div class="mb-4">
+                        <h6 class="font-14 font-weight-bold text-muted">Font Style</h6>
+                        <div class="custom-controls-stacked font_setting">
+                            <label class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" name="font" value="font-opensans">
+                                <span class="custom-control-label">Open Sans Font</span>
+                            </label>
+                            <label class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" name="font" value="font-montserrat">
+                                <span class="custom-control-label">Montserrat Google Font</span>
+                            </label>
+                            <label class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" name="font" value="font-roboto">
+                                <span class="custom-control-label">Robot Google Font</span>
+                            </label>
+                            <label class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" name="font" value="font-jakarta" checked="">
+                                <span class="custom-control-label">Plus Jakarta Google Font</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <h6 class="font-14 font-weight-bold mt-4 text-muted">General Settings</h6>
+                        <ul class="setting-list list-unstyled mt-1 setting_switch">
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Night Mode</span>
+                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input btn-darkmode">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Fix Navbar top</span>
+                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input btn-fixnavbar">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Header Dark</span>
+                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input btn-pageheader">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Min Sidebar Dark</span>
+                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input btn-min_sidebar">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Sidebar Dark</span>
+                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input btn-sidebar">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Icon Color</span>
+                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input btn-iconcolor">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Gradient Color</span>
+                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input btn-gradient">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Box Shadow</span>
+                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input btn-boxshadow">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">RTL Support</span>
+                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input btn-rtl">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Box Layout</span>
+                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input btn-boxlayout">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <label class="d-block">Storage <span class="float-right">77%</span></label>
+                        <div class="progress progress-sm">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100" style="width: 77%;"></div>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-block mt-3">Upgrade Storage</button>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane vivify fadeIn" id="activity" aria-expanded="false">
+                    <ul class="new_timeline mt-3">
+                        <li>
+                            <div class="bullet pink"></div>
+                            <div class="time">11:00am</div>
+                            <div class="desc">
+                                <h3>Attendance</h3>
+                                <h4>Computer Class</h4>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bullet pink"></div>
+                            <div class="time">11:30am</div>
+                            <div class="desc">
+                                <h3>Added an interest</h3>
+                                <h4>“Volunteer Activities”</h4>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bullet green"></div>
+                            <div class="time">12:00pm</div>
+                            <div class="desc">
+                                <h3>Developer Team</h3>
+                                <h4>Hangouts</h4>
+                                <ul class="list-unstyled team-info margin-0 p-t-5">                                            
+                                    <li><img src="../assets/images/xs/avatar1.jpg" alt="Avatar"></li>
+                                    <li><img src="../assets/images/xs/avatar2.jpg" alt="Avatar"></li>
+                                    <li><img src="../assets/images/xs/avatar3.jpg" alt="Avatar"></li>
+                                    <li><img src="../assets/images/xs/avatar4.jpg" alt="Avatar"></li>                                            
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bullet green"></div>
+                            <div class="time">2:00pm</div>
+                            <div class="desc">
+                                <h3>Responded to need</h3>
+                                <a href="javascript:void(0)">“In-Kind Opportunity”</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bullet orange"></div>
+                            <div class="time">1:30pm</div>
+                            <div class="desc">
+                                <h3>Lunch Break</h3>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bullet green"></div>
+                            <div class="time">2:38pm</div>
+                            <div class="desc">
+                                <h3>Finish</h3>
+                                <h4>Go to Home</h4>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="theme_div">
+            <div class="border-bottom p-2 p-3">
+                <a href="javascript:void(0)" class="themebar float-right">
+                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
+                </a>
+                <h6 class="mb-0">Choose Theme</h6>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <ul class="list-group list-unstyled">
+                        <li class="list-group-item mb-2">
+                            <p>Default Theme <span class="badge badge-success font-13 font-weight-normal ml-1">New</span></p>
+                            <a href="index.html"><img src="../assets/images/themes/default.png" class="img-fluid" /></a>
+                        </li>
+                        <li class="list-group-item mb-2">
+                            <p>Night Mode Theme</p>
+                            <a href="https://puffintheme.com/template/epic-pro/dark/index.html"><img src="../assets/images/themes/dark.png" class="img-fluid" /></a>
+                        </li>                    
+                        <li class="list-group-item mb-2">
+                            <p>RTL Version</p>
+                            <a href="https://puffintheme.com/template/epic-pro/rtl/index.html"><img src="../assets/images/themes/rtl.png" class="img-fluid" /></a>
+                        </li>
+                        <li class="list-group-item mb-2">
+                            <p>Theme Version1</p>
+                            <a href="https://puffintheme.com/template/epic-pro/main/index.html"><img src="../assets/images/themes/theme1.png" class="img-fluid" /></a>
+                        </li>
+                        <li class="list-group-item mb-2">
+                            <p>Theme Version2</p>
+                            <a href="https://puffintheme.com/template/epic-pro/theme2/index.html"><img src="../assets/images/themes/theme2.png" class="img-fluid" /></a>
+                        </li> 
+                        <li class="list-group-item mb-2">
+                            <p>Theme Version3</p>
+                            <a href="https://puffintheme.com/template/epic-pro/theme3/index.html"><img src="../assets/images/themes/theme3.png" class="img-fluid" /></a>
+                        </li>
+                        <li class="list-group-item mb-2">
+                            <p>Theme Version4</p>
+                            <a href="https://puffintheme.com/template/epic-pro/theme4/index.html"><img src="../assets/images/themes/theme4.png" class="img-fluid" /></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="user_div">
+            <h5 class="brand-name mb-4">
+                Kalsun Groups
+                <a href="javascript:void(0)" class="user_btn">
+                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 8v-2a2 2 0 0 1 2 -2h7a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-2" /><path d="M15 12h-12l3 -3" /><path d="M6 15l-3 -3" /></svg>
+                </a>
+            </h5>
+            <div class="card">
+            </div>
+            <div class="card">
+                <div class="card-header border-bottom">
+                    <h3 class="card-title">Statistics</h3>
+                    <div class="card-options">
+                        <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>                                
+                        <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="text-center">
+                        <div class="row">
+                            <div class="col-6 pb-3">
+                                <label class="mb-0">Balance</label>
+                                <h4 class="font-30 font-weight-bold">$545</h4>
+                            </div>
+                            <div class="col-6 pb-3">
+                                <label class="mb-0">Growth</label>
+                                <h4 class="font-30 font-weight-bold">27%</h4>
+                            </div>
+                        </div>
+                    </div>                
+                    <div class="form-group">
+                        <label class="d-block">Total Income<span class="float-right">77%</span></label>
+                        <div class="progress progress-xs">
+                            <div class="progress-bar bg-blue" role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100" style="width: 77%;"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="d-block">Total Expenses <span class="float-right">50%</span></label>
+                        <div class="progress progress-xs">
+                            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                    <div class="form-group mb-0">
+                        <label class="d-block">Gross Profit <span class="float-right">23%</span></label>
+                        <div class="progress progress-xs">
+                            <div class="progress-bar bg-green" role="progressbar" aria-valuenow="23" aria-valuemin="0" aria-valuemax="100" style="width: 23%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header border-bottom">
+                    <h3 class="card-title">Friends</h3>
+                    <div class="card-options">
+                        <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>                                
+                        <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
+                    </div>
+                </div>
+                <div class="card-body">                
+                    <ul class="right_chat list-unstyled">
+                        <li class="online">
+                            <a href="javascript:void(0);">
+                                <div class="media">
+                                    <img class="media-object " src="../assets/images/xs/avatar4.jpg" alt="">
+                                    <div class="media-body">
+                                        <span class="name">Donald Gardner</span>
+                                        <span class="message">Designer, Blogger</span>
+                                        <span class="badge badge-outline status"></span>
+                                    </div>
+                                </div>
+                            </a>                            
+                        </li>
+                        <li class="online">
+                            <a href="javascript:void(0);">
+                                <div class="media">
+                                    <img class="media-object " src="../assets/images/xs/avatar5.jpg" alt="">
+                                    <div class="media-body">
+                                        <span class="name">Wendy Keen</span>
+                                        <span class="message">Java Developer</span>
+                                        <span class="badge badge-outline status"></span>
+                                    </div>
+                                </div>
+                            </a>                            
+                        </li>
+                        <li class="offline">
+                            <a href="javascript:void(0);">
+                                <div class="media">
+                                    <img class="media-object " src="../assets/images/xs/avatar2.jpg" alt="">
+                                    <div class="media-body">
+                                        <span class="name">Matt Rosales</span>
+                                        <span class="message">CEO, Epic Theme</span>
+                                        <span class="badge badge-outline status"></span>
+                                    </div>
+                                </div>
+                            </a>                            
+                        </li>                      
+                    </ul>
+                </div>
+            </div>
+            <div class="card b-none">
+                <ul class="list-group">
+                    <li class="list-group-item d-flex">
+                        <div class="box-icon sm rounded bg-blue"><i class="fa fa-credit-card"></i> </div>
+                        <div class="ml-3">
+                            <div>+$29 New sale</div>
+                            <a href="javascript:void(0)">Admin Template</a>
+                            <div class="text-muted font-12">5 min ago</div>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex">
+                        <div class="box-icon sm rounded bg-pink"><i class="fa fa-upload"></i> </div>
+                        <div class="ml-3">
+                            <div>Project Update</div>
+                            <a href="javascript:void(0)">New HTML page</a>
+                            <div class="text-muted font-12">10 min ago</div>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex">
+                        <div class="box-icon sm rounded bg-teal"><i class="fa fa-file-word-o"></i> </div>
+                        <div class="ml-3">
+                            <div>You edited the file</div>
+                            <a href="javascript:void(0)">reposrt.doc</a>
+                            <div class="text-muted font-12">11 min ago</div>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex">
+                        <div class="box-icon sm rounded bg-cyan"><i class="fa fa-user"></i> </div>
+                        <div class="ml-3">
+                            <div>New user</div>
+                            <a href="javascript:void(0)">Puffin web - view</a>
+                            <div class="text-muted font-12">17 min ago</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="left-sidebar" class="sidebar ">
+            <h5 class="brand-name">Kalsun Groups <a href="javascript:void(0)" class="menu_option float-right"><i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i></a></h5>
+            <nav id="left-sidebar-nav" class="sidebar-nav">
+                <ul class="metismenu">
+                    <li class="g_heading">Directories</li>
+                    <li class="active">
+                        <a href="javascript:void(0)" class="has-arrow arrow-c"><i class="icon-rocket"></i><span>HRMS</span></a>
+                        <ul>
+                            <li><a href="index.html"><span>Dashboard</span></a></li>
+                            <li><a href="hr-users.html"><span>Users</span></a></li>
+                            <li><a href="hr-departments.html"><span>Departments</span></a></li>
+                            <li><a href="hr-employee.html"><span>Employee</span></a></li>
+                            <li><a href="hr-holidays.html"><span>Holidays</span></a></li>
+                            <li><a href="hr-payroll.html"><span>Payroll</span></a></li>
+                            <li class="active"><a href="hr-expenses.html"><span>expenses</span></a></li>
+                            <li><a href="hr-report.html"><span>Report</span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="has-arrow arrow-c"><i class="icon-cup"></i><span>Project</span></a>
+                        <ul>
+                            <li><a href="project-index.html">Dashboard</a></li>                        
+                            <li><a href="project-list.html">Project list</a></li>
+                            <li><a href="project-taskboard.html">Taskboard</a></li>
+                            <li><a href="project-ticket.html">Ticket List</a></li>
+                            <li><a href="project-ticket-details.html">Ticket Details</a></li>
+                            <li><a href="project-clients.html">Clients</a></li>
+                            <li><a href="project-todo.html">Todo List</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="has-arrow arrow-c"><i class="icon-briefcase"></i><span>Job Portal</span></a>
+                        <ul>
+                            <li><a href="job-index.html"><span>Job Dashboard</span></a></li>
+                            <li><a href="job-positions.html"><span>Positions</span></a></li>                    
+                            <li><a href="job-applicants.html"><span>Applicants</span></a></li>
+                            <li><a href="job-resumes.html"><span>Resumes</span></a></li>
+                            <li><a href="job-settings.html"><span>Settings</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>        
+        </div>
+
+        <div class="page">
+            <div id="page_top" class="section-body top_dark sticky-top">
+                <div class="container-fluid">
+                    <div class="page-header">
+                        <div class="left">
+                            <h1 class="page-title">expenses</h1>
+                            <select class="custom-select xs-hide">
+                                <option>Year</option>
+                                <option>Month</option>
+                                <option>Week</option>
+                            </select>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search...">
+                            </div>                        
+                        </div>
+                        <div class="right">
+                            <ul class="nav nav-pills">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Language</a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#"><img class="w20 mr-2" src="https://puffintheme.com/template/epic-pro/assets/images/flags/us.svg">English</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#"><img class="w20 mr-2" src="https://puffintheme.com/template/epic-pro/assets/images/flags/es.svg">Spanish</a>
+                                        <a class="dropdown-item" href="#"><img class="w20 mr-2" src="https://puffintheme.com/template/epic-pro/assets/images/flags/jp.svg">japanese</a>
+                                        <a class="dropdown-item" href="#"><img class="w20 mr-2" src="https://puffintheme.com/template/epic-pro/assets/images/flags/bl.svg">France</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Reports</a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#"><i class="dropdown-icon fa fa-file-excel-o"></i> MS Excel</a>
+                                        <a class="dropdown-item" href="#"><i class="dropdown-icon fa fa-file-word-o"></i> MS Word</a>
+                                        <a class="dropdown-item" href="#"><i class="dropdown-icon fa fa-file-pdf-o"></i> PDF</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Project</a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Graphics Design</a>                                    
+                                        <a class="dropdown-item" href="#">Angular Admin</a>
+                                        <a class="dropdown-item" href="#">PSD to HTML</a>
+                                        <a class="dropdown-item" href="#">iOs App Development</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Home Development</a>
+                                        <a class="dropdown-item" href="#">New Blog post</a>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="notification d-flex">
+                                <div class="dropdown d-flex">
+                                    <a class="nav-link icon d-none d-md-flex btn btn-default btn-icon ml-1" data-toggle="dropdown">
+                                        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-mail"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg>    
+                                        <span class="badge badge-success nav-unread"></span>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                        <ul class="right_chat list-unstyled w250 p-0">
+                                            <li class="online">
+                                                <a href="javascript:void(0);">
+                                                    <div class="media">
+                                                        <img class="media-object " src="../assets/images/xs/avatar4.jpg" alt="">
+                                                        <div class="media-body">
+                                                            <span class="name">Donald Gardner</span>
+                                                            <span class="message">Designer, Blogger</span>
+                                                            <span class="badge badge-outline status"></span>
+                                                        </div>
+                                                    </div>
+                                                </a>                            
+                                            </li>
+                                            <li class="online">
+                                                <a href="javascript:void(0);">
+                                                    <div class="media">
+                                                        <img class="media-object " src="../assets/images/xs/avatar5.jpg" alt="">
+                                                        <div class="media-body">
+                                                            <span class="name">Wendy Keen</span>
+                                                            <span class="message">Java Developer</span>
+                                                            <span class="badge badge-outline status"></span>
+                                                        </div>
+                                                    </div>
+                                                </a>                            
+                                            </li>
+                                            <li class="offline">
+                                                <a href="javascript:void(0);">
+                                                    <div class="media">
+                                                        <img class="media-object " src="../assets/images/xs/avatar2.jpg" alt="">
+                                                        <div class="media-body">
+                                                            <span class="name">Matt Rosales</span>
+                                                            <span class="message">CEO, Epic Theme</span>
+                                                            <span class="badge badge-outline status"></span>
+                                                        </div>
+                                                    </div>
+                                                </a>                            
+                                            </li>
+                                            <li class="online">
+                                                <a href="javascript:void(0);">
+                                                    <div class="media">
+                                                        <img class="media-object " src="../assets/images/xs/avatar3.jpg" alt="">
+                                                        <div class="media-body">
+                                                            <span class="name">Phillip Smith</span>
+                                                            <span class="message">Writter, Mag Editor</span>
+                                                            <span class="badge badge-outline status"></span>
+                                                        </div>
+                                                    </div>
+                                                </a>                            
+                                            </li>                        
+                                        </ul>
+                                        <div class="dropdown-divider"></div>
+                                        <a href="javascript:void(0)" class="dropdown-item text-center text-muted-dark readall">Mark all as read</a>
+                                    </div>
+                                </div>
+                                <div class="dropdown d-flex">
+                                    <a class="nav-link icon d-none d-md-flex btn btn-default btn-icon ml-1" data-toggle="dropdown">
+                                        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-bell"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" /><path d="M9 17v1a3 3 0 0 0 6 0v-1" /></svg>
+                                        <span class="badge badge-primary nav-unread"></span>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                        <ul class="list-unstyled feeds_widget">
+                                            <li>
+                                                <div class="feeds-left"><i class="fa fa-check"></i></div>
+                                                <div class="feeds-body">
+                                                    <h4 class="title text-danger">Issue Fixed <small class="float-right text-muted">11:05</small></h4>
+                                                    <small>WE have fix all Design bug with Responsive</small>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="feeds-left"><i class="fa fa-user"></i></div>
+                                                <div class="feeds-body">
+                                                    <h4 class="title">New User <small class="float-right text-muted">10:45</small></h4>
+                                                    <small>I feel great! Thanks team</small>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="feeds-left"><i class="fa fa-thumbs-o-up"></i></div>
+                                                <div class="feeds-body">
+                                                    <h4 class="title">7 New Feedback <small class="float-right text-muted">Today</small></h4>
+                                                    <small>It will give a smart finishing to your site</small>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="feeds-left"><i class="fa fa-question-circle"></i></div>
+                                                <div class="feeds-body">
+                                                    <h4 class="title text-warning">Server Warning <small class="float-right text-muted">10:50</small></h4>
+                                                    <small>Your connection is not private</small>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="feeds-left"><i class="fa fa-shopping-cart"></i></div>
+                                                <div class="feeds-body">
+                                                    <h4 class="title">7 New Orders <small class="float-right text-muted">11:35</small></h4>
+                                                    <small>You received a new oder from Tina.</small>
+                                                </div>
+                                            </li>                                   
+                                        </ul>
+                                        <div class="dropdown-divider"></div>
+                                        <a href="javascript:void(0)" class="dropdown-item text-center text-muted-dark readall">Mark all as read</a>
+                                    </div>
+                                </div>
+                                <div class="dropdown d-flex">
+                                    <a class="nav-link icon d-none d-md-flex btn btn-default btn-icon ml-1" data-toggle="dropdown">
+                                        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-user"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                        <a class="dropdown-item" href="page-profile.html"><i class="dropdown-icon fe fe-user"></i> Profile</a>
+                                        <a class="dropdown-item" href="app-setting.html"><i class="dropdown-icon fe fe-settings"></i> Settings</a>
+                                        <a class="dropdown-item" href="javascript:void(0)"><span class="float-right"><span class="badge badge-primary">6</span></span><i class="dropdown-icon fe fe-mail"></i> Inbox</a>
+                                        <a class="dropdown-item" href="javascript:void(0)"><i class="dropdown-icon fe fe-send"></i> Message</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="javascript:void(0)"><i class="dropdown-icon fe fe-help-circle"></i> Need help?</a>
+                                        <a class="dropdown-item" href="login.html"><i class="dropdown-icon fe fe-log-out"></i> Sign out</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-body">
+                <div class="container-fluid">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <ul class="nav nav-tabs page-header-tab">
+                            <li class="nav-item"><a class="nav-link active" id="expenses-tab" data-toggle="tab" href="#expenses-Expenses">Expenses</a></li>
+                        </ul>
+                        <div class="header-action">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addExpenseModal"><i class="mr-2 fa-solid fa-plus"></i>Add Expense</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-body mt-3">
+                <div class="container-fluid">
+                    <div class="tab-content mt-3">
+                        <div class="tab-pane fade show active" id="expenses-Expenses" role="tabpanel">
+                            <div class="row clearfix">
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div>Total expenses</div>
+                                            <div class="py-4 m-0 text-center h1 text-success counter">78</div>
+                                            <div class="d-flex">
+                                                <small class="text-muted">This years</small>
+                                                <div class="ml-auto"><i class="fa fa-caret-up text-success"></i>4%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div>New Account</div>
+                                            <div class="py-4 m-0 text-center h1 text-info counter">29</div>
+                                            <div class="d-flex">
+                                                <small class="text-muted">This years</small>
+                                                <div class="ml-auto"><i class="fa fa-caret-up text-success"></i>13%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div>Total Current A/C</div>
+                                            <div class="py-4 m-0 text-center h1 text-warning counter">8</div>
+                                            <div class="d-flex">
+                                                <small class="text-muted">This years</small>
+                                                <div class="ml-auto"><i class="fa fa-caret-up text-success"></i>3%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div>Total Saving A/C</div>
+                                            <div class="py-4 m-0 text-center h1 text-danger counter">70</div>
+                                            <div class="d-flex">
+                                                    <small class="text-muted">This years</small>
+                                                <div class="ml-auto"><i class="fa fa-caret-down text-danger"></i>10%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header border-bottom">
+                                    <h3 class="card-title">Expenses List</h3>
+                                    <div class="card-options">
+                                        <form>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control form-control-sm" placeholder="Search something..." name="s">
+                                                <span class="input-group-btn ml-2"><button class="btn btn-icon btn-sm" type="submit"><span class="fe fe-search"></span></button></span>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover table-striped table-vcenter text-nowrap">
+                                            <thead>
+                                                <tr>
+                                                    <th>Invoice No.</th>
+                                                    <th>Clients</th>
+                                                    <th>Date</th>
+                                                    <th>Type</th>
+                                                    <th>Status</th>
+                                                    <th class="w100">Amount</th>
+                                                    <th class="w150">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="expenseTableBody">
+                                                <!-- Expense data will be loaded here -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>            
+            </div> 
+        </div>    
+    </div>
+
+    <!-- Add/Edit Expense Modal -->
+    <div class="modal fade" id="addExpenseModal" tabindex="-1" role="dialog" aria-labelledby="addExpenseModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addExpenseModalLabel">Add New Expense</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="expenseForm">
+                        <input type="hidden" id="expenseId" name="id">
+                        <div class="form-group">
+                            <label for="invoice_no">Invoice No.</label>
+                            <input type="text" class="form-control" id="invoice_no" name="invoice_no" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="client_name">Client Name</label>
+                            <input type="text" class="form-control" id="client_name" name="client_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="expense_date">Date</label>
+                            <input type="date" class="form-control" id="expense_date" name="expense_date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="expense_type">Type</label>
+                            <select class="form-control" id="expense_type" name="expense_type" required>
+                                <option value="">Select Type</option>
+                                <option value="Travel">Travel</option>
+                                <option value="Utilities">Utilities</option>
+                                <option value="Office Supplies">Office Supplies</option>
+                                <option value="Software">Software</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="status">Status</label>
+                            <select class="form-control" id="status" name="status" required>
+                                <option value="">Select Status</option>
+                                <option value="Pending">Pending</option>
+                                <option value="Approved">Approved</option>
+                                <option value="Rejected">Rejected</option>
+                                <option value="Paid">Paid</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="amount">Amount</label>
+                            <input type="number" step="0.01" class="form-control" id="amount" name="amount" required>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary" id="saveExpenseBtn">Save Expense</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/bundles/lib.vendor.bundle.js"></script>
+<script src="../assets/bundles/counterup.bundle.js"></script>
+<script src="../assets/js/core.js"></script>
+
+<script>
+$(function () {
+    "use strict";
+
+    $('.counter').counterUp({
+        delay: 10,
+        time: 1000
+    });
+
+    const BASE_URL = "http://localhost:3000";
+
+    const expenseForm = $('#expenseForm');
+    const expenseTableBody = $('#expenseTableBody');
+    const addExpenseModal = $('#addExpenseModal');
+    const saveExpenseBtn = $('#saveExpenseBtn');
+
+    let currentEditingExpenseId = null;
+
+    // ================================
+    // FETCH ALL EXPENSES
+    // ================================
+    async function fetchExpenses() {
+        try {
+            const response = await fetch(`${BASE_URL}/api/expenses`);
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+            const expenses = await response.json();
+            renderExpenses(expenses);
+        } catch (error) {
+            console.error('Error fetching expenses:', error);
+            alert('Failed to load expenses. Please try again.');
+        }
+    }
+
+    // ================================
+    // RENDER EXPENSES IN TABLE
+    // ================================
+    function renderExpenses(expenses) {
+        expenseTableBody.empty();
+
+        if (expenses.length === 0) {
+            expenseTableBody.append('<tr><td colspan="7" class="text-center">No expenses found.</td></tr>');
+            return;
+        }
+
+        expenses.forEach(expense => {
+            const row = `
+                <tr>
+                    <td>${expense.invoice_no}</td>
+                    <td>${expense.client_name}</td>
+                    <td>${expense.expense_date}</td>
+                    <td>${expense.expense_type}</td>
+                    <td><span class="tag tag-blue">${expense.status}</span></td>
+                    <td>₹ ${parseFloat(expense.amount).toFixed(2)}</td>
+                    <td>
+                        <button type="button" class="btn btn-sm btn-icon view-btn" data-id="${expense.id}" title="View"><i class="fa fa-eye"></i></button>
+                        <button type="button" class="btn btn-sm btn-icon edit-btn" data-id="${expense.id}" title="Edit"><i class="fa fa-edit"></i></button>
+                        <button type="button" class="btn btn-sm btn-icon delete-btn" data-id="${expense.id}" title="Delete"><i class="fa fa-trash"></i></button>
+                    </td>
+                </tr>
+            `;
+            expenseTableBody.append(row);
+        });
+
+        attachExpenseActionListeners();
+    }
+
+    // ================================
+    // BUTTON ACTION LISTENERS
+    // ================================
+    function attachExpenseActionListeners() {
+        $('.view-btn').off('click').on('click', function () {
+            viewExpense($(this).data('id'));
+        });
+
+        $('.edit-btn').off('click').on('click', function () {
+            editExpense($(this).data('id'));
+        });
+
+        $('.delete-btn').off('click').on('click', function () {
+            deleteExpense($(this).data('id'));
+        });
+    }
+
+    // ================================
+    // ADD / UPDATE EXPENSE
+    // ================================
+    expenseForm.on('submit', async function (e) {
+        e.preventDefault();
+
+        const formData = {
+            invoice_no: $('#invoice_no').val(),
+            client_name: $('#client_name').val(),
+            expense_date: $('#expense_date').val(),
+            expense_type: $('#expense_type').val(),
+            status: $('#status').val(),
+            amount: parseFloat($('#amount').val())
+        };
+
+        const url = currentEditingExpenseId
+            ? `${BASE_URL}/api/expenses/${currentEditingExpenseId}`
+            : `${BASE_URL}/api/expenses`;
+
+        const method = currentEditingExpenseId ? 'PUT' : 'POST';
+
+        try {
+            const response = await fetch(url, {
+                method: method,
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || `HTTP error! status: ${response.status}`);
+            }
+
+            const result = await response.json();
+            alert(result.message);
+
+            addExpenseModal.modal('hide');
+            expenseForm[0].reset();
+            currentEditingExpenseId = null;
+            $('#addExpenseModalLabel').text('Add New Expense');
+
+            fetchExpenses();
+        } catch (error) {
+            console.error('Error saving expense:', error);
+            alert(`Error: ${error.message}`);
+        }
+    });
+
+    // Reset form when opening modal
+    $('#addExpenseModal').on('show.bs.modal', function () {
+        expenseForm[0].reset();
+        currentEditingExpenseId = null;
+        $('#addExpenseModalLabel').text('Add New Expense');
+    });
+
+    // ================================
+    // EDIT EXPENSE
+    // ================================
+    async function editExpense(id) {
+        try {
+            const response = await fetch(`${BASE_URL}/api/expenses/${id}`);
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+            const expense = await response.json();
+
+            $('#addExpenseModalLabel').text('Edit Expense');
+            currentEditingExpenseId = id;
+
+            $('#expenseId').val(expense.id);
+            $('#invoice_no').val(expense.invoice_no);
+            $('#client_name').val(expense.client_name);
+            $('#expense_date').val(expense.expense_date);
+            $('#expense_type').val(expense.expense_type);
+            $('#status').val(expense.status);
+            $('#amount').val(expense.amount);
+
+            addExpenseModal.modal('show');
+        } catch (error) {
+            console.error('Error fetching expense for edit:', error);
+            alert('Failed to load expense for editing.');
+        }
+    }
+
+    // ================================
+    // VIEW EXPENSE
+    // ================================
+    async function viewExpense(id) {
+        try {
+            const response = await fetch(`${BASE_URL}/api/expenses/${id}`);
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+            const expense = await response.json();
+
+            alert(`
+                Expense Details:
+                Invoice No: ${expense.invoice_no}
+                Client: ${expense.client_name}
+                Date: ${expense.expense_date}
+                Type: ${expense.expense_type}
+                Status: ${expense.status}
+                Amount: $${parseFloat(expense.amount).toFixed(2)}
+            `);
+        } catch (error) {
+            console.error('Error fetching expense for view:', error);
+            alert('Failed to load expense details.');
+        }
+    }
+
+    // ================================
+    // DELETE EXPENSE
+    // ================================
+    async function deleteExpense(id) {
+        if (confirm('Are you sure you want to delete this expense?')) {
+            try {
+                const response = await fetch(`${BASE_URL}/api/expenses/${id}`, {
+                    method: 'DELETE'
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || `HTTP error! status: ${response.status}`);
+                }
+
+                const result = await response.json();
+                alert(result.message);
+
+                fetchExpenses();
+            } catch (error) {
+                console.error('Error deleting expense:', error);
+                alert(`Error: ${error.message}`);
+            }
+        }
+    }
+
+    // ================================
+    // INITIAL LOAD
+    // ================================
+    fetchExpenses();
+
+});
+</script>
+
+</body>
+</html>
