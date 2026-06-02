@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="icon" href="../assets/images/icon/logo.png" type="image/x-icon" />
+    <title>HAC Record Procurement Form</title>
+
+    <!-- Bootstrap Core and vandor -->
+    <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
+
+    <!-- Fonts -->
+    <link href="../assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <!-- Core css -->
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/theme1.css" />
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+    <style>
+        /* =========================================
+           GOOGLE FORM EXACT REPLICA STYLES
+           ========================================= */
+        .gform-page {
+            background-color: #f0ebf8; /* Google form purple background */
+            min-height: calc(100vh - 60px);
+            padding: 40px 20px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .gform-container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .gform-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 12px;
+            border: 1px solid #dadce0;
+            box-shadow: 0 1px 2px 0 rgba(60,64,67,0.1), 0 2px 6px 2px rgba(60,64,67,0.05);
+            transition: box-shadow 0.2s;
+        }
+        .gform-card:hover {
+            box-shadow: 0 1px 3px 0 rgba(60,64,67,0.2), 0 4px 8px 3px rgba(60,64,67,0.1);
+        }
+        .gform-card-active {
+            border-left: 6px solid #4285f4;
+        }
+        .gform-header {
+            border-top: 10px solid #673ab7; /* Google purple header */
+        }
+        .gform-title {
+            font-size: 32px;
+            font-weight: 400;
+            color: #202124;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+        .gform-desc {
+            font-size: 14px;
+            color: #5f6368;
+        }
+        .gform-question {
+            font-size: 16px;
+            font-weight: 500;
+            color: #202124;
+            margin-bottom: 16px;
+        }
+        .gform-input {
+            border: none;
+            border-bottom: 1px solid #d1d5db;
+            border-radius: 0;
+            padding: 8px 0;
+            width: 100%;
+            font-size: 14px;
+            color: #202124;
+            background-color: transparent;
+            box-shadow: none !important;
+            transition: border-bottom-color 0.3s ease;
+        }
+        .gform-input:focus {
+            border-bottom: 2px solid #673ab7;
+            outline: none;
+        }
+        /* Style for Select dropdown to match */
+        select.gform-input {
+            cursor: pointer;
+            padding-bottom: 5px;
+        }
+        .required-star {
+            color: #d93025;
+            margin-left: 4px;
+        }
+        .gform-submit-btn {
+            background-color: #673ab7;
+            color: #fff;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .gform-submit-btn:hover {
+            background-color: #5e35b1;
+        }
+        .gform-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .gform-clear {
+            color: #673ab7;
+            background: transparent;
+            border: none;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .gform-clear:hover {
+            background: #f0ebf8;
+            border-radius: 4px;
+        }
+        
+        /* Success Message Container */
+        #successCard {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="font-jakarta theme1">
+            <!-- Google Form Layout starts here -->
+            <div class="gform-page">
+                <div class="gform-container">
+
+                    <!-- SUCCESS MESSAGE (Hidden by default) -->
+                    <div id="successCard" class="gform-card gform-header">
+                        <h1 class="gform-title" style="font-size: 28px;">HAC Record Procurement</h1>
+                        <p class="gform-desc mt-3" style="font-size: 15px; color: #202124;">Your response has been recorded.</p>
+                        <a href="javascript:void(0)" onclick="resetAndShowForm()" class="text-primary mt-3 d-inline-block" style="text-decoration: underline;">Submit another response</a>
+                    </div>
+
+                    <!-- THE FORM -->
+                    <form id="hacForm">
+                        
+                        <!-- Header Card -->
+                        <div class="gform-card gform-header">
+                            <h1 class="gform-title">HAC Record Procurement</h1>
+                            <p class="gform-desc">Please fill out the procurement record details below. Fields marked with an asterisk (<span class="required-star">*</span>) are required.</p>
+                            <hr class="mt-4 mb-3" style="border-top: 1px solid #dadce0;">
+                            <p class="gform-desc text-danger mb-0 text-right"><span class="required-star">*</span> Indicates required question</p>
+                        </div>
+
+                        <!-- 1. Date -->
+                        <div class="gform-card" onclick="highlightCard(this)">
+                            <div class="gform-question">Date <span class="required-star">*</span></div>
+                            <input type="date" class="gform-input" id="f_procurement_date" required>
+                        </div>
+
+                        <!-- 2. Client ID -->
+                        <div class="gform-card" onclick="highlightCard(this)">
+                            <div class="gform-question">Client ID <span class="required-star">*</span></div>
+                            <input type="text" class="gform-input" id="f_client_id" placeholder="Your answer" required>
+                        </div>
+
+                        <!-- 3. Company Name -->
+                        <div class="gform-card" onclick="highlightCard(this)">
+                            <div class="gform-question">Company Name <span class="required-star">*</span></div>
+                            <input type="text" class="gform-input" id="f_company_name" placeholder="Your answer" required>
+                        </div>
+
+                        <!-- 4. Description -->
+                        <div class="gform-card" onclick="highlightCard(this)">
+                            <div class="gform-question">Description</div>
+                            <input type="text" class="gform-input" id="f_description" placeholder="Your answer">
+                        </div>
+
+                        <!-- 5. Mode of document received -->
+                        <div class="gform-card" onclick="highlightCard(this)">
+                            <div class="gform-question">Mode of document received</div>
+                            <input type="text" class="gform-input" id="f_mode_of_document_received" placeholder="e.g. Email, Courier, Hand Delivery">
+                        </div>
+
+                        <!-- 6. Quotation Value -->
+                        <div class="gform-card" onclick="highlightCard(this)">
+                            <div class="gform-question">Quotation Value</div>
+                            <input type="text" class="gform-input" id="f_quotation_value" placeholder="Your answer">
+                        </div>
+
+                        <!-- 7. Document received -->
+                        <div class="gform-card" onclick="highlightCard(this)">
+                            <div class="gform-question">Document received</div>
+                            <input type="text" class="gform-input" id="f_document_received" placeholder="Your answer">
+                        </div>
+
+                        <!-- 8. Advance Payment -->
+                        <div class="gform-card" onclick="highlightCard(this)">
+                            <div class="gform-question">Advance Payment</div>
+                            <input type="text" class="gform-input" id="f_advance_payment" placeholder="Your answer">
+                        </div>
+
+                        <!-- 9. Client Person Name -->
+                        <div class="gform-card" onclick="highlightCard(this)">
+                            <div class="gform-question">Client Person Name</div>
+                            <input type="text" class="gform-input" id="f_client_person_name" placeholder="Your answer">
+                        </div>
+
+                        <!-- 10. Client Person Number -->
+                        <div class="gform-card" onclick="highlightCard(this)">
+                            <div class="gform-question">Client Person Number</div>
+                            <input type="text" class="gform-input" id="f_client_person_number" placeholder="Your answer">
+                        </div>
+
+                        <!-- 11. Client Person Mail ID -->
+                        <div class="gform-card" onclick="highlightCard(this)">
+                            <div class="gform-question">Client Person Mail ID</div>
+                            <input type="email" class="gform-input" id="f_client_person_mail_id" placeholder="Your answer">
+                        </div>
+
+                        <!-- 12. Client Designation -->
+                        <div class="gform-card" onclick="highlightCard(this)">
+                            <div class="gform-question">Client Designation</div>
+                            <input type="text" class="gform-input" id="f_client_designation" placeholder="Your answer">
+                        </div>
+
+                        <!-- 13. Advisor Name -->
+                        <div class="gform-card" onclick="highlightCard(this)">
+                            <div class="gform-question">Advisor Name</div>
+                            <select class="gform-input" id="f_advisor_name">
+                                <option value="" disabled selected>Choose</option>
+                                <option value="AALIYA">AALIYA</option>
+                                <option value="AADHYA">AADHYA</option>
+                                <option value="ABI">ABI</option>
+                                <option value="ADITI">ADITI</option>
+                                <option value="AHANA">AHANA</option>
+                                <option value="AKALYA">AKALYA</option>
+                                <option value="AKSHAYA">AKSHAYA</option>
+                                <option value="AKSHITHA">AKSHITHA</option>
+                                <option value="ANANYA">ANANYA</option>
+                                <option value="ANJALI">ANJALI</option>
+                                <option value="ANUSHA">ANUSHA</option>
+                                <option value="APSARA">APSARA</option>
+                                <option value="ARCHANA">ARCHANA</option>
+                                <option value="ASMITHA">ASMITHA</option>
+                                <option value="AVANTHIKA">AVANTHIKA</option>
+                            </select>
+                        </div>
+
+                        <!-- Footer (Submit & Clear) -->
+                        <div class="gform-footer">
+                            <button type="submit" class="gform-submit-btn" id="submitBtn">Submit</button>
+                            <button type="button" class="gform-clear py-2 px-3" onclick="clearForm()">Clear form</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../assets/bundles/lib.vendor.bundle.js"></script>
+    <script src="../assets/js/core.js"></script>
+    <script src="../assets/js/page/theme1-js.js"></script>
+
+    <script>
+        // Update to your actual Express API route
+        const API_URL = 'http://localhost:3000/api/hac-record-procurement';
+
+        // Helper to mimic Google Form "Active Card" styling highlight
+        function highlightCard(element) {
+            document.querySelectorAll('.gform-card').forEach(card => card.classList.remove('gform-card-active'));
+            element.classList.add('gform-card-active');
+        }
+
+        // Add focus events to input fields to trigger parent card highlight
+        document.querySelectorAll('.gform-input').forEach(input => {
+            input.addEventListener('focus', function() {
+                highlightCard(this.closest('.gform-card'));
+            });
+        });
+
+        // Clear form function
+        function clearForm() {
+            if(confirm('Are you sure you want to clear the form? This will remove all your answers.')) {
+                document.getElementById('hacForm').reset();
+            }
+        }
+
+        // Show form again after successful submission
+        function resetAndShowForm() {
+            document.getElementById('hacForm').reset();
+            document.getElementById('successCard').style.display = 'none';
+            document.getElementById('hacForm').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Submit form data to existing Express API
+        document.getElementById('hacForm').onsubmit = async (e) => {
+            e.preventDefault();
+            
+            // Disable button to prevent duplicate clicks
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Submitting...';
+
+            const payload = {
+                procurement_date: document.getElementById('f_procurement_date').value,
+                client_id: document.getElementById('f_client_id').value,
+                company_name: document.getElementById('f_company_name').value,
+                description: document.getElementById('f_description').value,
+                mode_of_document_received: document.getElementById('f_mode_of_document_received').value,
+                quotation_value: document.getElementById('f_quotation_value').value,
+                document_received: document.getElementById('f_document_received').value,
+                advance_payment: document.getElementById('f_advance_payment').value,
+                client_person_name: document.getElementById('f_client_person_name').value,
+                client_person_number: document.getElementById('f_client_person_number').value,
+                client_person_mail_id: document.getElementById('f_client_person_mail_id').value,
+                client_designation: document.getElementById('f_client_designation').value,
+                advisor_name: document.getElementById('f_advisor_name').value
+            };
+
+            try {
+                const res = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                
+                if (res.ok) {
+                    // Hide Form, Show Success Card
+                    document.getElementById('hacForm').style.display = 'none';
+                    document.getElementById('successCard').style.display = 'block';
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    const errData = await res.json();
+                    alert("Failed to submit: " + (errData.error || "Unknown Error"));
+                }
+            } catch (err) { 
+                console.error(err);
+                alert("Error connecting to the server. Is your backend running?"); 
+            } finally {
+                // Re-enable button
+                submitBtn.disabled = false;
+                submitBtn.innerText = 'Submit';
+            }
+        };
+    </script>
+</body>
+</html>

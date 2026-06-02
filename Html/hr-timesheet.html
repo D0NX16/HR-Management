@@ -1,0 +1,1058 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="icon" href="../assets/images/icon/logo.png" type="image/x-icon" />
+
+    <title>HR Time Sheet</title>
+
+    <!-- Bootstrap Core and vandor -->
+    <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
+
+    <!-- ✅ FIXED: Added Public CDNs to load icons safely (Bypassing CORS errors) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
+    <!-- Feather Icons (used for class="fe ...") -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.css">
+
+    <!-- Core css -->
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/theme1.css" />
+</head>
+<style>
+    /* Horizontal scroll for the wide table */
+    .custom-table-scroll {
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* Group Header Coloring */
+    .group-header {
+        background-color: #007bff !important;
+        /* Blue */
+        color: rgb(0, 0, 0) !important;
+        text-align: center;
+    }
+
+    .group-header-rec {
+        background-color: #28a745 !important;
+        /* Green */
+        color: rgb(0, 0, 0) !important;
+        text-align: center;
+    }
+
+    /* Center text in headers */
+    .thead-dark th {
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    /* ✅ Horizontal scrollbar at bottom */
+    .custom-table-scroll {
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    /* Force table to overflow */
+    .custom-table-scroll table {
+        min-width: 1400px;
+        /* adjust if needed */
+    }
+
+    /* Optional: smooth scrollbar */
+    .custom-table-scroll::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .custom-table-scroll::-webkit-scrollbar-thumb {
+        background: #c1c1c1;
+        border-radius: 4px;
+    }
+
+    .custom-table-scroll::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+</style>
+
+
+<body class="font-jakarta theme1">
+
+    <div id="main_content">
+
+        <div id="header_top" class="header_top">
+            <div class="container">
+                <div class="hleft">
+                    <a class="header-brand" href="../index.html"><i class="fe fe-command brand-logo"></i></a>
+                    <div class="dropdown">
+                        <a href="page-search.html" class="nav-link icon" data-toggle="tooltip" data-placement="right"
+                            title="Search">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                                <path d="M21 21l-6 -6" />
+                            </svg>
+                        </a>
+                        <a href="app-calendar.html" class="nav-link icon app_inbox xs-hide" data-toggle="tooltip"
+                            data-placement="right" title="Calender">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path
+                                    d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" />
+                                <path d="M16 3v4" />
+                                <path d="M8 3v4" />
+                                <path d="M4 11h16" />
+                                <path d="M7 14h.013" />
+                                <path d="M10.01 14h.005" />
+                                <path d="M13.01 14h.005" />
+                                <path d="M16.015 14h.005" />
+                                <path d="M13.015 17h.005" />
+                                <path d="M7.01 17h.005" />
+                                <path d="M10.01 17h.005" />
+                            </svg>
+                        </a>
+                        <a href="app-contact.html" class="nav-link icon xs-hide" data-toggle="tooltip"
+                            data-placement="right" title="Contact">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path
+                                    d="M20 6v12a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2z" />
+                                <path d="M10 16h6" />
+                                <path d="M13 11m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                                <path d="M4 8h3" />
+                                <path d="M4 12h3" />
+                                <path d="M4 16h3" />
+                            </svg>
+                        </a>
+                        <a href="app-chat.html" class="nav-link icon xs-hide" data-toggle="tooltip"
+                            data-placement="right" title="Chat">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+                                <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+                            </svg>
+                        </a>
+                        <a href="app-filemanager.html" class="nav-link icon app_file xs-hide" data-toggle="tooltip"
+                            data-placement="right" title="File Manager">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path
+                                    d="M9 3h3l2 2h5a2 2 0 0 1 2 2v7a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-9a2 2 0 0 1 2 -2" />
+                                <path d="M17 16v2a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-9a2 2 0 0 1 2 -2h2" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="hright">
+                    <div class="dropdown">
+                        <a href="javascript:void(0)" class="nav-link icon theme_btn" data-toggle="tooltip"
+                            data-placement="right" title="Themes">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path
+                                    d="M5 3m0 2a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2z" />
+                                <path d="M19 6h1a2 2 0 0 1 2 2a5 5 0 0 1 -5 5l-5 0v2" />
+                                <path
+                                    d="M10 15m0 1a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1z" />
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="nav-link icon settingbar" data-toggle="tooltip"
+                            data-placement="right" title="Settings">
+                            <svg class="fa-spin" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path
+                                    d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" />
+                                <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="nav-link user_btn" data-toggle="tooltip"
+                            data-placement="right" title="User Menu" /><img class="avatar"
+                            src="../assets/images/user.jpg" alt=""></a>
+                        <a href="javascript:void(0)" class="nav-link icon menu_toggle" data-toggle="tooltip"
+                            data-placement="right" title="Toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M4 6h16" />
+                                <path d="M7 12h13" />
+                                <path d="M10 18h10" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="rightsidebar" class="right_sidebar">
+            <a href="javascript:void(0)" class="p-3 settingbar float-right">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-x">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M18 6l-12 12" />
+                    <path d="M6 6l12 12" />
+                </svg>
+            </a>
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Settings"
+                        aria-expanded="true">Settings</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#activity"
+                        aria-expanded="false">Activity</a></li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane vivify fadeIn active" id="Settings" aria-expanded="true">
+                    <div class="mb-4">
+                        <h6 class="font-14 font-weight-bold text-muted">Font Style</h6>
+                        <div class="custom-controls-stacked font_setting">
+                            <label class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" name="font" value="font-opensans">
+                                <span class="custom-control-label">Open Sans Font</span>
+                            </label>
+                            <label class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" name="font" value="font-montserrat">
+                                <span class="custom-control-label">Montserrat Google Font</span>
+                            </label>
+                            <label class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" name="font" value="font-roboto">
+                                <span class="custom-control-label">Robot Google Font</span>
+                            </label>
+                            <label class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" name="font" value="font-jakarta"
+                                    checked="">
+                                <span class="custom-control-label">Plus Jakarta Google Font</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <h6 class="font-14 font-weight-bold mt-4 text-muted">General Settings</h6>
+                        <ul class="setting-list list-unstyled mt-1 setting_switch">
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Night Mode</span>
+                                    <input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-darkmode">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Fix Navbar top</span>
+                                    <input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-fixnavbar">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Header Dark</span>
+                                    <input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-pageheader">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Min Sidebar Dark</span>
+                                    <input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-min_sidebar">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Sidebar Dark</span>
+                                    <input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-sidebar">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Icon Color</span>
+                                    <input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-iconcolor">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Gradient Color</span>
+                                    <input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-gradient">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Box Shadow</span>
+                                    <input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-boxshadow">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">RTL Support</span>
+                                    <input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-rtl">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Box Layout</span>
+                                    <input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-boxlayout">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <label class="d-block">Storage <span class="float-right">77%</span></label>
+                        <div class="progress progress-sm">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="77" aria-valuemin="0"
+                                aria-valuemax="100" style="width: 77%;"></div>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-block mt-3">Upgrade Storage</button>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane vivify fadeIn" id="activity" aria-expanded="false">
+                    <ul class="new_timeline mt-3">
+                        <li>
+                            <div class="bullet pink"></div>
+                            <div class="time">11:00am</div>
+                            <div class="desc">
+                                <h3>Attendance</h3>
+                                <h4>Computer Class</h4>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bullet pink"></div>
+                            <div class="time">11:30am</div>
+                            <div class="desc">
+                                <h3>Added an interest</h3>
+                                <h4>“Volunteer Activities”</h4>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bullet green"></div>
+                            <div class="time">12:00pm</div>
+                            <div class="desc">
+                                <h3>Developer Team</h3>
+                                <h4>Hangouts</h4>
+                                <ul class="list-unstyled team-info margin-0 p-t-5">
+                                    <li><img src="../assets/images/xs/avatar1.jpg" alt="Avatar"></li>
+                                    <li><img src="../assets/images/xs/avatar2.jpg" alt="Avatar"></li>
+                                    <li><img src="../assets/images/xs/avatar3.jpg" alt="Avatar"></li>
+                                    <li><img src="../assets/images/xs/avatar4.jpg" alt="Avatar"></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bullet green"></div>
+                            <div class="time">2:00pm</div>
+                            <div class="desc">
+                                <h3>Responded to need</h3>
+                                <a href="javascript:void(0)">“In-Kind Opportunity”</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bullet orange"></div>
+                            <div class="time">1:30pm</div>
+                            <div class="desc">
+                                <h3>Lunch Break</h3>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bullet green"></div>
+                            <div class="time">2:38pm</div>
+                            <div class="desc">
+                                <h3>Finish</h3>
+                                <h4>Go to Home</h4>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="theme_div">
+            <div class="border-bottom p-2 p-3">
+                <a href="javascript:void(0)" class="themebar float-right">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-x">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M18 6l-12 12" />
+                        <path d="M6 6l12 12" />
+                    </svg>
+                </a>
+                <h6 class="mb-0">Choose Theme</h6>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <ul class="list-group list-unstyled">
+                        <li class="list-group-item mb-2">
+                            <p>Default Theme <span
+                                    class="badge badge-success font-13 font-weight-normal ml-1">New</span></p>
+                            <a href="../index.html"><img src="../assets/images/themes/default.png" class="img-fluid" /></a>
+                        </li>
+                        <li class="list-group-item mb-2">
+                            <p>Night Mode Theme</p>
+                            <a href="#"><img src="../assets/images/themes/dark.png" class="img-fluid" /></a>
+                        </li>
+                        <li class="list-group-item mb-2">
+                            <p>RTL Version</p>
+                            <a href="#"><img src="../assets/images/themes/rtl.png" class="img-fluid" /></a>
+                        </li>
+                        <li class="list-group-item mb-2">
+                            <p>Theme Version1</p>
+                            <a href="#"><img src="../assets/images/themes/theme1.png" class="img-fluid" /></a>
+                        </li>
+                        <li class="list-group-item mb-2">
+                            <p>Theme Version2</p>
+                            <a href="#"><img src="../assets/images/themes/theme2.png" class="img-fluid" /></a>
+                        </li>
+                        <li class="list-group-item mb-2">
+                            <p>Theme Version3</p>
+                            <a href="#"><img src="../assets/images/themes/theme3.png" class="img-fluid" /></a>
+                        </li>
+                        <li class="list-group-item mb-2">
+                            <p>Theme Version4</p>
+                            <a href="#"><img src="../assets/images/themes/theme4.png" class="img-fluid" /></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="user_div">
+            <h5 class="brand-name mb-4">
+                Kalsun Groups
+                <a href="javascript:void(0)" class="user_btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M10 8v-2a2 2 0 0 1 2 -2h7a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-2" />
+                        <path d="M15 12h-12l3 -3" />
+                        <path d="M6 15l-3 -3" />
+                    </svg>
+                </a>
+            </h5>
+            <div class="card">
+                <div class="card-body">
+                    <div class="media">
+                        <img class="avatar avatar-xl mr-3" src="../assets/images/sm/avatar1.jpg" alt="avatar">
+                        <div class="media-body">
+                            <h5 class="m-0">Sara Hopkins</h5>
+                            <p class="text-muted mb-0">Webdeveloper</p>
+                            <ul class="social-links list-inline mb-0 mt-2">
+                                <li class="list-inline-item"><a href="javascript:void(0)" title="" data-toggle="tooltip"
+                                        data-original-title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                                <li class="list-inline-item"><a href="javascript:void(0)" title="" data-toggle="tooltip"
+                                        data-original-title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                                <li class="list-inline-item"><a href="javascript:void(0)" title="" data-toggle="tooltip"
+                                        data-original-title="1234567890"><i class="fa fa-phone"></i></a></li>
+                                <li class="list-inline-item"><a href="javascript:void(0)" title="" data-toggle="tooltip"
+                                        data-original-title="@skypename"><i class="fa fa-skype"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header border-bottom">
+                    <h3 class="card-title">Statistics</h3>
+                    <div class="card-options">
+                        <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i
+                                class="fe fe-chevron-up"></i></a>
+                        <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="text-center">
+                        <div class="row">
+                            <div class="col-6 pb-3">
+                                <label class="mb-0">Balance</label>
+                                <h4 class="font-30 font-weight-bold">$545</h4>
+                            </div>
+                            <div class="col-6 pb-3">
+                                <label class="mb-0">Growth</label>
+                                <h4 class="font-30 font-weight-bold">27%</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="d-block">Total Income<span class="float-right">77%</span></label>
+                        <div class="progress progress-xs">
+                            <div class="progress-bar bg-blue" role="progressbar" aria-valuenow="77" aria-valuemin="0"
+                                aria-valuemax="100" style="width: 77%;"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="d-block">Total Expenses <span class="float-right">50%</span></label>
+                        <div class="progress progress-xs">
+                            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0"
+                                aria-valuemax="100" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                    <div class="form-group mb-0">
+                        <label class="d-block">Gross Profit <span class="float-right">23%</span></label>
+                        <div class="progress progress-xs">
+                            <div class="progress-bar bg-green" role="progressbar" aria-valuenow="23" aria-valuemin="0"
+                                aria-valuemax="100" style="width: 23%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header border-bottom">
+                    <h3 class="card-title">Friends</h3>
+                    <div class="card-options">
+                        <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i
+                                class="fe fe-chevron-up"></i></a>
+                        <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <ul class="right_chat list-unstyled">
+                        <li class="online">
+                            <a href="javascript:void(0);">
+                                <div class="media">
+                                    <img class="media-object " src="../assets/images/xs/avatar4.jpg" alt="">
+                                    <div class="media-body">
+                                        <span class="name">Donald Gardner</span>
+                                        <span class="message">Designer, Blogger</span>
+                                        <span class="badge badge-outline status"></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="online">
+                            <a href="javascript:void(0);">
+                                <div class="media">
+                                    <img class="media-object " src="../assets/images/xs/avatar5.jpg" alt="">
+                                    <div class="media-body">
+                                        <span class="name">Wendy Keen</span>
+                                        <span class="message">Java Developer</span>
+                                        <span class="badge badge-outline status"></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="offline">
+                            <a href="javascript:void(0);">
+                                <div class="media">
+                                    <img class="media-object " src="../assets/images/xs/avatar2.jpg" alt="">
+                                    <div class="media-body">
+                                        <span class="name">Matt Rosales</span>
+                                        <span class="message">CEO, Epic Theme</span>
+                                        <span class="badge badge-outline status"></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card b-none">
+                <ul class="list-group">
+                    <li class="list-group-item d-flex">
+                        <div class="box-icon sm rounded bg-blue"><i class="fa fa-credit-card"></i> </div>
+                        <div class="ml-3">
+                            <div>+$29 New sale</div>
+                            <a href="javascript:void(0)">Admin Template</a>
+                            <div class="text-muted font-12">5 min ago</div>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex">
+                        <div class="box-icon sm rounded bg-pink"><i class="fa fa-upload"></i> </div>
+                        <div class="ml-3">
+                            <div>Project Update</div>
+                            <a href="javascript:void(0)">New HTML page</a>
+                            <div class="text-muted font-12">10 min ago</div>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex">
+                        <div class="box-icon sm rounded bg-teal"><i class="fa fa-file-word-o"></i> </div>
+                        <div class="ml-3">
+                            <div>You edited the file</div>
+                            <a href="javascript:void(0)">reposrt.doc</a>
+                            <div class="text-muted font-12">11 min ago</div>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex">
+                        <div class="box-icon sm rounded bg-cyan"><i class="fa fa-user"></i> </div>
+                        <div class="ml-3">
+                            <div>New user</div>
+                            <a href="javascript:void(0)">Puffin web - view</a>
+                            <div class="text-muted font-12">17 min ago</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="left-sidebar" class="sidebar">
+            <h5 class="brand-name">
+                Kalsun Groups
+                <a href="javascript:void(0)" class="menu_option float-right">
+                    <i class="fa-solid fa-table-cells-large" style="color: #000000;"></i>
+                </a>
+            </h5>
+
+            <nav id="left-sidebar-nav" class="sidebar-nav">
+                <ul class="metismenu">
+
+                    <li class="g_heading">Directories</li>
+
+                    <!-- HRMS -->
+                    <li id="sidebar-hrms">
+                        <a href="javascript:void(0)" class="has-arrow arrow-c">
+                            <i class="fa-solid fa-rocket" style="color: #74c0fc;"></i>
+                            <span>HRMS</span>
+                        </a>
+                        <ul>
+                            <li id="sidebar-dashboard"><a href="../index.html">Dashboard</a></li>
+                            <li id="sidebar-users"><a href="./hr-users.html">Users</a></li>
+                            <li id="sidebar-departments"><a href="./hr-departments.html">Departments</a></li>
+                            <li id="sidebar-employee"><a href="./hr-employee.html">Employee</a></li>
+                            <li id="sidebar-attendance"><a href="./hr-attendance.html">Attendance</a></li>
+                            <li id="sidebar-payroll"><a href="./hr-payroll.html">Payroll</a></li>
+                            <li id="sidebar-expenses"><a href="./hr-expenses.html">Expenses</a></li>
+                            <li id="sidebar-performance"><a href="./hr-employee_perfomance.html">Emp
+                                    Performance</a></li>
+                            <li id="sidebar-appraisal"><a href="./hr-appraisal_flow.html">Appraisal Flow</a></li>
+
+                            <!-- HR Reports -->
+                            <li id="sidebar-hr-reports">
+                                <a href="javascript:void(0)">HR Report</a>
+                                <ul>
+                                    <li><a href="./hr-daily-reports.html">HR Task Reports</a></li>
+                                    <li><a href="./hr-reports.html">HR Interview Reports</a></li>
+                                    <li class="active"><a href="./hr-timesheet.html">HR Time Sheet</a></li>
+                                    <li><a href="./hr-interview-schedule.html">Interview Schedules</a></li>
+                                    <li><a href="./hr-appointed-Canditates.html">Appointed Candidates</a></li>
+                                    <li><a href="./hr-resigned-candidates.html">Resigned Candidates</a></li>
+                                </ul>
+                            </li>
+                            <li id="sidebar-admin-reports"><a href="./hr-admin-reports.html">Admin Report</a></li>
+                            <li id="sidebar-other-portals"><a href="./other-portals.html">Other Portals</a></li>
+                            <li id="sidebar-payment-bills"><a href="./hr-payment-bills.html">Payment Bills</a></li>
+                            <li id="sidebar-employee-task"><a href="./employee-Task.html">Employee Task</a></li>
+                            <li id="sidebar-leave-request"><a href="./leave-Request.html">Leave Request</a></li>
+                            <li id="sidebar-daily-report"><a href="./daily-task.html">Daily Report</a></li>
+
+                            <!-- Asset List -->
+                            <li id="sidebar-asset-list">
+                                <a href="javascript:void(0)">Asset List</a>
+                                <ul>
+                                    <li><a href="./Asset_Master_Register.html">Asset Master Register</a></li>
+                                    <li><a href="./branch_asset_summary.html">Branch Asset Summary</a></li>
+                                    <li><a href="./asset_issue_register.html">Asset Issue Register</a></li>
+                                    <li><a href="./asset_movement_register.html">Asset Movement Register</a></li>
+                                    <li><a href="./asset_maintenance_log.html">Asset Maintenance Log</a></li>
+                                    <li><a href="./asset_verification.html">Asset Verification</a></li>
+                                    <li><a href="./asset_disposal_register.html">Asset Disposal Register</a></li>
+                                </ul>
+                            </li>
+
+                            <li id="sidebar-bills-parent">
+                                <a href="javascript:void(0)">Bills</a>
+                                <ul>
+                                    <li><a href="./eb_bill.html">EB Bills</a></li>
+                                    <li><a href="./recharge_bill.html">Mobile Recharge Bills</a></li>
+                                    <li><a href="./internet-bill.html"> Internet Bills</a></li>
+                                    <li><a href="./rent_payment.html"> Rent Payments</a></li>
+                                    <li><a href="./vendor_payment.html">Vendor Payment</a></li>
+                                    <li><a href="./petrol_Allowance.html">Petrol Allowance</a></li>
+                                </ul>
+                            </li>
+
+                              <li id="sidebar-vendor-directory"><a href="./vendor_directory.html">Vendor Directory</a></li>
+                              <li id="sidebar-business-report"><a href="./business_report.html">Business Report</a></li>
+                              <li id="sidebar-compliance-tracker"><a href="./compliance_tracker.html">Compliance Tracker</a></li>
+                              <li id="sidebar-inventory"><a href="./inventory.html">Inventory Tracker</a></li>
+                              <li id="sidebar-meeting"><a href="./meeting.html">Meeting Tracker</a></li>
+                              <li id="sidebar-software-access"><a href="./software_access.html">Software Access</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="page">
+            <div id="page_top" class="section-body top_dark sticky-top">
+                <!-- Controls -->
+                <div class="card p-3 mb-3">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>Select Employee ID:</label>
+                            <!-- In a real app, populate this dynamically or use the logged-in user -->
+                            <input type="text" id="gridEmployeeId" class="form-control" placeholder="EMP001"
+                                value="EMP1001">
+                        </div>
+                        <div class="col-md-4">
+                            <label>Select Week (Pick any date):</label>
+                            <input type="date" id="gridDate" class="form-control">
+                            <small class="text-muted" id="weekDisplay">Selected Week: -</small>
+                        </div>
+                        <div class="col-md-4 d-flex align-items-end">
+                            <button class="btn btn-primary" onclick="loadGridData()">Load Data</button>
+                            <button class="btn btn-success ml-2" onclick="saveGridData()">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Grid Table -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Weekly Schedule</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-vcenter text-nowrap" id="timesheetGrid">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th style="width: 150px;">Time Slot</th>
+                                        <th>Monday</th>
+                                        <th>Tuesday</th>
+                                        <th>Wednesday</th>
+                                        <th>Thursday</th>
+                                        <th>Friday</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="timesheetGridBody">
+                                    <!-- Rows will be generated by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    // 1. Configuration
+                    const timeSlots = [
+                        "9:00 AM-9:30 AM",
+                        "9:30 AM-11:30 AM",
+                        "11:30 AM-11:40 AM",
+                        "11:40 AM-1:00 PM",
+                        "1:30 PM-2:00 PM",
+                        "2:00 PM-4:00 PM",
+                        "4:15 PM-5:00 PM",
+                        "5:00 PM-6:20 PM",
+                        "6:20 PM-6:35 PM"
+                    ];
+
+                    const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+
+                    // Set default date to today
+                    document.getElementById('gridDate').valueAsDate = new Date();
+
+                    // 2. Helper: Get the Monday of the selected date
+                    function getMonday(d) {
+                        d = new Date(d);
+                        var day = d.getDay(),
+                            diff = d.getDate() - day + (day == 0 ? -6 : 1); // adjust when day is sunday
+                        const monday = new Date(d.setDate(diff));
+                        return monday.toISOString().split('T')[0];
+                    }
+
+                    // 3. Initialize Table Structure
+                    function initTable() {
+                        const tbody = document.getElementById('timesheetGridBody');
+                        tbody.innerHTML = ''; // Clear existing
+
+                        timeSlots.forEach(slot => {
+                            const tr = document.createElement('tr');
+
+                            // Time Slot Column
+                            const tdTime = document.createElement('td');
+                            tdTime.className = 'font-weight-bold bg-primary text-white';
+                            tdTime.textContent = slot;
+                            tr.appendChild(tdTime);
+
+                            // Day Columns
+                            days.forEach(day => {
+                                const td = document.createElement('td');
+                                const textarea = document.createElement('textarea');
+                                textarea.className = 'form-control border-0';
+                                textarea.style.resize = 'none';
+                                textarea.style.height = '30px'; // Adjust height
+                                textarea.placeholder = '-';
+
+                                // Set data attributes to identify cell
+                                textarea.dataset.day = day;
+                                textarea.dataset.slot = slot;
+
+                                td.appendChild(textarea);
+                                tr.appendChild(td);
+                            });
+
+                            tbody.appendChild(tr);
+                        });
+
+                        // Update Week Display Label
+                        const selectedDate = document.getElementById('gridDate').value;
+                        if (selectedDate) {
+                            document.getElementById('weekDisplay').innerText = "Week Starting: " + getMonday(selectedDate);
+                        }
+                    }
+
+                    // 4. Load Data from Backend
+                    async function loadGridData() {
+                        const empId = document.getElementById('gridEmployeeId').value;
+                        const dateInput = document.getElementById('gridDate').value;
+
+                        if (!empId || !dateInput) {
+                            alert("Please select Employee and Date");
+                            return;
+                        }
+
+                        const weekStart = getMonday(dateInput);
+                        document.getElementById('weekDisplay').innerText = "Week Starting: " + weekStart;
+
+                        // Clear all textareas first
+                        document.querySelectorAll('#timesheetGridBody textarea').forEach(el => el.value = '');
+
+                        try {
+                            const response = await fetch(`/api/timesheet/grid?employee_id=${empId}&week_start_date=${weekStart}`);
+                            const data = await response.json();
+
+                            if (response.ok) {
+                                data.forEach(entry => {
+                                    // Find the textarea matching Day and Slot
+                                    const input = document.querySelector(`textarea[data-day="${entry.day_name}"][data-slot="${entry.time_slot}"]`);
+                                    if (input) {
+                                        input.value = entry.task_description;
+                                    }
+                                });
+                            } else {
+                                console.error("Failed to load", data);
+                            }
+                        } catch (error) {
+                            console.error("Error:", error);
+                        }
+                    }
+
+                    // 5. Save Data to Backend
+                    async function saveGridData() {
+                        const empId = document.getElementById('gridEmployeeId').value;
+                        const dateInput = document.getElementById('gridDate').value;
+                        const weekStart = getMonday(dateInput);
+
+                        const entries = [];
+
+                        // Loop through all inputs
+                        document.querySelectorAll('#timesheetGridBody textarea').forEach(input => {
+                            if (input.value.trim() !== "") {
+                                entries.push({
+                                    day: input.dataset.day,
+                                    slot: input.dataset.slot,
+                                    task: input.value.trim()
+                                });
+                            }
+                        });
+
+                        if (entries.length === 0) {
+                            alert("No data to save.");
+                            return;
+                        }
+
+                        try {
+                            const response = await fetch('/api/timesheet/save-grid', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({
+                                    employee_id: empId,
+                                    week_start_date: weekStart,
+                                    entries: entries
+                                })
+                            });
+
+                            const result = await response.json();
+                            if (response.ok) {
+                                alert("Timesheet Saved Successfully!");
+                            } else {
+                                alert("Error: " + result.error);
+                            }
+                        } catch (error) {
+                            console.error("Error:", error);
+                            alert("Failed to connect to server.");
+                        }
+                    }
+
+                    // Run initialization
+                    window.onload = function () {
+                        initTable();
+                        // Optional: Auto load on start if IDs exist
+                        // loadGridData();
+                    };
+
+                    // Re-calc week start on date change
+                    document.getElementById('gridDate').addEventListener('change', function () {
+                        document.getElementById('weekDisplay').innerText = "Week Starting: " + getMonday(this.value);
+                    });
+
+                </script>
+                <script>
+
+ document.addEventListener('DOMContentLoaded', () => {
+            // 1. Retrieve User Details
+            const loggedInUserName = localStorage.getItem('loggedInUserName');
+            const loggedInUserRole = localStorage.getItem('loggedInUserRole'); // Ensure this is saved during login
+
+            const welcomeMessageElement = document.getElementById('welcomeMessage');
+
+            // 2. Set Welcome Message
+            if (loggedInUserName && welcomeMessageElement) {
+                welcomeMessageElement.textContent = `${loggedInUserName} (${loggedInUserRole})`;
+            } else if (welcomeMessageElement) {
+                welcomeMessageElement.textContent = 'Guest!';
+                // Optional: window.location.href = 'login.html';
+            }
+
+            // 3. Define Menu Permissions
+            // Keys must match the IDs we added to the HTML <li> tags
+ const allMenuIds = [
+                 'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report',
+                'sticky-actions' , 'hide-feature' ,'sidebar-asset-list','sidebar-bills-parent','sidebar-vendor-directory','sidebar-business-report','sidebar-compliance-tracker','sidebar-inventory','sidebar-meeting','sidebar-software-access'
+            ];
+
+            const rolePermissions = {
+                'HR': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                    'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                    'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals', 'sidebar-meeting',
+                    'sidebar-payment-bills', 'sidebar-leave-request' ,'sticky-actions' , 'hide-feature' ,'sidebar-daily-report' ],
+                'ADMIN': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-attendance', 'sidebar-admin-reports', 
+                    'sidebar-payment-bills', 'sidebar-leave-request' ,'hide-feature','sticky-actions','sidebar-asset-list','sidebar-bills-parent', 'sidebar-payroll','sidebar-business-report','sidebar-vendor-directory','sidebar-compliance-tracker','sidebar-meeting','sidebar-inventory','sidebar-software-access','sidebar-daily-report'],
+                'EMPLOYEE': [
+                    'sidebar-hrms', 'sidebar-departments', 'sidebar-employee-task', 'sidebar-leave-request','sticky-actions' , 'hide-feature'],
+
+                'GENERAL MANAGER':['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report','sidebar-asset-list','sidebar-bills-parent','sidebar-vendor-directory','sidebar-business-report','sidebar-compliance-tracker','sidebar-inventory','sidebar-meeting','sidebar-software-access'], 
+
+                'PROJECT MANAGER': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-departments', 'sidebar-employee', 
+                    'sidebar-performance', 'sidebar-leave-request' ,'sticky-actions' , 'hide-feature'
+                ],
+
+                   'AGM':['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report','sidebar-asset-list','sidebar-bills-parent','sidebar-vendor-directory','sidebar-business-report','sidebar-compliance-tracker','sidebar-inventory','sidebar-meeting','sidebar-software-access'],
+
+
+                'VP' :['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report','sidebar-asset-list','sidebar-bills-parent','sidebar-vendor-directory','sidebar-business-report','sidebar-compliance-tracker','sidebar-inventory','sidebar-meeting','sidebar-software-access'], 
+
+                'CEO' :['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report','sidebar-asset-list','sidebar-bills-parent','sidebar-vendor-directory','sidebar-business-report','sidebar-compliance-tracker','sidebar-inventory','sidebar-meeting','sidebar-software-access']
+            };
+
+            // 4. Function to Filter Menu
+            function filterMenuByRole(role) {
+                // Normalize role string (handle 'Admin', 'admin', 'ADMIN')
+                 const normalizedRole = role ? role.toUpperCase().trim() : '';
+                const allowedMenus = rolePermissions[normalizedRole] || [];
+
+                allMenuIds.forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) {
+                        if (allowedMenus.includes(id)) {
+                            el.style.display = 'block'; // Show
+                        } else {
+                            el.style.display = 'none';  // Hide
+                        }
+                    }
+                });
+            }
+
+            // 5. Execute Filter
+            if (loggedInUserRole) {
+                filterMenuByRole(loggedInUserRole);
+            } else {
+                // If no role found (not logged in), hide sensitive menus or redirect
+                // For now, let's hide everything except dashboard
+                allMenuIds.forEach(id => {
+                    if (id !== 'menu-dashboard') {
+                        const el = document.getElementById(id);
+                        if (el) el.style.display = 'none';
+                    }
+                });
+            }
+
+            // 6. Sign Out Logic
+            const signOutButton = document.querySelector('a[href="Html/Login.html"].dropdown-item');
+            if (signOutButton) {
+                signOutButton.addEventListener('click', () => {
+                    localStorage.removeItem('loggedInUserName');
+                    localStorage.removeItem('loggedInUserId');
+                    localStorage.removeItem('loggedInUserRole'); // Clear role on logout
+                });
+            }
+        });
+
+
+                    document.getElementById('timesheet').classList.add('active');
+                    // connect to backend to fetch timesheet data
+                    fetch('/api/timesheet')
+                        .then(response => response.json())
+                        .then(data => {
+                            const tbody = document.getElementById('timesheet-body');
+                            data.forEach(item => {
+                                const row = document.createElement('tr');
+                                row.innerHTML = `
+                        <td>${item.employee_name}</td>
+                        <td>${item.date}</td>
+                        <td>${item.hours_worked}</td>
+                        <td>${item.tasks_completed}</td>
+                        <td>${item.approved_by || '-'}</td>
+                        <td>${item.status}</td>
+                    `;
+                                tbody.appendChild(row);
+                            });
+                        })
+                        .catch(error => console.error('Error fetching timesheet data:', error));
+                </script>
+            </div>
+        </div>
+</body>
+
+</html>

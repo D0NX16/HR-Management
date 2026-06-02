@@ -35,7 +35,7 @@
         <div id="header_top" class="header_top">
             <div class="container">
                 <div class="hleft">
-                    <a class="header-brand" href="index.html"><i class="fe fe-command brand-logo"></i></a>
+                    <a class="header-brand" href="../index.html"><i class="fe fe-command brand-logo"></i></a>
                     <div class="dropdown">
                         <a href="page-search.html" class="nav-link icon" data-toggle="tooltip" data-placement="right"
                             title="Search">
@@ -364,7 +364,7 @@
                         <li class="list-group-item mb-2">
                             <p>Default Theme <span
                                     class="badge badge-success font-13 font-weight-normal ml-1">New</span></p>
-                            <a href="index.html"><img src="../assets/images/themes/default.png" class="img-fluid" /></a>
+                            <a href="../index.html"><img src="../assets/images/themes/default.png" class="img-fluid" /></a>
                         </li>
                         <li class="list-group-item mb-2">
                             <p>Night Mode Theme</p>
@@ -575,45 +575,91 @@
             <nav id="left-sidebar-nav" class="sidebar-nav">
                 <ul class="metismenu">
                     <li class="g_heading">Directories</li>
-                    <li class="active">
+                    <li>
+                        <a href="javascript:void(0)" class="has-arrow arrow-c" id="sidebar-hrms"><i
+                                class="fa-solid fa-rocket" style="color: #74c0fc;"></i><span>HRMS</span></a>
+                        <ul>
+                            <li  id="sidebar-dashboard"><a href="../index.html"><span>Dashboard</span></a></li>
+                            <li id="sidebar-users"><a href="hr-users.html"><span>Users</span></a></li>
+                            <li id="sidebar-departments"><a href="hr-departments.html"><span>Departments</span></a></li>
+                            <li class="active" id="sidebar-employee"><a href="hr-employee.html"><span>Employee</span></a></li>
+                            <li id="sidebar-attendance"><a href="hr-attendance.html"><span>Attendance</span></a></li>
+                            <li id="sidebar-payroll"><a href="hr-payroll.html"><span>Payroll</span></a></li>
+                            <li id="sidebar-expenses"><a href="hr-expenses.html"><span>Expenses</span></a></li>
+                            <li id="sidebar-performance"><a href="hr-employee_perfomance.html"><span>Emp Performance</span></a></li>
+                            <li id="sidebar-appraisal"><a href="hr-appraisal_flow.html"><span>Appraisal Flow</span></a></li>
+                            <li id="sidebar-hr-reports"><a href="#"><span>HR Report</span></a>
+                                <ul>
+                                    <li><a class="text-muted" href="hr-daily-reports.html"><span>HR Task Reports</span></a></li>
+                                    <li><a class="text-muted" href="hr-reports.html"><span>HR Interview Reports</span></a></li>
+                                    <li><a class="text-muted" href="hr-timesheet.html"><span>HR Time Sheet</span></a></li>
+                                    <li><a class="text-muted" href="hr-interview-schedule.html"><span>Interview Schedules</span></a></li>
+                                    <li><a class="text-muted" href="hr-appointed-Canditates.html"><span>Appointed Candidates</span></a></li>
+                                    <li><a class="text-muted" href="hr-resigned-candidates.html"><span>Resigned Candidates</span></a></li>
+                                </ul>
+                            </li>
+                            <li id="sidebar-admin-reports"><a href="hr-admin-reports.html"><span>Admin Report</span></a></li>
+                            <li id="sidebar-other-portals"><a href="other-portals.html"><span>Other Portals</span></a></li>
+                            <li id="sidebar-payment-bills"><a href="hr-payment-bills.html"><span>Payment Bills</span></a> </li>
+                            <li id="sidebar-employee-task"><a href="employee-Task.html"><span>Employee Task</span></a></li>
+                            <li id="sidebar-leave-request"><a href="leave-Request.html"><span>Leave Request</span></a></li>
+                        </ul>
+                    </li>
+
+                    <li id="sidebar-auditor">
                         <a href="javascript:void(0)" class="has-arrow arrow-c"><i class="fa-solid fa-rocket"
-                                style="color: #74c0fc;"></i><span>HRMS</span></a>
+                                style="color: #74c0fc;"></i><span>Auditor</span></a>
                         <ul>
-                            <li><a href="index.html"><span>Dashboard</span></a></li>
-                            <li><a href="hr-users.html"><span>Users</span></a></li>
-                            <li><a href="hr-departments.html"><span>Departments</span></a></li>
-                            <li class="active"><a href="hr-employee.html"><span>Employee</span></a></li>
-                            <li><a href="hr-holidays.html"><span>Holidays</span></a></li>
-                            <li><a href="hr-payroll.html"><span>Payroll</span></a></li>
-                            <li><a href="hr-expenses.html"><span>expenses<span></a></li>
-                            <li><a href="hr-report.html"><span>Report</span></a></li>
+                            <li id="sidebar-working">
+                                <a><span>Operational Dashboard</span></a>
+                                <ul>
+                                    <li id="sidebar-client-id"><a href="clientID.html"><span>Client ID</span></a></li>
+                                    <li id="sidebar-quotation-id"><a href="quotationID.html"><span>Quotation ID</span></a></li>
+                                    <li id="sidebar-proforma"><a href="proforma.html"><span>Proforma Voice</span></a></li>
+                                    <li id="sidebar-document-tracker"><a href="documentCollection.html"><span>Document Tracker</span></a></li>
+                                    <li id="sidebar-backend-id"><a href="backend_id.html"><span>Backend ID</span></a></li>
+                                    <li id="sidebar-history-license"><a href="history-license.html"><span>History of license</span></a></li>
+                                    <li id="sidebar-output"><a href="outputSheet.html"><span>Daily Report</span></a></li>
+                                    <li id="sidebar-enquiry"><a href="enquiry.html"><span>Enquiry</span></a></li>
+                                    <li id="sidebar-audit-quotation"><a href="audit_quotation.html"><span>Quotation </span></a></li>
+                                    <li id="sidebar-audit-appointments"><a href="audit_appointments.html"><span>Appoinment</span></a></li>
+                                    <li id="sidebar-operators"><a href="operators.html"><span>My Operator</span></a></li>
+                                    <li id="sidebar-pg-enquiry"><a href="pg_enquiry.html"><span>PG-Enquiry</span></a></li>
+                                    <li id="sidebar-sm-enquiries"><a href="sm_enquiries.html"><span>SM-Enquiries</span></a></li>
+                                    <li id="sidebar-audit-weekly-report"><a href="audit_weekly_report.html"><span>Weekly Report Sheet</span></a></li>
+                                    <li id="sidebar-phone-audit-report"><a href="phone_audit_report.html"><span>Phone Audit</span></a></li>
+                                    <li id="sidebar-audit-base"><a href="audit_base.html"><span>Base</span></a></li>
+                                   <li id="sidebar-advisor-entry"><a href="advisor_entry_sheet.html"><span>Advisor Entry</span></a></li>
+                                    <li id="sidebar-social-report"><a href="social-media-report.html"><span>Social Media Report</span></a></li>
+                                    <li id="sidebar-advisor-performance-tracker"><a href="advisor_performance_tracker.html"><span>Advisor Performance Tracker</span></a></li>
+                                    <li id="sidebar-performance-tracker"><a href="performance_tracker.html"><span>Performance Tracker</span></a></li>
+                                </ul>
+                            </li>
+
+                            <li id="sidebar-backend-report">
+                                <a href="hac_backend.html"><span>HAC Backend Report</span></a>
+                            </li>
+
+                            <li id="sidebar-financial-report">
+                                <a><span>Financial Report</span></a>
+                                <ul>
+                                    <li id="sidebar-bill-supply"><a href="bill-supply.html"><span>Bill of supply</span></a></li> 
+                                    <li id="sidebar-accounting-log"><a href="accounting_log.html"><span>Accounting Log</span></a></li>             
+                                </ul>
+                            </li>
+
+                            <li id="sidebar-sop">
+                                <a><span>SOP Tracker</span></a>
+                                <ul>    
+                                    <li id="sidebar-qc"><a href="Qc-sheet.html"><span>QC - SHEET</span></a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="javascript:void(0)" class="has-arrow arrow-c"><i class="fa-solid fa-mug-hot"
-                                style="color: #74c0fc;"></i><span>Project</span></a>
-                        <ul>
-                            <li><a href="project-index.html">Dashboard</a></li>
-                            <li><a href="project-list.html">Project list</a></li>
-                            <li><a href="project-taskboard.html">Taskboard</a></li>
-                            <li><a href="project-ticket.html">Ticket List</a></li>
-                            <li><a href="project-ticket-details.html">Ticket Details</a></li>
-                            <li><a href="project-clients.html">Clients</a></li>
-                            <li><a href="project-todo.html">Todo List</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)" class="has-arrow arrow-c"><i class="fa-solid fa-briefcase"
-                                style="color: #74c0fc;"></i><span>Job
-                                Portal</span></a>
-                        <ul>
-                            <li><a href="job-index.html"><span>Job Dashboard</span></a></li>
-                            <li><a href="job-positions.html"><span>Positions</span></a></li>
-                            <li><a href="job-applicants.html"><span>Applicants</span></a></li>
-                            <li><a href="job-resumes.html"><span>Resumes</span></a></li>
-                            <li><a href="job-settings.html"><span>Settings</span></a></li>
-                        </ul>
-                    </li>
+                    <li id="sidebar-management">
+                        <a href="management-discussion.html" ><i class="fa-solid fa-rocket"
+                                style="color: #74c0fc;"></i><span> Discussion</span></a>
+                    </li>  
                 </ul>
             </nav>
         </div>
@@ -634,48 +680,6 @@
                             </div>
                         </div>
                         <div class="right">
-                            <ul class="nav nav-pills">
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                                        aria-haspopup="true" aria-expanded="false">Language</a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#"><img class="w20 mr-2"
-                                                src="https://puffintheme.com/template/epic-pro/assets/images/flags/us.svg">English</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#"><img class="w20 mr-2"
-                                                src="https://puffintheme.com/template/epic-pro/assets/images/flags/es.svg">Spanish</a>
-                                        <a class="dropdown-item" href="#"><img class="w20 mr-2"
-                                                src="https://puffintheme.com/template/epic-pro/assets/images/flags/jp.svg">japanese</a>
-                                        <a class="dropdown-item" href="#"><img class="w20 mr-2"
-                                                src="https://puffintheme.com/template/epic-pro/assets/images/flags/bl.svg">France</a>
-                                    </div>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                                        aria-haspopup="true" aria-expanded="false">Reports</a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#"><i
-                                                class="dropdown-icon fa fa-file-excel-o"></i> MS Excel</a>
-                                        <a class="dropdown-item" href="#"><i
-                                                class="dropdown-icon fa fa-file-word-o"></i> MS Word</a>
-                                        <a class="dropdown-item" href="#"><i class="dropdown-icon fa fa-file-pdf-o"></i>
-                                            PDF</a>
-                                    </div>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                                        aria-haspopup="true" aria-expanded="false">Project</a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Graphics Design</a>
-                                        <a class="dropdown-item" href="#">Angular Admin</a>
-                                        <a class="dropdown-item" href="#">PSD to HTML</a>
-                                        <a class="dropdown-item" href="#">iOs App Development</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Home Development</a>
-                                        <a class="dropdown-item" href="#">New Blog post</a>
-                                    </div>
-                                </li>
-                            </ul>
                             <div class="notification d-flex">
                                 <div class="dropdown d-flex">
                                     <a class="nav-link icon d-none d-md-flex btn btn-default btn-icon ml-1"
@@ -829,19 +833,25 @@
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                         <a class="dropdown-item" href="page-profile.html"><i
-                                                class="dropdown-icon fe fe-user"></i> Profile</a>
+                                                class="dropdown-icon fa-solid fa-user-tie" style="color: #8c8c8c;"></i>
+                                            Profile</a>
                                         <a class="dropdown-item" href="app-setting.html"><i
-                                                class="dropdown-icon fe fe-settings"></i> Settings</a>
+                                                class="dropdown-icon fa-solid fa-gear" style="color: #8c8c8c;"></i>
+                                            Settings</a>
                                         <a class="dropdown-item" href="javascript:void(0)"><span
                                                 class="float-right"><span class="badge badge-primary">6</span></span><i
-                                                class="dropdown-icon fe fe-mail"></i> Inbox</a>
+                                                class="dropdown-icon fa-solid fa-envelope" style="color: #8c8c8c;"></i>
+                                            Inbox</a>
                                         <a class="dropdown-item" href="javascript:void(0)"><i
-                                                class="dropdown-icon fe fe-send"></i> Message</a>
+                                                class="dropdown-icon fa-solid fa-paper-plane"
+                                                style="color: #8c8c8c;"></i> Message</a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="javascript:void(0)"><i
-                                                class="dropdown-icon fe fe-help-circle"></i> Need help?</a>
+                                                class="dropdown-icon fa-solid fa-circle-question"
+                                                style="color: #8c8c8c;"></i> Need help?</a>
                                         <a class="dropdown-item" href="login.html"><i
-                                                class="dropdown-icon fe fe-log-out"></i> Sign out</a>
+                                                class="dropdown-icon fa-solid fa-arrow-right-from-bracket"
+                                                style="color: #8c8c8c;"></i> Sign out</a>
                                     </div>
                                 </div>
                             </div>
@@ -855,15 +865,15 @@
                         <ul class="nav nav-tabs page-header-tab">
                             <li class="nav-item"><a class="nav-link active" id="Employee-tab" data-toggle="tab"
                                     href="#Employee-list">All</a></li>
-                            <li class="nav-item"><a class="nav-link" id="Employee-tab" data-toggle="tab"
-                                    href="#Employee-view">View</a></li>
-                            <li class="nav-item"><a class="nav-link" id="Employee-tab" data-toggle="tab"
-                                    href="#Employee-Request">Leave Request</a></li>
                         </ul>
-                        <div class="header-action">
+                        <div class="header-action" id="hide-feature">
                             <button type="button" class="btn btn-primary" data-toggle="modal"
                                 data-target="#exampleModal"><i class="mr-2 fa-solid fa-plus"
                                     style="color: #ffffff;"></i>Add</button>
+
+                            <button class="btn btn-success btn-sm ml-2" data-toggle="modal"
+                                  data-target="#uploadModal"> <i class="fa fa-file-excel-o">
+                                  </i> Upload Excel </button>
                         </div>
                     </div>
                 </div>
@@ -896,7 +906,7 @@
                                                     <th>Emp ID</th>
                                                     <th>Phone</th>
                                                     <th>Role</th>
-                                                    <th>Action</th>
+                                                    <th >Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -1184,7 +1194,7 @@
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-content" style="width: 670px; padding: 10px 10px 10px 10px;">
+            <div class="modal-content" style="width: 700px; padding: 10px 10px 10px 10px;">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Add Employee</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
@@ -1192,14 +1202,14 @@
                 </div>
                 <div class="modal-body">
                     <div class="row clearfix">
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label for="email">Email <span style="color: red;">*</span></label>
                                 <input required type="email" autocomplete="email" class="form-control"
                                     id="employeeEmail" placeholder="Email ID">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Company <span style="color: red;">*</span></label>
                                 <select required class="form-control" autocomplete="company" id="companyLocation">
@@ -1209,7 +1219,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Branch <span style="color: red;">*</span></label>
                                 <select required class="form-control" autocomplete="employee" id="employeeBranch">
@@ -1221,42 +1231,42 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Emp ID <span style="color: red;">*</span></label>
                                 <input required type="text" autocomplete="employeeId" class="form-control"
                                     id="employeeId" placeholder="Employee ID">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Employee Name (As Per Aadhar) <span style="color: red;">*</span></label>
                                 <input required type="text" class="form-control" autocomplete="employeeName"
                                     id="employeeName" placeholder="Employee Name">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Caller Name (IF)</label>
                                 <input required type="text" class="form-control" id="callerName"
                                     placeholder="Caller Name">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Date Of Joining <span style="color: red;">*</span></label>
                                 <input required type="date" data-provide="datepicker" data-date-autoclose="true"
                                     class="form-control" id="dateOfJoining" placeholder="Date">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>DOB (As Per Aadhar) <span style="color: red;">*</span></label>
                                 <input required type="date" data-provide="datepicker" data-date-autoclose="true"
                                     class="form-control" id="employeeDob" placeholder="Date">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Type of Employement <span style="color: red;">*</span></label>
                                 <select required class="form-control" autocomplete="employement" id="employeement">
@@ -1268,21 +1278,21 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Designation <span style="color: red;">*</span></label>
                                 <input required type="text" class="form-control" id="designation"
                                     placeholder="Designation">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Department <span style="color: red;">*</span></label>
                                 <input required type="text" class="form-control" id="department"
                                     placeholder="Department">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Marital status <span style="color: red;">*</span></label>
                                 <select required class="form-control" id="maritalStatus">
@@ -1291,42 +1301,42 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Blood Group <span style="color: red;">*</span></label>
                                 <input required type="text" class="form-control" id="bloodGroup"
                                     placeholder="Blood Group">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Contact Number <span style="color: red;">*</span></label>
                                 <input required type="number" class="form-control" id="contactNumber"
                                     placeholder="Contact Number">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Alternate Phone Number</label>
                                 <input required type="number" class="form-control" id="alternatePhoneNumber"
                                     placeholder="Alternate Phone Number">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Official Phone Number</label>
                                 <input required type="number" class="form-control" id="officialPhoneNumber"
                                     placeholder="Official Phone Number">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Personal Mail Id <span style="color: red;">*</span></label>
                                 <input required type="email" class="form-control" id="personalMailId"
                                     placeholder="Personal Mail Id">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Official Mail Id</label>
                                 <input required type="email" class="form-control" id="officialMailId"
@@ -1347,181 +1357,224 @@
                                     placeholder="Temporary address"></textarea>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Emergency contact person Name <span style="color: red;">*</span></label>
                                 <input required type="text" class="form-control" id="emergencyContactPersonName"
                                     placeholder="Emergency Contact Person Name">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Relationship with Employee <span style="color: red;">*</span></label>
                                 <input required type="text" class="form-control" id="emergencyRelationship"
                                     placeholder="Relationship">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Emergency contact person phone no <span style="color: red;">*</span></label>
                                 <input required type="number" class="form-control" id="emergencyPhoneNumber"
                                     placeholder="Phone Number">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Employee Nominee Name <span style="color: red;">*</span></label>
                                 <input required type="text" class="form-control" id="employeeNomineeName"
                                     placeholder="Nominee Name">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Nominee DOB <span style="color: red;">*</span></label>
                                 <input required type="date" data-provide="datepicker" data-date-autoclose="true"
                                     class="form-control" id="nomineeDob" placeholder="Date">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Nominee Relationship with Employee <span style="color: red;">*</span></label>
                                 <input required type="text" class="form-control" id="nomineeRelationship"
                                     placeholder="Relationship">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Father Name (As per Aadhar) <span style="color: red;">*</span></label>
                                 <input required type="text" class="form-control" id="fatherName"
                                     placeholder="Father Name">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Father's DOB (As per Aadhar) <span style="color: red;">*</span></label>
                                 <input required type="date" data-provide="datepicker" data-date-autoclose="true"
                                     class="form-control" id="fatherDob" placeholder="Date">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Father's Phone Number <span style="color: red;">*</span></label>
                                 <input required type="number" class="form-control" id="fatherPhoneNumber"
                                     placeholder="Father's Phone Number">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Mother Name (As per Aadhar) <span style="color: red;">*</span></label>
                                 <input required type="text" class="form-control" id="motherName"
                                     placeholder="Mother Name">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Mother DOB (As per Aadhar) <span style="color: red;">*</span></label>
                                 <input required type="date" data-provide="datepicker" data-date-autoclose="true"
                                     class="form-control" id="motherDob" placeholder="Date">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Mother's Phone Number <span style="color: red;">*</span></label>
                                 <input required type="number" class="form-control" id="motherPhoneNumber"
                                     placeholder="Mother's Phone Number">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Spouse Name</label>
                                 <input type="text" class="form-control" id="spouseName" placeholder="Spouse Name">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Spouse DOB (As per Aadhar)</label>
                                 <input type="date" data-provide="datepicker" data-date-autoclose="true"
                                     class="form-control" id="spouseDob" placeholder="Date">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Spouse Phone Number</label>
                                 <input type="number" class="form-control" id="spousePhoneNumber"
                                     placeholder="Spouse Phone Number">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Child 1</label>
                                 <input type="text" class="form-control" id="child1Name" placeholder="Child 1 Name">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Child 1 DOB (If)</label>
                                 <input type="date" data-provide="datepicker" data-date-autoclose="true"
                                     class="form-control" id="child1Dob" placeholder="Date">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Child 2</label>
                                 <input type="text" class="form-control" id="child2Name" placeholder="Child 2 Name">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Child 2 DOB (If)</label>
                                 <input type="date" data-provide="datepicker" data-date-autoclose="true"
                                     class="form-control" id="child2Dob" placeholder="Date">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>EPF No</span></label>
                                 <input type="text" class="form-control" id="epfNo" placeholder="EPF No">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>ESIC No</label>
                                 <input type="text" class="form-control" id="esicNo" placeholder="ESIC No.">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Bank Name & Branch <span style="color: red;">*</span></label>
                                 <input required type="text" class="form-control" id="bankNameBranch"
                                     placeholder="Bank Name & Branch">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Account Number <span style="color: red;">*</span></label>
                                 <input required type="text" class="form-control" id="accountNumber"
                                     placeholder="Account Number">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>IFSC Number <span style="color: red;">*</span></label>
                                 <input required type="text" class="form-control" id="ifscNumber"
                                     placeholder="IFSC Number">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Net Take Home Salary <span style="color: red;">*</span></label>
                                 <input required type="text" class="form-control" id="netTakeHomeSalary"
                                     placeholder="Net Take Home Salary">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
                             <div class="form-group">
-                                <label>Upload Documents (Any)<span style="color: red;">*</span></label>
-                                <input required type="file" class="form-control" multiple id="uploadDocuments"
-                                    placeholder="Upload Documents">
+                                <label>Upload Aadhar/ PAN <span style="color: red;">*</span></label>
+                                <input required type="file" class="form-control" accept=".pdf, .jpg, .jpeg, .png, .docx"
+                                    multiple id="uploadDocuments" placeholder="Upload Documents">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-group">
+                                <label>Upload Offer Letter <span style="color: red;">*</span></label>
+                                <input required type="file" class="form-control" accept=".pdf, .jpg, .jpeg, .png, .docx"
+                                    multiple id="uploadDocuments" placeholder="Upload Documents">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-group">
+                                <label> Upload Address Proof (Voter ID) <span style="color: red;">*</span></label>
+                                <input required type="file" class="form-control" accept=".pdf, .jpg, .jpeg, .png, .docx"
+                                    multiple id="uploadPan" placeholder="Upload Pan">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-group">
+                                <label>Upload Educational Certificates & Mark Sheets <span
+                                        style="color: red;">*</span></label>
+                                <input required type="file" class="form-control" accept=".pdf, .jpg, .jpeg, .png, .docx"
+                                    multiple id="uploadPan" placeholder="Upload Pan">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-group">
+                                <label>Upload Experience Certificates & Relieving Letter (If)</label>
+                                <input required type="file" class="form-control" accept=".pdf, .jpg, .jpeg, .png, .docx"
+                                    multiple id="uploadPan" placeholder="Upload Pan">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-group">
+                                <label>Upload Bank Account <span style="color: red;">*</span></label>
+                                <input required type="file" class="form-control" accept=".pdf, .jpg, .jpeg, .png, .docx"
+                                    multiple id="uploadPan" placeholder="Upload Pan">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-group">
+                                <label>Upload Passport-size Photo <span style="color: red;">*</span></label>
+                                <input required type="file" class="form-control" accept=".jpg, .jpeg, .png," multiple
+                                    id="uploadPassportPhoto" placeholder="Upload Passport Photo">
                             </div>
                         </div>
                     </div>
@@ -1533,6 +1586,29 @@
             </div>
         </div>
     </div>
+                        <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Upload Excel File</h5>
+                                    <button type="button" class="close"
+                                        data-dismiss="modal"><span>&times;</span></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="uploadForm">
+                                        <div class="form-group">
+                                            <label>Select .xlsx File</label>
+                                            <input type="file" id="excelFile" class="form-control" accept=".xlsx, .xls"
+                                                required>
+                                            <small class="text-danger">* Excel headers must be: Date, Name, Role,
+                                                Experience, Mobile, Location</small>
+                                        </div>
+                                        <button type="submit" class="btn btn-success btn-block">Upload & Import</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
     <script src="../assets/bundles/lib.vendor.bundle.js"></script>
 
@@ -1545,6 +1621,163 @@
     <script src="assets/js/page/dialogs.html"></script>
     <script src="assets/js/form/dropify.html"></script>
     <script src="assets/js/page/employee.js"></script>
+
+    <script>
+
+ document.addEventListener('DOMContentLoaded', () => {
+            // 1. Retrieve User Details
+            const loggedInUserName = localStorage.getItem('loggedInUserName');
+            const loggedInUserRole = localStorage.getItem('loggedInUserRole'); // Ensure this is saved during login
+
+            const welcomeMessageElement = document.getElementById('welcomeMessage');
+
+            // 2. Set Welcome Message
+            if (loggedInUserName && welcomeMessageElement) {
+                welcomeMessageElement.textContent = `${loggedInUserName} (${loggedInUserRole})`;
+            } else if (welcomeMessageElement) {
+                welcomeMessageElement.textContent = 'Guest!';
+                // Optional: window.location.href = 'login.html';
+            }
+
+            // 3. Define Menu Permissions
+ const allMenuIds = [
+           'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
+                'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
+                'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
+                'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
+                'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
+                'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
+                'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
+                'sidebar-sop', 'sidebar-qc' , 'sticky-actions' , 'hide-feature' , ' sidebar-social-report ', 'sidebar-advisor-performance-tracker' , 'sidebar-performance-tracker', 'sidebar-management'
+        ];
+
+        const rolePermissions = {
+   'HR': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                    'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                    'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals', 
+                    'sidebar-payment-bills', 'sidebar-leave-request' ,'sticky-actions' , 'hide-feature' ],
+                'ADMIN': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-attendance', 'sidebar-admin-reports', 
+                    'sidebar-payment-bills', 'sidebar-leave-request'],
+                'EMPLOYEE': [
+                    'sidebar-hrms', 'sidebar-departments', 'sidebar-employee-task', 'sidebar-leave-request' ],
+
+                'GENERAL MANAGER':['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
+                'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
+                'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
+                'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
+                'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
+                'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
+                'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
+                'sidebar-sop', 'sidebar-qc' , ' sidebar-social-report ', 'sidebar-advisor-performance-tracker' , 'sidebar-performance-tracker', 'sidebar-management'], 
+
+                'PROJECT MANAGER': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-departments', 'sidebar-employee', 
+                    'sidebar-performance', 'sidebar-leave-request' ,'sticky-actions' , 'hide-feature'
+                ],
+                'ADVISOR': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-working', 'sidebar-financial-report',
+                    'sidebar-client-id', 'sidebar-quotation-id', 'sidebar-proforma', 'sidebar-document-tracker', 
+                    'sidebar-backend-id', 'sidebar-bill-supply', 'sidebar-history-license', 'sidebar-backend-report', 
+                    'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments', 'sidebar-operators', 
+                    'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report', 'sidebar-phone-audit-report', 
+                    'sidebar-audit-base', 'sidebar-advisor-entry', 'sidebar-output' ,'sticky-actions' , 'hide-feature' , ' sidebar-social-report ', 'sidebar-advisor-performance-tracker' , 'sidebar-performance-tracker'
+                ],
+                'AUDIT PROJECT MANAGER': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-working', 'sidebar-financial-report', 
+                    'sidebar-sop', 'sidebar-backend-report', 'sidebar-enquiry', 'sidebar-audit-quotation', 
+                    'sidebar-audit-appointments', 'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 
+                    'sidebar-audit-weekly-report', 'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-qc', 
+                    'sidebar-advisor-entry', 'sidebar-output', 'sidebar-bill-supply', 'sidebar-accounting-log' , 'sticky-actions' , 'hide-feature' , ' sidebar-social-report ', 'sidebar-advisor-performance-tracker' , 'sidebar-performance-tracker' 
+                ],
+                'BACKEND PROJECT MANAGER': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-backend-report' , 'sticky-actions' , 'hide-feature' 
+                ],
+                'TEAM LEADER': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-financial-report', 
+                    'sidebar-accounting-log', 'sidebar-bill-supply' , 'sticky-actions' , 'hide-feature' 
+                ],
+                'BACK OFFICE EXECUTIVE': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-backend-report', 
+                    'sidebar-sop', 'sidebar-qc' ,'sticky-actions' , 'hide-feature'
+                ] ,
+                'VP' :['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
+                'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
+                'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
+                'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
+                'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
+                'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
+                'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
+                'sidebar-sop', 'sidebar-qc' , ' sidebar-social-report ', 'sidebar-advisor-performance-tracker' , 'sidebar-performance-tracker', 'sidebar-management'], 
+
+                'CEO' :['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
+                'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
+                'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
+                'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
+                'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
+                'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
+                'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
+                'sidebar-sop', 'sidebar-qc' , ' sidebar-social-report ', 'sidebar-advisor-performance-tracker' , 'sidebar-performance-tracker', 'sidebar-management']
+        };
+
+            // 4. Function to Filter Menu
+            function filterMenuByRole(role) {
+                // Normalize role string (handle 'Admin', 'admin', 'ADMIN')
+                   const normalizedRole = role ? role.toUpperCase().trim() : '';
+
+                const allowedMenus = rolePermissions[normalizedRole] || [];
+
+                allMenuIds.forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) {
+                        if (allowedMenus.includes(id)) {
+                            el.style.display = 'block'; // Show
+                        } else {
+                            el.style.display = 'none';  // Hide
+                        }
+                    }
+                });
+            }
+
+            // 5. Execute Filter
+            if (loggedInUserRole) {
+                filterMenuByRole(loggedInUserRole);
+            } else {
+                // If no role found (not logged in), hide sensitive menus or redirect
+                // For now, let's hide everything except dashboard
+                allMenuIds.forEach(id => {
+                    if (id !== 'menu-dashboard') {
+                        const el = document.getElementById(id);
+                        if (el) el.style.display = 'none';
+                    }
+                });
+            }
+
+            // 6. Sign Out Logic
+            const signOutButton = document.querySelector('a[href="Html/Login.html"].dropdown-item');
+            if (signOutButton) {
+                signOutButton.addEventListener('click', () => {
+                    localStorage.removeItem('loggedInUserName');
+                    localStorage.removeItem('loggedInUserId');
+                    localStorage.removeItem('loggedInUserRole'); // Clear role on logout
+                });
+            }
+        });
+
+    </script>
 
 </body>
 

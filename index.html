@@ -1,69 +1,1394 @@
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<!doctype html>
+<html lang="en" dir="ltr">
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="description" content="HTTrack is an easy-to-use website mirror utility. It allows you to download a World Wide website from the Internet to a local directory,building recursively all structures, getting html, images, and other files from the server to your computer. Links are rebuiltrelatively so that you can freely browse to the local site (works with any browser). You can mirror several sites together so that you can jump from one toanother. You can, also, update an existing mirror site, or resume an interrupted download. The robot is fully configurable, with an integrated help" />
-	<meta name="keywords" content="httrack, HTTRACK, HTTrack, winhttrack, WINHTTRACK, WinHTTrack, offline browser, web mirror utility, aspirateur web, surf offline, web capture, www mirror utility, browse offline, local  site builder, website mirroring, aspirateur www, internet grabber, capture de site web, internet tool, hors connexion, unix, dos, windows 95, windows 98, solaris, ibm580, AIX 4.0, HTS, HTGet, web aspirator, web aspirateur, libre, GPL, GNU, free software" />
-	<title>Local index - HTTrack Website Copier</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <link rel="icon" href="./assets/images/icon/logo.png" type="image/x-icon" />
+
+    <title>HR Dashboard</title>
+
+    <!-- Bootstrap Core and vandor -->
+    <link rel="stylesheet" href="./assets/plugins/bootstrap/css/bootstrap.min.css" />
+
+    <!-- Fonts -->
+    <link href="./assets/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <!-- Plugins css -->
+    <link rel="stylesheet" href="./assets/plugins/charts-c3/c3.min.css" />
+
+    <!-- Core css -->
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/theme1.css" />
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+    <style>
+        /* 1. Default text color for sub-menu items (Dark Gray) */
+        .metismenu ul a {
+            color: #4d5052 !important;
+        }
+
+        /* 2. Make the Parent active item Blue */
+        .metismenu .active>a {
+            color: #3d78e3 !important;
+        }
+
+        /* 3. Make ONLY the specific active sub-menu item Blue */
+        .metismenu .active ul li.active>a {
+            color: #3d78e3 !important;
+            font-weight: 600;
+            background: transparent;
+        }
+
+        /* 4. Hover effect for sub-items */
+        .metismenu ul a:hover {
+            color: #3d78e3 !important;
+        }
+    </style>
+
+    <script>
+        if (!localStorage.getItem('loggedInUserName')) {
+            window.location.replace('./Html/login.html');
+        }
+    </script>
 </head>
 
-<table width="76%" border="0" align="center" cellspacing="0" cellpadding="3" class="tableWidth">
-	<tr>
-	<td id="subTitle">HTTrack Website Copier - Open Source offline browser</td>
-	</tr>
-</table>
-<table width="76%" border="0" align="center" cellspacing="0" cellpadding="0" class="tableWidth">
-<tr class="blak">
-<td>
-	<table width="100%" border="0" align="center" cellspacing="1" cellpadding="0">
-	<tr>
-	<td colspan="6"> 
-		<table width="100%" border="0" align="center" cellspacing="0" cellpadding="10">
-		<tr> 
-		<td id="pageContent"> 
-<!-- ==================== End prologue ==================== -->
+<body class="font-jakarta theme1">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+        </div>
+    </div>
 
-	<meta name="generator" content="HTTrack Website Copier/3.x">
-	<TITLE>Local index - HTTrack</TITLE>
-</HEAD>
-<BODY>
-<H1 ALIGN=Center>Index of locally available sites:</H1>
-	<TABLE BORDER="0" WIDTH="100%" CELLSPACING="1" CELLPADDING="0">
-		<TR>
-			<TD BACKGROUND="fade.gif">
-				&middot;
-					<A HREF="puffintheme.com/template/epic-pro/theme1/index.html">
-						HRMS Dashboard
-					</A>		
-			</TD>
-		</TR>
-	</TABLE>
-	<BR>
-	<BR>
-	<BR>
-	<meta HTTP-EQUIV="Refresh" CONTENT="0; URL=puffintheme.com/template/epic-pro/theme1/index.html">
+    <div id="main_content">
+
+        <div id="header_top" class="header_top">
+            <div class="container">
+                <div class="hleft">
+                    <div class="dropdown">
+                    </div>
+                </div>
+                <div class="hright">
+                    <div class="dropdown">
+                        <a href="javascript:void(0)" class="nav-link icon settingbar" data-toggle="tooltip"
+                            data-placement="right" title="Settings">
+                            <svg class="fa-spin" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path
+                                    d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" />
+                                <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="nav-link icon menu_toggle" data-toggle="tooltip"
+                            data-placement="right" title="Toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M4 6h16" />
+                                <path d="M7 12h13" />
+                                <path d="M10 18h10" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="rightsidebar" class="right_sidebar">
+            <a href="javascript:void(0)" class="p-3 settingbar float-right">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-x">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M18 6l-12 12" />
+                    <path d="M6 6l12 12" />
+                </svg>
+            </a>
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Settings"
+                        aria-expanded="true">Settings</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#activity"
+                        aria-expanded="false">Activity</a></li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane vivify fadeIn active" id="Settings" aria-expanded="true">
+                    <div class="mb-4">
+                        <h6 class="font-14 font-weight-bold text-muted">Font Style</h6>
+                        <div class="custom-controls-stacked font_setting">
+                            <label class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" name="font" value="font-opensans">
+                                <span class="custom-control-label">Open Sans Font</span>
+                            </label>
+                            <label class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" name="font" value="font-montserrat">
+                                <span class="custom-control-label">Montserrat Google Font</span>
+                            </label>
+                            <label class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" name="font" value="font-roboto">
+                                <span class="custom-control-label">Robot Google Font</span>
+                            </label>
+                            <label class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" name="font" value="font-jakarta"
+                                    checked="">
+                                <span class="custom-control-label">Plus Jakarta Google Font</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <h6 class="font-14 font-weight-bold mt-4 text-muted">General Settings</h6>
+                        <ul class="setting-list list-unstyled mt-1 setting_switch">
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Night Mode</span>
+                                    <input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-darkmode">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Fix Navbar top</span>
+                                    <input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-fixnavbar" checked>
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Header Dark</span>
+                                    <input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-pageheader" checked>
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Min Sidebar Dark</span>
+                                    <input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-min_sidebar">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Sidebar Dark</span>
+                                    <input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-sidebar">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Icon Color</span>
+                                    <input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-iconcolor">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Gradient Color</span>
+                                    <input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-gradient">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Box Shadow</span>
+                                    <input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-boxshadow">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">RTL Support</span>
+                                    <input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-rtl">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Box Layout</span>
+                                    <input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-boxlayout">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <label class="d-block">Storage <span class="float-right">77%</span></label>
+                        <div class="progress progress-sm">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="77" aria-valuemin="0"
+                                aria-valuemax="100" style="width: 77%;"></div>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-block mt-3">Upgrade Storage</button>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane vivify fadeIn" id="activity" aria-expanded="false">
+                    <ul class="new_timeline mt-3">
+                        <li>
+                            <div class="bullet pink"></div>
+                            <div class="time">11:00am</div>
+                            <div class="desc">
+                                <h3>Attendance</h3>
+                                <h4>Computer Class</h4>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bullet pink"></div>
+                            <div class="time">11:30am</div>
+                            <div class="desc">
+                                <h3>Added an interest</h3>
+                                <h4>“Volunteer Activities”</h4>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bullet green"></div>
+                            <div class="time">12:00pm</div>
+                            <div class="desc">
+                                <h3>Developer Team</h3>
+                                <h4>Hangouts</h4>
+                                <ul class="list-unstyled team-info margin-0 p-t-5">
+                                    <li><img src="./assets/images/xs/avatar1.jpg" alt="Avatar"></li>
+                                    <li><img src="./assets/images/xs/avatar2.jpg" alt="Avatar"></li>
+                                    <li><img src="./assets/images/xs/avatar3.jpg" alt="Avatar"></li>
+                                    <li><img src="./assets/images/xs/avatar4.jpg" alt="Avatar"></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bullet green"></div>
+                            <div class="time">2:00pm</div>
+                            <div class="desc">
+                                <h3>Responded to need</h3>
+                                <a href="javascript:void(0)">“In-Kind Opportunity”</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bullet orange"></div>
+                            <div class="time">1:30pm</div>
+                            <div class="desc">
+                                <h3>Lunch Break</h3>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bullet green"></div>
+                            <div class="time">2:38pm</div>
+                            <div class="desc">
+                                <h3>Finish</h3>
+                                <h4>Go to Home</h4>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="theme_div">
+            <div class="border-bottom p-2 p-3">
+                <a href="javascript:void(0)" class="themebar float-right">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-x">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M18 6l-12 12" />
+                        <path d="M6 6l12 12" />
+                    </svg>
+                </a>
+                <h6 class="mb-0">Choose Theme</h6>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <ul class="list-group list-unstyled">
+                        <li class="list-group-item mb-2">
+                            <p>Default Theme <span
+                                    class="badge badge-success font-13 font-weight-normal ml-1">New</span></p>
+                            <a href="./index.html"><img src="./assets/images/themes/default.png"
+                                    class="img-fluid" /></a>
+                        </li>
+                        <li class="list-group-item mb-2">
+                            <p>Night Mode Theme</p>
+                            <a href="https://puffintheme.com/template/epic-pro/dark/index.html"><img
+                                    src="./assets/images/themes/dark.png" class="img-fluid" /></a>
+                        </li>
+                        <li class="list-group-item mb-2">
+                            <p>RTL Version</p>
+                            <a href="https://puffintheme.com/template/epic-pro/rtl/index.html"><img
+                                    src="./assets/images/themes/rtl.png" class="img-fluid" /></a>
+                        </li>
+                        <li class="list-group-item mb-2">
+                            <p>Theme Version1</p>
+                            <a href="https://puffintheme.com/template/epic-pro/main/index.html"><img
+                                    src="./assets/images/themes/theme1.png" class="img-fluid" /></a>
+                        </li>
+                        <li class="list-group-item mb-2">
+                            <p>Theme Version2</p>
+                            <a href="https://puffintheme.com/template/epic-pro/theme2/index.html"><img
+                                    src="./assets/images/themes/theme2.png" class="img-fluid" /></a>
+                        </li>
+                        <li class="list-group-item mb-2">
+                            <p>Theme Version3</p>
+                            <a href="https://puffintheme.com/template/epic-pro/theme3/index.html"><img
+                                    src="./assets/images/themes/theme3.png" class="img-fluid" /></a>
+                        </li>
+                        <li class="list-group-item mb-2">
+                            <p>Theme Version4</p>
+                            <a href="https://puffintheme.com/template/epic-pro/theme4/index.html"><img
+                                    src="./assets/images/themes/theme4.png" class="img-fluid" /></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="user_div">
+            <h5 class="brand-name mb-4">
+                Kalsun Groups
+                <a href="javascript:void(0)" class="user_btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M10 8v-2a2 2 0 0 1 2 -2h7a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-2" />
+                        <path d="M15 12h-12l3 -3" />
+                        <path d="M6 15l-3 -3" />
+                    </svg>
+                </a>
+            </h5>
+            <div class="card">
+                <div class="card-body">
+                    <div class="media">
+                        <img class="avatar avatar-xl mr-3" src="./assets/images/sm/avatar1.jpg" alt="avatar">
+                        <div class="media-body">
+                            <h5 class="m-0">Sara Hopkins</h5>
+                            <p class="text-muted mb-0">Webdeveloper</p>
+                            <ul class="social-links list-inline mb-0 mt-2">
+                                <li class="list-inline-item"><a href="javascript:void(0)" title="" data-toggle="tooltip"
+                                        data-original-title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                                <li class="list-inline-item"><a href="javascript:void(0)" title="" data-toggle="tooltip"
+                                        data-original-title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                                <li class="list-inline-item"><a href="javascript:void(0)" title="" data-toggle="tooltip"
+                                        data-original-title="1234567890"><i class="fa fa-phone"></i></a></li>
+                                <li class="list-inline-item"><a href="javascript:void(0)" title="" data-toggle="tooltip"
+                                        data-original-title="@skypename"><i class="fa fa-skype"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header border-bottom">
+                    <h3 class="card-title">Statistics</h3>
+                    <div class="card-options">
+                        <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i
+                                class="fe fe-chevron-up"></i></a>
+                        <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fa-solid fa-xmark"
+                                style="color: #B197FC;"></i></a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="text-center">
+                        <div class="row">
+                            <div class="col-6 pb-3">
+                                <label class="mb-0">Balance</label>
+                                <h4 class="font-30 font-weight-bold">545</h4>
+                            </div>
+                            <div class="col-6 pb-3">
+                                <label class="mb-0">Growth</label>
+                                <h4 class="font-30 font-weight-bold">27%</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="d-block">Total Income<span class="float-right">77%</span></label>
+                        <div class="progress progress-xs">
+                            <div class="progress-bar bg-blue" role="progressbar" aria-valuenow="77" aria-valuemin="0"
+                                aria-valuemax="100" style="width: 77%;"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="d-block">Total Expenses <span class="float-right">50%</span></label>
+                        <div class="progress progress-xs">
+                            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0"
+                                aria-valuemax="100" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                    <div class="form-group mb-0">
+                        <label class="d-block">Gross Profit <span class="float-right">23%</span></label>
+                        <div class="progress progress-xs">
+                            <div class="progress-bar bg-green" role="progressbar" aria-valuenow="23" aria-valuemin="0"
+                                aria-valuemax="100" style="width: 23%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header border-bottom">
+                    <h3 class="card-title">Friends</h3>
+                    <div class="card-options">
+                        <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i
+                                class="fe fe-chevron-up"></i></a>
+                        <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fa-solid fa-xmark"
+                                style="color: #B197FC;"></i></a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <ul class="right_chat list-unstyled">
+                        <li class="online">
+                            <a href="javascript:void(0);">
+                                <div class="media">
+                                    <img class="media-object " src="./assets/images/xs/avatar4.jpg" alt="">
+                                    <div class="media-body">
+                                        <span class="name">Donald Gardner</span>
+                                        <span class="message">Designer, Blogger</span>
+                                        <span class="badge badge-outline status"></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="online">
+                            <a href="javascript:void(0);">
+                                <div class="media">
+                                    <img class="media-object " src="./assets/images/xs/avatar5.jpg" alt="">
+                                    <div class="media-body">
+                                        <span class="name">Wendy Keen</span>
+                                        <span class="message">Java Developer</span>
+                                        <span class="badge badge-outline status"></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="offline">
+                            <a href="javascript:void(0);">
+                                <div class="media">
+                                    <img class="media-object " src="./assets/images/xs/avatar2.jpg" alt="">
+                                    <div class="media-body">
+                                        <span class="name">Matt Rosales</span>
+                                        <span class="message">CEO, Epic Theme</span>
+                                        <span class="badge badge-outline status"></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card b-none">
+                <ul class="list-group">
+                    <li class="list-group-item d-flex">
+                        <div class="box-icon sm rounded bg-blue"><i class="fa fa-credit-card"></i> </div>
+                        <div class="ml-3">
+                            <div>+₹ 29 New sale</div>
+                            <a href="javascript:void(0)">Admin Template</a>
+                            <div class="text-muted font-12">5 min ago</div>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex">
+                        <div class="box-icon sm rounded bg-pink"><i class="fa fa-upload"></i> </div>
+                        <div class="ml-3">
+                            <div>Project Update</div>
+                            <a href="javascript:void(0)">New HTML page</a>
+                            <div class="text-muted font-12">10 min ago</div>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex">
+                        <div class="box-icon sm rounded bg-teal"><i class="fa fa-file-word-o"></i> </div>
+                        <div class="ml-3">
+                            <div>You edited the file</div>
+                            <a href="javascript:void(0)">reposrt.doc</a>
+                            <div class="text-muted font-12">11 min ago</div>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex">
+                        <div class="box-icon sm rounded bg-cyan"><i class="fa fa-user"></i> </div>
+                        <div class="ml-3">
+                            <div>New user</div>
+                            <a href="javascript:void(0)">Puffin web - view</a>
+                            <div class="text-muted font-12">17 min ago</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="left-sidebar" class="sidebar">
+            <h5 class="brand-name">
+                Kalsun Groups
+                <a href="javascript:void(0)" class="menu_option float-right">
+                    <i class="fa-solid fa-table-cells-large" style="color: #000000;"></i>
+                </a>
+            </h5>
+
+            <nav id="left-sidebar-nav" class="sidebar-nav">
+                <ul class="metismenu">
+
+                    <li class="g_heading">Directories</li>
+
+                    <!-- HRMS -->
+                    <li id="sidebar-hrms">
+                        <a href="javascript:void(0)" class="has-arrow arrow-c">
+                            <i class="fa-solid fa-rocket" style="color: #74c0fc;"></i>
+                            <span>HRMS</span>
+                        </a>
+                        <ul>
+                            <li id="sidebar-dashboard" class="active"><a href="index.html">Dashboard</a></li>
+                            <li id="sidebar-users"><a href="./Html/hr-users.html">Users</a></li>
+                            <li id="sidebar-departments"><a href="./Html/hr-departments.html">Departments</a></li>
+                            <li id="sidebar-employee"><a href="./Html/hr-employee.html">Employee</a></li>
+                            <li id="sidebar-attendance"><a href="./Html/hr-attendance.html">Attendance</a></li>
+                            <li id="sidebar-payroll"><a href="./Html/hr-payroll.html">Payroll</a></li>
+                            <li id="sidebar-expenses"><a href="./Html/hr-expenses.html">Expenses</a></li>
+                            <li id="sidebar-performance"><a href="./Html/hr-employee_perfomance.html">Emp
+                                    Performance</a></li>
+                            <li id="sidebar-appraisal"><a href="./Html/hr-appraisal_flow.html">Appraisal Flow</a></li>
+
+                            <!-- HR Reports -->
+                            <li id="sidebar-hr-reports">
+                                <a href="javascript:void(0)">HR Report</a>
+                                <ul>
+                                    <li><a href="./Html/hr-daily-reports.html">HR Task Reports</a></li>
+                                    <li><a href="./Html/hr-reports.html">HR Interview Reports</a></li>
+                                    <li><a href="./Html/hr-timesheet.html">HR Time Sheet</a></li>
+                                    <li><a href="./Html/hr-interview-schedule.html">Interview Schedules</a></li>
+                                    <li><a href="./Html/hr-appointed-Canditates.html">Appointed Candidates</a></li>
+                                    <li><a href="./Html/hr-resigned-candidates.html">Resigned Candidates</a></li>
+                                </ul>
+                            </li>
+                            <li id="sidebar-admin-reports"><a href="./Html/hr-admin-reports.html">Admin Report</a></li>
+                            <li id="sidebar-other-portals"><a href="./Html/other-portals.html">Other Portals</a></li>
+                            <li id="sidebar-payment-bills"><a href="./Html/hr-payment-bills.html">Payment Bills</a></li>
+                            <li id="sidebar-employee-task"><a href="./Html/employee-Task.html">Employee Task</a></li>
+                            <li id="sidebar-leave-request"><a href="./Html/leave-Request.html">Leave Request</a></li>
+                            <li id="sidebar-daily-report"><a href="./Html/daily-task.html">Daily Report</a></li>
+
+                            <!-- Asset List -->
+                            <li id="sidebar-asset-list">
+                                <a href="javascript:void(0)">Asset List</a>
+                                <ul>
+                                    <li><a href="./Html/Asset_Master_Register.html">Asset Master Register</a></li>
+                                    <li><a href="./Html/branch_asset_summary.html">Branch Asset Summary</a></li>
+                                    <li><a href="./Html/asset_issue_register.html">Asset Issue Register</a></li>
+                                    <li><a href="./Html/asset_movement_register.html">Asset Movement Register</a></li>
+                                    <li><a href="./Html/asset_maintenance_log.html">Asset Maintenance Log</a></li>
+                                    <li><a href="./Html/asset_verification.html">Asset Verification</a></li>
+                                    <li><a href="./Html/asset_disposal_register.html">Asset Disposal Register</a></li>
+                                </ul>
+                            </li>
+
+                            <li id="sidebar-bills-parent">
+                                <a href="javascript:void(0)">Bills</a>
+                                <ul>
+                                    <li><a href="./Html/eb_bill.html">EB Bills</a></li>
+                                    <li><a href="./Html/recharge_bill.html">Mobile Recharge Bills</a></li>
+                                    <li><a href="./Html/internet-bill.html"> Internet Bills</a></li>
+                                    <li id="sidebar-rent-payment"><a href="./Html/rent_payment.html"> Rent Payments</a>
+                                    </li>
+                                    <li id="sidebar-vendor-payment-bill"><a href="./Html/vendor_payment.html">Vendor
+                                            Payment</a></li>
+                                            <li id="sidebar-petrol-Allowance-bill"><a href="./Html/petrol_Allowance.html">Petrol
+                                            Allowance</a></li>
+                                </ul>
+                            </li>
+
+                            <li id="sidebar-vendor-directory"><a href="./Html/vendor_directory.html">Vendor Directory</a></li>
+                            <li id="sidebar-business-report"><a href="./Html/business_report.html">Business Report</a></li>
+                             <li id="sidebar-compliance-tracker"><a href="./Html/compliance_tracker.html">Compliance Tracker</a></li>
+                              <li id="sidebar-inventory"><a href="./Html/inventory.html">Inventory Tracker</a></li>
+                              <li id="sidebar-meeting"><a href="./Html/meeting.html">Meeting Tracker</a></li>
+                              <li id="sidebar-software-access"><a href="./Html/software_access.html">Software Access</a></li>
+
+                        </ul>
+                    </li>
+                    <!-- Auditor -->
+                <li id="sidebar-auditor">
+                    <a href="javascript:void(0)" class="has-arrow arrow-c"><i class="fa-solid fa-rocket"
+                            style="color: #74c0fc;"></i><span>Auditor</span></a>
+                    <ul>
+                        <li id="sidebar-working">
+                            <a><span>Operational Dashboard</span></a>
+                            <ul>
+                                <li id="sidebar-client-id"><a href="./clientID.html"><span>Client ID</span></a></li>
+                                <li id="sidebar-quotation-id"><a href="./quotationID.html"><span>Quotation ID</span></a>
+                                </li>
+                                <li id="sidebar-proforma"><a href="./proforma.html"><span>Proforma Voice</span></a></li>
+                                <li id="sidebar-document-tracker"><a href="./documentCollection.html"><span>Document
+                                            Tracker</span></a></li>
+                                <li id="sidebar-backend-id"><a href="./backend_id.html"><span>Backend ID</span></a></li>
+                                <li id="sidebar-history-license"><a href="./history-license.html"><span>History of
+                                            license</span></a></li>
+                                <li id="sidebar-output"><a href="./outputSheet.html?dept=Auditor"><span>Daily
+                                            Report</span></a></li>
+                                <li id="sidebar-enquiry"><a href="./enquiry.html"><span>Enquiry</span></a></li>
+                                <li id="sidebar-audit-quotation"><a href="./audit_quotation.html"><span>Quotation
+                                        </span></a></li>
+                                <li id="sidebar-audit-appointments"><a
+                                        href="./audit_appointments.html"><span>Appoinment</span></a></li>
+                                <li id="sidebar-operators"><a href="./operators.html"><span>My Operator</span></a></li>
+                                <li id="sidebar-pg-enquiry"><a href="./pg_enquiry.html"><span>PG-Enquiry</span></a></li>
+                                <li id="sidebar-sm-enquiries"><a href="./sm_enquiries.html"><span>SM-Enquiries</span></a>
+                                </li>
+                                <li id="sidebar-audit-weekly-report"><a href="./audit_weekly_report.html"><span>Weekly
+                                            Report Sheet</span></a></li>
+                                <li id="sidebar-phone-audit-report"><a href="./phone_audit_report.html"><span>Phone
+                                            Audit</span></a></li>
+                                <li class="active" id="sidebar-audit-base"><a
+                                        href="./audit_base.html"><span>Base</span></a></li>
+                                <li id="sidebar-advisor-entry"><a href="./advisor_entry_sheet.html"><span>Advisor
+                                            Entry</span></a></li>
+                                <li id="sidebar-social-report" class="active"><a
+                                        href="./social-media-report.html?dept=Auditor"><span>Social Media
+                                            Report</span></a></li>
+                                <li id="sidebar-advisor-performance-tracker"><a
+                                        href="./advisor_performance_tracker.html"><span>Advisor Performance
+                                            Tracker</span></a></li>
+                                <li id="sidebar-performance-tracker"><a
+                                        href="./performance_tracker.html"><span>Performance Tracker</span></a></li>
+                            </ul>
+                        </li>
+
+                        <li id="sidebar-backend-report">
+                            <a href="./hac_backend.html"><span>HAC Backend Report</span></a>
+                        </li>
+
+                        <li id="sidebar-financial-report">
+                            <a><span>Financial Report</span></a>
+                            <ul>
+                                <li id="sidebar-bill-supply"><a href="./bill-supply.html"><span>Bill of supply</span></a>
+                                </li>
+                                <li id="sidebar-accounting-log"><a href="./accounting_log.html"><span>Accounting
+                                            Log</span></a></li>
+                            </ul>
+                        </li>
+
+                        <li id="sidebar-sop">
+                            <a><span>SOP Tracker</span></a>
+                            <ul>
+                                <li id="sidebar-qc"><a href="Qc-sheet.html"><span>QC - SHEET</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li id="sidebar-massmedia">
+                    <a href="javascript:void(0)" class="has-arrow arrow-c">
+                        <i class="fa-solid fa-rocket" style="color: #74c0fc;"></i>
+                        <span>Mass Media</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0)">Operational Dashboard</a>
+                            <ul>
+                                <li id="sidebar-daily-report"><a href="./outputSheet.html?dept=MassMedia">Mass Media
+                                        Output</a></li>
+                                <li id="sidebar-media-social-report" class="active"><a
+                                        href="./social-media-report.html?dept=MassMedia">Social Media
+                                        Report</a></li>
+                                <li id="sidebar-media-enquiry"><a href="./media_enquiry.html">Enquiry</a></li>
+                                <li id="sidebar-category"><a href="./category.html">Category</a></li>
+                                <li id="sidebar-office-visit"><a href="./office_vists.html">Office Visit</a></li>
+                                <li id="sidebar-applied-visit"><a href="./applied_visit.html">Applied Visit</a></li>
+                                <li id="sidebar-nomination-tracker"><a href="./nomination_tracker.html">Nomination
+                                        Tracker</a></li>
+                            </ul>
+                        </li>
+                        <li id="sidebar-media-accounting-log">
+                            <a href="javascript:void(0)">Financial Report</a>
+                            <ul>
+                                <li ><a href="./media_accounting_log.html">Accounting Log</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li id="sidebar-landmark">
+                    <a href="javascript:void(0)" class="has-arrow arrow-c">
+                        <i class="fa-solid fa-rocket" style="color: #74c0fc;"></i>
+                        <span>LandMark</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0)">Operational Dashboard</a>
+                            <ul>
+                                <li id="landmark-output"><a href="./outputSheet.html?dept=Landmark">Landmark Output</a>
+                                </li>
+                                <li id="landmark-social" class="active"><a href="./social-media-report.html?dept=Landmark">Social Media
+                                        Report</a></li>
+                                <li id="landmark-enquiry"><a href="./landmark_enquiry.html">Enquiry</a></li>
+                                <li id="landmark-office"><a href="./landmark_office_visit.html">Office visit</a></li>
+                                <li id="landmark-site"><a href="./site_visit.html">Site Visit</a></li>
+                                <li id="landmark-document-tracker"><a href="./landmark_document_tracker.html">Document
+                                        Tracker</a></li>
+                                <li id="landmark-applied-mark"><a href="./landmark_applied_list.html">Applied List</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="landmark-accounting-log">
+                            <a href="javascript:void(0)">Financial Report</a>
+                            <ul>
+                                <li><a href="./landmark_accounting_log.html">Accounting Log</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                    <!-- Discussion -->
+                    <li id="sidebar-management">
+                        <a href="./Html/management-discussion.html">
+                            <i class="fa-solid fa-rocket" style="color: #74c0fc;"></i>
+                            <span>Discussion</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+
+        <div class="page">
+            <div id="page_top" class="section-body top_dark sticky-top">
+                <div class="container-fluid">
+                    <div class="page-header">
+                        <!-- START OF FIX 1: ADDED D-FLEX AND THE GO BACK BUTTON -->
+                        <div class="left d-flex align-items-center">
+                            <h1 class="page-title mr-3 mb-0">Dashboard</h1>
+                        </div>
+                        <!-- END OF FIX 1 -->
+
+                        <div class="right">
+                            <div class="notification d-flex">
+                                <div class="dropdown d-flex">
+                                    <a class="nav-link icon d-none d-md-flex btn btn-default btn-icon ml-1"
+                                        data-toggle="dropdown">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="icon icon-tabler icons-tabler-outline icon-tabler-bell">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path
+                                                d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
+                                            <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
+                                        </svg>
+                                        <span class="badge badge-primary nav-unread" id="notification_badge"></span>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow"
+                                        style="min-width: 256px !important;">
+                                        <ul class="list-unstyled feeds_widget" id="notification_list">
+                                        </ul>
+                                        <div class="dropdown-divider"></div>
+                                        <span id="leave_notification_badge" class="badge badge-danger"
+                                            style="display:none"></span>
+
+                                        <ul id="leave_notification_list"
+                                            style="list-style-type: none; padding-left: 10px !important; padding-right: 20px !important;">
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="dropdown d-flex">
+                                    <a class="nav-link icon d-none d-md-flex btn btn-default btn-icon ml-1"
+                                        data-toggle="dropdown">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="icon icon-tabler icons-tabler-outline icon-tabler-user">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+                                            <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                        </svg>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                        <a class="dropdown-item" href="page-profile.html"><i
+                                                class="dropdown-icon fa-solid fa-user-tie" style="color: #8c8c8c;"></i>
+                                            Profile</a>
+                                        <a class="dropdown-item" href="app-setting.html"><i
+                                                class="dropdown-icon fa-solid fa-gear" style="color: #8c8c8c;"></i>
+                                            Settings</a>
+                                        <a class="dropdown-item" href="javascript:void(0)"><span
+                                                class="float-right"><span class="badge badge-primary">6</span></span><i
+                                                class="dropdown-icon fa-solid fa-envelope" style="color: #8c8c8c;"></i>
+                                            Inbox</a>
+                                        <a class="dropdown-item" href="javascript:void(0)"><i
+                                                class="dropdown-icon fa-solid fa-paper-plane"
+                                                style="color: #8c8c8c;"></i> Message</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="javascript:void(0)"><i
+                                                class="dropdown-icon fa-solid fa-circle-question"
+                                                style="color: #8c8c8c;"></i> Need help?</a>
+                                        <a class="dropdown-item" href="javascript:void(0)" onclick="logout()"><i
+                                                class="dropdown-icon fa-solid fa-arrow-right-from-bracket"
+                                                style="color: #8c8c8c;"></i> Sign out</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-body mt-3">
+                <div class="container-fluid">
+                    <div class="row clearfix">
+                        <div class="col-lg-12">
+                            <div class="mb-4">
+                                <h4 class="font600 mb-1">Welcome <span id="welcomeMessage"
+                                        style="color: #3fa64b; font-weight: bold;"></span></h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <!-- Main Dashboard Cards -->
+                        <div class="col-6 col-md-4 col-xl-2" id="main-menu-users">
+                            <div class="card ribbon"><a href="./Html/hr-users.html" class="card-body my_sort_cut"><i
+                                        class="fa-solid fa-users" style="color: #3fa64b;"></i>
+                                    <h6 class="pt-2 mb-0 font500">Users</h6>
+                                </a></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-xl-2" id="main-menu-attendance">
+                            <div class="card"><a href="./Html/hr-attendance.html" class="card-body my_sort_cut"><i
+                                        class="fa-solid fa-thumbs-up" style="color: #3fa64b;"></i>
+                                    <h6 class="pt-2 mb-0 font500">Attendance</h6>
+                                </a></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-xl-2" id="main-menu-payroll">
+                            <div class="card ribbon"><a href="./Html/hr-payroll.html" class="card-body my_sort_cut"><i
+                                        class="fa-solid fa-calendar-days" style="color: #3fa64b;"></i>
+                                    <h6 class="pt-2 mb-0 font500">Payroll</h6>
+                                </a></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-xl-2" id="main-menu-performance">
+                            <div class="card"><a href="./Html/hr-employee_perfomance.html"
+                                    class="card-body my_sort_cut"><i class="fa-solid fa-credit-card"
+                                        style="color: #3fa64b;"></i>
+                                    <h6 class="pt-2 mb-0 font500">Performance</h6>
+                                </a></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-xl-2" id="main-menu-expenses">
+                            <div class="card"><a href="./Html/hr-expenses.html" class="card-body my_sort_cut"><i
+                                        class="fa-solid fa-calculator" style="color: #3fa64b;"></i>
+                                    <h6 class="pt-2 mb-0 font500">Expenses</h6>
+                                </a></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-xl-2" id="main-menu-departments">
+                            <div class="card"><a href="./Html/hr-departments.html" class="card-body my_sort_cut"><i
+                                        class="fa-solid fa-building" style="color: #3fa64b;"></i>
+                                    <h6 class="pt-2 mb-0 font500">Departments</h6>
+                                </a></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-xl-2" id="main-menu-appraisal">
+                            <div class="card"><a href="./Html/hr-appraisal_flow.html" class="card-body my_sort_cut"><i
+                                        class="fa-solid fa-file-export" style="color: #3fa64b;"></i>
+                                    <h6 class="pt-2 mb-0 font500">Appraisal</h6>
+                                </a></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-xl-2" id="main-menu-employee">
+                            <div class="card"><a href="./Html/hr-employee.html" class="card-body my_sort_cut"><i
+                                        class="fa-solid fa-user" style="color: #3fa64b;"></i>
+                                    <h6 class="pt-2 mb-0 font500">Employees</h6>
+                                </a></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-xl-2" id="main-menu-hr-reports">
+                            <div class="card"><a href="./Html/hr-reports.html" class="card-body my_sort_cut"><i
+                                        class="fa-solid fa-file-import" style="color: #3fa64b;"></i>
+                                    <h6 class="pt-2 mb-0 font500">Hr Report</h6>
+                                </a></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-xl-2" id="main-menu-admin-reports">
+                            <div class="card"><a href="./Html/hr-admin-reports.html" class="card-body my_sort_cut"><i
+                                        class="fa-solid fa-file-export" style="color: #3fa64b;"></i>
+                                    <h6 class="pt-2 mb-0 font500">Admin Report</h6>
+                                </a></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-xl-2" id="main-menu-other-portals">
+                            <div class="card"><a href="./Html/other-portals.html" class="card-body my_sort_cut"><i
+                                        class="fa-solid fa-portrait" style="color: #3fa64b;"></i>
+                                    <h6 class="pt-2 mb-0 font500">other Portal</h6>
+                                </a></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-xl-2" id="main-menu-payment-bills">
+                            <div class="card"><a href="./Html/hr-payment-bills.html" class="card-body my_sort_cut"><i
+                                        class="fa-solid fa-indian-rupee-sign" style="color: #3fa64b;"></i>
+                                    <h6 class="pt-2 mb-0 font500">Payment Bill</h6>
+                                </a></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-xl-2" id="main-menu-employee-task">
+                            <div class="card"><a href="./Html/employee-Task.html" class="card-body my_sort_cut"><i
+                                        class="fa-solid fa-list-check" style="color: #3fa64b;"></i>
+                                    <h6 class="pt-2 mb-0 font500">Employee Task</h6>
+                                </a></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-xl-2" id="main-menu-leave-request">
+                            <div class="card"><a href="./Html/leave-Request.html" class="card-body my_sort_cut"><i
+                                        class="fa-solid fa-list-check" style="color: #3fa64b;"></i>
+                                    <h6 class="pt-2 mb-0 font500">Leave Request</h6>
+                                </a></div>
+                        </div>
+
+                        <!-- Auditor/Operations Dashboard Cards -->
+                        <div class="col-6 col-md-4 col-xl-2" id="main-menu-client-id">
+                            <div class="card"><a href="./Html/clientID.html" class="card-body my_sort_cut"><i
+                                        class="fa-solid fa-id-card" style="color: #3fa64b;"></i>
+                                    <h6 class="pt-2 mb-0 font500">Client ID</h6>
+                                </a></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-xl-2" id="main-menu-quotation-id">
+                            <div class="card"><a href="./Html/quotationID.html" class="card-body my_sort_cut"><i
+                                        class="fa-solid fa-file-invoice" style="color: #3fa64b;"></i>
+                                    <h6 class="pt-2 mb-0 font500">Quotation ID</h6>
+                                </a></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-xl-2" id="main-menu-proforma">
+                            <div class="card"><a href="./Html/proforma.html" class="card-body my_sort_cut"><i
+                                        class="fa-solid fa-file-lines" style="color: #3fa64b;"></i>
+                                    <h6 class="pt-2 mb-0 font500">Proforma Invoice</h6>
+                                </a></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-xl-2" id="main-menu-document-tracker">
+                            <div class="card"><a href="./Html/documentCollection.html" class="card-body my_sort_cut"><i
+                                        class="fa-solid fa-folder-open" style="color: #3fa64b;"></i>
+                                    <h6 class="pt-2 mb-0 font500">Document Collection</h6>
+                                </a></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-xl-2" id="main-menu-backend-id">
+                            <div class="card"><a href="./Html/backend_id.html" class="card-body my_sort_cut"><i
+                                        class="fa-solid fa-key" style="color: #3fa64b;"></i>
+                                    <h6 class="pt-2 mb-0 font500">Backend ID</h6>
+                                </a></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-xl-2" id="main-menu-bill-supply">
+                            <div class="card"><a href="./Html/bill-supply.html" class="card-body my_sort_cut"><i
+                                        class="fa-solid fa-receipt" style="color: #3fa64b;"></i>
+                                    <h6 class="pt-2 mb-0 font500">Bill of Supply</h6>
+                                </a></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-xl-2" id="main-menu-history-license">
+                            <div class="card"><a href="./Html/history-license.html" class="card-body my_sort_cut"><i
+                                        class="fa-solid fa-clock-rotate-left" style="color: #3fa64b;"></i>
+                                    <h6 class="pt-2 mb-0 font500">History License</h6>
+                                </a></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-xl-2" id="main-menu-backend-report">
+                            <div class="card"><a href="./Html/hac_backend.html" class="card-body my_sort_cut"><i
+                                        class="fa-solid fa-clock-rotate-left" style="color: #3fa64b;"></i>
+                                    <h6 class="pt-2 mb-0 font500">Hac Backend</h6>
+                                </a></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-xl-2" id="main-menu-output">
+                            <div class="card"><a href="./Html/outputSheet.html" class="card-body my_sort_cut"><i
+                                        class="fa-solid fa-phone" style="color: #3fa64b;"></i>
+                                    <h6 class="pt-2 mb-0 font500">Advisor Daily Report</h6>
+                                </a></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-xl-2" id="main-menu-enquiry">
+                            <div class="card"><a href="./Html/enquiry.html" class="card-body my_sort_cut"><i
+                                        class="fa-solid fa-circle-question" style="color: #3fa64b;"></i>
+                                    <h6 class="pt-2 mb-0 font500">Enquiry</h6>
+                                </a></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-xl-2" id="main-menu-audit-quotation">
+                            <div class="card"><a href="./Html/audit_quotation.html" class="card-body my_sort_cut"><i
+                                        class="fa-solid fa-file-invoice-dollar" style="color: #3fa64b;"></i>
+                                    <h6 class="pt-2 mb-0 font500">Quotation</h6>
+                                </a></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-xl-2" id="main-menu-audit-appointments">
+                            <div class="card"><a href="./Html/audit_appointments.html" class="card-body my_sort_cut"><i
+                                        class="fa-solid fa-calendar-check" style="color: #3fa64b;"></i>
+                                    <h6 class="pt-2 mb-0 font500">Appointment</h6>
+                                </a></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-xl-2" id="main-menu-operators">
+                            <div class="card"><a href="./Html/operators.html" class="card-body my_sort_cut"><i
+                                        class="fa-solid fa-headset" style="color: #3fa64b;"></i>
+                                    <h6 class="pt-2 mb-0 font500">Operator</h6>
+                                </a></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-xl-2" id="main-menu-pg-enquiry">
+                            <div class="card"><a href="./Html/pg_enquiry.html" class="card-body my_sort_cut"><i
+                                        class="fa-solid fa-building-user" style="color: #3fa64b;"></i>
+                                    <h6 class="pt-2 mb-0 font500">PG-Enquiry</h6>
+                                </a></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-xl-2" id="main-menu-sm-enquiries">
+                            <div class="card"><a href="./Html/sm_enquiries.html" class="card-body my_sort_cut"><i
+                                        class="fa-solid fa-comments" style="color: #3fa64b;"></i>
+                                    <h6 class="pt-2 mb-0 font500">SM-Enquiries</h6>
+                                </a></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-xl-2" id="main-menu-audit-weekly-report">
+                            <div class="card"><a href="" class="card-body my_sort_cut"><i
+                                        class="fa-solid fa-calendar-week" style="color: #3fa64b;"></i>
+                                    <h6 class="pt-2 mb-0 font500">Weekly Report</h6>
+                                </a></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-xl-2" id="main-menu-phone-audit-report">
+                            <div class="card"><a href="./Html/phone_audit_report.html" class="card-body my_sort_cut"><i
+                                        class="fa-solid fa-mobile-screen" style="color: #3fa64b;"></i>
+                                    <h6 class="pt-2 mb-0 font500">Phone Audit</h6>
+                                </a></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-xl-2" id="main-menu-audit-base">
+                            <div class="card"><a href="./Html/audit_base.html" class="card-body my_sort_cut"><i
+                                        class="fa-solid fa-database" style="color: #3fa64b;"></i>
+                                    <h6 class="pt-2 mb-0 font500">Base</h6>
+                                </a></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-xl-2" id="main-menu-advisor-entry">
+                            <div class="card"><a href="./Html/advisor_entry_sheet.html" class="card-body my_sort_cut"><i
+                                        class="fa-solid fa-user-pen" style="color: #3fa64b;"></i>
+                                    <h6 class="pt-2 mb-0 font500">Advisor Entry</h6>
+                                </a></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-xl-2" id="main-menu-qc">
+                            <div class="card"><a href="./Html/Qc-sheet.html" class="card-body my_sort_cut"><i
+                                        class="fa-solid fa-circle-check" style="color: #3fa64b;"></i>
+                                    <h6 class="pt-2 mb-0 font500">QC Sheet</h6>
+                                </a></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-xl-2" id="main-menu-log">
+                            <div class="card"><a href="./Html/accounting_log.html" class="card-body my_sort_cut"><i
+                                        class="fa-solid fa-circle-check" style="color: #3fa64b;"></i>
+                                    <h6 class="pt-2 mb-0 font500">Accounting log</h6>
+                                </a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/bundles/lib.vendor.bundle.js"></script>
+    <script src="./assets/bundles/apexcharts.bundle.js"></script>
+    <script src="./assets/bundles/counterup.bundle.js"></script>
+    <script src="./assets/bundles/knobjs.bundle.js"></script>
+    <script src="./assets/bundles/c3.bundle.js"></script>
+
+    <script src="./assets/js/core.js"></script>
+    <script src="./Html/assets/js/page/index.js"></script>
+    <script src="./Html/assets/js/page/theme1-js.js"></script>
+    <script>
+        /* ---------------------------------------------------------
+           1. FORCE LOGIN CHECK (RUN FIRST)
+        --------------------------------------------------------- */
+        (function () {
+            if (!localStorage.getItem('loggedInUserName')) {
+                window.location.replace('/Html/login.html');
+            }
+        })();
 
 
-<!-- ==================== Start epilogue ==================== -->
-		</td>
-		</tr>	
-		</table>
-	</td>
-	</tr>
-	</table>
-</td>
-</tr>
-</table>
+        window.addEventListener("pageshow", function (event) {
+            // Checks if loaded from cache or via browser back/forward buttons
+            if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
+                if (!localStorage.getItem('loggedInUserName')) {
+                    window.location.replace('/Html/login.html');
+                } else {
+                    window.location.reload(); // avoid cached dashboard
+                }
+            }
+        });
 
-<table width="76%" border="0" align="center" valign="bottom" cellspacing="0" cellpadding="0">
-	<tr>
-	<td id="footer"><small>&copy; 2008 Xavier Roche & other contributors - Web Design: Leto Kauler.</small></td>
-	</tr>
-</table>
+        /* ---------------------------------------------------------
+           3. LOGOUT FUNCTION (FINAL FIX)
+        --------------------------------------------------------- */
+        function logout() {
+            // Clear local storage and session storage
+            localStorage.clear();
+            sessionStorage.clear();
 
+            // Replace the current state in history so they can't step back to this page
+            window.history.replaceState(null, null, '/Html/login.html');
+
+            // Redirect immediately
+            window.location.replace('/Html/login.html');
+        }
+
+
+
+        /* ---------------------------------------------------------
+           4. MAIN LOGIC
+        --------------------------------------------------------- */
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const loggedInUserName = localStorage.getItem('loggedInUserName');
+            const loggedInUserRole = localStorage.getItem('loggedInUserRole');
+
+            const welcomeMessageElement = document.getElementById('welcomeMessage');
+
+            if (loggedInUserName && welcomeMessageElement) {
+                welcomeMessageElement.textContent = `${loggedInUserName} (${loggedInUserRole || 'User'})`;
+            }
+
+            /* ---------------------------------------------------------
+                SIDEBAR PERMISSIONS (Fixed IDs)
+             --------------------------------------------------------- */
+            const allSidebarIds = [
+                'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
+               'sidebar-management' , 'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
+                'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
+                'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
+                'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
+                'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
+                'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log', 'sidebar-media-accounting-log',
+                'sidebar-sop', 'sidebar-qc', 'sticky-actions', 'hide-feature', 'sidebar-social-report','sidebar-media-social-report' , 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker', "sidebar-massmedia","sidebar-daily-report","sidebar-media-enquiry","sidebar-category","sidebar-office-visit","sidebar-applied-visit","sidebar-nomination-tracker","sidebar-landmark","landmark-output","landmark-social","landmark-enquiry","landmark-office","landmark-site","landmark-document-tracker","landmark-applied-mark","landmark-accounting-log"
+            ];
+
+            const sidebarPermissions = {
+               'HR': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                    'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                    'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals', 'sidebar-meeting',
+                    'sidebar-payment-bills', 'sidebar-leave-request' ,'sticky-actions' , 'hide-feature' ,'sidebar-daily-report' ],
+                'ADMIN': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-attendance', 'sidebar-admin-reports', 
+                    'sidebar-payment-bills', 'sidebar-leave-request','sidebar-asset-list','sidebar-bills-parent', 'sidebar-payroll','sidebar-business-report','sidebar-vendor-directory','sidebar-compliance-tracker','sidebar-meeting','sidebar-inventory','sidebar-software-access','sidebar-daily-report'],
+                'EMPLOYEE': [
+                    'sidebar-hrms', 'sidebar-departments', 'sidebar-employee-task', 'sidebar-leave-request'],
+                'GENERAL MANAGER': allSidebarIds,
+                'PROJECT MANAGER': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-departments', 'sidebar-employee',
+                    'sidebar-performance', 'sidebar-leave-request'
+                ],
+
+                 'PROJECT MANAGER': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-departments', 'sidebar-employee', 
+                    'sidebar-performance', 'sidebar-leave-request' 
+                ],
+                'ADVISOR': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-working', 'sidebar-financial-report',
+                    'sidebar-client-id', 'sidebar-quotation-id', 'sidebar-proforma', 'sidebar-document-tracker',
+                    'sidebar-backend-id', 'sidebar-bill-supply', 'sidebar-history-license', 'sidebar-backend-report',
+                    'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments', 'sidebar-operators',
+                    'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report', 'sidebar-phone-audit-report',
+                    'sidebar-audit-base', 'sidebar-advisor-entry', 'sidebar-output', 'sticky-actions', 'hide-feature', 'sidebar-social-report', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker'
+                ],
+                'AUDIT PROJECT MANAGER': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-working', 'sidebar-financial-report',
+                    'sidebar-sop', 'sidebar-backend-report', 'sidebar-enquiry', 'sidebar-audit-quotation',
+                    'sidebar-audit-appointments', 'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries',
+                    'sidebar-audit-weekly-report', 'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-qc',
+                    'sidebar-advisor-entry', 'sidebar-output', 'sidebar-bill-supply', 'sidebar-accounting-log', 'sticky-actions', 'hide-feature', 'sidebar-social-report', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker'
+                ],
+                'BACKEND PROJECT MANAGER': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-backend-report', 'sticky-actions', 'hide-feature'
+                ],
+                'TEAM LEADER': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-financial-report',
+                    'sidebar-accounting-log', 'sidebar-bill-supply', 'sticky-actions', 'hide-feature'
+                ],
+                'BACK OFFICE EXECUTIVE': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-backend-report',
+                    'sidebar-sop', 'sidebar-qc', 'sticky-actions', 'hide-feature'
+                ],
+
+                'MEDIA PROJECT MANAGER': [
+                     'sidebar-hrms', 'sidebar-dashboard', 'sticky-actions' , 'hide-feature' ,  "sidebar-daily-report", "sidebar-media-social-report","sidebar-media-enquiry","sidebar-category","sidebar-office-visit","sidebar-applied-visit","sidebar-nomination-tracker","sidebar-media-accounting-log","sidebar-massmedia"
+                ],
+                'MEDIA TEAM LEADER': [
+                     'sidebar-hrms', 'sidebar-dashboard', 'sticky-actions' , 'hide-feature' ,  "sidebar-daily-report", "sidebar-media-social-report","sidebar-media-enquiry","sidebar-category","sidebar-office-visit","sidebar-applied-visit","sidebar-nomination-tracker","sidebar-media-accounting-log","sidebar-massmedia"
+                ],
+                
+                'MADVISOR':['sidebar-hrms', 'sidebar-dashboard', 'sticky-actions' , 'hide-feature' ,  "sidebar-daily-report", "sidebar-media-social-report","sidebar-media-enquiry","sidebar-category","sidebar-office-visit","sidebar-applied-visit","sidebar-nomination-tracker","sidebar-massmedia"],
+                
+                'LAND PROJECT MANAGER': [
+                     'sidebar-hrms', 'sidebar-dashboard', 'sticky-actions' , 'hide-feature','landmark-output',"sidebar-landmark",
+                    'landmark-social' , 'landmark-enquiry' ,"landmark-office","landmark-site","landmark-document-tracker","landmark-applied-mark",'landmark-accounting-log'
+                ],
+                'LAND TEAM LEADER': [
+                     'sidebar-hrms', 'sidebar-dashboard', 'sticky-actions' , 'hide-feature','landmark-output',"sidebar-landmark",
+                     'landmark-social' , 'landmark-enquiry' ,"landmark-office","landmark-site","landmark-document-tracker","landmark-applied-mark",'landmark-accounting-log'
+                ],
+                
+                'LADVISOR':['sidebar-hrms', 'sidebar-dashboard', 'sticky-actions' , 'hide-feature','landmark-output',"sidebar-landmark",
+                                  'landmark-social' , 'landmark-enquiry' ,"landmark-office","landmark-site","landmark-document-tracker","landmark-applied-mark"],
+
+                'GENERAL MANAGER': allSidebarIds,
+
+
+                'AGM': allSidebarIds,
+
+
+                'VP': allSidebarIds,
+
+                'CEO': allSidebarIds
+            };
+
+            /* ---------------------------------------------------------
+               MAIN MENU PERMISSIONS (Fixed IDs)
+            --------------------------------------------------------- */
+            const allMainMenuIds = [
+                'main-menu-users', 'main-menu-attendance', 'main-menu-payroll', 'main-menu-performance',
+                'main-menu-expenses', 'main-menu-departments', 'main-menu-appraisal', 'main-menu-employee',
+                'main-menu-hr-reports', 'main-menu-admin-reports', 'main-menu-other-portals', 'main-menu-payment-bills',
+                'main-menu-employee-task', 'main-menu-leave-request', 'main-menu-client-id', 'main-menu-quotation-id',
+                'main-menu-proforma', 'main-menu-document-tracker', 'main-menu-backend-id', 'main-menu-bill-supply',
+                'main-menu-history-license', 'main-menu-backend-report', 'main-menu-output', 'main-menu-enquiry',
+                'main-menu-audit-quotation', 'main-menu-audit-appointments', 'main-menu-operators', 'main-menu-pg-enquiry',
+                'main-menu-sm-enquiries', 'main-menu-audit-weekly-report', 'main-menu-phone-audit-report',
+                'main-menu-audit-base', 'main-menu-advisor-entry', 'main-menu-qc', 'main-menu-log'
+            ];
+
+            const mainMenuPermissions = {
+                'HR': [
+                    'main-menu-users', 'main-menu-departments', 'main-menu-employee', 'main-menu-attendance',
+                    'main-menu-payroll', 'main-menu-expenses', 'main-menu-performance', 'main-menu-appraisal',
+                    'main-menu-hr-reports', 'main-menu-admin-reports', 'main-menu-other-portals',
+                    'main-menu-payment-bills', 'main-menu-leave-request'
+                ],
+                'GENERAL MANAGER': allMainMenuIds, // General manager gets access to all cards
+                'ADMIN': [
+                    'main-menu-attendance', 'main-menu-admin-reports', 'main-menu-payment-bills', 'main-menu-leave-request'
+                ],
+                'EMPLOYEE': [
+                    'main-menu-departments', 'main-menu-employee-task', 'main-menu-leave-request'
+                ],
+                'ADVISOR': [
+                    'main-menu-client-id', 'main-menu-quotation-id', 'main-menu-proforma', 'main-menu-document-tracker',
+                    'main-menu-backend-id', 'main-menu-history-license', 'main-menu-output', 'main-menu-enquiry',
+                    'main-menu-audit-quotation', 'main-menu-audit-appointments', 'main-menu-operators', 'main-menu-pg-enquiry',
+                    'main-menu-sm-enquiries', 'main-menu-audit-weekly-report', 'main-menu-phone-audit-report',
+                    'main-menu-audit-base', 'main-menu-advisor-entry'
+                ],
+                'AUDIT PROJECT MANAGER': [
+                    'main-menu-client-id', 'main-menu-quotation-id', 'main-menu-proforma', 'main-menu-document-tracker',
+                    'main-menu-backend-id', 'main-menu-bill-supply', 'main-menu-history-license', 'main-menu-output',
+                    'main-menu-enquiry', 'main-menu-audit-quotation', 'main-menu-audit-appointments', 'main-menu-operators',
+                    'main-menu-pg-enquiry', 'main-menu-sm-enquiries', 'main-menu-audit-weekly-report', 'main-menu-phone-audit-report',
+                    'main-menu-audit-base', 'main-menu-advisor-entry', 'main-menu-qc'
+                ],
+                'BACKEND PROJECT MANAGER': ['main-menu-backend-report'],
+                'TEAM LEADER': ['main-menu-log'],
+                'BACK OFFICE EXECUTIVE': ['main-menu-backend-report', 'main-menu-qc']
+            };
+
+            function applyPermissions(role, allIds, permissionMap) {
+                const normalizedRole = role ? role.toUpperCase().trim() : '';
+
+                if (!permissionMap[normalizedRole]) {
+                    console.warn("Invalid role:", normalizedRole);
+                    return;
+                }
+
+                const allowedItems = new Set(permissionMap[normalizedRole]);
+
+                allIds.forEach(id => {
+                    const el = document.getElementById(id);
+                    if (!el) return;
+
+                    el.style.display = allowedItems.has(id) ? '' : 'none';
+                });
+            }
+
+            if (loggedInUserRole) {
+                applyPermissions(loggedInUserRole, allSidebarIds, sidebarPermissions);
+                applyPermissions(loggedInUserRole, allMainMenuIds, mainMenuPermissions);
+            }
+
+            fetchPaymentNotifications(); c
+            fetchLeaveNotifications();
+        });
+
+        /* ---------------------------------------------------------
+           PAYMENT NOTIFICATIONS
+        --------------------------------------------------------- */
+        async function fetchPaymentNotifications() {
+            try {
+                const res = await fetch('http://localhost:3000/api/payment_bills');
+                const bills = await res.json();
+
+                const list = document.getElementById('notification_list');
+                const badge = document.getElementById('notification_badge');
+
+                if (!list || !badge) return;
+
+                list.innerHTML = '';
+                let count = 0;
+
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+
+                bills.forEach(bill => {
+                    const due = new Date(bill.due_date);
+                    const days = Math.ceil((due - today) / (1000 * 60 * 60 * 24));
+
+                    if (days <= 10 && bill.status !== 'Paid') {
+                        count++;
+
+                        const li = document.createElement('li');
+                        li.innerHTML = `
+                            <div class="feeds-body">
+                                <b>${bill.vendor}</b> - ₹${bill.amount}
+                                <br><small>${days < 0 ? 'Overdue' : days + ' days left'}</small>
+                            </div>
+                        `;
+                        list.appendChild(li);
+                    }
+                });
+
+                badge.style.display = count ? 'inline-block' : 'none';
+                badge.textContent = count;
+
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        /* ---------------------------------------------------------
+           LEAVE NOTIFICATIONS
+        --------------------------------------------------------- */
+        async function fetchLeaveNotifications() {
+            try {
+                const role = localStorage.getItem('loggedInUserRole');
+                if (!role || role.toUpperCase() !== 'GENERAL MANAGER') return;
+
+                const res = await fetch('http://localhost:3000/api/leave-requests/pending/count');
+                const data = await res.json();
+
+                const badge = document.getElementById('leave_notification_badge');
+                const list = document.getElementById('leave_notification_list');
+
+                if (!badge || !list) return;
+
+                list.innerHTML = '';
+
+                if (data.pending > 0) {
+                    badge.textContent = data.pending;
+                    badge.style.display = 'inline-block';
+
+                    const li = document.createElement('li');
+                    li.innerHTML = `${data.pending} leave requests pending`;
+                    list.appendChild(li);
+
+                } else {
+                    badge.style.display = 'none';
+                    list.innerHTML = '<li>No pending leave requests</li>';
+                }
+
+            } catch (err) {
+                console.error(err);
+            }
+        }
+    </script>
 </body>
 
 </html>
-
-

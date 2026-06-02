@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="icon" href="../assets/images/icon/logo.png" type="image/x-icon" />
+
+    <title>Management Discussion</title>
+
+    <!-- Bootstrap Core and vendor -->
+    <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
+    <link href="../assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <!-- Core css -->
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/theme1.css" />
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+    <!-- SweetAlert2 CDN for Chat Popups -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        /* Sidebar Styles from your code */
+        .metismenu ul a { color: #4d5052 !important; }
+        .metismenu .active>a { color: #3d78e3 !important; }
+        .metismenu .active ul li.active>a { color: #3d78e3 !important; font-weight: 600; background: transparent; }
+        .metismenu ul a:hover { color: #3d78e3 !important; }
+
+        /* ========================================= */
+        /* WHATSAPP CHAT UI STYLES (For Red Box Area) */
+        /* ========================================= */
+        .chat-layout {
+            display: flex; flex-direction: column;
+            height: calc(100vh - 70px); /* Fill screen minus top header */
+            background-color: #f0f2f5;
+        }
+
+        .chat-header {
+            background-color: #ffffff; padding: 15px 25px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08); z-index: 10;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+
+        #feed {
+            flex-grow: 1; overflow-y: auto; padding: 25px;
+            display: flex; flex-direction: column; gap: 15px;
+            background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png'); /* Subtle WhatsApp Background pattern */
+            background-repeat: repeat; opacity: 0.95;
+        }
+
+        .comment-node { 
+            display: flex; align-items: flex-end; gap: 10px; 
+            max-width: 85%; width: fit-content;
+        }
+
+        /* Left Side (Other Users) */
+        .msg-left { align-self: flex-start; }
+        .msg-left .comment-content { background-color: #ffffff; border: 1px solid #e2e8f0; border-bottom-left-radius: 4px; }
+
+        /* Right Side (Logged In User) */
+        .msg-right { align-self: flex-end; flex-direction: row-reverse; }
+        .msg-right .comment-content { background-color: #dcf8c6; border: 1px solid #cdebb5; border-bottom-right-radius: 4px; }
+        
+        .avatar-circle {
+            width: 35px; height: 35px; min-width: 35px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-weight: bold; font-size: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 5px;
+        }
+
+        .comment-content {
+            border-radius: 12px; padding: 10px 14px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1); position: relative; min-width: 280px;
+        }
+
+        .meta-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; gap: 15px; }
+
+        .user-name { font-weight: 700; color: #1e293b; font-size: 13px; }
+        .role-badge {
+            font-weight: 600; padding: 2px 6px; border-radius: 20px; font-size: 9px;
+            margin-left: 6px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        
+        .role-CEO, .role-VP { background: #fee2e2; color: #991b1b; }
+        .role-ADMIN { background: #e0e7ff; color: #3730a3; }
+        .role-GM, .role-GENERAL { background: #d1fae5; color: #065f46; }
+        .role-OTHER { background: #f1f5f9; color: #475569; }
+
+        .comment-text { color: #111b21; font-size: 14.5px; line-height: 1.5; margin-bottom: 0; white-space: pre-wrap; }
+
+        /* Footer: Timestamp & Edited Tag */
+        .msg-footer {
+            display: flex; justify-content: flex-end; align-items: center; gap: 6px;
+            margin-top: 5px; font-size: 11px; color: #667781;
+        }
+        .edited-tag { font-style: italic; display: flex; align-items: center; gap: 3px; }
+
+        /* Custom 3-Dots Dropdown */
+        .msg-dropdown { position: relative; }
+        .msg-dropdown i.fa-ellipsis-vertical { color: #8696a0; padding: 0 5px; cursor: pointer; font-size: 15px; }
+        
+        .dropdown-content {
+            display: none; position: absolute; right: 0; top: 100%; margin-top: 5px;
+            background-color: #ffffff; min-width: 130px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15); border-radius: 8px; z-index: 100; overflow: hidden;
+        }
+        .dropdown-content.show { display: block; }
+        
+        .dropdown-item {
+            padding: 10px 15px; font-size: 13px; font-weight: 600;
+            cursor: pointer; display: flex; align-items: center; gap: 8px; color: #475569; transition: background 0.2s;
+        }
+        .dropdown-item:hover { background-color: #f8fafc; color: #0f172a; }
+        .dropdown-item.text-danger:hover { background-color: #fee2e2; }
+
+        /* Quoted Reply CSS */
+        .quoted-reply {
+            background-color: rgba(0,0,0,0.04); border-left: 4px solid #10b981;
+            padding: 8px 10px; margin-bottom: 8px; border-radius: 4px 8px 8px 4px; cursor: pointer;
+        }
+        .quoted-reply-author { font-size: 11px; font-weight: 700; color: #10b981; margin-bottom: 2px; display: block; }
+        .quoted-reply-text { font-size: 13px; color: #54656f; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; max-width: 100%; }
+
+        /* Input Area Footer */
+        .chat-input-wrapper {
+            background-color: #f0f2f5; padding: 12px 20px;
+            display: flex; align-items: center; gap: 15px;
+            border-top: 1px solid #d1d7db;
+        }
+        .chat-input-wrapper textarea {
+            flex-grow: 1; border: none; border-radius: 20px; padding: 12px 20px;
+            font-size: 15px; background: #ffffff; resize: none; overflow: hidden;
+            box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+        }
+        .chat-input-wrapper textarea:focus { outline: none; }
+        .send-btn {
+            background-color: #00a884; color: white; border: none;
+            width: 48px; height: 48px; border-radius: 50%; display: flex;
+            align-items: center; justify-content: center; font-size: 18px;
+            cursor: pointer; transition: background 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .send-btn:hover { background-color: #008f6f; }
+    </style>
+
+</head>
+
+<body class="font-jakarta theme1">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper"><div class="loader"></div></div>
+
+    <div id="main_content">
+        <!-- TOP HEADER -->
+        <div id="header_top" class="header_top">
+            <div class="container">
+                <div class="hleft"><div class="dropdown"></div></div>
+                <div class="hright">
+                    <div class="dropdown">
+                        <a href="javascript:void(0)" class="nav-link icon menu_toggle" data-toggle="tooltip" data-placement="right" title="Toggle">
+                            <i class="fa-solid fa-bars"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LEFT SIDEBAR -->
+        <div id="left-sidebar" class="sidebar">
+            <h5 class="brand-name">Kalsun Groups <a href="javascript:void(0)" class="menu_option float-right"><i class="fa-solid fa-table-cells-large" style="color: #000000;"></i></a></h5>
+            <nav id="left-sidebar-nav" class="sidebar-nav">
+                <ul class="metismenu">
+                    <li class="g_heading">Directories</li>
+                    <li>
+                        <a href="javascript:void(0)" class="has-arrow arrow-c" id="sidebar-hrms"><i class="fa-solid fa-rocket" style="color: #74c0fc;"></i><span>HRMS</span></a>
+                        <ul>
+                            <li id="sidebar-dashboard"><a href="../index.html"><span>Dashboard</span></a></li>
+                            <!-- I left a few sample menu items, rest is controlled by your JS -->
+                            <li class="active"><a href="discussion.html"><span>Management Discussion</span></a></li>
+                            <li id="sidebar-employee"><a href="hr-employee.html"><span>Employee</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- MAIN PAGE CONTENT (THE RED BOX AREA) -->
+        <div class="page">
+            <div class="chat-layout">
+                
+                <!-- Chat Header -->
+                <div class="chat-header">
+                    <div>
+                        <h5 class="mb-0 font-weight-bold"><i class="fa-solid fa-users mr-2 text-success"></i>Management Discussion</h5>
+                        <small class="text-muted" id="welcomeMessage">Connecting...</small>
+                    </div>
+                    <button class="btn btn-outline-secondary btn-sm" onclick="window.history.back()"><i class="fa-solid fa-arrow-left mr-1"></i> Back</button>
+                </div>
+
+                <!-- Chat Messages Feed -->
+                <div id="feed">
+                    <!-- Messages will load here dynamically -->
+                </div>
+
+                <!-- Chat Input Box -->
+                <div class="chat-input-wrapper" id="new-thread-container">
+                    <textarea id="new-thread-text" rows="1" placeholder="Type a message (Press Enter to send)"></textarea>
+                    <button class="send-btn" onclick="postThread()" title="Send"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../assets/bundles/lib.vendor.bundle.js"></script>
+    <script src="../assets/js/core.js"></script>
+    <script src="../assets/js/page/theme1-js.js"></script>
+    
+    <script>
+        // ==========================================
+        // 1. GLOBAL VARIABLES & INITIALIZATION
+        // ==========================================
+        const currentUser = {
+            id: localStorage.getItem('loggedInUserId') || 0,
+            name: localStorage.getItem('loggedInUserName') || 'Unknown',
+            role: localStorage.getItem('loggedInUserRole') || 'USER'
+        };
+
+        if (!localStorage.getItem('loggedInUserName')) {
+            window.location.replace('./login.html');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set Subtitle to show role
+            document.getElementById('welcomeMessage').innerText = `Logged in as: ${currentUser.name} (${currentUser.role})`;
+
+            // Hide input bar for unauthorized roles
+            const allowedToStartThreads = ['ADMIN', 'CEO', 'VP', 'DIRECTOR', 'GENERAL MANAGER', 'HR']; 
+            if (!allowedToStartThreads.includes(currentUser.role.toUpperCase())) {
+                document.getElementById('new-thread-container').style.display = 'none';
+            }
+
+            // Close 3-dots menus when clicking outside
+            document.addEventListener('click', () => {
+                document.querySelectorAll('.dropdown-content').forEach(menu => menu.classList.remove('show'));
+            });
+
+            // Auto-resize textarea logic
+            const tx = document.getElementById("new-thread-text");
+            tx.setAttribute("style", "height:" + (tx.scrollHeight) + "px;overflow-y:hidden;");
+            tx.addEventListener("input", OnInput, false);
+
+            function OnInput() {
+                this.style.height = "auto";
+                this.style.height = (this.scrollHeight) + "px";
+                if(this.scrollHeight > 100) this.style.overflowY = "auto";
+            }
+
+            // Enter to send logic
+            tx.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    postThread();
+                }
+            });
+
+            // Load Chat
+            fetchComments();
+        });
+
+        // ==========================================
+        // 2. CHAT API LOGIC
+        // ==========================================
+        async function apiCall(endpoint, method = 'GET', body = null) {
+            const headers = {
+                'Content-Type': 'application/json',
+                'x-user-id': currentUser.id,
+                'x-user-name': currentUser.name,
+                'x-user-role': currentUser.role
+            };
+            const options = { method, headers };
+            if (body) options.body = JSON.stringify(body);
+            try {
+                const res = await fetch(`http://localhost:3000${endpoint}`, options); 
+                const data = await res.json();
+                if (!res.ok) throw new Error(data.error || "Action Failed");
+                return data;
+            } catch (err) {
+                Swal.fire({ icon: 'error', title: 'Oops...', text: err.message });
+                throw err;
+            }
+        }
+
+        async function fetchComments() {
+            const feed = document.getElementById('feed');
+            
+            const comments = await apiCall('/api/comments');
+            feed.innerHTML = '';
+
+            if (!comments || comments.length === 0) {
+                feed.innerHTML = `<div class="text-center py-5 mt-5"><i class="fa-regular fa-comments fa-3x text-muted mb-3"></i><h5 class="text-muted">Start the conversation</h5></div>`;
+                return;
+            }
+
+            const commentMap = {};
+            comments.forEach(c => commentMap[c.id] = c);
+
+            comments.forEach(comment => {
+                let parentComment = null;
+                if (comment.parent_id && commentMap[comment.parent_id]) {
+                    parentComment = commentMap[comment.parent_id];
+                }
+                feed.appendChild(buildCommentHTML(comment, parentComment));
+            });
+
+            // Scroll to bottom smoothly
+            setTimeout(() => {
+                feed.scrollTo({ top: feed.scrollHeight, behavior: 'smooth' });
+            }, 100);
+        }
+
+        // ==========================================
+        // 3. UI RENDERING & BUILDER
+        // ==========================================
+        function toggleMenu(id, event) {
+            event.stopPropagation(); 
+            document.querySelectorAll('.dropdown-content').forEach(menu => {
+                if (menu.id !== `menu-${id}`) menu.classList.remove('show');
+            });
+            document.getElementById(`menu-${id}`).classList.toggle('show');
+        }
+
+        function getAvatarColor(name) {
+            const colors = ['#f56565', '#ed8936', '#ecc94b', '#48bb78', '#38b2ac', '#4299e1', '#667eea', '#9f7aea', '#ed64a6'];
+            let hash = 0;
+            for (let i = 0; i < name.length; i++) hash = name.charCodeAt(i) + ((hash << 5) - hash);
+            return colors[Math.abs(hash) % colors.length];
+        }
+
+        function buildCommentHTML(comment, parentComment) {
+            const div = document.createElement('div');
+            div.id = `msg-${comment.id}`; 
+            
+            const isOwner = String(comment.author_id) === String(currentUser.id);
+            div.className = `comment-node ${isOwner ? 'msg-right' : 'msg-left'}`;
+
+            const initial = comment.author_name ? comment.author_name.charAt(0).toUpperCase() : '?';
+            const avatarColor = getAvatarColor(comment.author_name);
+
+            let badgeClass = 'role-OTHER';
+            const r = comment.author_role.toUpperCase();
+            if (r.includes('CEO') || r.includes('VP')) badgeClass = 'role-CEO';
+            else if (r.includes('ADMIN')) badgeClass = 'role-ADMIN';
+            else if (r.includes('GENERAL') || r.includes('GM')) badgeClass = 'role-GM';
+
+            const timeStr = new Date(comment.created_at).toLocaleString([], {hour:'2-digit', minute:'2-digit'});
+
+            let isEdited = false;
+            let editedTimeStr = '';
+            if (comment.updated_at) {
+                isEdited = true;
+                editedTimeStr = new Date(comment.updated_at).toLocaleString([], {hour:'2-digit', minute:'2-digit'});
+            }
+
+            // Ticks: Blue if read by admin, gray if not.
+            const tickColor = comment.is_read ? '#53bdeb' : '#8696a0';
+            const tickTitle = comment.is_read ? 'Seen' : 'Delivered';
+
+            let quotedHTML = '';
+            if (parentComment) {
+                quotedHTML = `
+                    <div class="quoted-reply" onclick="document.getElementById('msg-${parentComment.id}').scrollIntoView({behavior: 'smooth', block: 'center'})">
+                        <span class="quoted-reply-author">${parentComment.author_name}</span>
+                        <span class="quoted-reply-text">${parentComment.text}</span>
+                    </div>
+                `;
+            }
+
+            div.innerHTML = `
+                <div class="avatar-circle" style="background-color: ${avatarColor};">${initial}</div>
+                <div class="comment-content">
+                    
+                    <div class="meta-header">
+                        <div class="d-flex align-items-center">
+                            <span class="user-name">${comment.author_name}</span>
+                            <span class="role-badge ${badgeClass}">${comment.author_role}</span>
+                        </div>
+                        
+                        <!-- 3 Dots Menu -->
+                        <div class="msg-dropdown">
+                            <i class="fa-solid fa-ellipsis-vertical" onclick="toggleMenu(${comment.id}, event)"></i>
+                            <div class="dropdown-content" id="menu-${comment.id}">
+                                <div class="dropdown-item" onclick="replyTo(${comment.id})"><i class="fa-solid fa-reply text-primary"></i> Reply</div>
+                                ${isOwner ? `
+                                    <div class="dropdown-item" onclick="editComment(${comment.id})"><i class="fa-solid fa-pen text-warning"></i> Edit</div>
+                                    <div class="dropdown-item text-danger" onclick="deleteComment(${comment.id})"><i class="fa-solid fa-trash"></i> Delete</div>
+                                ` : ''}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    ${quotedHTML}
+
+                    <p id="text-${comment.id}" class="comment-text">${comment.text}</p>
+                    
+                    <div class="msg-footer">
+                        ${isEdited ? `<span class="edited-tag"><i class="fa-solid fa-pen" style="font-size: 9px;"></i> Edited ${editedTimeStr}</span> • ` : ''}
+                        <span>${timeStr}</span>
+                        ${isOwner ? `<i class="fa-solid fa-check-double ml-1" style="color: ${tickColor};" title="${tickTitle}"></i>` : ''}
+                    </div>
+                    
+                </div>
+            `;
+            return div;
+        }
+
+        // ==========================================
+        // 4. CHAT ACTIONS (POST, REPLY, EDIT, DEL)
+        // ==========================================
+        async function postThread() {
+            const input = document.getElementById('new-thread-text');
+            const text = input.value;
+            if (!text.trim()) return;
+            
+            input.value = '';
+            input.style.height = 'auto'; // reset height after send
+            
+            await apiCall('/api/comments', 'POST', { text });
+            fetchComments();
+        }
+
+        async function replyTo(parentId) {
+            const { value: text } = await Swal.fire({
+                title: 'Write a Reply', input: 'textarea', showCancelButton: true,
+                confirmButtonText: 'Send', confirmButtonColor: '#00a884',
+                inputValidator: (v) => !v || !v.trim() ? 'Cannot be empty' : null
+            });
+            if (text) {
+                await apiCall(`/api/comments/${parentId}/reply`, 'POST', { text });
+                fetchComments();
+            }
+        }
+
+        async function editComment(id) {
+            const oldText = document.getElementById(`text-${id}`).innerText;
+            const { value: text } = await Swal.fire({
+                title: 'Edit Message', input: 'textarea', inputValue: oldText, showCancelButton: true,
+                confirmButtonText: 'Save', confirmButtonColor: '#f59e0b',
+                inputValidator: (v) => !v || !v.trim() ? 'Cannot be empty' : null
+            });
+            if (text && text.trim() !== oldText.trim()) {
+                await apiCall(`/api/comments/${id}`, 'PUT', { text });
+                fetchComments();
+            }
+        }
+
+        async function deleteComment(id) {
+            const result = await Swal.fire({
+                title: 'Delete Message?', text: 'This will be deleted for everyone.',
+                icon: 'warning', showCancelButton: true, confirmButtonColor: '#dc2626', confirmButtonText: 'Delete'
+            });
+            if (result.isConfirmed) {
+                await apiCall(`/api/comments/${id}`, 'DELETE');
+                fetchComments();
+            }
+        }
+    </script>
+</body>
+</html> 

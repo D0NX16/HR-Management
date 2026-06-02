@@ -1,7 +1,13 @@
 {
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "bootstrap": "^5.3.8",
     "bootstrap-icons": "^1.13.1",
-    "fontawesome": "^5.6.3"
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.4",
+    "express": "^5.2.1",
+    "fontawesome": "^5.6.3",
+    "multer": "^2.0.2",
+    "mysql2": "^3.16.3"
   }
 }

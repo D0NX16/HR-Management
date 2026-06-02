@@ -7,14 +7,14 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="icon" href="../Index/assets/logo/logo.png" type="image/x-icon" />
+    <link rel="icon" href="../assets/images/icon/logo.png" type="image/x-icon" />
 
     <title>HR Users</title>
-<!-- Bootstrap Core and vandor -->
+    <!-- Bootstrap Core and vandor -->
     <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../assets/plugins/sweetalert/sweetalert.html">
-    <link rel="stylesheet" href="../assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.html">
-    <link rel="stylesheet" href="../assets/plugins/dropify/css/dropify.min.html">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <link rel="stylesheet" href="../assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css"/>
+    <link rel="stylesheet" href="../assets/plugins/dropify/css/dropify.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 
     <!-- Core css -->
@@ -34,7 +34,7 @@
         <div id="header_top" class="header_top">
             <div class="container">
                 <div class="hleft">
-                    <a class="header-brand" href="index.html"><i class="fe fe-command brand-logo"></i></a>
+                    <a class="header-brand" href="../index.html"><i class="fe fe-command brand-logo"></i></a>
                     <div class="dropdown">
                         <a href="page-search.html" class="nav-link icon" data-toggle="tooltip" data-placement="right"
                             title="Search">
@@ -130,9 +130,6 @@
                                 <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
                             </svg>
                         </a>
-                        <a href="javascript:void(0)" class="nav-link user_btn" data-toggle="tooltip"
-                            data-placement="right" title="User Menu" /><img class="avatar"
-                            src="../assets/images/user.jpg" alt=""></a>
                         <a href="javascript:void(0)" class="nav-link icon menu_toggle" data-toggle="tooltip"
                             data-placement="right" title="Toggle">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -186,7 +183,7 @@
                         <li class="list-group-item mb-2">
                             <p>Default Theme <span
                                     class="badge badge-success font-13 font-weight-normal ml-1">New</span></p>
-                            <a href="index.html"><img src="../assets/images/themes/default.png" class="img-fluid" /></a>
+                            <a href="../index.html"><img src="../assets/images/themes/default.png" class="img-fluid" /></a>
                         </li>
                         <li class="list-group-item mb-2">
                             <p>Night Mode Theme</p>
@@ -321,38 +318,91 @@
             <nav id="left-sidebar-nav" class="sidebar-nav">
                 <ul class="metismenu">
                     <li class="g_heading">Directories</li>
-                    <li class="active">
+                    <li>
+                        <a href="javascript:void(0)" class="has-arrow arrow-c" id="sidebar-hrms"><i
+                                class="fa-solid fa-rocket" style="color: #74c0fc;"></i><span>HRMS</span></a>
+                        <ul>
+                            <li id="sidebar-dashboard"><a href="../index.html"><span>Dashboard</span></a></li>
+                            <li class="active" id="sidebar-users"><a href="hr-users.html"><span>Users</span></a></li>
+                            <li id="sidebar-departments"><a href="hr-departments.html"><span>Departments</span></a></li>
+                            <li id="sidebar-employee"><a href="hr-employee.html"><span>Employee</span></a></li>
+                            <li id="sidebar-attendance"><a href="hr-attendance.html"><span>Attendance</span></a></li>
+                            <li id="sidebar-payroll"><a href="hr-payroll.html"><span>Payroll</span></a></li>
+                            <li id="sidebar-expenses"><a href="hr-expenses.html"><span>Expenses</span></a></li>
+                            <li id="sidebar-performance"><a href="hr-employee_perfomance.html"><span>Emp Performance</span></a></li>
+                            <li id="sidebar-appraisal"><a href="hr-appraisal_flow.html"><span>Appraisal Flow</span></a></li>
+                            <li id="sidebar-hr-reports"><a href="#"><span>HR Report</span></a>
+                                <ul>
+                                    <li><a class="text-muted" href="hr-daily-reports.html"><span>HR Task Reports</span></a></li>
+                                    <li><a class="text-muted" href="hr-reports.html"><span>HR Interview Reports</span></a></li>
+                                    <li><a class="text-muted" href="hr-timesheet.html"><span>HR Time Sheet</span></a></li>
+                                    <li><a class="text-muted" href="hr-interview-schedule.html"><span>Interview Schedules</span></a></li>
+                                    <li><a class="text-muted" href="hr-appointed-Canditates.html"><span>Appointed Candidates</span></a></li>
+                                    <li><a class="text-muted" href="hr-resigned-candidates.html"><span>Resigned Candidates</span></a></li>
+                                </ul>
+                            </li>
+                            <li id="sidebar-admin-reports"><a href="hr-admin-reports.html"><span>Admin Report</span></a></li>
+                            <li id="sidebar-other-portals"><a href="other-portals.html"><span>Other Portals</span></a></li>
+                            <li id="sidebar-payment-bills"><a href="hr-payment-bills.html"><span>Payment Bills</span></a> </li>
+                            <li id="sidebar-employee-task"><a href="employee-Task.html"><span>Employee Task</span></a></li>
+                            <li id="sidebar-leave-request"><a href="leave-Request.html"><span>Leave Request</span></a></li>
+                        </ul>
+                    </li>
+
+                    <li id="sidebar-auditor">
                         <a href="javascript:void(0)" class="has-arrow arrow-c"><i class="fa-solid fa-rocket"
-                                style="color: #74c0fc;"></i><span>HRMS</span></a>
+                                style="color: #74c0fc;"></i><span>Auditor</span></a>
                         <ul>
-                            <li><a href="index.html"><span>Dashboard</span></a></li>
-                            <li class="active"><a href="hr-users.html"><span>Users</span></a></li>
-                            <li><a href="hr-departments.html"><span>Departments</span></a></li>
-                            <li><a href="hr-employee.html"><span>Employee</span></a></li>
-                            <li><a href="hr-holidays.html"><span>Holidays</span></a></li>
-                            <li><a href="hr-payroll.html"><span>Payroll</span></a></li>
-                            <li><a href="hr-expenses.html"><span>expenses</span></a></li>
-                            <li><a href="hr-report.html"><span>Report</span></a></li>
+                            <li id="sidebar-working">
+                                <a><span>Operational Dashboard</span></a>
+                                <ul>
+                                    <li id="sidebar-client-id"><a href="clientID.html"><span>Client ID</span></a></li>
+                                    <li id="sidebar-quotation-id"><a href="quotationID.html"><span>Quotation ID</span></a></li>
+                                    <li id="sidebar-proforma"><a href="proforma.html"><span>Proforma Voice</span></a></li>
+                                    <li id="sidebar-document-tracker"><a href="documentCollection.html"><span>Document Tracker</span></a></li>
+                                    <li id="sidebar-backend-id"><a href="backend_id.html"><span>Backend ID</span></a></li>
+                                    <li id="sidebar-history-license"><a href="history-license.html"><span>History of license</span></a></li>
+                                    <li id="sidebar-output"><a href="outputSheet.html"><span>Daily Report</span></a></li>
+                                    <li id="sidebar-enquiry"><a href="enquiry.html"><span>Enquiry</span></a></li>
+                                    <li id="sidebar-audit-quotation"><a href="audit_quotation.html"><span>Quotation </span></a></li>
+                                    <li id="sidebar-audit-appointments"><a href="audit_appointments.html"><span>Appoinment</span></a></li>
+                                    <li id="sidebar-operators"><a href="operators.html"><span>My Operator</span></a></li>
+                                    <li id="sidebar-pg-enquiry"><a href="pg_enquiry.html"><span>PG-Enquiry</span></a></li>
+                                    <li id="sidebar-sm-enquiries"><a href="sm_enquiries.html"><span>SM-Enquiries</span></a></li>
+                                    <li id="sidebar-audit-weekly-report"><a href="audit_weekly_report.html"><span>Weekly Report Sheet</span></a></li>
+                                    <li id="sidebar-phone-audit-report"><a href="phone_audit_report.html"><span>Phone Audit</span></a></li>
+                                    <li id="sidebar-audit-base"><a href="audit_base.html"><span>Base</span></a></li>
+                                   <li id="sidebar-advisor-entry"><a href="advisor_entry_sheet.html"><span>Advisor Entry</span></a></li>
+                                    <li id="sidebar-social-report"><a href="social-media-report.html"><span>Social Media Report</span></a></li>
+                                    <li id="sidebar-advisor-performance-tracker"><a href="advisor_performance_tracker.html"><span>Advisor Performance Tracker</span></a></li>
+                                    <li id="sidebar-performance-tracker"><a href="performance_tracker.html"><span>Performance Tracker</span></a></li>
+                                </ul>
+                            </li>
+
+                            <li id="sidebar-backend-report">
+                                <a href="hac_backend.html"><span>HAC Backend Report</span></a>
+                            </li>
+
+                            <li id="sidebar-financial-report">
+                                <a><span>Financial Report</span></a>
+                                <ul>
+                                    <li id="sidebar-bill-supply"><a href="bill-supply.html"><span>Bill of supply</span></a></li> 
+                                    <li id="sidebar-accounting-log"><a href="accounting_log.html"><span>Accounting Log</span></a></li>             
+                                </ul>
+                            </li>
+
+                            <li id="sidebar-sop">
+                                <a><span>SOP Tracker</span></a>
+                                <ul>    
+                                    <li id="sidebar-qc"><a href="Qc-sheet.html"><span>QC - SHEET</span></a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="javascript:void(0)" class="has-arrow arrow-c"><i class="fa-solid fa-mug-hot" style="color: #74c0fc;"></i><span>Project</span></a>
-                        <ul>
-                            <li><a href="project-index.html">Dashboard</a></li>
-                            <li><a href="project-list.html">Project list</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)" class="has-arrow arrow-c"><i class="fa-solid fa-briefcase" style="color: #74c0fc;"></i><span>New
-                                Candidates</span></a>
-                        <ul>
-                            <li><a href="job-index.html"><span>Job Dashboard</span></a></li>
-                            <li><a href="job-positions.html"><span>Positions</span></a></li>
-                            <li><a href="job-applicants.html"><span>Applicants</span></a></li>
-                            <li><a href="job-resumes.html"><span>Resumes</span></a></li>
-                            <li><a href="job-settings.html"><span>Settings</span></a></li>
-                        </ul>
-                    </li>
+                     <li id="sidebar-management">
+                        <a href="management-discussion.html" ><i class="fa-solid fa-rocket"
+                                style="color: #74c0fc;"></i><span> Discussion</span></a>
+                    </li> 
                 </ul>
             </nav>
         </div>
@@ -373,48 +423,6 @@
                             </div>
                         </div>
                         <div class="right">
-                            <ul class="nav nav-pills">
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                                        aria-haspopup="true" aria-expanded="false">Language</a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#"><img class="w20 mr-2"
-                                                src="https://puffintheme.com/template/epic-pro/assets/images/flags/us.svg">English</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#"><img class="w20 mr-2"
-                                                src="https://puffintheme.com/template/epic-pro/assets/images/flags/es.svg">Spanish</a>
-                                        <a class="dropdown-item" href="#"><img class="w20 mr-2"
-                                                src="https://puffintheme.com/template/epic-pro/assets/images/flags/jp.svg">japanese</a>
-                                        <a class="dropdown-item" href="#"><img class="w20 mr-2"
-                                                src="https://puffintheme.com/template/epic-pro/assets/images/flags/bl.svg">France</a>
-                                    </div>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                                        aria-haspopup="true" aria-expanded="false">Reports</a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#"><i
-                                                class="dropdown-icon fa fa-file-excel-o"></i> MS Excel</a>
-                                        <a class="dropdown-item" href="#"><i
-                                                class="dropdown-icon fa fa-file-word-o"></i> MS Word</a>
-                                        <a class="dropdown-item" href="#"><i class="dropdown-icon fa fa-file-pdf-o"></i>
-                                            PDF</a>
-                                    </div>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                                        aria-haspopup="true" aria-expanded="false">Project</a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Graphics Design</a>
-                                        <a class="dropdown-item" href="#">Angular Admin</a>
-                                        <a class="dropdown-item" href="#">PSD to HTML</a>
-                                        <a class="dropdown-item" href="#">iOs App Development</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Home Development</a>
-                                        <a class="dropdown-item" href="#">New Blog post</a>
-                                    </div>
-                                </li>
-                            </ul>
                             <div class="notification d-flex">
                                 <div class="dropdown d-flex">
                                     <a class="nav-link icon d-none d-md-flex btn btn-default btn-icon ml-1"
@@ -568,19 +576,25 @@
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                         <a class="dropdown-item" href="page-profile.html"><i
-                                                class="dropdown-icon fe fe-user"></i> Profile</a>
+                                                class="dropdown-icon fa-solid fa-user-tie" style="color: #8c8c8c;"></i>
+                                            Profile</a>
                                         <a class="dropdown-item" href="app-setting.html"><i
-                                                class="dropdown-icon fe fe-settings"></i> Settings</a>
+                                                class="dropdown-icon fa-solid fa-gear" style="color: #8c8c8c;"></i>
+                                            Settings</a>
                                         <a class="dropdown-item" href="javascript:void(0)"><span
                                                 class="float-right"><span class="badge badge-primary">6</span></span><i
-                                                class="dropdown-icon fe fe-mail"></i> Inbox</a>
+                                                class="dropdown-icon fa-solid fa-envelope" style="color: #8c8c8c;"></i>
+                                            Inbox</a>
                                         <a class="dropdown-item" href="javascript:void(0)"><i
-                                                class="dropdown-icon fe fe-send"></i> Message</a>
+                                                class="dropdown-icon fa-solid fa-paper-plane"
+                                                style="color: #8c8c8c;"></i> Message</a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="javascript:void(0)"><i
-                                                class="dropdown-icon fe fe-help-circle"></i> Need help?</a>
+                                                class="dropdown-icon fa-solid fa-circle-question"
+                                                style="color: #8c8c8c;"></i> Need help?</a>
                                         <a class="dropdown-item" href="login.html"><i
-                                                class="dropdown-icon fe fe-log-out"></i> Sign out</a>
+                                                class="dropdown-icon fa-solid fa-arrow-right-from-bracket"
+                                                style="color: #8c8c8c;"></i> Sign out</a>
                                     </div>
                                 </div>
                             </div>
@@ -598,7 +612,9 @@
                                     href="#user-add">Add New</a></li>
                         </ul>
                         <div class="header-action">
-                            <button type="button" class="btn btn-primary"><i class="fe fe-plus mr-2"></i>Add</button>
+                            <button type="button" class="btn btn-primary"
+                                onclick="$('.nav-tabs a[href=\'#user-add\']').tab('show');"><i
+                                    class="fe fe-plus mr-2"></i>Add New</button>
                         </div>
                     </div>
                 </div>
@@ -733,23 +749,225 @@
                                                 </table>
                                             </div>
 
-                                            <button type="button" class="btn btn-primary">Add</button>
-                                            <button type="button" class="btn btn-secondary"
-                                                data-dismiss="modal">CLOSE</button>
+                                            <button type="button" class="btn btn-primary"
+                                                id="btn-save-user">Add</button> <button type="button"
+                                                class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- Edit User Modal -->
+                        <div class="modal fade" id="editUserModal" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Edit User</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <input type="hidden" id="edit-user-id">
+                                        <div class="form-group">
+                                            <label>Name</label>
+                                            <input type="text" class="form-control" id="edit-user-name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Email</label>
+                                            <input type="email" class="form-control" id="edit-user-email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Role</label>
+                                            <select class="form-control" id="edit-user-role">
+                                                <option value="Super Admin">Super Admin</option>
+                                                <option value="Admin">Admin</option>
+                                                <option value="Employee">Employee</option>
+                                                <option value="HR Admin">HR Admin</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>New Password <small>(Leave blank to keep current)</small></label>
+                                            <input type="password" class="form-control" id="edit-user-password">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary" onclick="updateUser()">Save
+                                            Changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-
+                        <script src="assets/js/page/dialogs.js"></script>
                         <script src="../assets/bundles/lib.vendor.bundle.js"></script>
-
-                        <script src="../assets/plugins/sweetalert/sweetalert.min.html"></script>
-
                         <script src="../assets/js/core.js"></script>
-                        <script src="assets/js/page/dialogs.html"></script>
                         <script src="assets/js/page/hr-users.js"></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+
+                        <script>
+
+ document.addEventListener('DOMContentLoaded', () => {
+            // 1. Retrieve User Details
+            const loggedInUserName = localStorage.getItem('loggedInUserName');
+            const loggedInUserRole = localStorage.getItem('loggedInUserRole'); // Ensure this is saved during login
+
+            const welcomeMessageElement = document.getElementById('welcomeMessage');
+
+            // 2. Set Welcome Message
+            if (loggedInUserName && welcomeMessageElement) {
+                welcomeMessageElement.textContent = `${loggedInUserName} (${loggedInUserRole})`;
+            } else if (welcomeMessageElement) {
+                welcomeMessageElement.textContent = 'Guest!';
+                // Optional: window.location.href = 'login.html';
+            }
+
+            // 3. Define Menu Permissions
+            // Keys must match the IDs we added to the HTML <li> tags
+                const allMenuIds = [
+           'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
+                'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
+                'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
+                'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
+                'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
+                'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
+                'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
+                'sidebar-sop', 'sidebar-qc' , 'sticky-actions' , 'hide-feature' , ' sidebar-social-report ', 'sidebar-advisor-performance-tracker' , 'sidebar-performance-tracker', 'sidebar-management'
+        ];
+
+        const rolePermissions = {
+                'HR': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                    'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                    'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals', 
+                    'sidebar-payment-bills', 'sidebar-leave-request' ,'sticky-actions' , 'hide-feature' ],
+                'ADMIN': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-attendance', 'sidebar-admin-reports', 
+                    'sidebar-payment-bills', 'sidebar-leave-request'],
+                'EMPLOYEE': [
+                    'sidebar-hrms', 'sidebar-departments', 'sidebar-employee-task', 'sidebar-leave-request' ],
+
+                'GENERAL MANAGER':['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
+                'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
+                'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
+                'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
+                'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
+                'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
+                'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
+                'sidebar-sop', 'sidebar-qc' , ' sidebar-social-report ', 'sidebar-advisor-performance-tracker' , 'sidebar-performance-tracker', 'sidebar-management'], 
+
+                'PROJECT MANAGER': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-departments', 'sidebar-employee', 
+                    'sidebar-performance', 'sidebar-leave-request' ,'sticky-actions' , 'hide-feature'
+                ],
+                'ADVISOR': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-working', 'sidebar-financial-report',
+                    'sidebar-client-id', 'sidebar-quotation-id', 'sidebar-proforma', 'sidebar-document-tracker', 
+                    'sidebar-backend-id', 'sidebar-bill-supply', 'sidebar-history-license', 'sidebar-backend-report', 
+                    'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments', 'sidebar-operators', 
+                    'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report', 'sidebar-phone-audit-report', 
+                    'sidebar-audit-base', 'sidebar-advisor-entry', 'sidebar-output' ,'sticky-actions' , 'hide-feature' , ' sidebar-social-report ', 'sidebar-advisor-performance-tracker' , 'sidebar-performance-tracker'
+                ],
+                'AUDIT PROJECT MANAGER': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-working', 'sidebar-financial-report', 
+                    'sidebar-sop', 'sidebar-backend-report', 'sidebar-enquiry', 'sidebar-audit-quotation', 
+                    'sidebar-audit-appointments', 'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 
+                    'sidebar-audit-weekly-report', 'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-qc', 
+                    'sidebar-advisor-entry', 'sidebar-output', 'sidebar-bill-supply', 'sidebar-accounting-log' , 'sticky-actions' , 'hide-feature' , ' sidebar-social-report ', 'sidebar-advisor-performance-tracker' , 'sidebar-performance-tracker' 
+                ],
+                'BACKEND PROJECT MANAGER': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-backend-report' , 'sticky-actions' , 'hide-feature' 
+                ],
+                'TEAM LEADER': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-financial-report', 
+                    'sidebar-accounting-log', 'sidebar-bill-supply' , 'sticky-actions' , 'hide-feature' 
+                ],
+                'BACK OFFICE EXECUTIVE': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-backend-report', 
+                    'sidebar-sop', 'sidebar-qc' ,'sticky-actions' , 'hide-feature'
+                ] ,
+                'VP' :['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
+                'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
+                'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
+                'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
+                'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
+                'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
+                'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
+                'sidebar-sop', 'sidebar-qc' , ' sidebar-social-report ', 'sidebar-advisor-performance-tracker' , 'sidebar-performance-tracker', 'sidebar-management'], 
+
+                'CEO' :['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
+                'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
+                'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
+                'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
+                'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
+                'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
+                'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
+                'sidebar-sop', 'sidebar-qc' , ' sidebar-social-report ', 'sidebar-advisor-performance-tracker' , 'sidebar-performance-tracker', 'sidebar-management']
+        };
+
+            // 4. Function to Filter Menu
+            function filterMenuByRole(role) {
+                // Normalize role string (handle 'Admin', 'admin', 'ADMIN')
+               
+                     const normalizedRole = role ? role.toUpperCase().trim() : '';
+
+                         console.log("Logged in role:", normalizedRole);
+
+
+                const allowedMenus = rolePermissions[normalizedRole] || [];
+
+                allMenuIds.forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) {
+                        if (allowedMenus.includes(id)) {
+                            el.style.display = 'block'; // Show
+                        } else {
+                            el.style.display = 'none';  // Hide
+                        }
+                    }
+                });
+            }
+
+            // 5. Execute Filter
+            if (loggedInUserRole) {
+                filterMenuByRole(loggedInUserRole);
+            } else {
+                // If no role found (not logged in), hide sensitive menus or redirect
+                // For now, let's hide everything except dashboard
+                allMenuIds.forEach(id => {
+                    if (id !== 'menu-dashboard') {
+                        const el = document.getElementById(id);
+                        if (el) el.style.display = 'none';
+                    }
+                });
+            }
+
+            // 6. Sign Out Logic
+            const signOutButton = document.querySelector('a[href="Html/Login.html"].dropdown-item');
+            if (signOutButton) {
+                signOutButton.addEventListener('click', () => {
+                    localStorage.removeItem('loggedInUserName');
+                    localStorage.removeItem('loggedInUserId');
+                    localStorage.removeItem('loggedInUserRole'); // Clear role on logout
+                });
+            }
+        });
+
+     </script>
 </body>
 
 </html>

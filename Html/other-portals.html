@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link rel="icon" href="../assets/images/icon/logo.png" type="image/x-icon" />
+    <title>Other Portals</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
+
+    <!-- Fonts & Icons -->
+    <link href="../assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css">
+
+    <!-- Plugins css -->
+    <link rel="stylesheet" href="../assets/plugins/charts-c3/c3.min.css" />
+
+    <!-- Core css -->
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/theme1.css" />
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+    <!-- Style Override to prevent broken icon boxes & Fix Modals -->
+    <style>
+        .metismenu ul a { color: #4d5052 !important; }
+        .metismenu .active>a { color: #3d78e3 !important; }
+        .metismenu .active ul li.active>a { color: #3d78e3 !important; font-weight: 600; background: transparent; }
+        .metismenu ul a:hover { color: #3d78e3 !important; }
+
+        /* --- FIX FOR MODAL VISIBILITY --- */
+        .modal { z-index: 1050 !important; }
+        .modal-backdrop { z-index: 1040 !important; }
+        .modal-content {
+            background-color: #ffffff !important;
+            color: #333333 !important;
+            border: 1px solid #ddd;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .modal-header {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .modal-body input.form-control {
+            background-color: #fff !important;
+            border: 1px solid #ced4da !important;
+            color: #495057 !important;
+        }
+        /* --- END FIX --- */
+    </style>
+</head>
+
+<body class="font-jakarta theme1">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader"></div>
+    </div>
+
+    <div id="main_content">
+
+        <!-- HEADER TOP -->
+        <div id="header_top" class="header_top">
+            <div class="container">
+                <div class="hleft"><div class="dropdown"></div></div>
+                <div class="hright">
+                    <div class="dropdown">
+                        <a href="javascript:void(0)" class="nav-link icon menu_toggle" data-toggle="tooltip" title="Toggle"><i class="fa fa-bars"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <div id="left-sidebar" class="sidebar">
+            <h5 class="brand-name">
+                Kalsun Groups
+                <a href="javascript:void(0)" class="menu_option float-right">
+                    <i class="fa-solid fa-table-cells-large" style="color: #000000;"></i>
+                </a>
+            </h5>
+
+            <nav id="left-sidebar-nav" class="sidebar-nav">
+                <ul class="metismenu">
+
+                    <li class="g_heading">Directories</li>
+
+                    <!-- HRMS -->
+                    <li id="sidebar-hrms">
+                        <a href="javascript:void(0)" class="has-arrow arrow-c">
+                            <i class="fa-solid fa-rocket" style="color: #74c0fc;"></i>
+                            <span>HRMS</span>
+                        </a>
+                        <ul>
+                            <li id="sidebar-dashboard"><a href="../index.html">Dashboard</a></li>
+                            <li id="sidebar-users"><a href="./hr-users.html">Users</a></li>
+                            <li id="sidebar-departments"><a href="./hr-departments.html">Departments</a></li>
+                            <li id="sidebar-employee"><a href="./hr-employee.html">Employee</a></li>
+                            <li id="sidebar-attendance"><a href="./hr-attendance.html">Attendance</a></li>
+                            <li id="sidebar-payroll"><a href="./hr-payroll.html">Payroll</a></li>
+                            <li id="sidebar-expenses"><a href="./hr-expenses.html">Expenses</a></li>
+                            <li id="sidebar-performance"><a href="./hr-employee_perfomance.html">Emp
+                                    Performance</a></li>
+                            <li id="sidebar-appraisal"><a href="./hr-appraisal_flow.html">Appraisal Flow</a></li>
+
+                            <!-- HR Reports -->
+                            <li id="sidebar-hr-reports">
+                                <a href="javascript:void(0)">HR Report</a>
+                                <ul>
+                                    <li><a href="./hr-daily-reports.html">HR Task Reports</a></li>
+                                    <li><a href="./hr-reports.html">HR Interview Reports</a></li>
+                                    <li><a href="./hr-timesheet.html">HR Time Sheet</a></li>
+                                    <li><a href="./hr-interview-schedule.html">Interview Schedules</a></li>
+                                    <li><a href="./hr-appointed-Canditates.html">Appointed Candidates</a></li>
+                                    <li><a href="./hr-resigned-candidates.html">Resigned Candidates</a></li>
+                                </ul>
+                            </li>
+                            <li id="sidebar-admin-reports"><a href="./hr-admin-reports.html">Admin Report</a></li>
+                            <li id="sidebar-other-portals" class="active"><a href="./other-portals.html">Other Portals</a></li>
+                            <li id="sidebar-payment-bills"><a href="./hr-payment-bills.html">Payment Bills</a></li>
+                            <li id="sidebar-employee-task"><a href="./employee-Task.html">Employee Task</a></li>
+                            <li id="sidebar-leave-request"><a href="./leave-Request.html">Leave Request</a></li>
+                            <li id="sidebar-daily-report"><a href="./daily-task.html">Daily Report</a></li>
+
+                            <!-- Asset List -->
+                            <li id="sidebar-asset-list">
+                                <a href="javascript:void(0)">Asset List</a>
+                                <ul>
+                                    <li><a href="./Asset_Master_Register.html">Asset Master Register</a></li>
+                                    <li><a href="./branch_asset_summary.html">Branch Asset Summary</a></li>
+                                    <li><a href="./asset_issue_register.html">Asset Issue Register</a></li>
+                                    <li><a href="./asset_movement_register.html">Asset Movement Register</a></li>
+                                    <li><a href="./asset_maintenance_log.html">Asset Maintenance Log</a></li>
+                                    <li><a href="./asset_verification.html">Asset Verification</a></li>
+                                    <li><a href="./asset_disposal_register.html">Asset Disposal Register</a></li>
+                                </ul>
+                            </li>
+
+                            <li id="sidebar-bills-parent">
+                                <a href="javascript:void(0)">Bills</a>
+                                <ul>
+                                    <li><a href="./eb_bill.html">EB Bills</a></li>
+                                    <li><a href="./recharge_bill.html">Mobile Recharge Bills</a></li>
+                                    <li><a href="./internet-bill.html"> Internet Bills</a></li>
+                                    <li><a href="./rent_payment.html"> Rent Payments</a></li>
+                                    <li><a href="./vendor_payment.html">Vendor Payment</a></li>
+                                    <li><a href="./petrol_Allowance.html">Petrol Allowance</a></li>
+                                </ul>
+                            </li>
+
+                              <li id="sidebar-vendor-directory"><a href="./vendor_directory.html">Vendor Directory</a></li>
+                              <li id="sidebar-business-report"><a href="./business_report.html">Business Report</a></li>
+                              <li id="sidebar-compliance-tracker"><a href="./compliance_tracker.html">Compliance Tracker</a></li>
+                              <li id="sidebar-inventory"><a href="./inventory.html">Inventory Tracker</a></li>
+                              <li id="sidebar-meeting"><a href="./meeting.html">Meeting Tracker</a></li>
+                              <li id="sidebar-software-access"><a href="./software_access.html">Software Access</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- ===== MAIN PAGE CONTENT ===== -->
+        <div class="page">
+            
+            <div id="page_top" class="section-body top_dark sticky-top">
+                <div class="container-fluid">
+                    <div class="page-header">
+                        <div class="left">
+                            <h1 class="page-title">Other Portals</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="page-header-bar mt-2 mb-3">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                            <li class="breadcrumb-item active">Other Portals</li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <!-- Modern Card Layout -->
+                <div class="row clearfix mt-4">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Other Portals Records</h3>
+                                <div class="card-options">
+                                    <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addModal">
+                                        <i class="fa fa-plus"></i> Add New
+                                    </button>
+                                    <button class="btn btn-success btn-sm ml-2" data-toggle="modal" data-target="#uploadModal">
+                                        <i class="fa fa-file-excel-o"></i> Upload Excel
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover table-striped mb-0 text-nowrap">
+                                        <thead>
+                                            <tr>
+                                                <th>Date</th>
+                                                <th>Name</th>
+                                                <th>Role</th>
+                                                <th>Experience</th>
+                                                <th>Mobile Number</th>
+                                                <th>Location</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tableBody">
+                                            <tr><td colspan="6" class="text-center">Loading Records...</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Add Single Record -->
+    <div class="modal fade" id="addModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add Record</h5>
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addForm">
+                        <div class="form-group"><label>Date</label><input type="date" name="date" class="form-control" required></div>
+                        <div class="form-group"><label>Name</label><input type="text" name="name" class="form-control" required></div>
+                        <div class="form-group"><label>Role</label><input type="text" name="role" class="form-control" required></div>
+                        <div class="form-group"><label>Experience</label><input type="text" name="experience" class="form-control"></div>
+                        <div class="form-group"><label>Mobile</label><input type="text" name="mobile" class="form-control" required></div>
+                        <div class="form-group"><label>Location</label><input type="text" name="location" class="form-control"></div>
+                        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Upload Excel -->
+    <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Upload Excel File</h5>
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <form id="uploadForm">
+                        <div class="form-group">
+                            <label>Select .xlsx File</label>
+                            <input type="file" id="excelFile" class="form-control" accept=".xlsx, .xls" required>
+                            <small class="text-danger mt-2 d-block">* Excel headers must exactly match: Date, Name, Role, Experience, Mobile, Location</small>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-block">Upload & Import</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../assets/bundles/lib.vendor.bundle.js"></script>
+    <script src="../assets/js/core.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Retrieve User Details
+            const loggedInUserName = localStorage.getItem('loggedInUserName');
+            const loggedInUserRole = localStorage.getItem('loggedInUserRole'); 
+            
+            const welcomeMessageElement = document.getElementById('welcomeMessage');
+            if (loggedInUserName && welcomeMessageElement) {
+                welcomeMessageElement.textContent = `${loggedInUserName} (${loggedInUserRole || 'User'})`;
+            }
+
+            // 2. SIDEBAR MENU PERMISSIONS (Updated Unified Logic)
+ const allMenuIds = [
+                 'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report',
+                'sticky-actions' , 'hide-feature' ,'sidebar-asset-list','sidebar-bills-parent','sidebar-vendor-directory','sidebar-business-report','sidebar-compliance-tracker','sidebar-inventory','sidebar-meeting','sidebar-software-access'
+            ];
+
+            const rolePermissions = {
+                'HR': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                    'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                    'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals', 'sidebar-meeting',
+                    'sidebar-payment-bills', 'sidebar-leave-request' ,'sticky-actions' , 'hide-feature' ,'sidebar-daily-report' ],
+                'ADMIN': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-attendance', 'sidebar-admin-reports', 
+                    'sidebar-payment-bills', 'sidebar-leave-request' ,'hide-feature','sticky-actions','sidebar-asset-list','sidebar-bills-parent', 'sidebar-payroll','sidebar-business-report','sidebar-vendor-directory','sidebar-compliance-tracker','sidebar-meeting','sidebar-inventory','sidebar-software-access','sidebar-daily-report'],
+                'EMPLOYEE': [
+                    'sidebar-hrms', 'sidebar-departments', 'sidebar-employee-task', 'sidebar-leave-request','sticky-actions' , 'hide-feature'],
+
+                'GENERAL MANAGER':['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report','sidebar-asset-list','sidebar-bills-parent','sidebar-vendor-directory','sidebar-business-report','sidebar-compliance-tracker','sidebar-inventory','sidebar-meeting','sidebar-software-access'], 
+
+                'PROJECT MANAGER': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-departments', 'sidebar-employee', 
+                    'sidebar-performance', 'sidebar-leave-request' ,'sticky-actions' , 'hide-feature'
+                ],
+
+                   'AGM':['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report','sidebar-asset-list','sidebar-bills-parent','sidebar-vendor-directory','sidebar-business-report','sidebar-compliance-tracker','sidebar-inventory','sidebar-meeting','sidebar-software-access'],
+
+
+                'VP' :['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report','sidebar-asset-list','sidebar-bills-parent','sidebar-vendor-directory','sidebar-business-report','sidebar-compliance-tracker','sidebar-inventory','sidebar-meeting','sidebar-software-access'], 
+
+                'CEO' :['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report','sidebar-asset-list','sidebar-bills-parent','sidebar-vendor-directory','sidebar-business-report','sidebar-compliance-tracker','sidebar-inventory','sidebar-meeting','sidebar-software-access']
+            };
+
+            function applyPermissions(role, allIds, permissionMap) {
+                const normalizedRole = role ? role.trim().toUpperCase() : '';
+                const allowedItems = permissionMap[normalizedRole] || [];
+
+                allIds.forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) el.style.display = allowedItems.includes(id) ? '' : 'none';
+                });
+            }
+
+            if (loggedInUserRole) {
+                applyPermissions(loggedInUserRole, allSidebarIds, sidebarPermissions);
+            } else {
+                allSidebarIds.forEach(id => {
+                    if (id !== 'menu-dashboard') {
+                        const el = document.getElementById(id);
+                        if (el) el.style.display = 'none';
+                    }
+                });
+            }
+        });
+
+        function logout() {
+            localStorage.clear();
+            window.location.replace('Html/Login.html');
+        }
+
+        // ===================================
+        // DATA LOAD AND FORMS LOGIC (JQuery)
+        // ===================================
+        const API_BASE_URL = 'http://localhost:3000/api/other-portals';
+
+        $(document).ready(function () {
+            loadData();
+        });
+
+        function loadData() {
+            $.ajax({
+                url: API_BASE_URL, 
+                type: 'GET',
+                success: function (data) {
+                    let rows = '';
+                    if (data.length === 0) {
+                        rows = '<tr><td colspan="6" class="text-center">No records found</td></tr>';
+                    } else {
+                        data.forEach(item => {
+                            rows += `
+                            <tr>
+                                <td>${item.record_date}</td>
+                                <td>${item.name}</td>
+                                <td>${item.role}</td>
+                                <td>${item.experience}</td>
+                                <td>${item.mobile_number}</td>
+                                <td>${item.location}</td>
+                            </tr>`;
+                        });
+                    }
+                    $('#tableBody').html(rows);
+                },
+                error: function (err) {
+                    console.error("Error loading data", err);
+                    $('#tableBody').html('<tr><td colspan="6" class="text-center text-danger">Failed to load data from server.</td></tr>');
+                }
+            });
+        }
+
+        // Add Single Record
+        $('#addForm').on('submit', function (e) {
+            e.preventDefault();
+            const formData = {
+                date: $('input[name="date"]').val(),
+                name: $('input[name="name"]').val(),
+                role: $('input[name="role"]').val(),
+                experience: $('input[name="experience"]').val(),
+                mobile: $('input[name="mobile"]').val(),
+                location: $('input[name="location"]').val(),
+            };
+
+            $.ajax({
+                url: API_BASE_URL,
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(formData),
+                success: function (response) {
+                    $('#addModal').modal('hide');
+                    $('#addForm')[0].reset();
+                    loadData();
+                },
+                error: function (xhr) {
+                    alert('Error: ' + (xhr.responseJSON?.error || 'Unknown error'));
+                }
+            });
+        });
+
+        // Upload Excel
+        $('#uploadForm').on('submit', function (e) {
+            e.preventDefault();
+            const fileInput = document.getElementById('excelFile');
+            const file = fileInput.files[0];
+
+            if (!file) {
+                alert("Please select a file");
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('file', file);
+
+            $.ajax({
+                url: API_BASE_URL + '/upload', 
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function (response) {
+                    alert(response.message);
+                    $('#uploadModal').modal('hide');
+                    $('#uploadForm')[0].reset();
+                    loadData();
+                },
+                error: function (xhr) {
+                    alert('Error uploading file: ' + (xhr.responseJSON?.error || xhr.statusText));
+                }
+            });
+        });
+    </script>
+</body>
+</html>

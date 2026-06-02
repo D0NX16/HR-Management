@@ -1,254 +1,224 @@
-// hr-users.js
-
 $(document).ready(function() {
-    const API_BASE_URL = 'http://localhost:3000/api'; // Adjust if your server runs on a different port/domain
+    // 1. Configuration
+    const API_BASE_URL = 'http://localhost:3000/api'; 
+    
+    // Selectors mapped to your HTML IDs
+    const $nameInput = $('#add-user-name');
+    const $emailInput = $('#add-user-email');
+    const $roleSelect = $('#add-user-role-type');
+    const $passInput = $('#add-user-password');
+    const $confPassInput = $('#add-user-confirm-password');
+    const $saveBtn = $('#btn-save-user');
 
-    // Function to fetch and render users
+    // --- 1. INITIAL LOAD ---
+    fetchUsers();
+
+    // --- 2. FETCH & RENDER USERS ---
     async function fetchUsers() {
         try {
             const response = await fetch(`${API_BASE_URL}/users`);
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
+            if (!response.ok) throw new Error('Failed to fetch data');
             const users = await response.json();
-            renderUsers(users);
+            renderUserTable(users);
         } catch (error) {
-            console.error('Error fetching users:', error);
-            Swal.fire('Error', 'Failed to load users.', 'error');
+            console.error('Error:', error);
+            showNotification('Error', 'Could not load users.', 'error');
         }
     }
 
-    // Function to render users into the table
-    function renderUsers(users) {
-        const userListBody = $('#userListBody');
-        userListBody.empty(); // Clear existing rows
+    function renderUserTable(users) {
+        const $tbody = $('#userListBody'); // ID added to <tbody> in HTML
+        $tbody.empty();
 
-        if (users.length === 0) {
-            userListBody.append('<tr><td colspan="6" class="text-center">No users found.</td></tr>');
+        if (!users || users.length === 0) {
+            $tbody.html('<tr><td colspan="5" class="text-center">No users found.</td></tr>');
             return;
         }
 
         users.forEach(user => {
+            // Format Date
+            const createdDate = user.created_at 
+                ? new Date(user.created_at).toLocaleDateString() 
+                : 'N/A';
+
+            // Role Badge Color
+            let badgeClass = 'badge-default';
+            if (user.role === 'Super Admin') badgeClass = 'badge-danger';
+            else if (user.role === 'Admin') badgeClass = 'badge-warning';
+            else if (user.role === 'Employee') badgeClass = 'badge-success';
+
             const row = `
-                <tr data-id="${user.id}">
-                    <td>${user.name}</td>
+                <tr>
+                    <td><h6 class="mb-0">${user.name}</h6></td>
                     <td>${user.email}</td>
-                    <td><span class="tag tag-blue">${user.role}</span></td>
-                    <td>${new Date(user.created_at).toLocaleDateString()}</td>
+                    <td><span class="badge ${badgeClass}">${user.role}</span></td>
+                    <td>${createdDate}</td>
                     <td>
-                        <button type="button" class="btn btn-sm btn-icon edit-user-btn" data-id="${user.id}" title="Edit"><i class="fa fa-edit"></i></button>
-                        <button class="btn btn-sm btn-icon delete-user-btn" data-id="${user.id}" title="Delete"><i class="fa fa-trash-o text-danger"></i></button>
+                        <button type="button" class="btn btn-icon btn-sm delete-btn" 
+                            data-id="${user.id}" 
+                            title="Delete">
+                            <i class="fa fa-trash text-danger"></i>
+                        </button>
                     </td>
                 </tr>
             `;
-            userListBody.append(row);
+            $tbody.append(row);
         });
     }
 
-    // --- Add New User (Registration) ---
-    // Assuming you have input fields with these IDs in your "Add New" tab
-    const addUserIdInput = $('#add-employee-id'); // Assuming this input is for Employee ID, not User ID
-    const addUserNameInput = $('#add-user-name');
-    const addUserEmailInput = $('#add-user-email');
-    const addUserPasswordInput = $('#add-user-password');
-    const addUserConfirmPasswordInput = $('#add-user-confirm-password');
-    const addUserRoleSelect = $('#add-user-role-type'); // Assuming the select has this ID
+    // --- 3. HANDLE SAVE (ADD / UPDATE) ---
+    $saveBtn.on('click', async function() {
+        const userId = $(this).data('id'); // Get ID if in Edit Mode
+        const isEdit = !!userId;
 
-    // Listen for form submission on the "Add New" tab
-    $('#user-add .card-body button.btn-primary').on('click', async function() {
-        // Collect data from your "Add New" tab input fields
-        const name = addUserNameInput.val().trim();
-        const email = addUserEmailInput.val().trim();
-        const password = addUserPasswordInput.val().trim();
-        const confirmPassword = addUserConfirmPasswordInput.val().trim();
-        const role = addUserRoleSelect.val();
+        const userData = {
+            name: $nameInput.val().trim(),
+            email: $emailInput.val().trim(),
+            role: $roleSelect.val(),
+            password: $passInput.val().trim()
+        };
 
-        if (!name || !email || !password || !confirmPassword || role === 'Select Role Type') {
-            Swal.fire('Validation Error', 'Please fill in all required fields.', 'warning');
+        const confirmPass = $confPassInput.val().trim();
+
+        // VALIDATION
+        if (!userData.name || !userData.email) {
+            showNotification('Required', 'Name and Email are required.', 'warning');
+            return;
+        }
+        if (userData.role === 'Select Role Type') {
+            showNotification('Required', 'Please select a Role.', 'warning');
             return;
         }
 
-        if (password !== confirmPassword) {
-            Swal.fire('Password Mismatch', 'Password and Confirm Password do not match.', 'error');
-            return;
-        }
-
-        try {
-            const response = await fetch(`${API_BASE_URL}/users`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ name, email, password, role })
-            });
-
-            const result = await response.json();
-
-            if (response.ok) {
-                Swal.fire('Success', result.message, 'success');
-                // Clear the form
-                addUserNameInput.val('');
-                addUserEmailInput.val('');
-                addUserPasswordInput.val('');
-                addUserConfirmPasswordInput.val('');
-                addUserRoleSelect.val('Select Role Type');
-                // Refresh the user list
-                fetchUsers();
-                // Switch back to the list tab
-                $('a[href="#user-list"]').tab('show');
-            } else {
-                Swal.fire('Error', result.error || 'Failed to add user.', 'error');
+        // Password Validation
+        if (isEdit) {
+            // In edit mode, password is optional. 
+            // If user typed one, we validate match. If empty, we remove it from payload.
+            if (userData.password && userData.password !== confirmPass) {
+                showNotification('Error', 'Passwords do not match.', 'error');
+                return;
             }
-        } catch (error) {
-            console.error('Error adding user:', error);
-            Swal.fire('Error', 'An unexpected error occurred while adding user.', 'error');
-        }
-    });
-
-    // --- Delete User ---
-    $(document).on('click', '.delete-user-btn', function() {
-        const userId = $(this).data('id');
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-        }).then(async (result) => {
-            if (result.isConfirmed) {
-                try {
-                    const response = await fetch(`${API_BASE_URL}/users/${userId}`, {
-                        method: 'DELETE'
-                    });
-
-                    const resultData = await response.json();
-
-                    if (response.ok) {
-                        Swal.fire('Deleted!', resultData.message, 'success');
-                        fetchUsers(); // Refresh the list
-                    } else {
-                        Swal.fire('Error', resultData.error || 'Failed to delete user.', 'error');
-                    }
-                } catch (error) {
-                    console.error('Error deleting user:', error);
-                    Swal.fire('Error', 'An unexpected error occurred during deletion.', 'error');
-                }
+            if (!userData.password) delete userData.password; // Don't send empty password
+        } else {
+            // In Add mode, password is required
+            if (!userData.password) {
+                showNotification('Required', 'Password is required for new users.', 'warning');
+                return;
             }
-        });
-    });
-
-    // --- Edit User (Display data in the "Add New" form for editing) ---
-    $(document).on('click', '.edit-user-btn', async function() {
-        const userId = $(this).data('id');
-
-        try {
-            const response = await fetch(`${API_BASE_URL}/users/${userId}`);
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+            if (userData.password !== confirmPass) {
+                showNotification('Error', 'Passwords do not match.', 'error');
+                return;
             }
-            const user = await response.json();
-
-            // Populate the "Add New" form fields with user data for editing
-            addUserNameInput.val(user.name);
-            addUserEmailInput.val(user.email);
-            addUserRoleSelect.val(user.role);
-            // Passwords are not usually pre-filled for security reasons
-            addUserPasswordInput.val('');
-            addUserConfirmPasswordInput.val('');
-
-            // Change the Add button to Update and store user ID
-            const addUpdateButton = $('#user-add .card-body button.btn-primary');
-            addUpdateButton.text('Update User').data('user-id', userId);
-
-            // Switch to the "Add New" tab
-            $('a[href="#user-add"]').tab('show');
-
-        } catch (error) {
-            console.error('Error fetching user for edit:', error);
-            Swal.fire('Error', 'Failed to load user data for editing.', 'error');
-        }
-    });
-
-    // Handle Update User when the "Update User" button is clicked
-    $('#user-add .card-body button.btn-primary').on('click', async function() {
-        const userId = $(this).data('user-id'); // Get the stored user ID
-
-        // If no user ID is stored, it means it's an "Add" operation
-        if (!userId) {
-            // Your existing add user logic will run from the first click handler
-            return;
         }
 
-        const name = addUserNameInput.val().trim();
-        const email = addUserEmailInput.val().trim();
-        const password = addUserPasswordInput.val().trim();
-        const confirmPassword = addUserConfirmPasswordInput.val().trim();
-        const role = addUserRoleSelect.val();
-
-        if (!name || !email || role === 'Select Role Type') {
-            Swal.fire('Validation Error', 'Please fill in all required fields (Name, Email, Role).', 'warning');
-            return;
-        }
-
-        if (password && password !== confirmPassword) {
-            Swal.fire('Password Mismatch', 'New Password and Confirm Password do not match.', 'error');
-            return;
-        }
-
-        const userData = { name, email, role };
-        if (password) { // Only send password if it's being updated
-            userData.password = password;
-        }
-
+        // API CALL
         try {
-            const response = await fetch(`${API_BASE_URL}/users/${userId}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+            const url = isEdit ? `${API_BASE_URL}/users/${userId}` : `${API_BASE_URL}/users`;
+            const method = isEdit ? 'PUT' : 'POST';
+
+            const response = await fetch(url, {
+                method: method,
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(userData)
             });
 
             const result = await response.json();
 
             if (response.ok) {
-                Swal.fire('Success', result.message, 'success');
-                // Reset the form and button
-                addUserNameInput.val('');
-                addUserEmailInput.val('');
-                addUserPasswordInput.val('');
-                addUserConfirmPasswordInput.val('');
-                addUserRoleSelect.val('Select Role Type');
-
-                const addUpdateButton = $('#user-add .card-body button.btn-primary');
-                addUpdateButton.text('Add').removeData('user-id'); // Remove stored ID
-
-                fetchUsers(); // Refresh the user list
-                $('a[href="#user-list"]').tab('show'); // Switch back to the list
+                showNotification('Success', isEdit ? 'User updated!' : 'User created!', 'success');
+                resetForm();
+                fetchUsers();
+                // Switch tab back to list
+                $('.nav-tabs a[href="#user-list"]').tab('show');
             } else {
-                Swal.fire('Error', result.error || 'Failed to update user.', 'error');
+                showNotification('Error', result.error || 'Operation failed', 'error');
             }
         } catch (error) {
-            console.error('Error updating user:', error);
-            Swal.fire('Error', 'An unexpected error occurred while updating user.', 'error');
+            console.error(error);
+            showNotification('Error', 'Server connection failed.', 'error');
         }
     });
 
-    // Reset form and button text when switching to "Add New" tab manually or after an operation
-    $('a[href="#user-add"]').on('shown.bs.tab', function (e) {
-        const addUpdateButton = $('#user-add .card-body button.btn-primary');
-        if (!addUpdateButton.data('user-id')) { // If no user ID is set (meaning it's a fresh add)
-            addUserNameInput.val('');
-            addUserEmailInput.val('');
-            addUserPasswordInput.val('');
-            addUserConfirmPasswordInput.val('');
-            addUserRoleSelect.val('Select Role Type');
-            addUpdateButton.text('Add');
-        }
+    // --- 4. HANDLE EDIT CLICK ---
+    $(document).on('click', '.edit-btn', function() {
+        const id = $(this).data('id');
+        const name = $(this).data('name');
+        const email = $(this).data('email');
+        const role = $(this).data('role');
+
+        // Populate Form
+        $nameInput.val(name);
+        $emailInput.val(email);
+        $roleSelect.val(role);
+        $passInput.val(''); // Clear password fields
+        $confPassInput.val('');
+
+        // Change Button State
+        $saveBtn.text('Update User').data('id', id); // Attach ID to button
+        
+        // Switch to Add/Edit Tab
+        $('.nav-tabs a[href="#user-add"]').tab('show');
     });
 
-    // Initial fetch of users when the page loads
-    fetchUsers();
+    // --- 5. HANDLE DELETE CLICK ---
+    $(document).on('click', '.delete-btn', function() {
+        const id = $(this).data('id');
+        
+        // Using standard SweetAlert (v1) syntax which is common in templates
+        swal({
+            title: "Are you sure?",
+            text: "You will not be able to recover this user!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#dc3545",
+            confirmButtonText: "Yes, delete it!",
+            closeOnConfirm: false
+        }, async function() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/users/${id}`, { method: 'DELETE' });
+                if (response.ok) {
+                    swal("Deleted!", "User has been deleted.", "success");
+                    fetchUsers();
+                } else {
+                    swal("Error", "Failed to delete user.", "error");
+                }
+            } catch (error) {
+                swal("Error", "Server connection failed.", "error");
+            }
+        });
+    });
+
+    // --- 6. HELPER: RESET FORM ---
+    function resetForm() {
+        $nameInput.val('');
+        $emailInput.val('');
+        $roleSelect.val('Select Role Type'); // Reset to default option
+        $passInput.val('');
+        $confPassInput.val('');
+        $saveBtn.text('Add').removeData('id'); // Remove ID
+    }
+
+    // --- 7. HELPER: NOTIFICATION WRAPPER ---
+    // Handles difference between SweetAlert v1 and v2 just in case
+    function showNotification(title, text, type) {
+        if (typeof swal === 'function') {
+            swal(title, text, type);
+        } else {
+            alert(`${title}: ${text}`);
+        }
+    }
+
+    // Detect manual tab click to reset form if canceling an edit
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        if ($(e.target).attr('href') === '#user-add') {
+            // If we clicked the tab manually (not via Edit button), check if we need to reset
+            // We check if the button has an ID attached. If NOT, it's a fresh add.
+            // If it DOES have an ID, we leave it (user might be navigating back and forth)
+            // Or you can choose to always reset on manual click:
+            // if (!$saveBtn.data('id')) resetForm();
+        } else {
+            // Leaving the add tab, reset form
+            resetForm();
+        }
+    });
 });

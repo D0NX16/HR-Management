@@ -1,0 +1,493 @@
+<!doctype html> 
+<html lang="en" dir="ltr">  
+<head>     
+    <meta charset="UTF-8">     
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">     
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">      
+    
+    <link rel="icon" href="../assets/images/icon/logo.png" type="image/x-icon" />      
+    <title>Accounting Log - Kalsun Groups</title>      
+    
+    <!-- Bootstrap Core and vendor -->     
+    <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />      
+    <link href="../assets/css/font-awesome.min.css" rel="stylesheet" />      
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">      
+    
+    <!-- Core css -->     
+    <link rel="stylesheet" href="../assets/css/main.css" />     
+    <link rel="stylesheet" href="../assets/css/theme1.css" />     
+    
+    <style>
+        .text-nowrap td, .text-nowrap th { white-space: nowrap; vertical-align: middle; }
+        .table-responsive { max-height: 65vh; overflow-y: auto; overflow-x: auto; cursor: grab; }
+        .table-responsive:active { cursor: grabbing; }
+        thead th { position: sticky; top: 0; background-color: #f4f7f6; z-index: 10; border-top: none !important; box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.1); }
+        .table-responsive::-webkit-scrollbar { height: 10px; width: 8px; }
+        .table-responsive::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px; }
+        .table-responsive::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 4px; }
+        
+        .amount-cell { font-weight: 600; color: #198754; }
+
+        /* Premium Modal Styling */
+        .custom-modal-content { border: none; border-radius: 16px; box-shadow: 0 15px 40px rgba(0,0,0,0.15); overflow: hidden; }
+        .custom-modal-header { background: #ffffff; border-bottom: 1px solid #eef2f5; padding: 1.25rem 1.75rem; }
+        .custom-modal-title { font-weight: 700; color: #2c3e50; font-size: 1.25rem; }
+        .form-section { background-color: #fcfdfe; border-radius: 10px; padding: 20px; margin-bottom: 20px; border: 1px solid #edf1f5; box-shadow: 0 2px 8px rgba(0,0,0,0.02); }
+        .form-section-title { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; color: #6c757d; margin-bottom: 20px; border-bottom: 2px solid #eef2f5; padding-bottom: 10px; display: flex; align-items: center; }
+        .form-section-title i { color: #3d78e3; margin-right: 8px; font-size: 1.1rem; }
+        .custom-input { border-radius: 8px; border: 1px solid #ced4da; padding: 0.5rem 0.75rem; font-size: 0.9rem; transition: all 0.2s ease; }
+        .custom-input:focus { border-color: #3d78e3; box-shadow: 0 0 0 4px rgba(61, 120, 227, 0.15); }
+        .custom-label { font-weight: 600; color: #495057; font-size: 0.85rem; margin-bottom: 0.4rem; }
+        .btn-circle-close { width: 32px; height: 32px; background: #f1f3f5; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: none; transition: all 0.2s ease; }
+        .btn-circle-close:hover { background: #e9ecef; color: #dc3545; }
+    </style>
+</head>
+
+<body class="font-jakarta theme1">     
+    <div class="page-loader-wrapper"><div class="loader"></div></div>      
+    
+    <div id="main_content">          
+        <!-- Header Top -->         
+        <div id="header_top" class="header_top">             
+            <div class="container">                 
+                <div class="hleft"><div class="dropdown"></div></div>                 
+                <div class="hright">                     
+                    <div class="dropdown">                         
+                        <a href="javascript:void(0)" class="nav-link icon menu_toggle"><i class="fa fa-bars"></i></a>                     
+                    </div>                 
+                </div>             
+            </div>         
+        </div>          
+        
+        <!-- Left Sidebar (Kept Short for Brevity - Insert your full sidebar here) -->
+        <div id="left-sidebar" class="sidebar">             
+            <h5 class="brand-name">Kalsun Groups</h5>             
+             <nav id="left-sidebar-nav" class="sidebar-nav">
+                <ul class="metismenu">
+                    <li class="g_heading">Directories</li>
+                    <li>
+                        <a href="javascript:void(0)" class="has-arrow arrow-c" id="sidebar-hrms"><i
+                                class="fa-solid fa-rocket" style="color: #74c0fc;"></i><span>HRMS</span></a>
+                        <ul>
+                            <li id="sidebar-dashboard"><a href="../index.html"><span>Dashboard</span></a></li>
+                        </ul>
+                    </li>
+
+                    <li id="sidebar-landmark">
+                        <a href="javascript:void(0)" class="has-arrow arrow-c">
+                            <i class="fa-solid fa-rocket" style="color: #74c0fc;"></i>
+                            <span>LandMark</span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0)">Operational Dashboard</a>
+                                <ul>
+                                    <li id="landmark-output"><a href="./outputSheet.html?dept=Landmark">Landmark Output</a></li>
+                                    <li id="landmark-social"><a href="./social-media-report.html?dept=Landmark">Social Media Report</a></li>
+                                    <li id="landmark-enquiry" class="active"><a href="./landmark_enquiry.html">Enquiry</a></li>
+                                    <li id="landmark-office"><a href="./landmark_office_visit.html">Office visit</a></li>
+                                    <li id="landmark-site"><a href="./site_visit.html">Site Visit</a></li>
+                                    <li id="landmark-document-tracker"><a href="./landmark_document_tracker.html">Document Tracker</a></li>
+                                    <li id="landmark-applied-mark"><a href="./landmark_applied_list.html">Applied List</a></li>
+                                </ul>
+                            </li>
+                            <li  id="landmark-accounting-log">
+                                <a href="javascript:void(0)" >Financial Report</a>
+                                <ul >
+                                    <li  class="active"><a href="./landmark_accounting_log.html">Accounting Log</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>      
+    </div>       
+
+ <div class="page" >
+            <div class="page-header-bar ">
+                <div>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
+                            <li class="breadcrumb-item active">Landmark Enquiry</li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="btn-action-bar mx-3 mb-2" id="hide-feature">
+                    <button class="btn btn-success btn-sm mt-4 mr-2" data-toggle="modal" data-target="#uploadModal">
+                        <i class="fa fa-file-excel mr-1"></i> Import Excel
+                    </button>
+                    <button class="btn btn-primary btn-sm mt-4" data-toggle="modal" data-target="#appModal" onclick="resetForm()">
+                        <i class="fa fa-plus mr-1"></i> Add Record
+                    </button>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="table-responsive bg-white shadow-sm" style="padding: 25px;">
+                    <table class="table table-hover table-striped" id="dataTable">
+                        <thead>
+                            <tr>
+                                <th>S.No</th>
+                                <th>Date</th>
+                                <th>Company Name</th>
+                                <th>City</th>
+                                <th>CP Name</th>
+                                <th>Designation</th>
+                                <th>CP Mobile No.1</th>
+                                <th>Whatsapp No.</th>
+                                <th>Email ID</th>
+                                <th>Products</th>
+                                <th>Industry</th>
+                                <th>Preference</th>
+                                <th>Site Location</th>
+                                <th>Land Size</th>
+                                <th>Budget</th>
+                                <th>Source</th>
+                                <th>IDE</th>
+                                <th>Remarks 1</th>
+                                <th>Remarks 2</th>
+                                <th>PC REMARKS</th>
+                                <th id="sticky-actions">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <tr><td colspan="21" class="text-center">No records found</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add / Edit Modal -->
+    <div class="modal fade" id="appModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <form id="appForm">
+                    <input type="hidden" id="f_id">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Landmark Enquiry Details</h5>
+                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-3 mb-3"><label>Date</label><input type="date" class="form-control" id="f_date" required></div>
+                            <div class="col-md-3 mb-3"><label>Company Name</label><input type="text" class="form-control" id="f_company_name" required></div>
+                            <div class="col-md-3 mb-3"><label>City</label><input type="text" class="form-control" id="f_city"></div>
+                            <div class="col-md-3 mb-3"><label>CP Name</label><input type="text" class="form-control" id="f_cp_name"></div>
+                            
+                            <div class="col-md-3 mb-3"><label>Designation</label><input type="text" class="form-control" id="f_designation"></div>
+                            <div class="col-md-3 mb-3"><label>CP Mobile No.1</label><input type="text" class="form-control" id="f_cp_mobile_no_1"></div>
+                            <div class="col-md-3 mb-3"><label>Whatsapp No.</label><input type="text" class="form-control" id="f_whatsapp_no"></div>
+                            <div class="col-md-3 mb-3"><label>Email ID</label><input type="email" class="form-control" id="f_email_id"></div>
+                            
+                            <div class="col-md-3 mb-3"><label>Products</label><input type="text" class="form-control" id="f_products"></div>
+                            <div class="col-md-3 mb-3"><label>Industry</label><input type="text" class="form-control" id="f_industry"></div>
+                            <div class="col-md-3 mb-3"><label>Preference</label><input type="text" class="form-control" id="f_preference"></div>
+                            <div class="col-md-3 mb-3"><label>Site Location</label><input type="text" class="form-control" id="f_site_location"></div>
+
+                            <div class="col-md-3 mb-3"><label>Land Size</label><input type="text" class="form-control" id="f_land_size"></div>
+                            <div class="col-md-3 mb-3"><label>Budget</label><input type="text" class="form-control" id="f_budget"></div>
+                            <div class="col-md-3 mb-3"><label>Source</label><input type="text" class="form-control" id="f_source"></div>
+                            <div class="col-md-3 mb-3"><label>IDE</label><input type="text" class="form-control" id="f_ide"></div>
+                            
+                            <div class="col-md-4 mb-3"><label>Remarks 1</label><textarea class="form-control" id="f_remarks_1" rows="2"></textarea></div>
+                            <div class="col-md-4 mb-3"><label>Remarks 2</label><textarea class="form-control" id="f_remarks_2" rows="2"></textarea></div>
+                            <div class="col-md-4 mb-3"><label>PC REMARKS</label><textarea class="form-control" id="f_pc_remarks" rows="2"></textarea></div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Save Record</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Excel Upload Modal -->
+    <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form id="uploadForm">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Upload Excel File</h5>
+                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="file" id="excelFile" class="form-control" accept=".xlsx, .xls" required>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success">Upload & Import</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="../assets/bundles/lib.vendor.bundle.js"></script>     
+    <script src="../assets/js/core.js"></script>     
+
+    <script>    
+
+    
+ document.addEventListener('DOMContentLoaded', () => {
+            // 1. Retrieve User Details
+            const loggedInUserName = localStorage.getItem('loggedInUserName');
+            const loggedInUserRole = localStorage.getItem('loggedInUserRole'); // Ensure this is saved during login
+
+            const welcomeMessageElement = document.getElementById('welcomeMessage');
+
+            // 2. Set Welcome Message
+            if (loggedInUserName && welcomeMessageElement) {
+                welcomeMessageElement.textContent = `${loggedInUserName} (${loggedInUserRole})`;
+            } else if (welcomeMessageElement) {
+                welcomeMessageElement.textContent = 'Guest!';
+                // Optional: window.location.href = 'login.html';
+            }
+
+            // 3. Define Menu Permissions
+            // Keys must match the IDs we added to the HTML <li> tags
+   const allMenuIds = [
+           'sidebar-hrms', 'sidebar-dashboard', 'sticky-actions' , 'hide-feature',"landmark-output",
+       "landmark-social","landmark-enquiry","landmark-office","landmark-site","landmark-document-tracker","landmark-applied-mark",'landmark-accounting-log'
+        ];
+
+        const rolePermissions = {
+            
+                'LAND PROJECT MANAGER': [
+                     'sidebar-hrms', 'sidebar-dashboard', 'sticky-actions' , 'hide-feature','landmark-output',
+       'landmark-social' , 'landmark-enquiry' ,"landmark-office","landmark-site","landmark-document-tracker","landmark-applied-mark",'landmark-accounting-log'
+                ],
+                'LAND TEAM LEADER': [
+                     'sidebar-hrms', 'sidebar-dashboard', 'sticky-actions' , 'hide-feature','landmark-output',
+       'landmark-social' , 'landmark-enquiry' ,"landmark-office","landmark-site","landmark-document-tracker","landmark-applied-mark",'landmark-accounting-log'
+                ],
+                
+                'LADVISOR':['sidebar-hrms', 'sidebar-dashboard', 'sticky-actions' , 'hide-feature','landmark-output',
+       'landmark-social' , 'landmark-enquiry' ,"landmark-office","landmark-site","landmark-document-tracker","landmark-applied-mark"],
+
+                'GENERAL MANAGER': [
+                    'sidebar-hrms', 'sidebar-dashboard',"landmark-output",
+       "landmark-social","landmark-enquiry","landmark-office","landmark-site","landmark-document-tracker","landmark-applied-mark",'landmark-accounting-log'
+                ] ,
+                
+                'AGM': [
+                    'sidebar-hrms', 'sidebar-dashboard',"landmark-output",
+       "landmark-social","landmark-enquiry","landmark-office","landmark-site","landmark-document-tracker","landmark-applied-mark",'landmark-accounting-log'
+                ] ,
+                'VP' :[ 'sidebar-hrms', 'sidebar-dashboard', "landmark-output",
+       "landmark-social","landmark-enquiry","landmark-office","landmark-site","landmark-document-tracker","landmark-applied-mark",'landmark-accounting-log'], 
+
+                'CEO' :[ 'sidebar-hrms', 'sidebar-dashboard', "landmark-output",
+       "landmark-social","landmark-enquiry","landmark-office","landmark-site","landmark-document-tracker","landmark-applied-mark",'landmark-accounting-log']
+        };
+            // 4. Function to Filter Menu
+            function filterMenuByRole(role) {
+                // Normalize role string (handle 'Admin', 'admin', 'ADMIN')
+               
+                     const normalizedRole = role ? role.toUpperCase().trim() : '';
+
+                         console.log("Logged in role:", normalizedRole);
+
+
+                const allowedMenus = rolePermissions[normalizedRole] || [];
+
+                allMenuIds.forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) {
+                        if (allowedMenus.includes(id)) {
+                            el.style.display = 'block'; // Show
+                        } else {
+                            el.style.display = 'none';  // Hide
+                        }
+                    }
+                });
+            }
+
+            // 5. Execute Filter
+            if (loggedInUserRole) {
+                filterMenuByRole(loggedInUserRole);
+            } else {
+                // If no role found (not logged in), hide sensitive menus or redirect
+                // For now, let's hide everything except dashboard
+                allMenuIds.forEach(id => {
+                    if (id !== 'menu-dashboard') {
+                        const el = document.getElementById(id);
+                        if (el) el.style.display = 'none';
+                    }
+                });
+            }
+
+            // 6. Sign Out Logic
+            const signOutButton = document.querySelector('a[href="Html/Login.html"].dropdown-item');
+            if (signOutButton) {
+                signOutButton.addEventListener('click', () => {
+                    localStorage.removeItem('loggedInUserName');
+                    localStorage.removeItem('loggedInUserId');
+                    localStorage.removeItem('loggedInUserRole'); // Clear role on logout
+                });
+            }
+        });
+
+  
+       const API_URL = 'http://localhost:3000/api/landmark-enquiry';
+
+    async function loadData() {
+        try {
+            const res = await fetch(API_URL);
+            const data = await res.json();
+            let html = '';
+            
+            if (!data.length) {
+                document.getElementById('tableBody').innerHTML = '<tr><td colspan="21" class="text-center">No records found.</td></tr>';
+                return;
+            }
+
+            const role = (localStorage.getItem('loggedInUserRole') || '').toUpperCase().trim();
+
+            data.forEach((d, index) => {
+                let actionButtons = '';
+                // Modify role logic based on your permission rules
+                if (role !== 'GENERAL MANAGER' && role !== 'VP' && role !== 'CEO') {
+                    actionButtons = `
+                        <div class="d-flex">
+                            <button class="btn btn-sm btn-info mr-1" onclick='editRecord(${JSON.stringify(d).replace(/'/g, "&#39;")})'><i class="fa fa-edit"></i></button>
+                            <button class="btn btn-sm btn-danger" onclick="deleteRecord(${d.id})"><i class="fa fa-trash"></i></button>
+                        </div>
+                    `;
+                }              
+
+                html += `<tr>
+                    <td>${index + 1}</td>
+                    <td>${d.date ? d.date.split('T')[0] : '—'}</td>
+                    <td>${d.company_name || '—'}</td>
+                    <td>${d.city || '—'}</td>
+                    <td>${d.cp_name || '—'}</td>
+                    <td>${d.designation || '—'}</td>
+                    <td>${d.cp_mobile_no_1 || '—'}</td>
+                    <td>${d.whatsapp_no || '—'}</td>
+                    <td>${d.email_id || '—'}</td>
+                    <td>${d.products || '—'}</td>
+                    <td>${d.industry || '—'}</td>
+                    <td>${d.preference || '—'}</td>
+                    <td>${d.site_location || '—'}</td>
+                    <td>${d.land_size || '—'}</td>
+                    <td>${d.budget || '—'}</td>
+                    <td>${d.source || '—'}</td>
+                    <td>${d.ide || '—'}</td>
+                    <td>${d.remarks_1 || '—'}</td>
+                    <td>${d.remarks_2 || '—'}</td>
+                    <td>${d.pc_remarks || '—'}</td>
+                    <td>${actionButtons}</td>
+                </tr>`;
+            });
+            document.getElementById('tableBody').innerHTML = html;
+        } catch (err) { console.error("Load Error:", err); }
+    }
+
+    function resetForm() {
+        document.getElementById('appForm').reset();
+        document.getElementById('f_id').value = '';
+    }
+
+    document.getElementById('appForm').onsubmit = async (e) => {
+        e.preventDefault();
+        const id = document.getElementById('f_id').value;
+        const payload = {
+            date: document.getElementById('f_date').value,
+            company_name: document.getElementById('f_company_name').value,
+            city: document.getElementById('f_city').value,
+            cp_name: document.getElementById('f_cp_name').value,
+            designation: document.getElementById('f_designation').value,
+            cp_mobile_no_1: document.getElementById('f_cp_mobile_no_1').value,
+            whatsapp_no: document.getElementById('f_whatsapp_no').value,
+            email_id: document.getElementById('f_email_id').value,
+            products: document.getElementById('f_products').value,
+            industry: document.getElementById('f_industry').value,
+            preference: document.getElementById('f_preference').value,
+            site_location: document.getElementById('f_site_location').value,
+            land_size: document.getElementById('f_land_size').value,
+            budget: document.getElementById('f_budget').value,
+            source: document.getElementById('f_source').value,
+            ide: document.getElementById('f_ide').value,
+            remarks_1: document.getElementById('f_remarks_1').value,
+            remarks_2: document.getElementById('f_remarks_2').value,
+            pc_remarks: document.getElementById('f_pc_remarks').value
+        };
+
+        const method = id ? 'PUT' : 'POST';
+        const url = id ? `${API_URL}/${id}` : API_URL;
+
+        try {
+            const res = await fetch(url, {
+                method,
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            if (res.ok) {
+                $('#appModal').modal('hide');
+                loadData();
+            }
+        } catch (err) { alert("Error saving record"); }
+    };
+
+    function editRecord(d) {
+        document.getElementById('f_id').value = d.id;
+        document.getElementById('f_date').value = d.date ? d.date.split('T')[0] : '';
+        document.getElementById('f_company_name').value = d.company_name || '';
+        document.getElementById('f_city').value = d.city || '';
+        document.getElementById('f_cp_name').value = d.cp_name || '';
+        
+        document.getElementById('f_designation').value = d.designation || '';
+        document.getElementById('f_cp_mobile_no_1').value = d.cp_mobile_no_1 || '';
+        document.getElementById('f_whatsapp_no').value = d.whatsapp_no || '';
+        document.getElementById('f_email_id').value = d.email_id || '';
+        
+        document.getElementById('f_products').value = d.products || '';
+        document.getElementById('f_industry').value = d.industry || '';
+        document.getElementById('f_preference').value = d.preference || '';
+        document.getElementById('f_site_location').value = d.site_location || '';
+        
+        document.getElementById('f_land_size').value = d.land_size || '';
+        document.getElementById('f_budget').value = d.budget || '';
+        document.getElementById('f_source').value = d.source || '';
+        document.getElementById('f_ide').value = d.ide || '';
+        
+        document.getElementById('f_remarks_1').value = d.remarks_1 || '';
+        document.getElementById('f_remarks_2').value = d.remarks_2 || '';
+        document.getElementById('f_pc_remarks').value = d.pc_remarks || '';
+        $('#appModal').modal('show');
+    }
+
+    async function deleteRecord(id) {
+        if (confirm('Delete this record?')) {
+            await fetch(`${API_URL}/${id}`, { method: 'DELETE' });
+            loadData();
+        }
+    }
+
+    // Excel Upload Handler
+    document.getElementById('uploadForm').onsubmit = async (e) => {
+        e.preventDefault();
+        const fileInput = document.getElementById('excelFile');
+        const formData = new FormData();
+        formData.append('file', fileInput.files[0]);
+
+        try {
+            const res = await fetch(`${API_URL}/upload`, { method: 'POST', body: formData });
+            const result = await res.json();
+            if (res.ok) {
+                alert(result.message);
+                $('#uploadModal').modal('hide');
+                loadData();
+            } else {
+                alert(result.error || 'Upload failed');
+            }
+        } catch (err) { alert('Upload error: ' + err.message); }
+    };
+
+    window.onload = loadData;  
+    </script>
+</body>  
+</html>

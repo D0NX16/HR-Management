@@ -27,7 +27,6 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
-        /* Add some styling for the eye icon button */
         .input-group-text {
             cursor: pointer;
         }
@@ -41,7 +40,7 @@
         <div class="auth_left">
             <div class="card">
                 <div class="text-center">
-                    <a class="header-brand" href="index.html">
+                    <a class="header-brand" href="../index.html">
                         <img class="img-fluid" style="width: 90px; height: 100px;" src="../Html/assets/logo/logo.png"
                             alt="Logo">
                     </a>
@@ -49,24 +48,52 @@
                 <div class="card-body">
                     <div class="card-title text-center">Create new account</div>
 
-                    <!-- Added <form> tag here -->
                     <form id="registerForm">
+                        <!-- Name Input -->
                         <div class="form-group">
                             <label class="form-label" for="nameInput">Name</label>
-                            <!-- Added name attribute -->
                             <input type="text" class="form-control" id="nameInput" name="name" placeholder="Enter name"
                                 autocomplete="name">
                         </div>
+
+                        <!-- Email Input -->
                         <div class="form-group">
                             <label class="form-label" for="emailInput">Email address</label>
-                            <!-- Added autocomplete="username" and name="email" -->
                             <input type="email" class="form-control" id="emailInput" name="email"
                                 placeholder="Enter email" autocomplete="username">
                         </div>
+
+                        <!-- Role Selection (REQUIRED TO FIX 400 ERROR) -->
+                        <div class="form-group">
+                            <label class="form-label" for="roleInput">Select Role</label>
+                            <select class="form-control" id="roleInput" name="role">
+                                <option value="" disabled selected>Select your role</option>
+                                <option value="Admin">Admin</option>
+                                <option value="HR">HR</option>
+                                <option value="Project Manager">Project Manager</option>
+                                <option value="General Manager">General Manager</option>
+                                <option value="Employee">Employee</option>
+                                <option value="Advisor">Advisor</option>
+                                <option value="Audit Project Manager">Audit Project Manager</option>
+                                <option value="Backend Project Manager">Backend Project Manager</option>
+                                <option value="Back Office Executive">Backend Office Executive</option>
+                                <option value="Team Leader">Team Leader</option>
+                                <option value="MAdvisor">Media Advisor</option>
+                                <option value="Media Project Manager">Media Project Manager</option>
+                                <option value="Media Team Leader">Media Team Leader</option>
+                                <option value="LAdvisor">Land Advisor</option>
+                                <option value="Land Project Manager">Land Project Manager</option>
+                                <option value="Land Team Leader">Land Team Leader</option>
+                                <option value="VP">Vice President</option>
+                                <option value="CEO">CEO</option>
+                                <option value="AGM">AGM</option>
+                            </select>
+                        </div>
+
+                        <!-- Password Input -->
                         <div class="form-group">
                             <label class="form-label" for="passwordInput">Password</label>
                             <div class="input-group">
-                                <!-- IMPORTANT: Added autocomplete="new-password" and name="password" -->
                                 <input type="password" class="form-control" id="passwordInput" name="password"
                                     placeholder="Password" autocomplete="new-password">
                                 <div class="input-group-append">
@@ -76,6 +103,8 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Terms Checkbox -->
                         <div class="form-group">
                             <label class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="termsCheckbox" />
@@ -83,12 +112,12 @@
                                         target="_blank">terms and policy</a></span>
                             </label>
                         </div>
+
                         <div class="form-footer">
                             <button type="submit" class="btn btn-primary btn-block" id="registerButton">Create new
                                 account</button>
                         </div>
                     </form>
-                    <!-- End <form> tag -->
 
                 </div>
                 <div class="text-center text-muted">
@@ -100,21 +129,21 @@
             <div class="carousel slide" data-ride="carousel" data-interval="3000">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="assets/images/slider1.html" class="img-fluid" alt="login page" />
+                        <img src="../assets/images/icon/logo.png" style="width: 90px; height: 100px;" class="img-fluid" alt="login page" />
                         <div class="px-4 mt-4">
                             <h4>Fully Responsive</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="assets/images/slider2.html" class="img-fluid" alt="login page" />
+                        <img src="../assets/images/icon/logo.png" style="width: 90px; height: 100px;" class="img-fluid" alt="login page" />
                         <div class="px-4 mt-4">
                             <h4>Quality Code and Easy Customizability</h4>
                             <p>There are many variations of passages of Lorem Ipsum available.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="assets/images/slider3.html" class="img-fluid" alt="login page" />
+                        <img src="../assets/images/icon/logo.png" style="width: 90px; height: 100px;" class="img-fluid" alt="login page" />
                         <div class="px-4 mt-4">
                             <h4>Cross Browser Compatibility</h4>
                             <p>Overview We're a group of women who want to learn JavaScript.</p>
@@ -133,36 +162,40 @@
             const registerButton = document.getElementById('registerButton');
             const nameInput = document.getElementById('nameInput');
             const emailInput = document.getElementById('emailInput');
+            const roleInput = document.getElementById('roleInput'); // Selected Role
             const passwordInput = document.getElementById('passwordInput');
             const termsCheckbox = document.getElementById('termsCheckbox');
             const togglePassword = document.getElementById('togglePassword');
 
+            // Toggle Password Visibility
             togglePassword.addEventListener('click', function (e) {
-                // toggle the type attribute
                 const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
                 passwordInput.setAttribute('type', type);
-                // toggle the eye slash icon
                 this.querySelector('i').classList.toggle('fa-eye');
                 this.querySelector('i').classList.toggle('fa-eye-slash');
             });
 
+            // Handle Registration
             registerButton.addEventListener('click', async (event) => {
                 event.preventDefault(); // Prevent default form submission
 
                 const name = nameInput.value;
                 const email = emailInput.value;
                 const password = passwordInput.value;
+                const role = roleInput.value; // Get the selected role value
                 const agreedToTerms = termsCheckbox.checked;
 
-                if (!name || !email || !password) {
+                // 1. Validate Fields
+                if (!name || !email || !password || !role) {
                     Swal.fire({
                         icon: 'error',
-                        title: 'Oops...',
-                        text: 'Please fill in all fields!',
+                        title: 'Missing Information',
+                        text: 'Please fill in Name, Email, Password, and Select a Role!',
                     });
                     return;
                 }
 
+                // 2. Validate Terms
                 if (!agreedToTerms) {
                     Swal.fire({
                         icon: 'warning',
@@ -173,12 +206,14 @@
                 }
 
                 try {
-                    const response = await fetch('http://localhost:3000/api/users', { // Ensure this URL matches your backend
+                    // 3. Send Data to Server
+                    const response = await fetch('http://localhost:3000/api/users', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
                         },
-                        body: JSON.stringify({ name, email, password }),
+                        // Include ROLE in the body
+                        body: JSON.stringify({ name, email, password, role }),
                     });
 
                     const data = await response.json();
@@ -191,7 +226,7 @@
                             showConfirmButton: false,
                             timer: 1500
                         }).then(() => {
-                            window.location.href = 'login.html'; // Redirect to login page on success
+                            window.location.href = 'login.html'; // Redirect to login page
                         });
                     } else {
                         Swal.fire({
@@ -205,7 +240,7 @@
                     Swal.fire({
                         icon: 'error',
                         title: 'Network Error',
-                        text: 'Could not connect to the server. Please check your internet connection and try again.',
+                        text: 'Could not connect to the server. Please check your internet connection.',
                     });
                 }
             });

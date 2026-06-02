@@ -1,25 +1,55 @@
 <!doctype html>
 <html lang="en" dir="ltr">
 
-<!-- Mirrored from puffintheme.com/template/epic-pro/theme1/hr-payroll.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Nov 2025 06:51:32 GMT -->
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="../assets/images/icon/logo.png" type="image/x-icon" />
 
     <title>HR Payroll</title>
-
     <!-- Bootstrap Core and vandor -->
     <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/plugins/sweetalert/sweetalert.html">
+    <link rel="stylesheet" href="../assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.html">
+    <link rel="stylesheet" href="../assets/plugins/dropify/css/dropify.min.html">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <!-- Replace the puffintheme font awesome link with this: -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Core css -->
     <link rel="stylesheet" href="../assets/css/main.css" />
     <link rel="stylesheet" href="../assets/css/theme1.css" />
 </head>
+<style>
+    @media print {
+        body * {
+            visibility: hidden;
+        }
+
+        #printableArea,
+        #printableArea * {
+            visibility: visible;
+        }
+
+        #printableArea {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            background: white;
+            z-index: 9999;
+            padding: 20px;
+        }
+
+        /* Hide print buttons inside the print area */
+        .no-print {
+            display: none !important;
+        }
+    }
+</style>
 
 <body class="font-jakarta theme1">
     <!-- Page Loader -->
@@ -33,7 +63,7 @@
         <div id="header_top" class="header_top">
             <div class="container">
                 <div class="hleft">
-                    <a class="header-brand" href="index.html"><i class="fe fe-command brand-logo"></i></a>
+                    <a class="header-brand" href="../index.html"><i class="fe fe-command brand-logo"></i></a>
                     <div class="dropdown">
                         <a href="page-search.html" class="nav-link icon" data-toggle="tooltip" data-placement="right"
                             title="Search">
@@ -362,7 +392,8 @@
                         <li class="list-group-item mb-2">
                             <p>Default Theme <span
                                     class="badge badge-success font-13 font-weight-normal ml-1">New</span></p>
-                            <a href="index.html"><img src="../assets/images/themes/default.png" class="img-fluid" /></a>
+                            <a href="../index.html"><img src="../assets/images/themes/default.png"
+                                    class="img-fluid" /></a>
                         </li>
                         <li class="list-group-item mb-2">
                             <p>Night Mode Theme</p>
@@ -573,44 +604,124 @@
             <nav id="left-sidebar-nav" class="sidebar-nav">
                 <ul class="metismenu">
                     <li class="g_heading">Directories</li>
-                    <li class="active">
-                        <a href="javascript:void(0)" class="has-arrow arrow-c"><i
-                                class="icon-rocket"></i><span>HRMS</span></a>
+                    <li>
+                        <a href="javascript:void(0)" class="has-arrow arrow-c" id="sidebar-hrms"><i
+                                class="fa-solid fa-rocket" style="color: #74c0fc;"></i><span>HRMS</span></a>
                         <ul>
-                            <li><a href="index.html"><span>Dashboard</span></a></li>
-                            <li><a href="hr-users.html"><span>Users</span></a></li>
-                            <li><a href="hr-departments.html"><span>Departments</span></a></li>
-                            <li><a href="hr-employee.html"><span>Employee</span></a></li>
-                            <li><a href="hr-holidays.html"><span>Holidays</span></a></li>
-                            <li><a href="hr-events.html"><span>Events</span></a></li>
-                            <li class="active"><a href="hr-payroll.html"><span>Payroll</span></a></li>
-                            <li><a href="hr-expenses.html"><span>expenses</span></a></li>
-                            <li><a href="hr-report.html"><span>Report</span></a></li>
+                            <li id="sidebar-dashboard"><a href="../index.html"><span>Dashboard</span></a></li>
+                            <li id="sidebar-users"><a href="hr-users.html"><span>Users</span></a></li>
+                            <li id="sidebar-departments"><a href="hr-departments.html"><span>Departments</span></a></li>
+                            <li id="sidebar-employee"><a href="hr-employee.html"><span>Employee</span></a></li>
+                            <li id="sidebar-attendance"><a href="hr-attendance.html"><span>Attendance</span></a></li>
+                            <li class="active" id="sidebar-payroll"><a href="hr-payroll.html"><span>Payroll</span></a>
+                            </li>
+                            <li id="sidebar-expenses"><a href="hr-expenses.html"><span>Expenses</span></a></li>
+                            <li id="sidebar-performance"><a href="hr-employee_perfomance.html"><span>Emp
+                                        Performance</span></a></li>
+                            <li id="sidebar-appraisal"><a href="hr-appraisal_flow.html"><span>Appraisal Flow</span></a>
+                            </li>
+                            <li id="sidebar-hr-reports"><a href="#"><span>HR Report</span></a>
+                                <ul>
+                                    <li><a class="text-muted" href="hr-daily-reports.html"><span>HR Task
+                                                Reports</span></a></li>
+                                    <li><a class="text-muted" href="hr-reports.html"><span>HR Interview
+                                                Reports</span></a></li>
+                                    <li><a class="text-muted" href="hr-timesheet.html"><span>HR Time Sheet</span></a>
+                                    </li>
+                                    <li><a class="text-muted" href="hr-interview-schedule.html"><span>Interview
+                                                Schedules</span></a></li>
+                                    <li><a class="text-muted" href="hr-appointed-Canditates.html"><span>Appointed
+                                                Candidates</span></a></li>
+                                    <li><a class="text-muted" href="hr-resigned-candidates.html"><span>Resigned
+                                                Candidates</span></a></li>
+                                </ul>
+                            </li>
+                            <li id="sidebar-admin-reports"><a href="hr-admin-reports.html"><span>Admin Report</span></a>
+                            </li>
+                            <li id="sidebar-other-portals"><a href="other-portals.html"><span>Other Portals</span></a>
+                            </li>
+                            <li id="sidebar-payment-bills"><a href="hr-payment-bills.html"><span>Payment
+                                        Bills</span></a> </li>
+                            <li id="sidebar-employee-task"><a href="employee-Task.html"><span>Employee Task</span></a>
+                            </li>
+                            <li id="sidebar-leave-request"><a href="leave-Request.html"><span>Leave Request</span></a>
+                            </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="javascript:void(0)" class="has-arrow arrow-c"><i
-                                class="icon-cup"></i><span>Project</span></a>
+
+                    <li id="sidebar-auditor">
+                        <a href="javascript:void(0)" class="has-arrow arrow-c"><i class="fa-solid fa-rocket"
+                                style="color: #74c0fc;"></i><span>Auditor</span></a>
                         <ul>
-                            <li><a href="project-index.html">Dashboard</a></li>
-                            <li><a href="project-list.html">Project list</a></li>
-                            <li><a href="project-taskboard.html">Taskboard</a></li>
-                            <li><a href="project-ticket.html">Ticket List</a></li>
-                            <li><a href="project-ticket-details.html">Ticket Details</a></li>
-                            <li><a href="project-clients.html">Clients</a></li>
-                            <li><a href="project-todo.html">Todo List</a></li>
+                            <li id="sidebar-working">
+                                <a><span>Operational Dashboard</span></a>
+                                <ul>
+                                    <li id="sidebar-client-id"><a href="clientID.html"><span>Client ID</span></a></li>
+                                    <li id="sidebar-quotation-id"><a href="quotationID.html"><span>Quotation
+                                                ID</span></a></li>
+                                    <li id="sidebar-proforma"><a href="proforma.html"><span>Proforma Voice</span></a>
+                                    </li>
+                                    <li id="sidebar-document-tracker"><a href="documentCollection.html"><span>Document
+                                                Tracker</span></a></li>
+                                    <li id="sidebar-backend-id"><a href="backend_id.html"><span>Backend ID</span></a>
+                                    </li>
+                                    <li id="sidebar-history-license"><a href="history-license.html"><span>History of
+                                                license</span></a></li>
+                                    <li id="sidebar-output"><a href="outputSheet.html"><span>Daily Report</span></a>
+                                    </li>
+                                    <li id="sidebar-enquiry"><a href="enquiry.html"><span>Enquiry</span></a></li>
+                                    <li id="sidebar-audit-quotation"><a href="audit_quotation.html"><span>Quotation
+                                            </span></a></li>
+                                    <li id="sidebar-audit-appointments"><a
+                                            href="audit_appointments.html"><span>Appoinment</span></a></li>
+                                    <li id="sidebar-operators"><a href="operators.html"><span>My Operator</span></a>
+                                    </li>
+                                    <li id="sidebar-pg-enquiry"><a href="pg_enquiry.html"><span>PG-Enquiry</span></a>
+                                    </li>
+                                    <li id="sidebar-sm-enquiries"><a
+                                            href="sm_enquiries.html"><span>SM-Enquiries</span></a></li>
+                                    <li id="sidebar-audit-weekly-report"><a href="audit_weekly_report.html"><span>Weekly
+                                                Report Sheet</span></a></li>
+                                    <li id="sidebar-phone-audit-report"><a href="phone_audit_report.html"><span>Phone
+                                                Audit</span></a></li>
+                                    <li id="sidebar-audit-base"><a href="audit_base.html"><span>Base</span></a></li>
+                                    <li id="sidebar-advisor-entry"><a href="advisor_entry_sheet.html"><span>Advisor
+                                                Entry</span></a></li>
+                                    <li id="sidebar-social-report"><a href="social-media-report.html"><span>Social Media
+                                                Report</span></a></li>
+                                    <li id="sidebar-advisor-performance-tracker"><a
+                                            href="advisor_performance_tracker.html"><span>Advisor Performance
+                                                Tracker</span></a></li>
+                                    <li id="sidebar-performance-tracker"><a
+                                            href="performance_tracker.html"><span>Performance Tracker</span></a></li>
+                                </ul>
+                            </li>
+
+                            <li id="sidebar-backend-report">
+                                <a href="hac_backend.html"><span>HAC Backend Report</span></a>
+                            </li>
+
+                            <li id="sidebar-financial-report">
+                                <a><span>Financial Report</span></a>
+                                <ul>
+                                    <li id="sidebar-bill-supply"><a href="bill-supply.html"><span>Bill of
+                                                supply</span></a></li>
+                                    <li id="sidebar-accounting-log"><a href="accounting_log.html"><span>Accounting
+                                                Log</span></a></li>
+                                </ul>
+                            </li>
+
+                            <li id="sidebar-sop">
+                                <a><span>SOP Tracker</span></a>
+                                <ul>
+                                    <li id="sidebar-qc"><a href="Qc-sheet.html"><span>QC - SHEET</span></a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="javascript:void(0)" class="has-arrow arrow-c"><i class="icon-briefcase"></i><span>Job
-                                Portal</span></a>
-                        <ul>
-                            <li><a href="job-index.html"><span>Job Dashboard</span></a></li>
-                            <li><a href="job-positions.html"><span>Positions</span></a></li>
-                            <li><a href="job-applicants.html"><span>Applicants</span></a></li>
-                            <li><a href="job-resumes.html"><span>Resumes</span></a></li>
-                            <li><a href="job-settings.html"><span>Settings</span></a></li>
-                        </ul>
+                    <li id="sidebar-management">
+                        <a href="management-discussion.html"><i class="fa-solid fa-rocket"
+                                style="color: #74c0fc;"></i><span> Discussion</span></a>
                     </li>
                 </ul>
             </nav>
@@ -632,48 +743,6 @@
                             </div>
                         </div>
                         <div class="right">
-                            <ul class="nav nav-pills">
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                                        aria-haspopup="true" aria-expanded="false">Language</a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#"><img class="w20 mr-2"
-                                                src="https://puffintheme.com/template/epic-pro/assets/images/flags/us.svg">English</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#"><img class="w20 mr-2"
-                                                src="https://puffintheme.com/template/epic-pro/assets/images/flags/es.svg">Spanish</a>
-                                        <a class="dropdown-item" href="#"><img class="w20 mr-2"
-                                                src="https://puffintheme.com/template/epic-pro/assets/images/flags/jp.svg">japanese</a>
-                                        <a class="dropdown-item" href="#"><img class="w20 mr-2"
-                                                src="https://puffintheme.com/template/epic-pro/assets/images/flags/bl.svg">France</a>
-                                    </div>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                                        aria-haspopup="true" aria-expanded="false">Reports</a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#"><i
-                                                class="dropdown-icon fa fa-file-excel-o"></i> MS Excel</a>
-                                        <a class="dropdown-item" href="#"><i
-                                                class="dropdown-icon fa fa-file-word-o"></i> MS Word</a>
-                                        <a class="dropdown-item" href="#"><i class="dropdown-icon fa fa-file-pdf-o"></i>
-                                            PDF</a>
-                                    </div>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                                        aria-haspopup="true" aria-expanded="false">Project</a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Graphics Design</a>
-                                        <a class="dropdown-item" href="#">Angular Admin</a>
-                                        <a class="dropdown-item" href="#">PSD to HTML</a>
-                                        <a class="dropdown-item" href="#">iOs App Development</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Home Development</a>
-                                        <a class="dropdown-item" href="#">New Blog post</a>
-                                    </div>
-                                </li>
-                            </ul>
                             <div class="notification d-flex">
                                 <div class="dropdown d-flex">
                                     <a class="nav-link icon d-none d-md-flex btn btn-default btn-icon ml-1"
@@ -827,19 +896,25 @@
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                         <a class="dropdown-item" href="page-profile.html"><i
-                                                class="dropdown-icon fe fe-user"></i> Profile</a>
+                                                class="dropdown-icon fa-solid fa-user-tie" style="color: #8c8c8c;"></i>
+                                            Profile</a>
                                         <a class="dropdown-item" href="app-setting.html"><i
-                                                class="dropdown-icon fe fe-settings"></i> Settings</a>
+                                                class="dropdown-icon fa-solid fa-gear" style="color: #8c8c8c;"></i>
+                                            Settings</a>
                                         <a class="dropdown-item" href="javascript:void(0)"><span
                                                 class="float-right"><span class="badge badge-primary">6</span></span><i
-                                                class="dropdown-icon fe fe-mail"></i> Inbox</a>
+                                                class="dropdown-icon fa-solid fa-envelope" style="color: #8c8c8c;"></i>
+                                            Inbox</a>
                                         <a class="dropdown-item" href="javascript:void(0)"><i
-                                                class="dropdown-icon fe fe-send"></i> Message</a>
+                                                class="dropdown-icon fa-solid fa-paper-plane"
+                                                style="color: #8c8c8c;"></i> Message</a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="javascript:void(0)"><i
-                                                class="dropdown-icon fe fe-help-circle"></i> Need help?</a>
+                                                class="dropdown-icon fa-solid fa-circle-question"
+                                                style="color: #8c8c8c;"></i> Need help?</a>
                                         <a class="dropdown-item" href="login.html"><i
-                                                class="dropdown-icon fe fe-log-out"></i> Sign out</a>
+                                                class="dropdown-icon fa-solid fa-arrow-right-from-bracket"
+                                                style="color: #8c8c8c;"></i> Sign out</a>
                                     </div>
                                 </div>
                             </div>
@@ -851,14 +926,17 @@
                 <div class="container-fluid">
                     <div class="d-flex justify-content-between align-items-center">
                         <ul class="nav nav-tabs page-header-tab">
+                            <!-- ADDED 'active' CLASS HERE -->
                             <li class="nav-item"><a class="nav-link active" id="Payroll-tab" data-toggle="tab"
-                                    href="#Payroll-Salary">Employee Salary</a></li>
-                            <li class="nav-item"><a class="nav-link" id="Payroll-tab" data-toggle="tab"
                                     href="#Payroll-Payslip">Payslip</a></li>
                         </ul>
-                        <div class="header-action">
+                        <!-- REPLACE YOUR EXISTING ADD BUTTON WITH THIS -->
+                        <div class="header-action" id="hide-feature">
+                            <!-- Updated Button targeting the correct ID -->
                             <button type="button" class="btn btn-primary" data-toggle="modal"
-                                data-target="#exampleModal"><i class="fe fe-plus mr-2"></i>Add</button>
+                                data-target="#addEmployeeModal">
+                                <i class="fe fe-plus mr-2"></i>Add Employee
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -866,186 +944,42 @@
             <div class="section-body mt-3">
                 <div class="container-fluid">
                     <div class="tab-content mt-3">
-                        <div class="tab-pane fade show active" id="Payroll-Salary" role="tabpanel">
-                            <div class="row clearfix">
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h6>Web Developer</h6>
-                                            <h3 class="pt-3">$<span class="counter">18,960</span></h3>
-                                            <span><span class="text-danger mr-2"><i class="fa fa-long-arrow-down"></i>
-                                                    5.27%</span> Since last month</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h6>App Developer</h6>
-                                            <h3 class="pt-3">$<span class="counter">11,783</span></h3>
-                                            <span><span class="text-success mr-2"><i class="fa fa-long-arrow-up"></i>
-                                                    11.38%</span> Since last month</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h6>Designer</h6>
-                                            <h3 class="pt-3">$<span class="counter">2,254</span></h3>
-                                            <span><span class="text-success mr-2"><i class="fa fa-long-arrow-up"></i>
-                                                    9.61%</span> Since last month</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h6>Marketing</h6>
-                                            <h3 class="pt-3">$<span class="counter">8,751</span></h3>
-                                            <span><span class="text-danger mr-2"><i class="fa fa-long-arrow-down"></i>
-                                                    2.27%</span> Since last month</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <!-- ADDED 'show active' CLASSES HERE -->
+                        <div class="tab-pane fade show active" id="Payroll-Payslip" role="tabpanel">
                             <div class="card">
-                                <div class="card-header border-bottom">
-                                    <h3 class="card-title">Employee</h3>
+                                <div class="card-header">
+                                    <h3 class="card-title">Employee Payslips</h3>
                                     <div class="card-options">
-                                        <form>
-                                            <div class="input-group">
-                                                <input type="text" class="form-control form-control-sm"
-                                                    placeholder="Search something..." name="s">
-                                                <span class="input-group-btn ml-2"><button class="btn btn-icon"
-                                                        type="submit"><span class="fe fe-search"></span></button></span>
-                                            </div>
-                                        </form>
+                                        <!-- Button to Open Modal -->
+                                        <li class="btn btn-primary btn-sm" data-toggle="modal"
+                                            data-target="#payslipModal">
+                                            <i class="fe fe-plus"></i> Generate Payslip
+                                            </button>
                                     </div>
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
-                                        <table class="table table-hover table-striped table-vcenter text-nowrap">
-                                            <thead>
+                                        <table class="table table-hover table-striped table-vcenter text-nowrap"
+                                            id="payslipTable">
+                                            <<thead>
                                                 <tr>
-                                                    <th style="width: 20px;">#</th>
-                                                    <th>Employee</th>
-                                                    <th class="w200">Role</th>
-                                                    <th class="w60">Salary</th>
-                                                    <th class="w60">Status</th>
-                                                    <th class="w200">Action</th>
+                                                    <th>S.No</th>
+                                                    <th>Employee ID</th>
+                                                    <th>Employee Name</th>
+                                                    <th>Dept / Div</th>
+                                                    <th>Designation</th>
+                                                    <th>Basic</th>
+                                                    <th>Deduction</th>
+                                                    <th>Net Salary</th>
+                                                    <th>Salary Date</th>
+                                                    <th>Payment Status</th>
+                                                    <th>Actions</th>
                                                 </tr>
-                                            </thead>
-                                            <tbody>
-                                            </tbody>
+                                                </thead>
+                                                <tbody>
+                                                    <!-- Data will be loaded here via JS -->
+                                                </tbody>
                                         </table>
-                                    </div>
-                                    <nav aria-label="Page navigation">
-                                        <ul class="pagination mb-0 justify-content-end">
-                                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="Payroll-Payslip" role="tabpanel">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="media mb-4">
-                                        <div class="mr-3">
-                                            <img class="rounded" src="../assets/images/xs/avatar4.jpg" alt="">
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="content">
-                                                <span><strong>Order ID: </strong> C09</span>
-                                                <p class="h5">John Smith <small
-                                                        class="float-right badge badge-primary">Jun 15, 2019</small></p>
-                                                <p>795 Folsom Ave, Suite 546 San Francisco, CA 54656</p>
-                                            </div>
-                                            <nav class="d-flex text-muted">
-                                                <a href="javascript:void(0);" class="icon mr-3"><i
-                                                        class="icon-envelope text-info"></i></a>
-                                                <a href="javascript:void(0);" class="icon mr-3"><i
-                                                        class="icon-printer"></i></a>
-                                            </nav>
-                                        </div>
-                                    </div>
-                                    <div class="table-responsive">
-                                        <table class="table table-hover table-striped table-vcenter text-nowrap">
-                                            <thead class="dark-mode">
-                                                <tr>
-                                                    <th class="w60">#</th>
-                                                    <th></th>
-                                                    <th class="w100">Earnings</th>
-                                                    <th class="w100">Deductions</th>
-                                                    <th class="w100 text-right">Total</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>01</td>
-                                                    <td>
-                                                        <span>Basic Salary</span>
-                                                    </td>
-                                                    <td>$1,500</td>
-                                                    <td>-</td>
-                                                    <td class="text-right">$380</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>02</td>
-                                                    <td>
-                                                        <span>House Rent Allowance (H.R.A.)</span>
-                                                    </td>
-                                                    <td>$62</td>
-                                                    <td>-</td>
-                                                    <td class="text-right">$250</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>03</td>
-                                                    <td>
-                                                        <span>Tax Deducted at Source (T.D.S.)</span>
-                                                    </td>
-                                                    <td>-</td>
-                                                    <td>$80</td>
-                                                    <td class="text-right">$120</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>04</td>
-                                                    <td>
-                                                        <span>C/Bank Loan</span>
-                                                    </td>
-                                                    <td>-</td>
-                                                    <td>$120</td>
-                                                    <td class="text-right">$120</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>05</td>
-                                                    <td>
-                                                        <span>Other Allowance</span>
-                                                    </td>
-                                                    <td>$121</td>
-                                                    <td>-</td>
-                                                    <td class="text-right">$120</td>
-                                                </tr>
-                                            </tbody>
-                                            <tfoot>
-                                                <tr>
-                                                    <td colspan="2"><span><strong>Note:</strong> Ipsum is simply dummy
-                                                            text of the printing and typesetting industry.</span></td>
-                                                    <td>$1683</td>
-                                                    <td>$200</td>
-                                                    <td class="text-right">
-                                                        <strong class="text-success">$1483.00</strong>
-                                                    </td>
-                                                </tr>
-                                            </tfoot>
-                                        </table>
-                                        <button class="btn btn-info float-right"><i class="icon-printer"></i>
-                                            Print</button>
                                     </div>
                                 </div>
                             </div>
@@ -1055,20 +989,790 @@
             </div>
         </div>
     </div>
+    <!-- Add Payslip Modal -->
+    <div class="modal fade" id="payslipModal" tabindex="-1" role="dialog" aria-labelledby="payslipModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="payslipModalLabel">Generate Salary Slip</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <form id="payslipForm">
+                        <!-- HIDDEN ID FIELD (CRITICAL FOR EDIT/UPDATE) -->
+                        <input type="hidden" id="payslipId" name="id">
 
+                        <!-- Header: Month & Year -->
+                        <div class="row clearfix mb-3" style="background: #f1f1f1; padding: 10px; border-radius: 5px;">
+                            <div class="col-md-6">
+                                <label>Month</label>
+                                <select class="form-control" name="month" id="p_month" required>
+                                    <option value="January">January</option>
+                                    <option value="February">February</option>
+                                    <option value="March">March</option>
+                                    <option value="April">April</option>
+                                    <option value="May">May</option>
+                                    <option value="June">June</option>
+                                    <option value="July">July</option>
+                                    <option value="August">August</option>
+                                    <option value="September">September</option>
+                                    <option value="October">October</option>
+                                    <option value="November">November</option>
+                                    <option value="December">December</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Year</label>
+                                <input type="number" class="form-control" name="year" id="p_year" value="2025" required>
+                            </div>
+                        </div>
+
+                        <!-- Employee Details -->
+                        <div class="row clearfix">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Employee Name</label>
+                                    <input type="text" class="form-control" name="employee_name" id="p_name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>UAN No</label>
+                                    <input type="text" class="form-control" name="uan_no" id="p_uan" value="Nil">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row clearfix">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Employee Code</label>
+                                    <input type="text" class="form-control" name="employee_code" id="p_code" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>ESI No</label>
+                                    <input type="text" class="form-control" name="esi_no" id="p_esi" value="Nil">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row clearfix">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Designation</label>
+                                    <input type="text" class="form-control" name="designation" id="p_desg">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Bank Account Number</label>
+                                    <input type="text" class="form-control" name="bank_account_number" id="p_bank">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row clearfix">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Date of Joining</label>
+                                    <input type="date" class="form-control" name="date_of_joining" id="p_doj">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Total Days</label>
+                                    <input type="number" class="form-control" name="total_days" id="p_total_days"
+                                        value="30">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row clearfix">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>PAN</label>
+                                    <input type="text" class="form-control" name="pan" id="p_pan">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Number of Worked Days</label>
+                                    <input type="number" class="form-control" name="worked_days" id="p_worked_days">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row clearfix border-bottom mb-3">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Department</label>
+                                    <input type="text" class="form-control" name="department" id="p_dept">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>LOP (Loss of Pay)</label>
+                                    <input type="number" class="form-control" name="lop" id="p_lop" value="0">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Financials -->
+                        <div class="row clearfix">
+                            <!-- Income -->
+                            <div class="col-md-6" style="border-right: 1px solid #ddd;">
+                                <h6 class="text-success">Income (Earnings)</h6>
+                                <div class="form-group row">
+                                    <label class="col-sm-6 col-form-label">Basic Salary</label>
+                                    <div class="col-sm-6">
+                                        <input type="number" class="form-control calc-income" name="basic_salary"
+                                            id="p_basic" placeholder="0.00">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-6 col-form-label">DA</label>
+                                    <div class="col-sm-6">
+                                        <input type="number" class="form-control calc-income" name="da" id="p_da"
+                                            placeholder="0.00">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-6 col-form-label">HRA</label>
+                                    <div class="col-sm-6">
+                                        <input type="number" class="form-control calc-income" name="hra" id="p_hra"
+                                            placeholder="0.00">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-6 col-form-label">CA (Conveyance)</label>
+                                    <div class="col-sm-6">
+                                        <input type="number" class="form-control calc-income" name="ca" id="p_ca"
+                                            placeholder="0.00">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Deductions -->
+                            <div class="col-md-6">
+                                <h6 class="text-danger">Deductions</h6>
+                                <div class="form-group row">
+                                    <label class="col-sm-6 col-form-label">PF (12%)</label>
+                                    <div class="col-sm-6">
+                                        <input type="number" class="form-control calc-deduction" name="pf" id="p_pf"
+                                            placeholder="0.00">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-6 col-form-label">E.S.I.C (0.75%)</label>
+                                    <div class="col-sm-6">
+                                        <input type="number" class="form-control calc-deduction" name="esic" id="p_esic"
+                                            placeholder="0.00">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-6 col-form-label">Advance</label>
+                                    <div class="col-sm-6">
+                                        <input type="number" class="form-control calc-deduction" name="advance"
+                                            id="p_adv" placeholder="0.00">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-6 col-form-label">Professional Tax</label>
+                                    <div class="col-sm-6">
+                                        <input type="number" class="form-control calc-deduction" name="professional_tax"
+                                            id="p_pt" placeholder="0.00">
+                                    </div>
+                                </div>
+                                <!-- Inside payslipModal modal-body -->
+                               
+                            </div>
+                        </div>
+
+                        <!-- Net Salary Result -->
+                        <div class="row clearfix mt-3 pt-3"
+                            style="background-color: #ffdce0; border: 1px solid #f5c6cb;">
+                            <div class="col-md-12 d-flex justify-content-between align-items-center">
+                                <h5 class="mb-3 font-weight-bold">Net Salary</h5>
+                                <input type="number" class="form-control mb-3 w150 font-weight-bold" name="net_salary"
+                                    id="finalNetSalary" readonly style="font-size: 1.2rem;">
+                            </div>
+                        </div>
+
+                         <div class="row clearfix border-top pt-3 mt-3">
+                                    <div class="col-md-3">
+                                        <label>Salary Date</label>
+                                        <input type="date" class="form-control" name="salary_date" id="p_salary_date">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Payment Date</label>
+                                        <input type="date" class="form-control" name="payment_date" id="p_payment_date">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Payment Mode</label>
+                                        <select class="form-control" id="p_pay_mode">
+                                            <option value="Bank Transfer">Bank Transfer</option>
+                                            <option value="Cash">Cash</option>
+                                            <option value="UPI">UPI</option>
+                                            <option value="Cheque">Cheque</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Payment Status</label>
+                                        <select class="form-control" id="p_pay_status">
+                                            <option value="Paid">Paid</option>
+                                            <option value="Pending">Pending</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12 mt-2">
+                                        <label>Remarks</label>
+                                        <input type="text" class="form-control" id="p_remarks"
+                                            placeholder="Add any salary remarks here...">
+                                    </div>
+                                </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="savePayslip()">Save Payslip</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Employee Modal -->
+    <div class="modal fade" id="addEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="addEmployeeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addEmployeeModalLabel">Add New Employee</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addEmployeeForm">
+                        <h6 class="text-primary">Mandatory Details</h6>
+                        <div class="row clearfix">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Employee ID <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="new_emp_id" placeholder="e.g. EMP001"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Employee Name <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="new_emp_name" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row clearfix">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Email <span class="text-danger">*</span></label>
+                                    <input type="email" class="form-control" id="new_emp_email" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Company <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="new_emp_company" value="Kalsun Groups"
+                                        required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row clearfix">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Employment Type <span class="text-danger">*</span></label>
+                                    <select class="form-control" id="new_emp_type" required>
+                                        <option value="Full Time">Full Time</option>
+                                        <option value="Part Time">Part Time</option>
+                                        <option value="Contract">Contract</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Date of Joining</label>
+                                    <input type="date" class="form-control" id="new_emp_doj">
+                                </div>
+                            </div>
+                        </div>
+
+                        <h6 class="text-primary mt-3">Employment Details</h6>
+                        <div class="row clearfix">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Designation</label>
+                                    <input type="text" class="form-control" id="new_emp_designation">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Department</label>
+                                    <input type="text" class="form-control" id="new_emp_department">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Branch</label>
+                                    <input type="text" class="form-control" id="new_emp_branch" value="Main Branch">
+                                </div>
+                            </div>
+                        </div>
+
+                        <h6 class="text-primary mt-3">Financial Details</h6>
+                        <div class="row clearfix">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Net Take Home Salary</label>
+                                    <input type="number" class="form-control" id="new_emp_salary" value="0">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Bank Account Number</label>
+                                    <input type="text" class="form-control" id="new_emp_account">
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="submitNewEmployee()">Save Employee</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="../assets/bundles/lib.vendor.bundle.js"></script>
 
     <script src="../assets/bundles/counterup.bundle.js"></script>
     <script src="../assets/js/core.js"></script>
     <script>
-        $(function () {
-            "use strict";
-            $('.counter').counterUp({
-                delay: 10,
-                time: 1000
-            });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Retrieve User Details
+            const loggedInUserName = localStorage.getItem('loggedInUserName');
+            const loggedInUserRole = localStorage.getItem('loggedInUserRole'); // Ensure this is saved during login
+
+            const welcomeMessageElement = document.getElementById('welcomeMessage');
+
+            // 2. Set Welcome Message
+            if (loggedInUserName && welcomeMessageElement) {
+                welcomeMessageElement.textContent = `${loggedInUserName} (${loggedInUserRole})`;
+            } else if (welcomeMessageElement) {
+                welcomeMessageElement.textContent = 'Guest!';
+                // Optional: window.location.href = 'login.html';
+            }
+
+            // 3. Define Menu Permissions
+            // Keys must match the IDs we added to the HTML <li> tags
+            const allMenuIds = [
+                'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
+                'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
+                'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
+                'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
+                'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
+                'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
+                'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
+                'sidebar-sop', 'sidebar-qc', 'sticky-actions', 'hide-feature', ' sidebar-social-report ', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker', 'sidebar-management'
+            ];
+
+            const rolePermissions = {
+                'HR': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                    'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                    'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                    'sidebar-payment-bills', 'sidebar-leave-request', 'sticky-actions', 'hide-feature'],
+                'ADMIN': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-attendance', 'sidebar-admin-reports',
+                    'sidebar-payment-bills', 'sidebar-leave-request'],
+                'EMPLOYEE': [
+                    'sidebar-hrms', 'sidebar-departments', 'sidebar-employee-task', 'sidebar-leave-request'],
+
+                'GENERAL MANAGER': ['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                    'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                    'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                    'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
+                    'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
+                    'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
+                    'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
+                    'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
+                    'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
+                    'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
+                    'sidebar-sop', 'sidebar-qc', ' sidebar-social-report ', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker', 'sidebar-management'],
+
+                'PROJECT MANAGER': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-departments', 'sidebar-employee',
+                    'sidebar-performance', 'sidebar-leave-request', 'sticky-actions', 'hide-feature'
+                ],
+                'ADVISOR': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-working', 'sidebar-financial-report',
+                    'sidebar-client-id', 'sidebar-quotation-id', 'sidebar-proforma', 'sidebar-document-tracker',
+                    'sidebar-backend-id', 'sidebar-bill-supply', 'sidebar-history-license', 'sidebar-backend-report',
+                    'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments', 'sidebar-operators',
+                    'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report', 'sidebar-phone-audit-report',
+                    'sidebar-audit-base', 'sidebar-advisor-entry', 'sidebar-output', 'sticky-actions', 'hide-feature', ' sidebar-social-report ', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker'
+                ],
+                'AUDIT PROJECT MANAGER': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-working', 'sidebar-financial-report',
+                    'sidebar-sop', 'sidebar-backend-report', 'sidebar-enquiry', 'sidebar-audit-quotation',
+                    'sidebar-audit-appointments', 'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries',
+                    'sidebar-audit-weekly-report', 'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-qc',
+                    'sidebar-advisor-entry', 'sidebar-output', 'sidebar-bill-supply', 'sidebar-accounting-log', 'sticky-actions', 'hide-feature', ' sidebar-social-report ', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker'
+                ],
+                'BACKEND PROJECT MANAGER': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-backend-report', 'sticky-actions', 'hide-feature'
+                ],
+                'TEAM LEADER': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-financial-report',
+                    'sidebar-accounting-log', 'sidebar-bill-supply', 'sticky-actions', 'hide-feature'
+                ],
+                'BACK OFFICE EXECUTIVE': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-backend-report',
+                    'sidebar-sop', 'sidebar-qc', 'sticky-actions', 'hide-feature'
+                ],
+                'VP': ['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                    'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                    'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                    'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
+                    'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
+                    'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
+                    'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
+                    'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
+                    'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
+                    'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
+                    'sidebar-sop', 'sidebar-qc', ' sidebar-social-report ', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker', 'sidebar-management'],
+
+                'CEO': ['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                    'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                    'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                    'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
+                    'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
+                    'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
+                    'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
+                    'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
+                    'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
+                    'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
+                    'sidebar-sop', 'sidebar-qc', ' sidebar-social-report ', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker', 'sidebar-management']
+            };
+
+
+            // 4. Function to Filter Menu
+            function filterMenuByRole(role) {
+                // Normalize role string (handle 'Admin', 'admin', 'ADMIN')
+                const normalizedRole = role ? role.toUpperCase().trim() : '';
+
+                const allowedMenus = rolePermissions[normalizedRole] || [];
+
+                allMenuIds.forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) {
+                        if (allowedMenus.includes(id)) {
+                            el.style.display = 'block'; // Show
+                        } else {
+                            el.style.display = 'none';  // Hide
+                        }
+                    }
+                });
+            }
+
+            // 5. Execute Filter
+            if (loggedInUserRole) {
+                filterMenuByRole(loggedInUserRole);
+            } else {
+                // If no role found (not logged in), hide sensitive menus or redirect
+                // For now, let's hide everything except dashboard
+                allMenuIds.forEach(id => {
+                    if (id !== 'menu-dashboard') {
+                        const el = document.getElementById(id);
+                        if (el) el.style.display = 'none';
+                    }
+                });
+            }
+
+            // 6. Sign Out Logic
+            const signOutButton = document.querySelector('a[href="Html/Login.html"].dropdown-item');
+            if (signOutButton) {
+                signOutButton.addEventListener('click', () => {
+                    localStorage.removeItem('loggedInUserName');
+                    localStorage.removeItem('loggedInUserId');
+                    localStorage.removeItem('loggedInUserRole'); // Clear role on logout
+                });
+            }
         });
+
+        // Ensure this matches your backend port
+        const API_BASE_URL = 'http://localhost:3000';
+
+        $(function () {
+            $('.counter').counterUp({ delay: 10, time: 1000 });
+            loadPayslips();
+        });
+
+        // 1. OPEN MODAL FOR ADDING
+        function openAddModal() {
+            $('#payslipForm')[0].reset();
+            $('#payslipId').val(''); // Clear hidden ID so it knows it's a new entry
+            $('#payslipModalLabel').text('Generate Salary Slip');
+            $('#payslipModal').modal('show');
+        }
+
+        // 2. LIVE CALCULATION
+        $('#payslipForm').on('input', '.calc-income, .calc-deduction', function () {
+            calculateNetSalary();
+        });
+
+        function calculateNetSalary() {
+            let totalIncome = 0;
+            let totalDeductions = 0;
+            $('.calc-income').each(function () { totalIncome += parseFloat($(this).val()) || 0; });
+            $('.calc-deduction').each(function () { totalDeductions += parseFloat($(this).val()) || 0; });
+            $('#finalNetSalary').val((totalIncome - totalDeductions).toFixed(2));
+        }
+
+        // Updated Load Table Function
+        function loadPayslips() {
+            fetch(`${API_BASE_URL}/api/payslip`)
+                .then(response => response.json())
+                .then(data => {
+                    const tbody = document.querySelector('#payslipTable tbody');
+                    tbody.innerHTML = '';
+                    const role = (localStorage.getItem('loggedInUserRole') || '').toUpperCase().trim();
+
+                    data.forEach((item, index) => {
+                        let actionButtons = (role !== 'GENERAL MANAGER' && role !== 'VP' && role !== 'CEO') ? `
+                    <button class="btn btn-sm btn-info" onclick="editPayslip(${item.id})"><i class="fa fa-edit"></i></button>
+                    <button class="btn btn-sm btn-danger" onclick="deletePayslip(${item.id})"><i class="fa fa-trash"></i></button>
+                ` : '';
+
+                        const row = `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${item.employee_id}</td>
+                        <td>${item.employee_name}</td>
+                        <td>${item.department}</td>
+                        <td>${item.designation}</td>
+                        <td>₹${parseFloat(item.basic_salary).toFixed(2)}</td>
+                        <td class="text-danger">₹${parseFloat(item.total_deduction).toFixed(2)}</td>
+                        <td class="text-success font-weight-bold">₹${parseFloat(item.net_salary).toFixed(2)}</td>
+                        <td>${item.salary_date ? item.salary_date.split('T')[0] : 'N/A'}</td>
+                        <td><span class="badge ${item.payment_status === 'Paid' ? 'badge-success' : 'badge-warning'}">${item.payment_status}</span></td>
+                        <td>${actionButtons}</td>
+                    </tr>`;
+                        tbody.innerHTML += row;
+                    });
+                });
+        }
+
+        // Updated Save Function
+        function savePayslip() {
+            const id = $('#payslipId').val();
+            const object = {
+                // ... include existing mapping ...
+                employee_id: $('#p_code').val(), // Mapping employee code field to employee_id
+                salary_date: $('#p_salary_date').val(),
+                payment_date: $('#p_payment_date').val(),
+                payment_mode: $('#p_pay_mode').val(),
+                payment_status: $('#p_pay_status').val(),
+                remarks: $('#p_remarks').val(),
+                // ... (rest of the basic salary/income/deduction fields)
+                month: $('#p_month').val(),
+                year: $('#p_year').val(),
+                employee_name: $('#p_name').val(),
+                designation: $('#p_desg').val(),
+                uan_no: $('#p_uan').val(),
+                esi_no: $('#p_esi').val(),
+                bank_account_number: $('#p_bank').val(),
+                date_of_joining: $('#p_doj').val(),
+                total_days: $('#p_total_days').val(),
+                pan: $('#p_pan').val(),
+                worked_days: $('#p_worked_days').val(),
+                department: $('#p_dept').val(),
+                lop: $('#p_lop').val(),
+                basic_salary: $('#p_basic').val(),
+                da: $('#p_da').val(),
+                hra: $('#p_hra').val(),
+                ca: $('#p_ca').val(),
+                pf: $('#p_pf').val(),
+                esic: $('#p_esic').val(),
+                advance: $('#p_adv').val(),
+                professional_tax: $('#p_pt').val(),
+                net_salary: $('#finalNetSalary').val()
+            };
+
+            const url = id ? `${API_BASE_URL}/api/payslip/update/${id}` : `${API_BASE_URL}/api/payslip/add`;
+            fetch(url, {
+                method: id ? 'PUT' : 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(object)
+            }).then(() => {
+                $('#payslipModal').modal('hide');
+                loadPayslips();
+            });
+        }
+
+        // Updated Edit Populate Function
+        function editPayslip(id) {
+            fetch(`${API_BASE_URL}/api/payslip/${id}`)
+                .then(res => res.json())
+                .then(data => {
+                    $('#payslipId').val(data.id);
+                    $('#p_code').val(data.employee_id); // Populate ID
+                    $('#p_salary_date').val(data.salary_date ? data.salary_date.split('T')[0] : '');
+                    $('#p_payment_date').val(data.payment_date ? data.payment_date.split('T')[0] : '');
+                    $('#p_pay_mode').val(data.payment_mode);
+                    $('#p_pay_status').val(data.payment_status);
+                    $('#p_remarks').val(data.remarks);
+                    // ... (populate all other existing fields like basic, etc.)
+                    $('#p_month').val(data.salary_month);
+                    $('#p_year').val(data.salary_year);
+                    $('#p_name').val(data.employee_name);
+                    $('#p_desg').val(data.designation);
+                    $('#p_uan').val(data.uan_no);
+                    $('#p_esi').val(data.esi_no);
+                    $('#p_bank').val(data.bank_account_number);
+                    if (data.date_of_joining) $('#p_doj').val(data.date_of_joining.split('T')[0]);
+                    $('#p_total_days').val(data.total_days);
+                    $('#p_pan').val(data.pan_number);
+                    $('#p_worked_days').val(data.worked_days);
+                    $('#p_dept').val(data.department);
+                    $('#p_lop').val(data.lop_days);
+                    $('#p_basic').val(data.basic_salary);
+                    $('#p_da').val(data.da);
+                    $('#p_hra').val(data.hra);
+                    $('#p_ca').val(data.ca);
+                    $('#p_pf').val(data.pf);
+                    $('#p_esic').val(data.esic);
+                    $('#p_adv').val(data.advance);
+                    $('#p_pt').val(data.professional_tax);
+                    $('#finalNetSalary').val(data.net_salary);
+
+                    $('#payslipModal').modal('show');
+                });
+        }
+
+        // 6. DELETE
+        function deletePayslip(id) {
+            if (confirm('Are you sure you want to delete this payslip?')) {
+                fetch(`${API_BASE_URL}/api/payslip/delete/${id}`, { method: 'DELETE' })
+                    .then(res => res.json())
+                    .then(data => {
+                        alert(data.message);
+                        loadPayslips();
+                    })
+                    .catch(err => alert("Error deleting record"));
+            }
+        }
+
+        // --- NEW FUNCTION TO ADD EMPLOYEE ---
+        function submitNewEmployee() {
+            // 1. Validate Mandatory Fields
+            const empId = $('#new_emp_id').val();
+            const empName = $('#new_emp_name').val();
+            const empEmail = $('#new_emp_email').val();
+            const empCompany = $('#new_emp_company').val();
+            const empType = $('#new_emp_type').val();
+
+            if (!empId || !empName || !empEmail || !empCompany || !empType) {
+                alert("Please fill in all mandatory fields marked with *");
+                return;
+            }
+
+            // 2. Construct Data Object (Matching server.js /api/employees/add)
+            const employeeData = {
+                // Core Details
+                employee_id: empId,
+                employee_name: empName,
+                email: empEmail,
+                company: empCompany,
+                caller_name: "Admin", // Default
+                date_of_joining: $('#new_emp_doj').val() || new Date().toISOString().split('T')[0],
+                dob: "2000-01-01", // Default to prevent null error if not asked
+                contact_number: "0000000000",
+                alternate_phone_number: "",
+                official_phone_number: "",
+                personal_mail_id: empEmail,
+                official_mail_id: "",
+                permanent_address: "Not Provided",
+                temporary_address: "",
+
+                // Employment Details
+                branch: $('#new_emp_branch').val(),
+                employment_type: empType,
+                designation: $('#new_emp_designation').val() || "Staff",
+                department: $('#new_emp_department').val() || "General",
+                epf_no: "",
+                esic_no: "",
+
+                // Personal Details (Sending empty defaults to satisfy SQL insert count)
+                marital_status: "Single",
+                blood_group: "",
+                emergency_contact_person_name: "",
+                relationship_with_employee: "",
+                emergency_contact_person_phone_number: "",
+                employee_nominee_name: "",
+                nominee_dob: null,
+                nominee_relationship_with_employee: "",
+                father_name: "",
+                father_dob: null,
+                father_phone_number: "",
+                mother_name: "",
+                mother_dob: null,
+                mother_phone_number: "",
+                spouse_name: "",
+                spouse_dob: null,
+                spouse_phone_number: "",
+                child1_name: "",
+                child1_dob: null,
+                child2_name: "",
+                child2_dob: null,
+
+                // Financial Details
+                bank_name_branch: "",
+                account_number: $('#new_emp_account').val() || "",
+                ifsc_number: "",
+                net_take_home_salary: $('#new_emp_salary').val() || 0
+            };
+
+            // 3. Send to Server
+            fetch(`${API_BASE_URL}/api/employees/add`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(employeeData)
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        return response.json().then(err => { throw new Error(err.error || "Server Error"); });
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    alert(data.message);
+                    $('#addEmployeeModal').modal('hide');
+                    $('#addEmployeeForm')[0].reset();
+                    // Optional: Reload page or update a list if you have an employee list on this page
+                    // location.reload(); 
+                })
+                .catch(error => {
+                    console.error('Error adding employee:', error);
+                    alert('Failed to add employee: ' + error.message);
+                });
+        }
     </script>
 </body>
 

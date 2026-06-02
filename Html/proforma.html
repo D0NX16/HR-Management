@@ -1,0 +1,1225 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="icon" href="../assets/images/icon/logo.png" type="image/x-icon" />
+
+    <title>Quotation ID</title>
+
+    <!-- Bootstrap Core and vandor -->
+    <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
+
+    <!-- Fonts -->
+    <link href="../assets/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <!-- Plugins css -->
+    <link rel="stylesheet" href="../assets/plugins/charts-c3/c3.min.css" />
+
+    <!-- Core css -->
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/theme1.css" />
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+       <style>
+        /* 1. Default text color for sub-menu items (Dark Gray) */
+.metismenu ul a {
+  color: #4d5052 !important; 
+}
+
+/* 2. Make the Parent active item Blue */
+.metismenu .active > a {
+  color: #3d78e3 !important;
+}
+
+/* 3. Make ONLY the specific active sub-menu item Blue */
+.metismenu .active ul li.active > a {
+  color: #3d78e3 !important;
+  font-weight: 600;
+  background: transparent;
+}
+
+/* 4. Hover effect for sub-items */
+.metismenu ul a:hover {
+  color: #3d78e3 !important;
+}
+    </style>
+
+</head>
+
+<body class="font-jakarta theme1">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+        </div>
+    </div>
+
+    <div id="main_content">
+
+        <div id="header_top" class="header_top">
+            <div class="container">
+                <div class="hleft">
+                    <div class="dropdown">
+                    </div>
+                </div>
+                <div class="hright">
+                    <div class="dropdown">
+                        <a href="javascript:void(0)" class="nav-link icon settingbar" data-toggle="tooltip"
+                            data-placement="right" title="Settings">
+                            <svg class="fa-spin" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path
+                                    d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" />
+                                <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="nav-link icon menu_toggle" data-toggle="tooltip"
+                            data-placement="right" title="Toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M4 6h16" />
+                                <path d="M7 12h13" />
+                                <path d="M10 18h10" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="rightsidebar" class="right_sidebar">
+            <a href="javascript:void(0)" class="p-3 settingbar float-right">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-x">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M18 6l-12 12" />
+                    <path d="M6 6l12 12" />
+                </svg>
+            </a>
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Settings"
+                        aria-expanded="true">Settings</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#activity"
+                        aria-expanded="false">Activity</a></li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane vivify fadeIn active" id="Settings" aria-expanded="true">
+                    <div class="mb-4">
+                        <h6 class="font-14 font-weight-bold text-muted">Font Style</h6>
+                        <div class="custom-controls-stacked font_setting">
+                            <label class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" name="font" value="font-opensans">
+                                <span class="custom-control-label">Open Sans Font</span>
+                            </label>
+                            <label class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" name="font" value="font-montserrat">
+                                <span class="custom-control-label">Montserrat Google Font</span>
+                            </label>
+                            <label class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" name="font" value="font-roboto">
+                                <span class="custom-control-label">Robot Google Font</span>
+                            </label>
+                            <label class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" name="font" value="font-jakarta"
+                                    checked="">
+                                <span class="custom-control-label">Plus Jakarta Google Font</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <h6 class="font-14 font-weight-bold mt-4 text-muted">General Settings</h6>
+                        <ul class="setting-list list-unstyled mt-1 setting_switch">
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Night Mode</span>
+                                    <input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-darkmode">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Fix Navbar top</span>
+                                    <input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-fixnavbar" checked>
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Header Dark</span>
+                                    <input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-pageheader" checked>
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Min Sidebar Dark</span>
+                                    <input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-min_sidebar">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Sidebar Dark</span>
+                                    <input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-sidebar">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Icon Color</span>
+                                    <input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-iconcolor">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Gradient Color</span>
+                                    <input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-gradient">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Box Shadow</span>
+                                    <input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-boxshadow">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">RTL Support</span>
+                                    <input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-rtl">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="custom-switch">
+                                    <span class="custom-switch-description">Box Layout</span>
+                                    <input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-boxlayout">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <label class="d-block">Storage <span class="float-right">77%</span></label>
+                        <div class="progress progress-sm">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="77" aria-valuemin="0"
+                                aria-valuemax="100" style="width: 77%;"></div>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-block mt-3">Upgrade Storage</button>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane vivify fadeIn" id="activity" aria-expanded="false">
+                    <ul class="new_timeline mt-3">
+                        <li>
+                            <div class="bullet pink"></div>
+                            <div class="time">11:00am</div>
+                            <div class="desc">
+                                <h3>Attendance</h3>
+                                <h4>Computer Class</h4>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bullet pink"></div>
+                            <div class="time">11:30am</div>
+                            <div class="desc">
+                                <h3>Added an interest</h3>
+                                <h4>“Volunteer Activities”</h4>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bullet green"></div>
+                            <div class="time">12:00pm</div>
+                            <div class="desc">
+                                <h3>Developer Team</h3>
+                                <h4>Hangouts</h4>
+                                <ul class="list-unstyled team-info margin-0 p-t-5">
+                                    <li><img src="../assets/images/xs/avatar1.jpg" alt="Avatar"></li>
+                                    <li><img src="../assets/images/xs/avatar2.jpg" alt="Avatar"></li>
+                                    <li><img src="../assets/images/xs/avatar3.jpg" alt="Avatar"></li>
+                                    <li><img src="../assets/images/xs/avatar4.jpg" alt="Avatar"></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bullet green"></div>
+                            <div class="time">2:00pm</div>
+                            <div class="desc">
+                                <h3>Responded to need</h3>
+                                <a href="javascript:void(0)">“In-Kind Opportunity”</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bullet orange"></div>
+                            <div class="time">1:30pm</div>
+                            <div class="desc">
+                                <h3>Lunch Break</h3>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bullet green"></div>
+                            <div class="time">2:38pm</div>
+                            <div class="desc">
+                                <h3>Finish</h3>
+                                <h4>Go to Home</h4>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="user_div">
+        <h5 class="brand-name mb-4">
+            Kalsun Groups
+            <a href="javascript:void(0)" class="user_btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M10 8v-2a2 2 0 0 1 2 -2h7a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-2" />
+                    <path d="M15 12h-12l3 -3" />
+                    <path d="M6 15l-3 -3" />
+                </svg>
+            </a>
+        </h5>
+        <div class="card">
+            <div class="card-body">
+                <div class="media">
+                    <img class="avatar avatar-xl mr-3" src="../assets/images/sm/avatar1.jpg" alt="avatar">
+                    <div class="media-body">
+                        <h5 class="m-0">Sara Hopkins</h5>
+                        <p class="text-muted mb-0">Webdeveloper</p>
+                        <ul class="social-links list-inline mb-0 mt-2">
+                            <li class="list-inline-item"><a href="javascript:void(0)" title="" data-toggle="tooltip"
+                                    data-original-title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li class="list-inline-item"><a href="javascript:void(0)" title="" data-toggle="tooltip"
+                                    data-original-title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                            <li class="list-inline-item"><a href="javascript:void(0)" title="" data-toggle="tooltip"
+                                    data-original-title="1234567890"><i class="fa fa-phone"></i></a></li>
+                            <li class="list-inline-item"><a href="javascript:void(0)" title="" data-toggle="tooltip"
+                                    data-original-title="@skypename"><i class="fa fa-skype"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header border-bottom">
+                <h3 class="card-title">Statistics</h3>
+                <div class="card-options">
+                    <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i
+                            class="fe fe-chevron-up"></i></a>
+                    <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fa-solid fa-xmark"
+                            style="color: #B197FC;"></i></a>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="text-center">
+                    <div class="row">
+                        <div class="col-6 pb-3">
+                            <label class="mb-0">Balance</label>
+                            <h4 class="font-30 font-weight-bold">545</h4>
+                        </div>
+                        <div class="col-6 pb-3">
+                            <label class="mb-0">Growth</label>
+                            <h4 class="font-30 font-weight-bold">27%</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="d-block">Total Income<span class="float-right">77%</span></label>
+                    <div class="progress progress-xs">
+                        <div class="progress-bar bg-blue" role="progressbar" aria-valuenow="77" aria-valuemin="0"
+                            aria-valuemax="100" style="width: 77%;"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="d-block">Total Expenses <span class="float-right">50%</span></label>
+                    <div class="progress progress-xs">
+                        <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0"
+                            aria-valuemax="100" style="width: 50%;"></div>
+                    </div>
+                </div>
+                <div class="form-group mb-0">
+                    <label class="d-block">Gross Profit <span class="float-right">23%</span></label>
+                    <div class="progress progress-xs">
+                        <div class="progress-bar bg-green" role="progressbar" aria-valuenow="23" aria-valuemin="0"
+                            aria-valuemax="100" style="width: 23%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header border-bottom">
+                <h3 class="card-title">Friends</h3>
+                <div class="card-options">
+                    <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i
+                            class="fe fe-chevron-up"></i></a>
+                    <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fa-solid fa-xmark"
+                            style="color: #B197FC;"></i></a>
+                </div>
+            </div>
+            <div class="card-body">
+                <ul class="right_chat list-unstyled">
+                    <li class="online">
+                        <a href="javascript:void(0);">
+                            <div class="media">
+                                <img class="media-object " src="../assets/images/xs/avatar4.jpg" alt="">
+                                <div class="media-body">
+                                    <span class="name">Donald Gardner</span>
+                                    <span class="message">Designer, Blogger</span>
+                                    <span class="badge badge-outline status"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="online">
+                        <a href="javascript:void(0);">
+                            <div class="media">
+                                <img class="media-object " src="../assets/images/xs/avatar5.jpg" alt="">
+                                <div class="media-body">
+                                    <span class="name">Wendy Keen</span>
+                                    <span class="message">Java Developer</span>
+                                    <span class="badge badge-outline status"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="offline">
+                        <a href="javascript:void(0);">
+                            <div class="media">
+                                <img class="media-object " src="../assets/images/xs/avatar2.jpg" alt="">
+                                <div class="media-body">
+                                    <span class="name">Matt Rosales</span>
+                                    <span class="message">CEO, Epic Theme</span>
+                                    <span class="badge badge-outline status"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="card b-none">
+            <ul class="list-group">
+                <li class="list-group-item d-flex">
+                    <div class="box-icon sm rounded bg-blue"><i class="fa fa-credit-card"></i> </div>
+                    <div class="ml-3">
+                        <div>+₹ 29 New sale</div>
+                        <a href="javascript:void(0)">Admin Template</a>
+                        <div class="text-muted font-12">5 min ago</div>
+                    </div>
+                </li>
+                <li class="list-group-item d-flex">
+                    <div class="box-icon sm rounded bg-pink"><i class="fa fa-upload"></i> </div>
+                    <div class="ml-3">
+                        <div>Project Update</div>
+                        <a href="javascript:void(0)">New HTML page</a>
+                        <div class="text-muted font-12">10 min ago</div>
+                    </div>
+                </li>
+                <li class="list-group-item d-flex">
+                    <div class="box-icon sm rounded bg-teal"><i class="fa fa-file-word-o"></i> </div>
+                    <div class="ml-3">
+                        <div>You edited the file</div>
+                        <a href="javascript:void(0)">reposrt.doc</a>
+                        <div class="text-muted font-12">11 min ago</div>
+                    </div>
+                </li>
+                <li class="list-group-item d-flex">
+                    <div class="box-icon sm rounded bg-cyan"><i class="fa fa-user"></i> </div>
+                    <div class="ml-3">
+                        <div>New user</div>
+                        <a href="javascript:void(0)">Puffin web - view</a>
+                        <div class="text-muted font-12">17 min ago</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="left-sidebar" class="sidebar ">
+        <h5 class="brand-name">Kalsun Groups <a href="javascript:void(0)" class="menu_option float-right"><i
+                    class="fa-solid fa-table-cells-large" style="color: #000000;"></i></a></h5>
+            <nav id="left-sidebar-nav" class="sidebar-nav">
+                <ul class="metismenu">
+                    <li class="g_heading">Directories</li>
+                    <li>
+                        <a href="javascript:void(0)" class="has-arrow arrow-c" id="sidebar-hrms"><i
+                                class="fa-solid fa-rocket" style="color: #74c0fc;"></i><span>HRMS</span></a>
+                        <ul>
+                            <li id="sidebar-dashboard"><a href="../index.html"><span>Dashboard</span></a></li>
+                        </ul>
+                    </li>
+
+                    <li id="sidebar-auditor">
+                        <a href="javascript:void(0)" class="has-arrow arrow-c"><i class="fa-solid fa-rocket"
+                                style="color: #74c0fc;"></i><span>Auditor</span></a>
+                        <ul>
+                            <li id="sidebar-working">
+                                <a><span>Operational Dashboard</span></a>
+                                <ul>
+                                    <li id="sidebar-client-id"><a href="clientID.html"><span>Client ID</span></a></li>
+                                    <li id="sidebar-quotation-id"><a href="quotationID.html"><span>Quotation ID</span></a></li>
+                                    <li class="active" id="sidebar-proforma"><a href="proforma.html"><span>Proforma Voice</span></a></li>
+                                    <li id="sidebar-document-tracker"><a href="documentCollection.html"><span>Document Tracker</span></a></li>
+                                    <li id="sidebar-backend-id"><a href="backend_id.html"><span>Backend ID</span></a></li>
+                                    <li id="sidebar-history-license"><a href="history-license.html"><span>History of license</span></a></li>
+                                    <li id="sidebar-output"><a href="outputSheet.html?dept='Auditor"><span>Daily Report</span></a></li>
+                                    <li id="sidebar-enquiry"><a href="enquiry.html"><span>Enquiry</span></a></li>
+                                    <li id="sidebar-audit-quotation"><a href="audit_quotation.html"><span>Quotation </span></a></li>
+                                    <li id="sidebar-audit-appointments"><a href="audit_appointments.html"><span>Appoinment</span></a></li>
+                                    <li id="sidebar-operators"><a href="operators.html"><span>My Operator</span></a></li>
+                                    <li id="sidebar-pg-enquiry"><a href="pg_enquiry.html"><span>PG-Enquiry</span></a></li>
+                                    <li id="sidebar-sm-enquiries"><a href="sm_enquiries.html"><span>SM-Enquiries</span></a></li>
+                                    <li id="sidebar-audit-weekly-report"><a href="audit_weekly_report.html"><span>Weekly Report Sheet</span></a></li>
+                                    <li id="sidebar-phone-audit-report"><a href="phone_audit_report.html"><span>Phone Audit</span></a></li>
+                                    <li id="sidebar-audit-base"><a href="audit_base.html"><span>Base</span></a></li>
+                                   <li id="sidebar-advisor-entry"><a href="advisor_entry_sheet.html"><span>Advisor Entry</span></a></li>
+                                    <li id="sidebar-social-report"><a href="social-media-report.html?dept='Auditor"><span>Social Media Report</span></a></li>
+                                    <li id="sidebar-advisor-performance-tracker"><a href="advisor_performance_tracker.html"><span>Advisor Performance Tracker</span></a></li>
+                                    <li id="sidebar-performance-tracker"><a href="performance_tracker.html"><span>Performance Tracker</span></a></li>
+                                </ul>
+                            </li>
+
+                            <li id="sidebar-backend-report">
+                                <a href="hac_backend.html"><span>HAC Backend Report</span></a>
+                            </li>
+
+                            <li id="sidebar-financial-report">
+                                <a><span>Financial Report</span></a>
+                                <ul>
+                                    <li id="sidebar-bill-supply"><a href="bill-supply.html"><span>Bill of supply</span></a></li> 
+                                    <li id="sidebar-accounting-log"><a href="accounting_log.html"><span>Accounting Log</span></a></li>             
+                                </ul>
+                            </li>
+
+                            <li id="sidebar-sop">
+                                <a><span>SOP Tracker</span></a>
+                                <ul>    
+                                    <li id="sidebar-qc"><a href="Qc-sheet.html"><span>QC - SHEET</span></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+    </div>
+    </div>
+
+    <!-- ===== MAIN PAGE CONTENT ===== -->
+    <div class="page">
+        <!-- Page Header -->
+        <div class="page-header-bar">
+            <div>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/index-2.html">Home</a></li>
+                        <li class="breadcrumb-item active">Proforma Invoice</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="btn-action-bar" id="hide-feature">
+                <!-- Upload Excel -->
+                <input type="file" id="excelFile" accept=".xlsx,.xls" style="display:none" onchange="uploadExcel()">
+                <button class="btn btn-success btn-sm" onclick="document.getElementById('excelFile').click()">
+                    <i class="fa fa-upload mr-1"></i> Upload Excel
+                </button>
+                <!-- Add New -->
+                <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addModal">
+                    <i class="fa fa-plus mr-1"></i> Add Proforma
+                </button>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="table-card">
+                <div class="card-header-custom">
+                </div>
+                <div class="table-responsive">
+                    <table class="table mb-0" id="quotationTable">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Date</th>
+                                <th>Quotation ID</th>
+                                <th>Proforma ID</th>
+                                <th>Client ID</th>
+                                <th>Company Name</th>
+                                <th>Description</th>
+                                <th>Sub Total (₹)</th>
+                                <th>GST 18% (₹)</th>
+                                <th>Grand Total (₹)</th>
+                                <th>CT. Person Name</th>
+                                <th>CT. Number</th>
+                                <th>CT. Email ID</th>
+                                <th>CP Person Designation</th>
+                                <th>Advisor Name</th>
+                                <th>Advisor CT No.</th>
+                                <th>Quote Sent Mode</th>
+                                <th id="sticky-actions">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="quotationTableBody">
+                            <tr class="empty-state">
+                                <td colspan="16">Loading...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div><!-- end .page -->
+    </div><!-- end #main_content -->
+
+
+    <!-- ===================== ADD MODAL ===================== -->
+    <!-- ===================== ADD MODAL ===================== -->
+    <div class="modal fade" id="addModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fa fa-plus-circle mr-2"></i>Add New Proforma Invoice</h5>
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                </div>
+                <form id="addQuotationForm">
+                    <div class="modal-body">
+                        <div class="row">
+                            <!-- Date field -->
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label-sm">Date</label>
+                                <input type="date" class="form-control form-control-sm" name="date" id="add_date">
+                            </div>
+
+                            <!-- Proforma ID field -->
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label-sm">Proforma ID</label>
+                                <input type="text" class="form-control form-control-sm" name="proforma_id"
+                                    placeholder="e.g. PRF-001">
+                            </div>
+
+                            <!-- CT Email ID field -->
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label-sm">CT. Email ID</label>
+                                <input type="email" class="form-control form-control-sm" name="ct_email_id"
+                                    placeholder="contact@email.com">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label-sm">Quotation ID *</label>
+                                <input type="text" class="form-control form-control-sm" name="quotation_id"
+                                    placeholder="e.g. QT-2024-001" required>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label-sm">Client ID</label>
+                                <input type="text" class="form-control form-control-sm" name="client_id"
+                                    placeholder="e.g. CLT-001">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label-sm">Company Name *</label>
+                                <input type="text" class="form-control form-control-sm" name="company_name"
+                                    placeholder="Company Name" required>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <label class="form-label-sm">Description</label>
+                                <textarea class="form-control form-control-sm" name="description" rows="2"
+                                    placeholder="Service / Product description"></textarea>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label-sm">Sub Total (₹)</label>
+                                <input type="number" step="0.01" class="form-control form-control-sm" name="sub_total"
+                                    id="add_sub_total" placeholder="0.00" oninput="calcGST('add')">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label-sm">GST 18% (₹)</label>
+                                <input type="number" step="0.01" class="form-control form-control-sm" name="gst_18"
+                                    id="add_gst" placeholder="Auto-calculated" readonly style="background:#f7f8fc;">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label-sm">Grand Total (₹)</label>
+                                <input type="number" step="0.01" class="form-control form-control-sm" name="grand_total"
+                                    id="add_grand" placeholder="Auto-calculated" readonly style="background:#f7f8fc;">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label-sm">CT. Person Name</label>
+                                <input type="text" class="form-control form-control-sm" name="ct_person_name"
+                                    placeholder="Contact Person Name">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label-sm">CT. Number</label>
+                                <input type="text" class="form-control form-control-sm" name="cp_number"
+                                    placeholder="Contact Number">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label-sm">CP Person Designation</label>
+                                <input type="text" class="form-control form-control-sm" name="cp_person_designation"
+                                    placeholder="Designation">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label-sm">Advisor Name</label>
+                                <input type="text" class="form-control form-control-sm" name="advisor_name"
+                                    placeholder="Advisor Name">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label-sm">Advisor CT Number</label>
+                                <input type="text" class="form-control form-control-sm" name="advisor_ct_number"
+                                    placeholder="Advisor Contact Number">
+                            </div>
+                            <!-- Reversed Quotation removed to match DB schema -->
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label-sm">Quote Sent Mode</label>
+                                <select class="form-control form-control-sm" name="quote_sent_mode">
+                                    <option value="">-- Select --</option>
+                                    <option value="Email">Email</option>
+                                    <option value="WhatsApp">WhatsApp</option>
+                                    <option value="In-Person">In-Person</option>
+                                    <option value="Courier">Courier</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-save mr-1"></i>Save
+                            Proforma</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== EDIT MODAL ===================== -->
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fa fa-edit mr-2"></i>Edit Proforma Invoice</h5>
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                </div>
+                <form id="editQuotationForm">
+                    <input type="hidden" id="edit_id" name="id">
+                    <div class="modal-body">
+                        <div class="row">
+                            <!-- Date field (FIXED ID to edit_date) -->
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label-sm">Date</label>
+                                <input type="date" class="form-control form-control-sm" name="date" id="edit_date">
+                            </div>
+
+                            <!-- Proforma ID field (ADDED ID) -->
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label-sm">Proforma ID</label>
+                                <input type="text" class="form-control form-control-sm" id="edit_proforma_id" name="proforma_id"
+                                    placeholder="e.g. PRF-001">
+                            </div>
+
+                            <!-- CT Email ID field (ADDED ID) -->
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label-sm">CT. Email ID</label>
+                                <input type="email" class="form-control form-control-sm" id="edit_ct_email_id" name="ct_email_id"
+                                    placeholder="contact@email.com">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label-sm">Quotation ID *</label>
+                                <input type="text" class="form-control form-control-sm" id="edit_quotation_id"
+                                    name="quotation_id" required>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label-sm">Client ID</label>
+                                <input type="text" class="form-control form-control-sm" id="edit_client_id"
+                                    name="client_id">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label-sm">Company Name *</label>
+                                <input type="text" class="form-control form-control-sm" id="edit_company_name"
+                                    name="company_name" required>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <label class="form-label-sm">Description</label>
+                                <textarea class="form-control form-control-sm" id="edit_description" name="description"
+                                    rows="2"></textarea>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label-sm">Sub Total (₹)</label>
+                                <input type="number" step="0.01" class="form-control form-control-sm"
+                                    id="edit_sub_total" name="sub_total" oninput="calcGST('edit')">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label-sm">GST 18% (₹)</label>
+                                <input type="number" step="0.01" class="form-control form-control-sm" id="edit_gst"
+                                    name="gst_18" readonly style="background:#f7f8fc;">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label-sm">Grand Total (₹)</label>
+                                <input type="number" step="0.01" class="form-control form-control-sm" id="edit_grand"
+                                    name="grand_total" readonly style="background:#f7f8fc;">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label-sm">CT. Person Name</label>
+                                <input type="text" class="form-control form-control-sm" id="edit_ct_person_name"
+                                    name="ct_person_name">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label-sm">CT. Number</label>
+                                <input type="text" class="form-control form-control-sm" id="edit_cp_number"
+                                    name="cp_number">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label-sm">CP Person Designation</label>
+                                <input type="text" class="form-control form-control-sm" id="edit_cp_person_designation"
+                                    name="cp_person_designation">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label-sm">Advisor Name</label>
+                                <input type="text" class="form-control form-control-sm" id="edit_advisor_name"
+                                    name="advisor_name">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label-sm">Advisor CT Number</label>
+                                <input type="text" class="form-control form-control-sm" id="edit_advisor_ct_number"
+                                    name="advisor_ct_number">
+                            </div>
+                            <!-- Reversed Quotation removed to match DB schema -->
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label-sm">Quote Sent Mode</label>
+                                <select class="form-control form-control-sm" id="edit_quote_sent_mode"
+                                    name="quote_sent_mode">
+                                    <option value="">-- Select --</option>
+                                    <option value="Email">Email</option>
+                                    <option value="WhatsApp">WhatsApp</option>
+                                    <option value="In-Person">In-Person</option>
+                                    <option value="Courier">Courier</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-save mr-1"></i>Update
+                            Proforma</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+   <script src="../assets/bundles/lib.vendor.bundle.js"></script>
+    <script src="../assets/bundles/apexcharts.bundle.js"></script>
+    <script src="../assets/bundles/counterup.bundle.js"></script>
+    <script src="../assets/bundles/knobjs.bundle.js"></script>
+    <script src="../assets/bundles/c3.bundle.js"></script>
+    <script src="../assets/js/core.js"></script>
+    <script src="../assets/js/page/index.js"></script>
+    <script src="../assets/js/page/theme1-js.js"></script>
+   <script>
+    
+  document.addEventListener('DOMContentLoaded', () => {
+        // ---------------------------------------------------------
+        // 1. Retrieve User Details
+        // ---------------------------------------------------------
+        const loggedInUserName = localStorage.getItem('loggedInUserName');
+        // Ensure role is saved during login (e.g., 'ADMIN', 'HR', 'EMPLOYEE')
+        const loggedInUserRole = localStorage.getItem('loggedInUserRole'); 
+        
+        const welcomeMessageElement = document.getElementById('welcomeMessage');
+
+        // ---------------------------------------------------------
+        // 2. Set Welcome Message
+        // ---------------------------------------------------------
+        if (loggedInUserName && welcomeMessageElement) {
+            // Show Name and Role if available
+            welcomeMessageElement.textContent = `${loggedInUserName} (${loggedInUserRole || 'User'})`;
+        } else if (welcomeMessageElement) {
+            welcomeMessageElement.textContent = 'Guest!';
+        }
+
+        // ---------------------------------------------------------
+        // 3. SIDEBAR MENU PERMISSIONS (Existing Logic)
+        // ---------------------------------------------------------
+
+  const allSidebarIds = [
+                'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
+                'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
+                'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
+                'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
+                'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
+                'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
+                'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
+                'sidebar-sop', 'sidebar-qc' , 'sticky-actions' , 'hide-feature' , ' sidebar-social-report ', 'sidebar-advisor-performance-tracker' , 'sidebar-performance-tracker', 'sidebar-management'
+            ];
+
+            const sidebarPermissions = {
+                'HR': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                    'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                    'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals', 
+                    'sidebar-payment-bills', 'sidebar-leave-request' ,'sticky-actions' , 'hide-feature' ],
+                'ADMIN': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-attendance', 'sidebar-admin-reports', 
+                    'sidebar-payment-bills', 'sidebar-leave-request'],
+                'EMPLOYEE': [
+                    'sidebar-hrms', 'sidebar-departments', 'sidebar-employee-task', 'sidebar-leave-request' ],
+
+                'GENERAL MANAGER':['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
+                'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
+                'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
+                'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
+                'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
+                'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
+                'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
+                'sidebar-sop', 'sidebar-qc' , ' sidebar-social-report ', 'sidebar-advisor-performance-tracker' , 'sidebar-performance-tracker', 'sidebar-management'], 
+
+                'PROJECT MANAGER': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-departments', 'sidebar-employee', 
+                    'sidebar-performance', 'sidebar-leave-request' ,'sticky-actions' , 'hide-feature'
+                ],
+                'ADVISOR': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-working', 'sidebar-financial-report',
+                    'sidebar-client-id', 'sidebar-quotation-id', 'sidebar-proforma', 'sidebar-document-tracker', 
+                    'sidebar-backend-id', 'sidebar-bill-supply', 'sidebar-history-license', 'sidebar-backend-report', 
+                    'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments', 'sidebar-operators', 
+                    'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report', 'sidebar-phone-audit-report', 
+                    'sidebar-audit-base', 'sidebar-advisor-entry', 'sidebar-output' ,'sticky-actions' , 'hide-feature' , ' sidebar-social-report ', 'sidebar-advisor-performance-tracker' , 'sidebar-performance-tracker'
+                ],
+                'AUDIT PROJECT MANAGER': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-working', 'sidebar-financial-report', 
+                    'sidebar-sop', 'sidebar-backend-report', 'sidebar-enquiry', 'sidebar-audit-quotation', 
+                    'sidebar-audit-appointments', 'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 
+                    'sidebar-audit-weekly-report', 'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-qc', 
+                    'sidebar-advisor-entry', 'sidebar-output', 'sidebar-bill-supply', 'sidebar-accounting-log' , 'sticky-actions' , 'hide-feature' , ' sidebar-social-report ', 'sidebar-advisor-performance-tracker' , 'sidebar-performance-tracker' 
+                ],
+                'BACKEND PROJECT MANAGER': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-backend-report' , 'sticky-actions' , 'hide-feature' 
+                ],
+                'TEAM LEADER': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-financial-report', 
+                    'sidebar-accounting-log', 'sidebar-bill-supply' , 'sticky-actions' , 'hide-feature' 
+                ],
+                'BACK OFFICE EXECUTIVE': [
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-backend-report', 
+                    'sidebar-sop', 'sidebar-qc' ,'sticky-actions' , 'hide-feature'
+                ] ,
+                'VP' :['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
+                'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
+                'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
+                'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
+                'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
+                'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
+                'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
+                'sidebar-sop', 'sidebar-qc' , ' sidebar-social-report ', 'sidebar-advisor-performance-tracker' , 'sidebar-performance-tracker', 'sidebar-management'], 
+
+                'CEO' :['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
+                'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
+                'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
+                'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
+                'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
+                'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
+                'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
+                'sidebar-sop', 'sidebar-qc' , ' sidebar-social-report ', 'sidebar-advisor-performance-tracker' , 'sidebar-performance-tracker', 'sidebar-management']
+            };
+
+
+        // ---------------------------------------------------------
+        // 5. Function to Filter Any Menu List
+        // ---------------------------------------------------------
+        function applyPermissions(role, allIds, permissionMap) {
+            // Normalize role string (handle 'Admin', 'admin', 'ADMIN')
+         const normalizedRole = role ? role.trim().toUpperCase() : '';
+            const allowedItems = permissionMap[normalizedRole] || [];
+
+            allIds.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    if (allowedItems.includes(id)) {
+                        el.style.display = ''; // Reset to default (block/flex/etc)
+                    } else {
+                        el.style.display = 'none';  // Hide
+                    }
+                }
+            });
+        }
+
+        // ---------------------------------------------------------
+        // 6. Execute Filters
+        // ---------------------------------------------------------
+        if (loggedInUserRole) {
+            // Filter Sidebar
+            applyPermissions(loggedInUserRole, allSidebarIds, sidebarPermissions);
+            // Filter Main Dashboard Menu
+         
+        } else {
+            // If Not Logged In: Hide everything except Dashboard
+            // Hide Sidebar items (except dashboard)
+            allSidebarIds.forEach(id => {
+                if (id !== 'menu-dashboard') {
+                    const el = document.getElementById(id);
+                    if (el) el.style.display = 'none';
+                }
+            });
+        }
+
+        // ---------------------------------------------------------
+        // 7. Sign Out Logic
+        // ---------------------------------------------------------
+    function logout() {
+    localStorage.clear();
+    window.location.replace('Html/Login.html');
+}
+    });
+
+        // Change this to your new Proforma API route!
+        const API = 'http://localhost:3000/api/proforma';
+
+        // ── GST Auto-Calculate ────────────────────────────────
+        function calcGST(prefix) {
+            const sub = parseFloat(document.getElementById(`${prefix}_sub_total`).value) || 0;
+            const gst = +(sub * 0.18).toFixed(2);
+            const grand = +(sub + gst).toFixed(2);
+            document.getElementById(`${prefix}_gst`).value = gst;
+            document.getElementById(`${prefix}_grand`).value = grand;
+        }
+
+        // ── Fetch & Render Table ─────────────────────────────
+        async function loadProformas() {
+            const tbody = document.getElementById('quotationTableBody'); // Kept original ID from your HTML
+            tbody.innerHTML = '<tr class="empty-state"><td colspan="18">Loading...</td></tr>';
+            
+            try {
+                const res = await fetch(API);
+                const data = await res.json();
+                
+                if (!data.length) {
+                    tbody.innerHTML = '<tr class="empty-state"><td colspan="18" class="text-center">No proforma invoices found.</td></tr>';
+                    return;
+                }
+                 const role = (localStorage.getItem('loggedInUserRole') || '').toUpperCase().trim();
+                  let actionButtons = '';
+
+         if (role !== 'GENERAL MANAGER' && role !== 'VP' && role !== 'CEO') {
+        actionButtons = `
+           <button class="btn btn-sm btn-warning mr-1" onclick="openEdit(${p.id})">
+                        <i class="fa fa-edit"></i>
+                    </button>
+                    <button class="btn btn-sm btn-danger" onclick="deleteProforma(${p.id}, '${p.proforma_id || p.quotation_id}')">
+                        <i class="fa fa-trash"></i>
+                    </button>
+        `;
+    }              
+                tbody.innerHTML = data.map((p, i) => `
+            <tr>
+                <td>${i + 1}</td>
+                <td>${p.date ? p.date.slice(0, 10) : '—'}</td>
+                <td><span class="badge badge-primary">${p.quotation_id || '—'}</span></td>
+                <td><strong>${p.proforma_id || '—'}</strong></td>
+                <td>${p.client_id || '—'}</td>
+                <td>${p.company_name || '—'}</td>
+                <td>${p.description || '—'}</td>
+                <td>₹${Number(p.sub_total).toLocaleString('en-IN', { minimumFractionDigits: 2 })}</td>
+                <td>₹${Number(p.gst_18).toLocaleString('en-IN', { minimumFractionDigits: 2 })}</td>
+                <td><strong>₹${Number(p.grand_total).toLocaleString('en-IN', { minimumFractionDigits: 2 })}</strong></td>
+                <td>${p.ct_person_name || '—'}</td>
+                <td>${p.ct_number || '—'}</td>
+                <td>${p.ct_email_id || '—'}</td>
+                <td>${p.cp_person_designation || '—'}</td>
+                <td>${p.advisor_name || '—'}</td>
+                <td>${p.advisor_ct_number || '—'}</td>
+                <td>${p.quote_sent_mode || '—'}</td>
+                <td class="d-flex">
+                    ${actionButtons}
+                </td>
+            </tr>
+        `).join('');
+            } catch (err) {
+                tbody.innerHTML = `<tr><td colspan="18" class="text-danger text-center">Error: ${err.message}</td></tr>`;
+            }
+        }
+
+        // ── ADD Proforma ────────────────────────────────────
+        document.getElementById('addQuotationForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const body = Object.fromEntries(formData.entries());
+
+            try {
+                const res = await fetch(API, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(body)
+                });
+                const data = await res.json();
+                
+                if (!res.ok) return alert('❌ ' + (data.error || 'Failed to add Proforma Invoice'));
+                
+                alert(data.message);
+                this.reset();
+                
+                // Clear auto-calculated fields safely
+                const addGst = document.getElementById('add_gst');
+                const addGrand = document.getElementById('add_grand');
+                if(addGst) addGst.value = '';
+                if(addGrand) addGrand.value = '';
+                
+                $('#addModal').modal('hide');
+                loadProformas();
+            } catch (err) {
+                alert('Error: ' + err.message);
+            }
+        });
+
+        // ── OPEN EDIT Modal ──────────────────────────────────
+        async function openEdit(id) {
+            try {
+                const res = await fetch(`${API}/${id}`);
+                const p = await res.json();
+
+                document.getElementById('edit_id').value = p.id;
+                document.getElementById('add_date').value = p.date ? p.date.slice(0, 10) : ''; 
+                document.getElementById('edit_quotation_id').value = p.quotation_id || '';
+                
+                // Proforma specific fields
+                const editProformaId = document.querySelector('#editModal input[name="proforma_id"]');
+                if(editProformaId) editProformaId.value = p.proforma_id || '';
+                
+                const editEmailId = document.querySelector('#editModal input[name="ct_email_id"]');
+                if(editEmailId) editEmailId.value = p.ct_email_id || '';
+                
+                document.getElementById('edit_client_id').value = p.client_id || '';
+                document.getElementById('edit_company_name').value = p.company_name || '';
+                document.getElementById('edit_description').value = p.description || '';
+                document.getElementById('edit_sub_total').value = p.sub_total || '';
+                document.getElementById('edit_gst').value = p.gst_18 || '';
+                document.getElementById('edit_grand').value = p.grand_total || '';
+                document.getElementById('edit_ct_person_name').value = p.ct_person_name || '';
+                document.getElementById('edit_cp_number').value = p.ct_number || ''; 
+                document.getElementById('edit_cp_person_designation').value = p.cp_person_designation || '';
+                document.getElementById('edit_advisor_name').value = p.advisor_name || '';
+                document.getElementById('edit_advisor_ct_number').value = p.advisor_ct_number || '';
+                
+                const editQuoteMode = document.getElementById('edit_quote_sent_mode');
+                if(editQuoteMode) editQuoteMode.value = p.quote_sent_mode || '';
+
+                $('#editModal').modal('show');
+            } catch (err) {
+                alert('Error loading Proforma data: ' + err.message);
+            }
+        }
+
+        // ── EDIT Form Submit ─────────────────────────────────
+        document.getElementById('editQuotationForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const id = document.getElementById('edit_id').value;
+            const formData = new FormData(this);
+            const body = Object.fromEntries(formData.entries());
+
+            try {
+                const res = await fetch(`${API}/${id}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(body)
+                });
+                const data = await res.json();
+                
+                if (!res.ok) return alert('❌ ' + (data.error || 'Failed to update Proforma'));
+                
+                alert(data.message);
+                $('#editModal').modal('hide');
+                loadProformas();
+            } catch (err) {
+                alert('Error: ' + err.message);
+            }
+        });
+
+        // ── DELETE ───────────────────────────────────────────
+        async function deleteProforma(id, identifier) {
+            if (!confirm(`Delete Proforma Invoice "${identifier}"? This cannot be undone.`)) return;
+            try {
+                const res = await fetch(`${API}/${id}`, { method: 'DELETE' });
+                const data = await res.json();
+                if (!res.ok) return alert('❌ ' + data.error);
+                
+                alert(data.message);
+                loadProformas();
+            } catch (err) {
+                alert('Error: ' + err.message);
+            }
+        }
+
+        // ── EXCEL UPLOAD ─────────────────────────────────────
+        async function uploadExcel() {
+            const fileInput = document.getElementById('excelFile');
+            const file = fileInput.files[0];
+            if (!file) return;
+
+            const formData = new FormData();
+            formData.append('file', file);
+
+            try {
+                const res = await fetch(`${API}/upload/excel`, {
+                    method: 'POST',
+                    body: formData
+                });
+                const data = await res.json();
+                
+                if (!res.ok) return alert('❌ ' + (data.error || 'Excel upload failed'));
+
+                let msg = data.message;
+                if (data.skipped && data.skipped.length) {
+                    msg += `\n\nSkipped rows:\n${data.skipped.join('\n')}`;
+                }
+                alert(msg);
+                
+                fileInput.value = '';
+                loadProformas();
+            } catch (err) {
+                alert('Upload error: ' + err.message);
+            }
+        }
+
+        // ── INIT ─────────────────────────────────────────────
+        document.addEventListener('DOMContentLoaded', loadProformas);
+    </script>
+</body>
+
+</html>

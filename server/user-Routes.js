@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
     let connection;
     try {
         connection = await pool.getConnection();
-        const [results] = await connection.query('SELECT id, name, email, role, created_at FROM reg_users');
+        const [results] = await connection.query('SELECT id, name, email, role, created_at FROM users');
         res.json(results);
     } catch (err) {
         console.error('Error fetching users:', err);
@@ -28,7 +28,7 @@ router.get('/:id', async (req, res) => {
     try {
         connection = await pool.getConnection();
         const { id } = req.params;
-        const [results] = await connection.query('SELECT id, name, email, role, created_at FROM reg_users WHERE id = ?', [id]);
+        const [results] = await connection.query('SELECT id, name, email, role, created_at FROM users WHERE id = ?', [id]);
         if (results.length === 0) {
             return res.status(404).json({ message: 'User not found.' });
         }
@@ -53,13 +53,13 @@ router.post('/', async (req, res) => {
         }
 
         // Check if email already exists
-        const [existingUsers] = await connection.query('SELECT id FROM reg_users WHERE email = ?', [email]);
+        const [existingUsers] = await connection.query('SELECT id FROM users WHERE email = ?', [email]);
         if (existingUsers.length > 0) {
             return res.status(409).json({ error: 'Email already registered.' });
         }
 
         const hashedPassword = await bcrypt.hash(password, 10);
-        const sql = 'INSERT INTO reg_users (name, email, password, role, created_at) VALUES (?, ?, ?, ?, NOW())';
+        const sql = 'INSERT INTO users (name, email, password, role, created_at) VALUES (?, ?, ?, ?, NOW())';
         const [result] = await connection.query(sql, [name, email, hashedPassword, role]);
 
         res.status(201).json({ message: '✅ User added successfully!', userId: result.insertId });
@@ -83,7 +83,7 @@ router.put('/:id', async (req, res) => {
             return res.status(400).json({ error: 'Name, email, and role are required for update.' });
         }
 
-        let sql = 'UPDATE reg_users SET name = ?, email = ?, role = ?';
+        let sql = 'UPDATE users SET name = ?, email = ?, role = ?';
         const values = [name, email, role];
 
         if (password) {
@@ -117,7 +117,7 @@ router.delete('/:id', async (req, res) => {
     try {
         connection = await pool.getConnection();
         const { id } = req.params;
-        const [result] = await connection.query('DELETE FROM reg_users WHERE id = ?', [id]);
+        const [result] = await connection.query('DELETE FROM users WHERE id = ?', [id]);
         if (result.affectedRows === 0) {
             return res.status(404).json({ message: 'User not found.' });
         }
