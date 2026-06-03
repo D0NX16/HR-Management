@@ -640,7 +640,8 @@
                                     <li><a href="./hr-resigned-candidates.html">Resigned Candidates</a></li>
                                 </ul>
                             </li>
-                            <li id="sidebar-admin-reports" class="active"><a href="./hr-admin-reports.html">Admin Report</a></li>
+                            <li id="sidebar-admin-reports" class="active"><a href="./hr-admin-reports.html">Admin
+                                    Report</a></li>
                             <li id="sidebar-other-portals"><a href="./other-portals.html">Other Portals</a></li>
                             <li id="sidebar-payment-bills"><a href="./hr-payment-bills.html">Payment Bills</a></li>
                             <li id="sidebar-employee-task"><a href="./employee-Task.html">Employee Task</a></li>
@@ -673,12 +674,14 @@
                                 </ul>
                             </li>
 
-                              <li id="sidebar-vendor-directory"><a href="./vendor_directory.html">Vendor Directory</a></li>
-                              <li id="sidebar-business-report"><a href="./business_report.html">Business Report</a></li>
-                              <li id="sidebar-compliance-tracker"><a href="./compliance_tracker.html">Compliance Tracker</a></li>
-                              <li id="sidebar-inventory"><a href="./inventory.html">Inventory Tracker</a></li>
-                              <li id="sidebar-meeting"><a href="./meeting.html">Meeting Tracker</a></li>
-                              <li id="sidebar-software-access"><a href="./software_access.html">Software Access</a></li>
+                            <li id="sidebar-vendor-directory"><a href="./vendor_directory.html">Vendor Directory</a>
+                            </li>
+                            <li id="sidebar-business-report"><a href="./business_report.html">Business Report</a></li>
+                            <li id="sidebar-compliance-tracker"><a href="./compliance_tracker.html">Compliance
+                                    Tracker</a></li>
+                            <li id="sidebar-inventory"><a href="./inventory.html">Inventory Tracker</a></li>
+                            <li id="sidebar-meeting"><a href="./meeting.html">Meeting Tracker</a></li>
+                            <li id="sidebar-software-access"><a href="./software_access.html">Software Access</a></li>
 
                         </ul>
                     </li>
@@ -920,7 +923,7 @@
                                     <div class="table-responsive">
                                         <table class="table table-hover table-striped table-vcenter text-nowrap"
                                             id="payslipTable">
-                                            <<thead>
+                                            <thead>
                                                 <tr>
                                                     <th>S.No</th>
                                                     <th>Employee ID</th>
@@ -1147,7 +1150,7 @@
                                     </div>
                                 </div>
                                 <!-- Inside payslipModal modal-body -->
-                               
+
                             </div>
                         </div>
 
@@ -1161,37 +1164,37 @@
                             </div>
                         </div>
 
-                         <div class="row clearfix border-top pt-3 mt-3">
-                                    <div class="col-md-3">
-                                        <label>Salary Date</label>
-                                        <input type="date" class="form-control" name="salary_date" id="p_salary_date">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <label>Payment Date</label>
-                                        <input type="date" class="form-control" name="payment_date" id="p_payment_date">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <label>Payment Mode</label>
-                                        <select class="form-control" id="p_pay_mode">
-                                            <option value="Bank Transfer">Bank Transfer</option>
-                                            <option value="Cash">Cash</option>
-                                            <option value="UPI">UPI</option>
-                                            <option value="Cheque">Cheque</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <label>Payment Status</label>
-                                        <select class="form-control" id="p_pay_status">
-                                            <option value="Paid">Paid</option>
-                                            <option value="Pending">Pending</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-12 mt-2">
-                                        <label>Remarks</label>
-                                        <input type="text" class="form-control" id="p_remarks"
-                                            placeholder="Add any salary remarks here...">
-                                    </div>
-                                </div>
+                        <div class="row clearfix border-top pt-3 mt-3">
+                            <div class="col-md-3">
+                                <label>Salary Date</label>
+                                <input type="date" class="form-control" name="salary_date" id="p_salary_date">
+                            </div>
+                            <div class="col-md-3">
+                                <label>Payment Date</label>
+                                <input type="date" class="form-control" name="payment_date" id="p_payment_date">
+                            </div>
+                            <div class="col-md-3">
+                                <label>Payment Mode</label>
+                                <select class="form-control" id="p_pay_mode">
+                                    <option value="Bank Transfer">Bank Transfer</option>
+                                    <option value="Cash">Cash</option>
+                                    <option value="UPI">UPI</option>
+                                    <option value="Cheque">Cheque</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label>Payment Status</label>
+                                <select class="form-control" id="p_pay_status">
+                                    <option value="Paid">Paid</option>
+                                    <option value="Pending">Pending</option>
+                                </select>
+                            </div>
+                            <div class="col-md-12 mt-2">
+                                <label>Remarks</label>
+                                <input type="text" class="form-control" id="p_remarks"
+                                    placeholder="Add any salary remarks here...">
+                            </div>
+                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -1337,12 +1340,12 @@
 
             // 3. Define Menu Permissions
             // Keys must match the IDs we added to the HTML <li> tags
- const allMenuIds = [
-                 'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+            const allMenuIds = [
+                'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
                 'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
                 'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
                 'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report',
-                'sticky-actions' , 'hide-feature' ,'sidebar-asset-list','sidebar-bills-parent','sidebar-vendor-directory','sidebar-business-report','sidebar-compliance-tracker','sidebar-inventory','sidebar-meeting','sidebar-software-access'
+                'sticky-actions', 'hide-feature', 'sidebar-asset-list', 'sidebar-bills-parent', 'sidebar-vendor-directory', 'sidebar-business-report', 'sidebar-compliance-tracker', 'sidebar-inventory', 'sidebar-meeting', 'sidebar-software-access'
             ];
 
             const rolePermissions = {
@@ -1350,38 +1353,38 @@
                     'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
                     'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
                     'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals', 'sidebar-meeting',
-                    'sidebar-payment-bills', 'sidebar-leave-request' ,'sticky-actions' , 'hide-feature' ,'sidebar-daily-report' ],
+                    'sidebar-payment-bills', 'sidebar-leave-request', 'sticky-actions', 'hide-feature', 'sidebar-daily-report'],
                 'ADMIN': [
-                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-attendance', 'sidebar-admin-reports', 
-                    'sidebar-payment-bills', 'sidebar-leave-request' ,'hide-feature','sticky-actions','sidebar-asset-list','sidebar-bills-parent', 'sidebar-payroll','sidebar-business-report','sidebar-vendor-directory','sidebar-compliance-tracker','sidebar-meeting','sidebar-inventory','sidebar-software-access','sidebar-daily-report'],
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-attendance', 'sidebar-admin-reports',
+                    'sidebar-payment-bills', 'sidebar-leave-request', 'hide-feature', 'sticky-actions', 'sidebar-asset-list', 'sidebar-bills-parent', 'sidebar-payroll', 'sidebar-business-report', 'sidebar-vendor-directory', 'sidebar-compliance-tracker', 'sidebar-meeting', 'sidebar-inventory', 'sidebar-software-access', 'sidebar-daily-report'],
                 'EMPLOYEE': [
-                    'sidebar-hrms', 'sidebar-departments', 'sidebar-employee-task', 'sidebar-leave-request','sticky-actions' , 'hide-feature'],
+                    'sidebar-hrms', 'sidebar-departments', 'sidebar-employee-task', 'sidebar-leave-request', 'sticky-actions', 'hide-feature'],
 
-                'GENERAL MANAGER':['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
-                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
-                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
-                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report','sidebar-asset-list','sidebar-bills-parent','sidebar-vendor-directory','sidebar-business-report','sidebar-compliance-tracker','sidebar-inventory','sidebar-meeting','sidebar-software-access'], 
+                'GENERAL MANAGER': ['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                    'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                    'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                    'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report', 'sidebar-asset-list', 'sidebar-bills-parent', 'sidebar-vendor-directory', 'sidebar-business-report', 'sidebar-compliance-tracker', 'sidebar-inventory', 'sidebar-meeting', 'sidebar-software-access'],
 
                 'PROJECT MANAGER': [
-                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-departments', 'sidebar-employee', 
-                    'sidebar-performance', 'sidebar-leave-request' ,'sticky-actions' , 'hide-feature'
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-departments', 'sidebar-employee',
+                    'sidebar-performance', 'sidebar-leave-request', 'sticky-actions', 'hide-feature'
                 ],
 
-                   'AGM':['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
-                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
-                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
-                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report','sidebar-asset-list','sidebar-bills-parent','sidebar-vendor-directory','sidebar-business-report','sidebar-compliance-tracker','sidebar-inventory','sidebar-meeting','sidebar-software-access'],
+                'AGM': ['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                    'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                    'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                    'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report', 'sidebar-asset-list', 'sidebar-bills-parent', 'sidebar-vendor-directory', 'sidebar-business-report', 'sidebar-compliance-tracker', 'sidebar-inventory', 'sidebar-meeting', 'sidebar-software-access'],
 
 
-                'VP' :['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
-                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
-                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
-                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report','sidebar-asset-list','sidebar-bills-parent','sidebar-vendor-directory','sidebar-business-report','sidebar-compliance-tracker','sidebar-inventory','sidebar-meeting','sidebar-software-access'], 
+                'VP': ['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                    'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                    'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                    'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report', 'sidebar-asset-list', 'sidebar-bills-parent', 'sidebar-vendor-directory', 'sidebar-business-report', 'sidebar-compliance-tracker', 'sidebar-inventory', 'sidebar-meeting', 'sidebar-software-access'],
 
-                'CEO' :['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
-                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
-                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
-                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report','sidebar-asset-list','sidebar-bills-parent','sidebar-vendor-directory','sidebar-business-report','sidebar-compliance-tracker','sidebar-inventory','sidebar-meeting','sidebar-software-access']
+                'CEO': ['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                    'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                    'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                    'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report', 'sidebar-asset-list', 'sidebar-bills-parent', 'sidebar-vendor-directory', 'sidebar-business-report', 'sidebar-compliance-tracker', 'sidebar-inventory', 'sidebar-meeting', 'sidebar-software-access']
             };
 
 

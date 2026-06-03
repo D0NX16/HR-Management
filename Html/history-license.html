@@ -1,244 +1,405 @@
-<!doctype html> 
-<html lang="en" dir="ltr">  
-<head>     
-    <meta charset="UTF-8">     
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">     
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">      
-    
-    <link rel="icon" href="../assets/images/icon/logo.png" type="image/x-icon" />      
-    <title>History of License</title>      
-    
-    <!-- Bootstrap Core and vandor -->     
-    <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />      
-    
-    <!-- Fonts -->     
-    <link href="../assets/css/font-awesome.min.css" rel="stylesheet" />      
-    
-    <!-- Icons -->     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">      
-    
-    <!-- Font Awesome CDN -->     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">      
-    
-    <!-- Plugins css -->     
-    <link rel="stylesheet" href="../assets/plugins/charts-c3/c3.min.css" />      
-    
-    <!-- Core css -->     
-    <link rel="stylesheet" href="../assets/css/main.css" />     
-    <link rel="stylesheet" href="../assets/css/theme1.css" />     
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>  
+<!doctype html>
+<html lang="en" dir="ltr">
 
-       <style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="icon" href="../assets/images/icon/logo.png" type="image/x-icon" />
+    <title>History of License</title>
+
+    <!-- Bootstrap Core and vandor -->
+    <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
+
+    <!-- Fonts -->
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <!-- Plugins css -->
+    <link rel="stylesheet" href="../assets/plugins/charts-c3/c3.min.css" />
+
+    <!-- Core css -->
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/theme1.css" />
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+    <style>
         /* 1. Default text color for sub-menu items (Dark Gray) */
-.metismenu ul a {
-  color: #4d5052 !important; 
-}
+        .metismenu ul a {
+            color: #4d5052 !important;
+        }
 
-/* 2. Make the Parent active item Blue */
-.metismenu .active > a {
-  color: #3d78e3 !important;
-}
+        /* 2. Make the Parent active item Blue */
+        .metismenu .active>a {
+            color: #3d78e3 !important;
+        }
 
-/* 3. Make ONLY the specific active sub-menu item Blue */
-.metismenu .active ul li.active > a {
-  color: #3d78e3 !important;
-  font-weight: 600;
-  background: transparent;
-}
+        /* 3. Make ONLY the specific active sub-menu item Blue */
+        .metismenu .active ul li.active>a {
+            color: #3d78e3 !important;
+            font-weight: 600;
+            background: transparent;
+        }
 
-/* 4. Hover effect for sub-items */
-.metismenu ul a:hover {
-  color: #3d78e3 !important;
-}
+        /* 4. Hover effect for sub-items */
+        .metismenu ul a:hover {
+            color: #3d78e3 !important;
+        }
     </style>
-    
-</head>  
 
-<body class="font-jakarta theme1">     
-    <!-- Page Loader -->     
-    <div class="page-loader-wrapper">         
-        <div class="loader">         
-        </div>     
-    </div>      
-    
-    <div id="main_content">          
-        <div id="header_top" class="header_top">             
-            <div class="container">                 
-                <div class="hleft">                     
-                    <div class="dropdown">                     
-                    </div>                 
-                </div>                 
-                <div class="hright">                     
-                    <div class="dropdown">                         
-                        <a href="javascript:void(0)" class="nav-link icon settingbar" data-toggle="tooltip" data-placement="right" title="Settings">                             
-                            <svg class="fa-spin" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">                                 
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />                                 
-                                <path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" />                                 
-                                <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />                             
-                            </svg>                         
-                        </a>                         
-                        <a href="javascript:void(0)" class="nav-link icon menu_toggle" data-toggle="tooltip" data-placement="right" title="Toggle">                             
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">                                 
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />                                 
-                                <path d="M4 6h16" />                                 
-                                <path d="M7 12h13" />                                 
-                                <path d="M10 18h10" />                             
-                            </svg>                         
-                        </a>                     
-                    </div>                 
-                </div>             
-            </div>         
-        </div>          
-        
-        <div id="rightsidebar" class="right_sidebar">             
-            <a href="javascript:void(0)" class="p-3 settingbar float-right">                 
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-x">                     
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />                     
-                    <path d="M18 6l-12 12" />                     
-                    <path d="M6 6l12 12" />                 
-                </svg>             
-            </a>             
-            <ul class="nav nav-tabs" role="tablist">                 
-                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Settings" aria-expanded="true">Settings</a></li>                 
-                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#activity" aria-expanded="false">Activity</a></li>             
-            </ul>             
-            <div class="tab-content">                 
-                <div role="tabpanel" class="tab-pane vivify fadeIn active" id="Settings" aria-expanded="true">                     
-                    <div class="mb-4">                         
-                        <h6 class="font-14 font-weight-bold text-muted">Font Style</h6>                         
-                        <div class="custom-controls-stacked font_setting">                             
-                            <label class="custom-control custom-radio custom-control-inline">                                 
-                                <input type="radio" class="custom-control-input" name="font" value="font-opensans">                                 
-                                <span class="custom-control-label">Open Sans Font</span>                             
-                            </label>                             
-                            <label class="custom-control custom-radio custom-control-inline">                                 
-                                <input type="radio" class="custom-control-input" name="font" value="font-montserrat">                                 
-                                <span class="custom-control-label">Montserrat Google Font</span>                             
-                            </label>                             
-                            <label class="custom-control custom-radio custom-control-inline">                                 
-                                <input type="radio" class="custom-control-input" name="font" value="font-roboto">                                 
-                                <span class="custom-control-label">Robot Google Font</span>                             
-                            </label>                             
-                            <label class="custom-control custom-radio custom-control-inline">                                 
-                                <input type="radio" class="custom-control-input" name="font" value="font-jakarta" checked="">                                 
-                                <span class="custom-control-label">Plus Jakarta Google Font</span>                             
-                            </label>                         
-                        </div>                     
-                    </div>                     
-                    <div>                         
-                        <h6 class="font-14 font-weight-bold mt-4 text-muted">General Settings</h6>                         
-                        <ul class="setting-list list-unstyled mt-1 setting_switch">                             
-                            <li><label class="custom-switch"><span class="custom-switch-description">Night Mode</span><input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input btn-darkmode"><span class="custom-switch-indicator"></span></label></li>                             
-                            <li><label class="custom-switch"><span class="custom-switch-description">Fix Navbar top</span><input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input btn-fixnavbar" checked><span class="custom-switch-indicator"></span></label></li>                             
-                            <li><label class="custom-switch"><span class="custom-switch-description">Header Dark</span><input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input btn-pageheader" checked><span class="custom-switch-indicator"></span></label></li>                             
-                            <li><label class="custom-switch"><span class="custom-switch-description">Min Sidebar Dark</span><input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input btn-min_sidebar"><span class="custom-switch-indicator"></span></label></li>                             
-                            <li><label class="custom-switch"><span class="custom-switch-description">Sidebar Dark</span><input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input btn-sidebar"><span class="custom-switch-indicator"></span></label></li>                             
-                            <li><label class="custom-switch"><span class="custom-switch-description">Icon Color</span><input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input btn-iconcolor"><span class="custom-switch-indicator"></span></label></li>                             
-                            <li><label class="custom-switch"><span class="custom-switch-description">Gradient Color</span><input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input btn-gradient"><span class="custom-switch-indicator"></span></label></li>                             
-                            <li><label class="custom-switch"><span class="custom-switch-description">Box Shadow</span><input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input btn-boxshadow"><span class="custom-switch-indicator"></span></label></li>                             
-                            <li><label class="custom-switch"><span class="custom-switch-description">RTL Support</span><input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input btn-rtl"><span class="custom-switch-indicator"></span></label></li>                             
-                            <li><label class="custom-switch"><span class="custom-switch-description">Box Layout</span><input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input btn-boxlayout"><span class="custom-switch-indicator"></span></label></li>                         
-                        </ul>                     
-                    </div>                     
-                    <hr>                     
-                    <div class="form-group">                         
-                        <label class="d-block">Storage <span class="float-right">77%</span></label>                         
-                        <div class="progress progress-sm">                             
-                            <div class="progress-bar" role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100" style="width: 77%;"></div>                         
-                        </div>                         
-                        <button type="button" class="btn btn-primary btn-block mt-3">Upgrade Storage</button>                     
-                    </div>                 
-                </div>                 
-                <div role="tabpanel" class="tab-pane vivify fadeIn" id="activity" aria-expanded="false">                     
-                    <ul class="new_timeline mt-3">                         
-                        <li><div class="bullet pink"></div><div class="time">11:00am</div><div class="desc"><h3>Attendance</h3><h4>Computer Class</h4></div></li>                         
-                        <li><div class="bullet pink"></div><div class="time">11:30am</div><div class="desc"><h3>Added an interest</h3><h4>“Volunteer Activities”</h4></div></li>                         
-                        <li><div class="bullet green"></div><div class="time">12:00pm</div><div class="desc"><h3>Developer Team</h3><h4>Hangouts</h4></div></li>                         
-                        <li><div class="bullet green"></div><div class="time">2:00pm</div><div class="desc"><h3>Responded to need</h3><a href="javascript:void(0)">“In-Kind Opportunity”</a></div></li>                         
-                        <li><div class="bullet orange"></div><div class="time">1:30pm</div><div class="desc"><h3>Lunch Break</h3></div></li>                         
-                        <li><div class="bullet green"></div><div class="time">2:38pm</div><div class="desc"><h3>Finish</h3><h4>Go to Home</h4></div></li>                     
-                    </ul>                 
-                </div>             
-            </div>         
-        </div>         
-        
-        <div class="user_div">             
-            <h5 class="brand-name mb-4">                 
-                Kalsun Groups                 
-                <a href="javascript:void(0)" class="user_btn">                     
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">                         
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />                         
-                        <path d="M10 8v-2a2 2 0 0 1 2 -2h7a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-2" />                         
-                        <path d="M15 12h-12l3 -3" />                         
-                        <path d="M6 15l-3 -3" />                     
-                    </svg>                 
-                </a>             
-            </h5>             
-            <div class="card">                 
-                <div class="card-body">                     
-                    <div class="media">                         
-                        <img class="avatar avatar-xl mr-3" src="../assets/images/sm/avatar1.jpg" alt="avatar">                         
-                        <div class="media-body">                             
-                            <h5 class="m-0">Sara Hopkins</h5>                             
-                            <p class="text-muted mb-0">Webdeveloper</p>                             
-                            <ul class="social-links list-inline mb-0 mt-2">                                 
-                                <li class="list-inline-item"><a href="javascript:void(0)"><i class="fa fa-facebook"></i></a></li>                                 
-                                <li class="list-inline-item"><a href="javascript:void(0)"><i class="fa fa-twitter"></i></a></li>                                 
-                                <li class="list-inline-item"><a href="javascript:void(0)"><i class="fa fa-phone"></i></a></li>                                 
-                                <li class="list-inline-item"><a href="javascript:void(0)"><i class="fa fa-skype"></i></a></li>                             
-                            </ul>                         
-                        </div>                     
-                    </div>                 
-                </div>             
-            </div>             
-            <div class="card">                 
-                <div class="card-header border-bottom">                     
-                    <h3 class="card-title">Statistics</h3>                     
-                    <div class="card-options">                         
-                        <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>                         
-                        <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fa-solid fa-xmark" style="color: #B197FC;"></i></a>                     
-                    </div>                 
-                </div>                 
-                <div class="card-body">                     
-                    <div class="text-center">                         
-                        <div class="row">                             
-                            <div class="col-6 pb-3"><label class="mb-0">Balance</label><h4 class="font-30 font-weight-bold">545</h4></div>                             
-                            <div class="col-6 pb-3"><label class="mb-0">Growth</label><h4 class="font-30 font-weight-bold">27%</h4></div>                         
-                        </div>                     
-                    </div>                     
-                    <div class="form-group"><label class="d-block">Total Income<span class="float-right">77%</span></label><div class="progress progress-xs"><div class="progress-bar bg-blue" role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100" style="width: 77%;"></div></div></div>                     
-                    <div class="form-group"><label class="d-block">Total Expenses <span class="float-right">50%</span></label><div class="progress progress-xs"><div class="progress-bar bg-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;"></div></div></div>                     
-                    <div class="form-group mb-0"><label class="d-block">Gross Profit <span class="float-right">23%</span></label><div class="progress progress-xs"><div class="progress-bar bg-green" role="progressbar" aria-valuenow="23" aria-valuemin="0" aria-valuemax="100" style="width: 23%;"></div></div></div>                 
-                </div>             
-            </div>             
-            <div class="card">                 
-                <div class="card-header border-bottom">                     
-                    <h3 class="card-title">Friends</h3>                     
-                    <div class="card-options">                         
-                        <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>                         
-                        <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fa-solid fa-xmark" style="color: #B197FC;"></i></a>                     
-                    </div>                 
-                </div>                 
-                <div class="card-body">                     
-                    <ul class="right_chat list-unstyled">                         
-                        <li class="online"><a href="javascript:void(0);"><div class="media"><img class="media-object " src="../assets/images/xs/avatar4.jpg" alt=""><div class="media-body"><span class="name">Donald Gardner</span><span class="message">Designer, Blogger</span><span class="badge badge-outline status"></span></div></div></a></li>                         
-                        <li class="online"><a href="javascript:void(0);"><div class="media"><img class="media-object " src="../assets/images/xs/avatar5.jpg" alt=""><div class="media-body"><span class="name">Wendy Keen</span><span class="message">Java Developer</span><span class="badge badge-outline status"></span></div></div></a></li>                         
-                        <li class="offline"><a href="javascript:void(0);"><div class="media"><img class="media-object " src="../assets/images/xs/avatar2.jpg" alt=""><div class="media-body"><span class="name">Matt Rosales</span><span class="message">CEO, Epic Theme</span><span class="badge badge-outline status"></span></div></div></a></li>                     
-                    </ul>                 
-                </div>             
-            </div>             
-            <div class="card b-none">                 
-                <ul class="list-group">                     
-                    <li class="list-group-item d-flex"><div class="box-icon sm rounded bg-blue"><i class="fa fa-credit-card"></i> </div><div class="ml-3"><div>+₹ 29 New sale</div><a href="javascript:void(0)">Admin Template</a><div class="text-muted font-12">5 min ago</div></div></li>                     
-                    <li class="list-group-item d-flex"><div class="box-icon sm rounded bg-pink"><i class="fa fa-upload"></i> </div><div class="ml-3"><div>Project Update</div><a href="javascript:void(0)">New HTML page</a><div class="text-muted font-12">10 min ago</div></div></li>                     
-                    <li class="list-group-item d-flex"><div class="box-icon sm rounded bg-teal"><i class="fa fa-file-word-o"></i> </div><div class="ml-3"><div>You edited the file</div><a href="javascript:void(0)">reposrt.doc</a><div class="text-muted font-12">11 min ago</div></div></li>                     
-                    <li class="list-group-item d-flex"><div class="box-icon sm rounded bg-cyan"><i class="fa fa-user"></i> </div><div class="ml-3"><div>New user</div><a href="javascript:void(0)">Puffin web - view</a><div class="text-muted font-12">17 min ago</div></div></li>                 
-                </ul>             
-            </div>         
-        </div>          
-        
-        <div id="left-sidebar" class="sidebar ">             
-            <h5 class="brand-name">Kalsun Groups <a href="javascript:void(0)" class="menu_option float-right"><i class="fa-solid fa-table-cells-large" style="color: #000000;"></i></a></h5>             
+</head>
+
+<body class="font-jakarta theme1">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+        </div>
+    </div>
+
+    <div id="main_content">
+        <div id="header_top" class="header_top">
+            <div class="container">
+                <div class="hleft">
+                    <div class="dropdown">
+                    </div>
+                </div>
+                <div class="hright">
+                    <div class="dropdown">
+                        <a href="javascript:void(0)" class="nav-link icon settingbar" data-toggle="tooltip"
+                            data-placement="right" title="Settings">
+                            <svg class="fa-spin" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path
+                                    d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" />
+                                <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="nav-link icon menu_toggle" data-toggle="tooltip"
+                            data-placement="right" title="Toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M4 6h16" />
+                                <path d="M7 12h13" />
+                                <path d="M10 18h10" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="rightsidebar" class="right_sidebar">
+            <a href="javascript:void(0)" class="p-3 settingbar float-right">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-x">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M18 6l-12 12" />
+                    <path d="M6 6l12 12" />
+                </svg>
+            </a>
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Settings"
+                        aria-expanded="true">Settings</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#activity"
+                        aria-expanded="false">Activity</a></li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane vivify fadeIn active" id="Settings" aria-expanded="true">
+                    <div class="mb-4">
+                        <h6 class="font-14 font-weight-bold text-muted">Font Style</h6>
+                        <div class="custom-controls-stacked font_setting">
+                            <label class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" name="font" value="font-opensans">
+                                <span class="custom-control-label">Open Sans Font</span>
+                            </label>
+                            <label class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" name="font" value="font-montserrat">
+                                <span class="custom-control-label">Montserrat Google Font</span>
+                            </label>
+                            <label class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" name="font" value="font-roboto">
+                                <span class="custom-control-label">Robot Google Font</span>
+                            </label>
+                            <label class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" name="font" value="font-jakarta"
+                                    checked="">
+                                <span class="custom-control-label">Plus Jakarta Google Font</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <h6 class="font-14 font-weight-bold mt-4 text-muted">General Settings</h6>
+                        <ul class="setting-list list-unstyled mt-1 setting_switch">
+                            <li><label class="custom-switch"><span class="custom-switch-description">Night
+                                        Mode</span><input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-darkmode"><span
+                                        class="custom-switch-indicator"></span></label></li>
+                            <li><label class="custom-switch"><span class="custom-switch-description">Fix Navbar
+                                        top</span><input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-fixnavbar" checked><span
+                                        class="custom-switch-indicator"></span></label></li>
+                            <li><label class="custom-switch"><span class="custom-switch-description">Header
+                                        Dark</span><input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-pageheader" checked><span
+                                        class="custom-switch-indicator"></span></label></li>
+                            <li><label class="custom-switch"><span class="custom-switch-description">Min Sidebar
+                                        Dark</span><input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-min_sidebar"><span
+                                        class="custom-switch-indicator"></span></label></li>
+                            <li><label class="custom-switch"><span class="custom-switch-description">Sidebar
+                                        Dark</span><input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-sidebar"><span
+                                        class="custom-switch-indicator"></span></label></li>
+                            <li><label class="custom-switch"><span class="custom-switch-description">Icon
+                                        Color</span><input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-iconcolor"><span
+                                        class="custom-switch-indicator"></span></label></li>
+                            <li><label class="custom-switch"><span class="custom-switch-description">Gradient
+                                        Color</span><input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-gradient"><span
+                                        class="custom-switch-indicator"></span></label></li>
+                            <li><label class="custom-switch"><span class="custom-switch-description">Box
+                                        Shadow</span><input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-boxshadow"><span
+                                        class="custom-switch-indicator"></span></label></li>
+                            <li><label class="custom-switch"><span class="custom-switch-description">RTL
+                                        Support</span><input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-rtl"><span
+                                        class="custom-switch-indicator"></span></label></li>
+                            <li><label class="custom-switch"><span class="custom-switch-description">Box
+                                        Layout</span><input type="checkbox" name="custom-switch-checkbox"
+                                        class="custom-switch-input btn-boxlayout"><span
+                                        class="custom-switch-indicator"></span></label></li>
+                        </ul>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <label class="d-block">Storage <span class="float-right">77%</span></label>
+                        <div class="progress progress-sm">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="77" aria-valuemin="0"
+                                aria-valuemax="100" style="width: 77%;"></div>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-block mt-3">Upgrade Storage</button>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane vivify fadeIn" id="activity" aria-expanded="false">
+                    <ul class="new_timeline mt-3">
+                        <li>
+                            <div class="bullet pink"></div>
+                            <div class="time">11:00am</div>
+                            <div class="desc">
+                                <h3>Attendance</h3>
+                                <h4>Computer Class</h4>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bullet pink"></div>
+                            <div class="time">11:30am</div>
+                            <div class="desc">
+                                <h3>Added an interest</h3>
+                                <h4>“Volunteer Activities”</h4>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bullet green"></div>
+                            <div class="time">12:00pm</div>
+                            <div class="desc">
+                                <h3>Developer Team</h3>
+                                <h4>Hangouts</h4>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bullet green"></div>
+                            <div class="time">2:00pm</div>
+                            <div class="desc">
+                                <h3>Responded to need</h3><a href="javascript:void(0)">“In-Kind Opportunity”</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bullet orange"></div>
+                            <div class="time">1:30pm</div>
+                            <div class="desc">
+                                <h3>Lunch Break</h3>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bullet green"></div>
+                            <div class="time">2:38pm</div>
+                            <div class="desc">
+                                <h3>Finish</h3>
+                                <h4>Go to Home</h4>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="user_div">
+            <h5 class="brand-name mb-4">
+                Kalsun Groups
+                <a href="javascript:void(0)" class="user_btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M10 8v-2a2 2 0 0 1 2 -2h7a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-2" />
+                        <path d="M15 12h-12l3 -3" />
+                        <path d="M6 15l-3 -3" />
+                    </svg>
+                </a>
+            </h5>
+            <div class="card">
+                <div class="card-body">
+                    <div class="media">
+                        <img class="avatar avatar-xl mr-3" src="../assets/images/sm/avatar1.jpg" alt="avatar">
+                        <div class="media-body">
+                            <h5 class="m-0">Sara Hopkins</h5>
+                            <p class="text-muted mb-0">Webdeveloper</p>
+                            <ul class="social-links list-inline mb-0 mt-2">
+                                <li class="list-inline-item"><a href="javascript:void(0)"><i
+                                            class="fa fa-facebook"></i></a></li>
+                                <li class="list-inline-item"><a href="javascript:void(0)"><i
+                                            class="fa fa-twitter"></i></a></li>
+                                <li class="list-inline-item"><a href="javascript:void(0)"><i
+                                            class="fa fa-phone"></i></a></li>
+                                <li class="list-inline-item"><a href="javascript:void(0)"><i
+                                            class="fa fa-skype"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header border-bottom">
+                    <h3 class="card-title">Statistics</h3>
+                    <div class="card-options">
+                        <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i
+                                class="fe fe-chevron-up"></i></a>
+                        <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fa-solid fa-xmark"
+                                style="color: #B197FC;"></i></a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="text-center">
+                        <div class="row">
+                            <div class="col-6 pb-3"><label class="mb-0">Balance</label>
+                                <h4 class="font-30 font-weight-bold">545</h4>
+                            </div>
+                            <div class="col-6 pb-3"><label class="mb-0">Growth</label>
+                                <h4 class="font-30 font-weight-bold">27%</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group"><label class="d-block">Total Income<span
+                                class="float-right">77%</span></label>
+                        <div class="progress progress-xs">
+                            <div class="progress-bar bg-blue" role="progressbar" aria-valuenow="77" aria-valuemin="0"
+                                aria-valuemax="100" style="width: 77%;"></div>
+                        </div>
+                    </div>
+                    <div class="form-group"><label class="d-block">Total Expenses <span
+                                class="float-right">50%</span></label>
+                        <div class="progress progress-xs">
+                            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0"
+                                aria-valuemax="100" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                    <div class="form-group mb-0"><label class="d-block">Gross Profit <span
+                                class="float-right">23%</span></label>
+                        <div class="progress progress-xs">
+                            <div class="progress-bar bg-green" role="progressbar" aria-valuenow="23" aria-valuemin="0"
+                                aria-valuemax="100" style="width: 23%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header border-bottom">
+                    <h3 class="card-title">Friends</h3>
+                    <div class="card-options">
+                        <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i
+                                class="fe fe-chevron-up"></i></a>
+                        <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fa-solid fa-xmark"
+                                style="color: #B197FC;"></i></a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <ul class="right_chat list-unstyled">
+                        <li class="online"><a href="javascript:void(0);">
+                                <div class="media"><img class="media-object " src="../assets/images/xs/avatar4.jpg"
+                                        alt="">
+                                    <div class="media-body"><span class="name">Donald Gardner</span><span
+                                            class="message">Designer, Blogger</span><span
+                                            class="badge badge-outline status"></span></div>
+                                </div>
+                            </a></li>
+                        <li class="online"><a href="javascript:void(0);">
+                                <div class="media"><img class="media-object " src="../assets/images/xs/avatar5.jpg"
+                                        alt="">
+                                    <div class="media-body"><span class="name">Wendy Keen</span><span
+                                            class="message">Java Developer</span><span
+                                            class="badge badge-outline status"></span></div>
+                                </div>
+                            </a></li>
+                        <li class="offline"><a href="javascript:void(0);">
+                                <div class="media"><img class="media-object " src="../assets/images/xs/avatar2.jpg"
+                                        alt="">
+                                    <div class="media-body"><span class="name">Matt Rosales</span><span
+                                            class="message">CEO, Epic Theme</span><span
+                                            class="badge badge-outline status"></span></div>
+                                </div>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card b-none">
+                <ul class="list-group">
+                    <li class="list-group-item d-flex">
+                        <div class="box-icon sm rounded bg-blue"><i class="fa fa-credit-card"></i> </div>
+                        <div class="ml-3">
+                            <div>+₹ 29 New sale</div><a href="javascript:void(0)">Admin Template</a>
+                            <div class="text-muted font-12">5 min ago</div>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex">
+                        <div class="box-icon sm rounded bg-pink"><i class="fa fa-upload"></i> </div>
+                        <div class="ml-3">
+                            <div>Project Update</div><a href="javascript:void(0)">New HTML page</a>
+                            <div class="text-muted font-12">10 min ago</div>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex">
+                        <div class="box-icon sm rounded bg-teal"><i class="fa fa-file-word-o"></i> </div>
+                        <div class="ml-3">
+                            <div>You edited the file</div><a href="javascript:void(0)">reposrt.doc</a>
+                            <div class="text-muted font-12">11 min ago</div>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex">
+                        <div class="box-icon sm rounded bg-cyan"><i class="fa fa-user"></i> </div>
+                        <div class="ml-3">
+                            <div>New user</div><a href="javascript:void(0)">Puffin web - view</a>
+                            <div class="text-muted font-12">17 min ago</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="left-sidebar" class="sidebar ">
+            <h5 class="brand-name">Kalsun Groups <a href="javascript:void(0)" class="menu_option float-right"><i
+                        class="fa-solid fa-table-cells-large" style="color: #000000;"></i></a></h5>
 
             <nav id="left-sidebar-nav" class="sidebar-nav">
                 <ul class="metismenu">
@@ -259,25 +420,44 @@
                                 <a><span>Operational Dashboard</span></a>
                                 <ul>
                                     <li id="sidebar-client-id"><a href="clientID.html"><span>Client ID</span></a></li>
-                                    <li id="sidebar-quotation-id"><a href="quotationID.html"><span>Quotation ID</span></a></li>
-                                    <li id="sidebar-proforma"><a href="proforma.html"><span>Proforma Voice</span></a></li>
-                                    <li id="sidebar-document-tracker"><a href="documentCollection.html"><span>Document Tracker</span></a></li>
-                                    <li id="sidebar-backend-id"><a href="backend_id.html"><span>Backend ID</span></a></li>
-                                    <li class="active" id="sidebar-history-license"><a href="history-license.html"><span>History of license</span></a></li>
-                                    <li id="sidebar-output"><a href="outputSheet.html?dept='Auditor"><span>Daily Report</span></a></li>
+                                    <li id="sidebar-quotation-id"><a href="quotationID.html"><span>Quotation
+                                                ID</span></a></li>
+                                    <li id="sidebar-proforma"><a href="proforma.html"><span>Proforma Voice</span></a>
+                                    </li>
+                                    <li id="sidebar-document-tracker"><a href="documentCollection.html"><span>Document
+                                                Tracker</span></a></li>
+                                    <li id="sidebar-backend-id"><a href="backend_id.html"><span>Backend ID</span></a>
+                                    </li>
+                                    <li class="active" id="sidebar-history-license"><a
+                                            href="history-license.html"><span>History of license</span></a></li>
+                                    <li id="sidebar-output"><a href="outputSheet.html?dept='Auditor"><span>Daily
+                                                Report</span></a></li>
                                     <li id="sidebar-enquiry"><a href="enquiry.html"><span>Enquiry</span></a></li>
-                                    <li id="sidebar-audit-quotation"><a href="audit_quotation.html"><span>Quotation </span></a></li>
-                                    <li id="sidebar-audit-appointments"><a href="audit_appointments.html"><span>Appoinment</span></a></li>
-                                    <li id="sidebar-operators"><a href="operators.html"><span>My Operator</span></a></li>
-                                    <li id="sidebar-pg-enquiry"><a href="pg_enquiry.html"><span>PG-Enquiry</span></a></li>
-                                    <li id="sidebar-sm-enquiries"><a href="sm_enquiries.html"><span>SM-Enquiries</span></a></li>
-                                    <li id="sidebar-audit-weekly-report"><a href="audit_weekly_report.html"><span>Weekly Report Sheet</span></a></li>
-                                    <li id="sidebar-phone-audit-report"><a href="phone_audit_report.html"><span>Phone Audit</span></a></li>
+                                    <li id="sidebar-audit-quotation"><a href="audit_quotation.html"><span>Quotation
+                                            </span></a></li>
+                                    <li id="sidebar-audit-appointments"><a
+                                            href="audit_appointments.html"><span>Appoinment</span></a></li>
+                                    <li id="sidebar-operators"><a href="operators.html"><span>My Operator</span></a>
+                                    </li>
+                                    <li id="sidebar-pg-enquiry"><a href="pg_enquiry.html"><span>PG-Enquiry</span></a>
+                                    </li>
+                                    <li id="sidebar-sm-enquiries"><a
+                                            href="sm_enquiries.html"><span>SM-Enquiries</span></a></li>
+                                    <li id="sidebar-audit-weekly-report"><a href="audit_weekly_report.html"><span>Weekly
+                                                Report Sheet</span></a></li>
+                                    <li id="sidebar-phone-audit-report"><a href="phone_audit_report.html"><span>Phone
+                                                Audit</span></a></li>
                                     <li id="sidebar-audit-base"><a href="audit_base.html"><span>Base</span></a></li>
-                                   <li id="sidebar-advisor-entry"><a href="advisor_entry_sheet.html"><span>Advisor Entry</span></a></li>
-                                    <li id="sidebar-social-report"><a href="social-media-report.html?dept='Auditor"><span>Social Media Report</span></a></li>
-                                    <li id="sidebar-advisor-performance-tracker"><a href="advisor_performance_tracker.html"><span>Advisor Performance Tracker</span></a></li>
-                                    <li id="sidebar-performance-tracker"><a href="performance_tracker.html"><span>Performance Tracker</span></a></li>
+                                    <li id="sidebar-advisor-entry"><a href="advisor_entry_sheet.html"><span>Advisor
+                                                Entry</span></a></li>
+                                    <li id="sidebar-social-report"><a
+                                            href="social-media-report.html?dept='Auditor"><span>Social Media
+                                                Report</span></a></li>
+                                    <li id="sidebar-advisor-performance-tracker"><a
+                                            href="advisor_performance_tracker.html"><span>Advisor Performance
+                                                Tracker</span></a></li>
+                                    <li id="sidebar-performance-tracker"><a
+                                            href="performance_tracker.html"><span>Performance Tracker</span></a></li>
                                 </ul>
                             </li>
 
@@ -288,14 +468,16 @@
                             <li id="sidebar-financial-report">
                                 <a><span>Financial Report</span></a>
                                 <ul>
-                                    <li id="sidebar-bill-supply"><a href="bill-supply.html"><span>Bill of supply</span></a></li> 
-                                    <li id="sidebar-accounting-log"><a href="accounting_log.html"><span>Accounting Log</span></a></li>             
+                                    <li id="sidebar-bill-supply"><a href="bill-supply.html"><span>Bill of
+                                                supply</span></a></li>
+                                    <li id="sidebar-accounting-log"><a href="accounting_log.html"><span>Accounting
+                                                Log</span></a></li>
                                 </ul>
                             </li>
 
                             <li id="sidebar-sop">
                                 <a><span>SOP Tracker</span></a>
-                                <ul>    
+                                <ul>
                                     <li id="sidebar-qc"><a href="Qc-sheet.html"><span>QC - SHEET</span></a></li>
                                 </ul>
                             </li>
@@ -304,40 +486,40 @@
                 </ul>
             </nav>
 
-        </div>     
-    </div>       
+        </div>
+    </div>
 
-    <!-- ===== MAIN PAGE CONTENT ===== -->         
-    <div class="page">             
-        <!-- Page Header -->             
-        <div class="page-header-bar">                 
-            <div>                     
-                <nav aria-label="breadcrumb">                         
-                    <ol class="breadcrumb">                             
-                        <li class="breadcrumb-item"><a href="/index-2.html">Home</a></li>                             
-                        <li class="breadcrumb-item active">History of License</li>                         
-                    </ol>                     
-                </nav>                 
-            </div>                 
-            <div class="btn-action-bar" id="hide-feature">                     
-                <input type="file" id="excelFile" accept=".xlsx,.xls" style="display:none" onchange="uploadExcel()">                     
-                <button class="btn btn-success btn-sm" onclick="document.getElementById('excelFile').click()">                         
-                    <i class="fa fa-upload mr-1"></i> Upload Excel                     
-                </button>                     
-                <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addModal">                         
-                    <i class="fa fa-plus mr-1"></i> Add Record                     
-                </button>                 
-            </div>             
-        </div>              
-        
-        <div class="container-fluid">                 
-            <div class="table-card">                     
-                <div class="card-header-custom">                     
-                </div>                     
-                <div class="table-responsive">                         
-                    <table class="table mb-0" id="recordsTable">                             
-                        <thead>                                 
-                            <tr>                                     
+    <!-- ===== MAIN PAGE CONTENT ===== -->
+    <div class="page">
+        <!-- Page Header -->
+        <div class="page-header-bar">
+            <div>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/index-2.html">Home</a></li>
+                        <li class="breadcrumb-item active">History of License</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="btn-action-bar" id="hide-feature">
+                <input type="file" id="excelFile" accept=".xlsx,.xls" style="display:none" onchange="uploadExcel()">
+                <button class="btn btn-success btn-sm" onclick="document.getElementById('excelFile').click()">
+                    <i class="fa fa-upload mr-1"></i> Upload Excel
+                </button>
+                <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addModal">
+                    <i class="fa fa-plus mr-1"></i> Add Record
+                </button>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="table-card">
+                <div class="card-header-custom">
+                </div>
+                <div class="table-responsive">
+                    <table class="table mb-0" id="recordsTable">
+                        <thead>
+                            <tr>
                                 <th>BackEnd ID</th>
                                 <th>Client ID</th>
                                 <th>Service</th>
@@ -351,205 +533,220 @@
                                 <th>Advisor Name</th>
                                 <th>Advisor CT No</th>
                                 <th>Address</th>
-                                <th id="sticky-actions">Actions</th>                                 
-                            </tr>                             
-                        </thead>                             
-                        <tbody id="recordsTableBody">                                 
-                            <tr class="empty-state"><td colspan="14">Loading...</td></tr>                             
-                        </tbody>                         
-                    </table>                     
-                </div>                 
-            </div>             
-        </div>         
-    </div><!-- end .page -->     
-</div><!-- end #main_content -->       
+                                <th id="sticky-actions">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recordsTableBody">
+                            <tr class="empty-state">
+                                <td colspan="14">Loading...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div><!-- end .page -->
+    </div><!-- end #main_content -->
 
-<!-- ===================== ADD MODAL ===================== -->     
-<div class="modal fade" id="addModal" tabindex="-1" role="dialog">         
-    <div class="modal-dialog modal-xl" role="document">             
-        <div class="modal-content">                 
-            <div class="modal-header">                     
-                <h5 class="modal-title"><i class="fa fa-plus-circle mr-2"></i>Add License Record</h5>                     
-                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>                 
-            </div>                 
-            <form id="addRecordForm">                     
-                <div class="modal-body">                         
-                    <div class="row">                             
-                        <div class="col-md-3 mb-3">                                 
-                            <label class="form-label-sm">BackEnd ID</label>                                 
-                            <input type="text" class="form-control form-control-sm" name="backend_id">                             
-                        </div>                             
-                        <div class="col-md-3 mb-3">                                 
-                            <label class="form-label-sm">Client ID</label>                                 
-                            <input type="text" class="form-control form-control-sm" name="client_id">                             
-                        </div>                             
-                        <div class="col-md-3 mb-3">                                 
-                            <label class="form-label-sm">Service</label>                                 
-                            <input type="text" class="form-control form-control-sm" name="service">                             
-                        </div>                             
-                        <div class="col-md-3 mb-3">                                 
-                            <label class="form-label-sm">License No</label>                                 
-                            <input type="text" class="form-control form-control-sm" name="license_no">                             
-                        </div>                             
-                        <div class="col-md-3 mb-3">                                 
-                            <label class="form-label-sm">Issue Date</label>                                 
-                            <input type="date" class="form-control form-control-sm" name="issue_date">                             
-                        </div>                             
-                        <div class="col-md-3 mb-3">                                 
-                            <label class="form-label-sm">Renewal Date</label>                                 
-                            <input type="date" class="form-control form-control-sm" name="renewal_date">                             
-                        </div>                             
-                        <div class="col-md-3 mb-3">                                 
-                            <label class="form-label-sm">CT. Person</label>                                 
-                            <input type="text" class="form-control form-control-sm" name="ct_person">                             
-                        </div>                             
-                        <div class="col-md-3 mb-3">                                 
-                            <label class="form-label-sm">CT. Number</label>                                 
-                            <input type="text" class="form-control form-control-sm" name="ct_number">                             
-                        </div>                             
-                        <div class="col-md-3 mb-3">                                 
-                            <label class="form-label-sm">CT Person Designation</label>                                 
-                            <input type="text" class="form-control form-control-sm" name="ct_person_designation">                             
-                        </div>                             
-                        <div class="col-md-3 mb-3">                                 
-                            <label class="form-label-sm">CT Person Mail</label>                                 
-                            <input type="email" class="form-control form-control-sm" name="ct_person_mail">                             
-                        </div>                             
-                        <div class="col-md-3 mb-3">                                 
-                            <label class="form-label-sm">Advisor Name</label>                                 
-                            <input type="text" class="form-control form-control-sm" name="advisor_name">                             
-                        </div>                             
-                        <div class="col-md-3 mb-3">                                 
-                            <label class="form-label-sm">Advisor CT No</label>                                 
-                            <input type="text" class="form-control form-control-sm" name="advisor_ct_no">                             
-                        </div>                             
-                        <div class="col-md-12 mb-3">                                 
-                            <label class="form-label-sm">Address</label>                                 
-                            <textarea class="form-control form-control-sm" name="address" rows="2"></textarea>                             
-                        </div>                         
-                    </div>                     
-                </div>                     
-                <div class="modal-footer">                         
-                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>                         
-                    <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-save mr-1"></i>Save Record</button>                     
-                </div>                 
-            </form>             
-        </div>         
-    </div>     
-</div>      
+    <!-- ===================== ADD MODAL ===================== -->
+    <div class="modal fade" id="addModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fa fa-plus-circle mr-2"></i>Add License Record</h5>
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                </div>
+                <form id="addRecordForm">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label-sm">BackEnd ID</label>
+                                <input type="text" class="form-control form-control-sm" name="backend_id">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label-sm">Client ID</label>
+                                <input type="text" class="form-control form-control-sm" name="client_id">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label-sm">Service</label>
+                                <input type="text" class="form-control form-control-sm" name="service">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label-sm">License No</label>
+                                <input type="text" class="form-control form-control-sm" name="license_no">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label-sm">Issue Date</label>
+                                <input type="date" class="form-control form-control-sm" name="issue_date">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label-sm">Renewal Date</label>
+                                <input type="date" class="form-control form-control-sm" name="renewal_date">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label-sm">CT. Person</label>
+                                <input type="text" class="form-control form-control-sm" name="ct_person">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label-sm">CT. Number</label>
+                                <input type="text" class="form-control form-control-sm" name="ct_number">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label-sm">CT Person Designation</label>
+                                <input type="text" class="form-control form-control-sm" name="ct_person_designation">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label-sm">CT Person Mail</label>
+                                <input type="email" class="form-control form-control-sm" name="ct_person_mail">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label-sm">Advisor Name</label>
+                                <input type="text" class="form-control form-control-sm" name="advisor_name">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label-sm">Advisor CT No</label>
+                                <input type="text" class="form-control form-control-sm" name="advisor_ct_no">
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <label class="form-label-sm">Address</label>
+                                <textarea class="form-control form-control-sm" name="address" rows="2"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-save mr-1"></i>Save
+                            Record</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
-<!-- ===================== EDIT MODAL ===================== -->     
-<div class="modal fade" id="editModal" tabindex="-1" role="dialog">         
-    <div class="modal-dialog modal-xl" role="document">             
-        <div class="modal-content">                 
-            <div class="modal-header">                     
-                <h5 class="modal-title"><i class="fa fa-edit mr-2"></i>Edit License Record</h5>                     
-                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>                 
-            </div>                 
-            <form id="editRecordForm">                     
-                <input type="hidden" id="edit_id" name="id">                     
-                <div class="modal-body">                         
-                    <div class="row">                             
-                        <div class="col-md-3 mb-3">                                 
-                            <label class="form-label-sm">BackEnd ID</label>                                 
-                            <input type="text" class="form-control form-control-sm" id="edit_backend_id" name="backend_id">                             
-                        </div>                             
-                        <div class="col-md-3 mb-3">                                 
-                            <label class="form-label-sm">Client ID</label>                                 
-                            <input type="text" class="form-control form-control-sm" id="edit_client_id" name="client_id">                             
-                        </div>                             
-                        <div class="col-md-3 mb-3">                                 
-                            <label class="form-label-sm">Service</label>                                 
-                            <input type="text" class="form-control form-control-sm" id="edit_service" name="service">                             
-                        </div>                             
-                        <div class="col-md-3 mb-3">                                 
-                            <label class="form-label-sm">License No</label>                                 
-                            <input type="text" class="form-control form-control-sm" id="edit_license_no" name="license_no">                             
-                        </div>                             
-                        <div class="col-md-3 mb-3">                                 
-                            <label class="form-label-sm">Issue Date</label>                                 
-                            <input type="date" class="form-control form-control-sm" id="edit_issue_date" name="issue_date">                             
-                        </div>                             
-                        <div class="col-md-3 mb-3">                                 
-                            <label class="form-label-sm">Renewal Date</label>                                 
-                            <input type="date" class="form-control form-control-sm" id="edit_renewal_date" name="renewal_date">                             
-                        </div>                             
-                        <div class="col-md-3 mb-3">                                 
-                            <label class="form-label-sm">CT. Person</label>                                 
-                            <input type="text" class="form-control form-control-sm" id="edit_ct_person" name="ct_person">                             
-                        </div>                             
-                        <div class="col-md-3 mb-3">                                 
-                            <label class="form-label-sm">CT. Number</label>                                 
-                            <input type="text" class="form-control form-control-sm" id="edit_ct_number" name="ct_number">                             
-                        </div>                             
-                        <div class="col-md-3 mb-3">                                 
-                            <label class="form-label-sm">CT Person Designation</label>                                 
-                            <input type="text" class="form-control form-control-sm" id="edit_ct_person_designation" name="ct_person_designation">                             
-                        </div>                             
-                        <div class="col-md-3 mb-3">                                 
-                            <label class="form-label-sm">CT Person Mail</label>                                 
-                            <input type="text" class="form-control form-control-sm" id="edit_ct_person_mail" name="ct_person_mail">                             
-                        </div>                             
-                        <div class="col-md-3 mb-3">                                 
-                            <label class="form-label-sm">Advisor Name</label>                                 
-                            <input type="text" class="form-control form-control-sm" id="edit_advisor_name" name="advisor_name">                             
-                        </div>                             
-                        <div class="col-md-3 mb-3">                                 
-                            <label class="form-label-sm">Advisor CT No</label>                                 
-                            <input type="text" class="form-control form-control-sm" id="edit_advisor_ct_no" name="advisor_ct_no">                             
-                        </div>                             
-                        <div class="col-md-12 mb-3">                                 
-                            <label class="form-label-sm">Address</label>                                 
-                            <textarea class="form-control form-control-sm" id="edit_address" name="address" rows="2"></textarea>                             
-                        </div>                         
-                    </div>                     
-                </div>                     
-                <div class="modal-footer">                         
-                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>                         
-                    <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-save mr-1"></i>Update Record</button>                     
-                </div>                 
-            </form>             
-        </div>         
-    </div>     
-</div>      
+    <!-- ===================== EDIT MODAL ===================== -->
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fa fa-edit mr-2"></i>Edit License Record</h5>
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                </div>
+                <form id="editRecordForm">
+                    <input type="hidden" id="edit_id" name="id">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label-sm">BackEnd ID</label>
+                                <input type="text" class="form-control form-control-sm" id="edit_backend_id"
+                                    name="backend_id">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label-sm">Client ID</label>
+                                <input type="text" class="form-control form-control-sm" id="edit_client_id"
+                                    name="client_id">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label-sm">Service</label>
+                                <input type="text" class="form-control form-control-sm" id="edit_service"
+                                    name="service">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label-sm">License No</label>
+                                <input type="text" class="form-control form-control-sm" id="edit_license_no"
+                                    name="license_no">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label-sm">Issue Date</label>
+                                <input type="date" class="form-control form-control-sm" id="edit_issue_date"
+                                    name="issue_date">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label-sm">Renewal Date</label>
+                                <input type="date" class="form-control form-control-sm" id="edit_renewal_date"
+                                    name="renewal_date">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label-sm">CT. Person</label>
+                                <input type="text" class="form-control form-control-sm" id="edit_ct_person"
+                                    name="ct_person">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label-sm">CT. Number</label>
+                                <input type="text" class="form-control form-control-sm" id="edit_ct_number"
+                                    name="ct_number">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label-sm">CT Person Designation</label>
+                                <input type="text" class="form-control form-control-sm" id="edit_ct_person_designation"
+                                    name="ct_person_designation">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label-sm">CT Person Mail</label>
+                                <input type="text" class="form-control form-control-sm" id="edit_ct_person_mail"
+                                    name="ct_person_mail">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label-sm">Advisor Name</label>
+                                <input type="text" class="form-control form-control-sm" id="edit_advisor_name"
+                                    name="advisor_name">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label-sm">Advisor CT No</label>
+                                <input type="text" class="form-control form-control-sm" id="edit_advisor_ct_no"
+                                    name="advisor_ct_no">
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <label class="form-label-sm">Address</label>
+                                <textarea class="form-control form-control-sm" id="edit_address" name="address"
+                                    rows="2"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-save mr-1"></i>Update
+                            Record</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
-<!-- Scripts -->     
-<script src="../assets/bundles/lib.vendor.bundle.js"></script>     
-<script src="../assets/bundles/apexcharts.bundle.js"></script>     
-<script src="../assets/bundles/counterup.bundle.js"></script>     
-<script src="../assets/bundles/knobjs.bundle.js"></script>     
-<script src="../assets/bundles/c3.bundle.js"></script>      
-<script src="../assets/js/core.js"></script>     
-<script src="../assets/js/page/index.js"></script>     
-<script src="../assets/js/page/theme1-js.js"></script>        
+    <!-- Scripts -->
+    <script src="../assets/bundles/lib.vendor.bundle.js"></script>
+    <script src="../assets/bundles/apexcharts.bundle.js"></script>
+    <script src="../assets/bundles/counterup.bundle.js"></script>
+    <script src="../assets/bundles/knobjs.bundle.js"></script>
+    <script src="../assets/bundles/c3.bundle.js"></script>
+    <script src="../assets/js/core.js"></script>
 
-<script>      
+    <script>
 
-  document.addEventListener('DOMContentLoaded', () => {
-        // ---------------------------------------------------------
-        // 1. Retrieve User Details
-        // ---------------------------------------------------------
-        const loggedInUserName = localStorage.getItem('loggedInUserName');
-        // Ensure role is saved during login (e.g., 'ADMIN', 'HR', 'EMPLOYEE')
-        const loggedInUserRole = localStorage.getItem('loggedInUserRole'); 
-        
-        const welcomeMessageElement = document.getElementById('welcomeMessage');
+        document.addEventListener('DOMContentLoaded', () => {
+            // ---------------------------------------------------------
+            // 1. Retrieve User Details
+            // ---------------------------------------------------------
+            const loggedInUserName = localStorage.getItem('loggedInUserName');
+            // Ensure role is saved during login (e.g., 'ADMIN', 'HR', 'EMPLOYEE')
+            const loggedInUserRole = localStorage.getItem('loggedInUserRole');
 
-        // ---------------------------------------------------------
-        // 2. Set Welcome Message
-        // ---------------------------------------------------------
-        if (loggedInUserName && welcomeMessageElement) {
-            // Show Name and Role if available
-            welcomeMessageElement.textContent = `${loggedInUserName} (${loggedInUserRole || 'User'})`;
-        } else if (welcomeMessageElement) {
-            welcomeMessageElement.textContent = 'Guest!';
-        }
+            const welcomeMessageElement = document.getElementById('welcomeMessage');
 
-        // ---------------------------------------------------------
-        // 3. SIDEBAR MENU PERMISSIONS (Existing Logic)
-        // ---------------------------------------------------------
+            // ---------------------------------------------------------
+            // 2. Set Welcome Message
+            // ---------------------------------------------------------
+            if (loggedInUserName && welcomeMessageElement) {
+                // Show Name and Role if available
+                welcomeMessageElement.textContent = `${loggedInUserName} (${loggedInUserRole || 'User'})`;
+            } else if (welcomeMessageElement) {
+                welcomeMessageElement.textContent = 'Guest!';
+            }
 
-  const allSidebarIds = [
+            // ---------------------------------------------------------
+            // 3. SIDEBAR MENU PERMISSIONS (Existing Logic)
+            // ---------------------------------------------------------
+
+            const allSidebarIds = [
                 'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
                 'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
                 'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
@@ -560,196 +757,196 @@
                 'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
                 'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
                 'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
-                'sidebar-sop', 'sidebar-qc' , 'sticky-actions' , 'hide-feature' , ' sidebar-social-report ', 'sidebar-advisor-performance-tracker' , 'sidebar-performance-tracker', 'sidebar-management'
+                'sidebar-sop', 'sidebar-qc', 'sticky-actions', 'hide-feature', ' sidebar-social-report ', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker', 'sidebar-management'
             ];
 
             const sidebarPermissions = {
                 'HR': [
                     'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
                     'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
-                    'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals', 
-                    'sidebar-payment-bills', 'sidebar-leave-request' ,'sticky-actions' , 'hide-feature' ],
+                    'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                    'sidebar-payment-bills', 'sidebar-leave-request', 'sticky-actions', 'hide-feature'],
                 'ADMIN': [
-                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-attendance', 'sidebar-admin-reports', 
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-attendance', 'sidebar-admin-reports',
                     'sidebar-payment-bills', 'sidebar-leave-request'],
                 'EMPLOYEE': [
-                    'sidebar-hrms', 'sidebar-departments', 'sidebar-employee-task', 'sidebar-leave-request' ],
+                    'sidebar-hrms', 'sidebar-departments', 'sidebar-employee-task', 'sidebar-leave-request'],
 
-                'GENERAL MANAGER':['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
-                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
-                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
-                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
-                'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
-                'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
-                'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
-                'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
-                'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
-                'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
-                'sidebar-sop', 'sidebar-qc' , ' sidebar-social-report ', 'sidebar-advisor-performance-tracker' , 'sidebar-performance-tracker', 'sidebar-management'], 
+                'GENERAL MANAGER': ['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                    'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                    'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                    'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
+                    'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
+                    'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
+                    'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
+                    'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
+                    'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
+                    'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
+                    'sidebar-sop', 'sidebar-qc', ' sidebar-social-report ', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker', 'sidebar-management'],
 
                 'PROJECT MANAGER': [
-                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-departments', 'sidebar-employee', 
-                    'sidebar-performance', 'sidebar-leave-request' ,'sticky-actions' , 'hide-feature'
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-departments', 'sidebar-employee',
+                    'sidebar-performance', 'sidebar-leave-request', 'sticky-actions', 'hide-feature'
                 ],
                 'ADVISOR': [
                     'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-working', 'sidebar-financial-report',
-                    'sidebar-client-id', 'sidebar-quotation-id', 'sidebar-proforma', 'sidebar-document-tracker', 
-                    'sidebar-backend-id', 'sidebar-bill-supply', 'sidebar-history-license', 'sidebar-backend-report', 
-                    'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments', 'sidebar-operators', 
-                    'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report', 'sidebar-phone-audit-report', 
-                    'sidebar-audit-base', 'sidebar-advisor-entry', 'sidebar-output' ,'sticky-actions' , 'hide-feature' , ' sidebar-social-report ', 'sidebar-advisor-performance-tracker' , 'sidebar-performance-tracker'
+                    'sidebar-client-id', 'sidebar-quotation-id', 'sidebar-proforma', 'sidebar-document-tracker',
+                    'sidebar-backend-id', 'sidebar-bill-supply', 'sidebar-history-license', 'sidebar-backend-report',
+                    'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments', 'sidebar-operators',
+                    'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report', 'sidebar-phone-audit-report',
+                    'sidebar-audit-base', 'sidebar-advisor-entry', 'sidebar-output', 'sticky-actions', 'hide-feature', ' sidebar-social-report ', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker'
                 ],
                 'AUDIT PROJECT MANAGER': [
-                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-working', 'sidebar-financial-report', 
-                    'sidebar-sop', 'sidebar-backend-report', 'sidebar-enquiry', 'sidebar-audit-quotation', 
-                    'sidebar-audit-appointments', 'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 
-                    'sidebar-audit-weekly-report', 'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-qc', 
-                    'sidebar-advisor-entry', 'sidebar-output', 'sidebar-bill-supply', 'sidebar-accounting-log' , 'sticky-actions' , 'hide-feature' , ' sidebar-social-report ', 'sidebar-advisor-performance-tracker' , 'sidebar-performance-tracker' 
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-working', 'sidebar-financial-report',
+                    'sidebar-sop', 'sidebar-backend-report', 'sidebar-enquiry', 'sidebar-audit-quotation',
+                    'sidebar-audit-appointments', 'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries',
+                    'sidebar-audit-weekly-report', 'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-qc',
+                    'sidebar-advisor-entry', 'sidebar-output', 'sidebar-bill-supply', 'sidebar-accounting-log', 'sticky-actions', 'hide-feature', ' sidebar-social-report ', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker'
                 ],
                 'BACKEND PROJECT MANAGER': [
-                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-backend-report' , 'sticky-actions' , 'hide-feature' 
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-backend-report', 'sticky-actions', 'hide-feature'
                 ],
                 'TEAM LEADER': [
-                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-financial-report', 
-                    'sidebar-accounting-log', 'sidebar-bill-supply' , 'sticky-actions' , 'hide-feature' 
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-financial-report',
+                    'sidebar-accounting-log', 'sidebar-bill-supply', 'sticky-actions', 'hide-feature'
                 ],
                 'BACK OFFICE EXECUTIVE': [
-                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-backend-report', 
-                    'sidebar-sop', 'sidebar-qc' ,'sticky-actions' , 'hide-feature'
-                ] ,
-                'VP' :['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
-                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
-                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
-                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
-                'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
-                'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
-                'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
-                'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
-                'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
-                'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
-                'sidebar-sop', 'sidebar-qc' , ' sidebar-social-report ', 'sidebar-advisor-performance-tracker' , 'sidebar-performance-tracker', 'sidebar-management'], 
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-backend-report',
+                    'sidebar-sop', 'sidebar-qc', 'sticky-actions', 'hide-feature'
+                ],
+                'VP': ['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                    'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                    'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                    'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
+                    'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
+                    'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
+                    'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
+                    'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
+                    'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
+                    'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
+                    'sidebar-sop', 'sidebar-qc', ' sidebar-social-report ', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker', 'sidebar-management'],
 
-                'CEO' :['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
-                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
-                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
-                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
-                'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
-                'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
-                'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
-                'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
-                'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
-                'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
-                'sidebar-sop', 'sidebar-qc' , ' sidebar-social-report ', 'sidebar-advisor-performance-tracker' , 'sidebar-performance-tracker', 'sidebar-management']
+                'CEO': ['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                    'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                    'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                    'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
+                    'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
+                    'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
+                    'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
+                    'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
+                    'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
+                    'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
+                    'sidebar-sop', 'sidebar-qc', ' sidebar-social-report ', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker', 'sidebar-management']
             };
 
 
-        // ---------------------------------------------------------
-        // 4. MAIN DASHBOARD MENU PERMISSIONS (New Logic)
-        // ---------------------------------------------------------
-        const allMainMenuIds = [
-            'main-menu-user', 'main-menu-department', 'main-menu-employees',
-            'main-menu-attendance', 'main-menu-payroll', 'main-menu-expenses',
-            'main-menu-performance', 'main-menu-appraisal', 'main-menu-hr-report', 
-            'main-menu-admin-report', 'main-menu-other-portal', 'main-menu-payment-bill','main-menu-employee-task','main-menu-leave-request'
-        ];
+            // ---------------------------------------------------------
+            // 4. MAIN DASHBOARD MENU PERMISSIONS (New Logic)
+            // ---------------------------------------------------------
+            const allMainMenuIds = [
+                'main-menu-user', 'main-menu-department', 'main-menu-employees',
+                'main-menu-attendance', 'main-menu-payroll', 'main-menu-expenses',
+                'main-menu-performance', 'main-menu-appraisal', 'main-menu-hr-report',
+                'main-menu-admin-report', 'main-menu-other-portal', 'main-menu-payment-bill', 'main-menu-employee-task', 'main-menu-leave-request'
+            ];
 
-        const mainMenuPermissions = {
-            'HR': ['main-menu-user', 'main-menu-department', 'main-menu-employees',
-            'main-menu-attendance', 'main-menu-payroll', 'main-menu-expenses',
-            'main-menu-performance', 'main-menu-appraisal', 'main-menu-hr-report', 
-            'main-menu-admin-report', 'main-menu-other-portal', 'main-menu-payment-bill','main-menu-leave-request'],
-            
-            'ADMIN': ['main-menu-attendance', 'main-menu-admin-report', 'main-menu-payment-bill','main-menu-leave-request'],
-            
-            'EMPLOYEE': [  'main-menu-department','main-menu-employee-task','main-menu-leave-request'],
-            
-            'GENERAL MANAGER': ['main-menu-user', 'main-menu-department', 'main-menu-employees',
-            'main-menu-attendance', 'main-menu-payroll', 'main-menu-expenses',
-            'main-menu-performance', 'main-menu-appraisal', 'main-menu-hr-report', 
-            'main-menu-admin-report', 'main-menu-other-portal', 'main-menu-payment-bill','main-menu-employee-task','main-menu-leave-request'],
-            
-            'PROJECT MANAGER': ['main-menu-department', 'main-menu-employees', 'main-menu-performance','main-menu-leave-request']
-        };
+            const mainMenuPermissions = {
+                'HR': ['main-menu-user', 'main-menu-department', 'main-menu-employees',
+                    'main-menu-attendance', 'main-menu-payroll', 'main-menu-expenses',
+                    'main-menu-performance', 'main-menu-appraisal', 'main-menu-hr-report',
+                    'main-menu-admin-report', 'main-menu-other-portal', 'main-menu-payment-bill', 'main-menu-leave-request'],
 
-        // ---------------------------------------------------------
-        // 5. Function to Filter Any Menu List
-        // ---------------------------------------------------------
-        function applyPermissions(role, allIds, permissionMap) {
-            // Normalize role string (handle 'Admin', 'admin', 'ADMIN')
-         const normalizedRole = role ? role.trim().toUpperCase() : '';
-            const allowedItems = permissionMap[normalizedRole] || [];
+                'ADMIN': ['main-menu-attendance', 'main-menu-admin-report', 'main-menu-payment-bill', 'main-menu-leave-request'],
 
-            allIds.forEach(id => {
-                const el = document.getElementById(id);
-                if (el) {
-                    if (allowedItems.includes(id)) {
-                        el.style.display = ''; // Reset to default (block/flex/etc)
-                    } else {
-                        el.style.display = 'none';  // Hide
-                    }
-                }
-            });
-        }
+                'EMPLOYEE': ['main-menu-department', 'main-menu-employee-task', 'main-menu-leave-request'],
 
-        // ---------------------------------------------------------
-        // 6. Execute Filters
-        // ---------------------------------------------------------
-        if (loggedInUserRole) {
-            // Filter Sidebar
-            applyPermissions(loggedInUserRole, allSidebarIds, sidebarPermissions);
-            // Filter Main Dashboard Menu
-         
-        } else {
-            // If Not Logged In: Hide everything except Dashboard
-            // Hide Sidebar items (except dashboard)
-            allSidebarIds.forEach(id => {
-                if (id !== 'menu-dashboard') {
+                'GENERAL MANAGER': ['main-menu-user', 'main-menu-department', 'main-menu-employees',
+                    'main-menu-attendance', 'main-menu-payroll', 'main-menu-expenses',
+                    'main-menu-performance', 'main-menu-appraisal', 'main-menu-hr-report',
+                    'main-menu-admin-report', 'main-menu-other-portal', 'main-menu-payment-bill', 'main-menu-employee-task', 'main-menu-leave-request'],
+
+                'PROJECT MANAGER': ['main-menu-department', 'main-menu-employees', 'main-menu-performance', 'main-menu-leave-request']
+            };
+
+            // ---------------------------------------------------------
+            // 5. Function to Filter Any Menu List
+            // ---------------------------------------------------------
+            function applyPermissions(role, allIds, permissionMap) {
+                // Normalize role string (handle 'Admin', 'admin', 'ADMIN')
+                const normalizedRole = role ? role.trim().toUpperCase() : '';
+                const allowedItems = permissionMap[normalizedRole] || [];
+
+                allIds.forEach(id => {
                     const el = document.getElementById(id);
-                    if (el) el.style.display = 'none';
-                }
-            });
+                    if (el) {
+                        if (allowedItems.includes(id)) {
+                            el.style.display = ''; // Reset to default (block/flex/etc)
+                        } else {
+                            el.style.display = 'none';  // Hide
+                        }
+                    }
+                });
+            }
+
+            // ---------------------------------------------------------
+            // 6. Execute Filters
+            // ---------------------------------------------------------
+            if (loggedInUserRole) {
+                // Filter Sidebar
+                applyPermissions(loggedInUserRole, allSidebarIds, sidebarPermissions);
+                // Filter Main Dashboard Menu
+
+            } else {
+                // If Not Logged In: Hide everything except Dashboard
+                // Hide Sidebar items (except dashboard)
+                allSidebarIds.forEach(id => {
+                    if (id !== 'menu-dashboard') {
+                        const el = document.getElementById(id);
+                        if (el) el.style.display = 'none';
+                    }
+                });
+            }
+
+            // ---------------------------------------------------------
+            // 7. Sign Out Logic
+            // ---------------------------------------------------------
+            function logout() {
+                localStorage.clear();
+                window.location.replace('Html/Login.html');
+            }
+        });
+
+        const API_URL = 'http://localhost:3000/api/history-licenses';
+
+        function parseDateForInput(dateString) {
+            if (!dateString) return '';
+            return new Date(dateString).toISOString().split('T')[0];
         }
 
-        // ---------------------------------------------------------
-        // 7. Sign Out Logic
-        // ---------------------------------------------------------
-    function logout() {
-    localStorage.clear();
-    window.location.replace('Html/Login.html');
-}
-    });
+        function formatDateForTable(dateString) {
+            if (!dateString) return '—';
+            const d = new Date(dateString);
+            return d.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+        }
 
-    const API_URL = 'http://localhost:3000/api/history-licenses';          
+        async function loadRecords() {
+            try {
+                const res = await fetch(API_URL);
+                const data = await res.json();
+                let html = '';
 
-    function parseDateForInput(dateString) {             
-        if (!dateString) return '';             
-        return new Date(dateString).toISOString().split('T')[0];         
-    }                  
+                if (!data.length) {
+                    document.getElementById('recordsTableBody').innerHTML =
+                        '<tr class="empty-state"><td colspan="14" class="text-center">No records found. Click "Add Record" to get started.</td></tr>';
+                    return;
+                }
+                const role = (localStorage.getItem('loggedInUserRole') || '').toUpperCase().trim();
 
-    function formatDateForTable(dateString) {             
-        if (!dateString) return '—';             
-        const d = new Date(dateString);             
-        return d.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });         
-    }          
+                data.forEach((row) => {
+                    let actionButtons = '';
 
-    async function loadRecords() {             
-        try {                 
-            const res  = await fetch(API_URL);                 
-            const data = await res.json();                 
-            let html   = '';                  
-
-            if (!data.length) {                     
-                document.getElementById('recordsTableBody').innerHTML =                         
-                    '<tr class="empty-state"><td colspan="14" class="text-center">No records found. Click "Add Record" to get started.</td></tr>';                     
-                return;                 
-            }                  
-  const role = (localStorage.getItem('loggedInUserRole') || '').toUpperCase().trim();
-  
-            data.forEach((row) => {              
-                let actionButtons = '';
-
-         if (role !== 'GENERAL MANAGER' && role !== 'VP' && role !== 'CEO') {
-        actionButtons = `
+                    if (role !== 'GENERAL MANAGER' && role !== 'VP' && role !== 'CEO') {
+                        actionButtons = `
            <button class="btn btn-sm btn-info mr-1" onclick='openEditModal(${JSON.stringify(row).replace(/'/g, "&#39;")})' title="Edit">                                 
                             <i class="fa fa-edit"></i>                             
                         </button>                             
@@ -757,8 +954,8 @@
                             <i class="fa fa-trash"></i>                             
                         </button>     
         `;
-    }                     
-                html += `<tr>                         
+                    }
+                    html += `<tr>                         
                     <td><strong>${row.backend_id || '—'}</strong></td>                         
                     <td>${row.client_id || '—'}</td>                         
                     <td>${row.service || '—'}</td>                         
@@ -775,116 +972,117 @@
                     <td class="d-flex ">                             
                          ${actionButtons}                   
                     </td>                     
-                </tr>`;                 
-            });                  
+                </tr>`;
+                });
 
-            document.getElementById('recordsTableBody').innerHTML = html;             
-        } catch (err) {                 
-            console.error('Failed to load records:', err);                 
-            document.getElementById('recordsTableBody').innerHTML =                     
-                '<tr class="empty-state"><td colspan="14" class="text-center text-danger">⚠️ Failed to load data. Check server connection.</td></tr>';             
-        }         
-    }          
+                document.getElementById('recordsTableBody').innerHTML = html;
+            } catch (err) {
+                console.error('Failed to load records:', err);
+                document.getElementById('recordsTableBody').innerHTML =
+                    '<tr class="empty-state"><td colspan="14" class="text-center text-danger">⚠️ Failed to load data. Check server connection.</td></tr>';
+            }
+        }
 
-    document.getElementById('addRecordForm').onsubmit = async (e) => {             
-        e.preventDefault();             
-        const data = Object.fromEntries(new FormData(e.target).entries());             
-        try {                 
-            const res = await fetch(API_URL, {                     
-                method:  'POST',                     
-                headers: { 'Content-Type': 'application/json' },                     
-                body:    JSON.stringify(data)                 
-            });                 
-            const result = await res.json();                                  
+        document.getElementById('addRecordForm').onsubmit = async (e) => {
+            e.preventDefault();
+            const data = Object.fromEntries(new FormData(e.target).entries());
+            try {
+                const res = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                const result = await res.json();
 
-            if (!res.ok) throw new Error(result.error || 'Failed to add record');                  
+                if (!res.ok) throw new Error(result.error || 'Failed to add record');
 
-            alert(result.message || '✅ Record added!');                 
-            $('#addModal').modal('hide');                 
-            e.target.reset();                                  
-            loadRecords();             
-        } catch (err) {                 
-            alert('Error adding record: ' + err.message);             
-        }         
-    };          
+                alert(result.message || '✅ Record added!');
+                $('#addModal').modal('hide');
+                e.target.reset();
+                loadRecords();
+            } catch (err) {
+                alert('Error adding record: ' + err.message);
+            }
+        };
 
-    function openEditModal(t) {             
-        document.getElementById('edit_id').value = t.id;                          
-        document.getElementById('edit_backend_id').value = t.backend_id || '';             
-        document.getElementById('edit_client_id').value = t.client_id || '';             
-        document.getElementById('edit_service').value = t.service || '';             
-        document.getElementById('edit_license_no').value = t.license_no || '';             
-        document.getElementById('edit_issue_date').value = parseDateForInput(t.issue_date);             
-        document.getElementById('edit_renewal_date').value = parseDateForInput(t.renewal_date);             
-        document.getElementById('edit_ct_person').value = t.ct_person || '';             
-        document.getElementById('edit_ct_number').value = t.ct_number || '';             
-        document.getElementById('edit_ct_person_designation').value = t.ct_person_designation || '';             
-        document.getElementById('edit_ct_person_mail').value = t.ct_person_mail || '';             
-        document.getElementById('edit_advisor_name').value = t.advisor_name || '';             
-        document.getElementById('edit_advisor_ct_no').value = t.advisor_ct_no || '';             
-        document.getElementById('edit_address').value = t.address || '';                          
-        
-        $('#editModal').modal('show');         
-    }          
+        function openEditModal(t) {
+            document.getElementById('edit_id').value = t.id;
+            document.getElementById('edit_backend_id').value = t.backend_id || '';
+            document.getElementById('edit_client_id').value = t.client_id || '';
+            document.getElementById('edit_service').value = t.service || '';
+            document.getElementById('edit_license_no').value = t.license_no || '';
+            document.getElementById('edit_issue_date').value = parseDateForInput(t.issue_date);
+            document.getElementById('edit_renewal_date').value = parseDateForInput(t.renewal_date);
+            document.getElementById('edit_ct_person').value = t.ct_person || '';
+            document.getElementById('edit_ct_number').value = t.ct_number || '';
+            document.getElementById('edit_ct_person_designation').value = t.ct_person_designation || '';
+            document.getElementById('edit_ct_person_mail').value = t.ct_person_mail || '';
+            document.getElementById('edit_advisor_name').value = t.advisor_name || '';
+            document.getElementById('edit_advisor_ct_no').value = t.advisor_ct_no || '';
+            document.getElementById('edit_address').value = t.address || '';
 
-    document.getElementById('editRecordForm').onsubmit = async (e) => {             
-        e.preventDefault();             
-        const data = Object.fromEntries(new FormData(e.target).entries());             
-        const id   = data.id;             
-        try {                 
-            const res = await fetch(`${API_URL}/${id}`, {                     
-                method:  'PUT',                     
-                headers: { 'Content-Type': 'application/json' },                     
-                body:    JSON.stringify(data)                 
-            });                 
-            const result = await res.json();                                  
+            $('#editModal').modal('show');
+        }
 
-            if (!res.ok) throw new Error(result.error || 'Failed to update record');                  
+        document.getElementById('editRecordForm').onsubmit = async (e) => {
+            e.preventDefault();
+            const data = Object.fromEntries(new FormData(e.target).entries());
+            const id = data.id;
+            try {
+                const res = await fetch(`${API_URL}/${id}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                const result = await res.json();
 
-            alert(result.message || '✅ Record updated!');                 
-            $('#editModal').modal('hide');                 
-            loadRecords();             
-        } catch (err) {                 
-            alert('Error updating record: ' + err.message);             
-        }         
-    };          
+                if (!res.ok) throw new Error(result.error || 'Failed to update record');
 
-    async function deleteRecord(id) {             
-        if (!confirm('Are you sure you want to delete this record?')) return;             
-        try {                 
-            const res = await fetch(`${API_URL}/${id}`, { method: 'DELETE' });                 
-            const result = await res.json();                                  
+                alert(result.message || '✅ Record updated!');
+                $('#editModal').modal('hide');
+                loadRecords();
+            } catch (err) {
+                alert('Error updating record: ' + err.message);
+            }
+        };
 
-            if (!res.ok) throw new Error(result.error || 'Failed to delete');                                  
-            
-            loadRecords();             
-        } catch (err) {                 
-            alert('Error deleting: ' + err.message);             
-        }         
-    }          
+        async function deleteRecord(id) {
+            if (!confirm('Are you sure you want to delete this record?')) return;
+            try {
+                const res = await fetch(`${API_URL}/${id}`, { method: 'DELETE' });
+                const result = await res.json();
 
-    async function uploadExcel() {             
-        const fileInput = document.getElementById('excelFile');             
-        if (!fileInput.files[0]) return alert('Please select a file first.');                          
-        
-        const formData  = new FormData();             
-        formData.append('file', fileInput.files[0]);                          
-        
-        try {                 
-            const res = await fetch(`${API_URL}/upload`, { method: 'POST', body: formData });                 
-            const result = await res.json();                                  
+                if (!res.ok) throw new Error(result.error || 'Failed to delete');
 
-            if (!res.ok) throw new Error(result.error || 'Upload failed');                                  
-            
-            alert(result.message || '✅ Uploaded successfully!');                 
-            fileInput.value = '';                 
-            loadRecords();             
-        } catch (err) {                 
-            alert('Upload failed: ' + err.message);             
-        }         
-    }          
+                loadRecords();
+            } catch (err) {
+                alert('Error deleting: ' + err.message);
+            }
+        }
 
-    window.onload = loadRecords;     
-</script>  
-</body>  
+        async function uploadExcel() {
+            const fileInput = document.getElementById('excelFile');
+            if (!fileInput.files[0]) return alert('Please select a file first.');
+
+            const formData = new FormData();
+            formData.append('file', fileInput.files[0]);
+
+            try {
+                const res = await fetch(`${API_URL}/upload`, { method: 'POST', body: formData });
+                const result = await res.json();
+
+                if (!res.ok) throw new Error(result.error || 'Upload failed');
+
+                alert(result.message || '✅ Uploaded successfully!');
+                fileInput.value = '';
+                loadRecords();
+            } catch (err) {
+                alert('Upload failed: ' + err.message);
+            }
+        }
+
+        window.onload = loadRecords;     
+    </script>
+</body>
+
 </html>

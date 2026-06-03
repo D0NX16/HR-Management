@@ -55,8 +55,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
          if (role !== 'GENERAL MANAGER' && role !== 'VP' && role !== 'CEO') {
         actionButtons = `
-            <button type="button" class="btn btn-icon btn-sm edit-employee" title="Edit" data-employee-id="${employee.employee_id}"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-icon btn-sm delete-employee js-sweetalert" title="Delete" data-type="confirm" data-employee-id="${employee.employee_id}"><i class="fa fa-trash-o text-danger"></i></button>
+            <button type="button" class="btn btn-icon btn-sm edit-employee" title="Edit" data-employee-id="${employee.employee_id}"><i class="fa fa-edit text-info"></i></button>
+            <button type="button" class="btn btn-icon btn-sm delete-employee js-sweetalert" title="Delete" data-type="confirm" data-employee-id="${employee.employee_id}"><i class="fa fa-trash-o text-danger"></i></button>
         `;
     }              
                 const row = `
