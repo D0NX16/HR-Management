@@ -645,9 +645,32 @@
         </div>
     </div>
 
+    <!-- Upload Modal -->
+    <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Import Excel</h5>
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <p>Please upload an Excel file containing the interview records. The columns should match: Candidate
+                        Name, Position, Experience, Applied Date, Round, Interview Date, Interviewer, Status.</p>
+                    <input type="file" id="excelFileInput" class="form-control" accept=".xlsx, .xls">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="handleExcelUpload()"
+                        id="btnUploadExcel">Upload & Import</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="../assets/bundles/lib.vendor.bundle.js"></script>
     <script src="../assets/js/core.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -780,10 +803,10 @@
                 const role = (localStorage.getItem('loggedInUserRole') || '').toUpperCase();
 
                 data.forEach((d, index) => {
-                    let actions = (role !== 'GENERAL MANAGER' && role !== 'CEO' && role !== 'VP') ? `
-                        <button class="btn btn-sm btn-info" onclick='editRecord(${JSON.stringify(d)})'><i class="fa fa-edit"></i></button>
+                    let actions = `
+                        <button class="btn btn-sm btn-info" onclick='editRecord(${JSON.stringify(d).replace(/'/g, "&#39;")})'><i class="fa fa-edit"></i></button>
                         <button class="btn btn-sm btn-danger" onclick="deleteRecord(${d.id})"><i class="fa fa-trash"></i></button>
-                    ` : '—';
+                    `;
 
                     html += `<tr>
                         <td>${d.candidate_name}</td>
@@ -846,6 +869,109 @@
         function resetForm() {
             document.getElementById('interviewForm').reset();
             document.getElementById('f_id').value = '';
+        }
+
+        async function handleExcelUpload() {
+            const fileInput = document.getElementById('excelFileInput');
+            const file = fileInput.files[0];
+            if (!file) {
+                alert("Please select an Excel file first.");
+                return;
+            }
+
+            const btnUpload = document.getElementById('btnUploadExcel');
+            const originalText = btnUpload.innerText;
+            btnUpload.innerText = "Uploading...";
+            btnUpload.disabled = true;
+
+            try {
+                const reader = new FileReader();
+                reader.onload = async (e) => {
+                    try {
+                        const data = new Uint8Array(e.target.result);
+                        const workbook = XLSX.read(data, { type: 'array', cellDates: true });
+                        const firstSheetName = workbook.SheetNames[0];
+                        const worksheet = workbook.Sheets[firstSheetName];
+                        const jsonData = XLSX.utils.sheet_to_json(worksheet, { raw: false, dateNF: "yyyy-mm-dd" });
+
+                        if (jsonData.length === 0) {
+                            alert("The uploaded Excel sheet is empty.");
+                            btnUpload.innerText = originalText;
+                            btnUpload.disabled = false;
+                            return;
+                        }
+
+                        let successCount = 0;
+                        let errorCount = 0;
+
+                        for (let row of jsonData) {
+                            const normalizeKey = (key) => key.toLowerCase().replace(/[^a-z0-9]/g, '');
+                            const rowLower = {};
+                            for (const key in row) {
+                                rowLower[normalizeKey(key)] = row[key];
+                            }
+
+                            const candidate_name = rowLower['candidatename'] || rowLower['name'] || '';
+                            const position = rowLower['position'] || rowLower['role'] || '';
+                            const experience = parseFloat(rowLower['experience']) || 0;
+
+                            const formatDate = (val) => {
+                                if (!val) return null;
+                                const d = new Date(val);
+                                return isNaN(d.getTime()) ? null : d.toISOString().split('T')[0];
+                            };
+
+                            const applied_date = formatDate(rowLower['applieddate']);
+                            const round = rowLower['round'] || '';
+                            const interview_date = formatDate(rowLower['interviewdate']);
+                            const interviewer = rowLower['interviewer'] || '';
+                            const status = rowLower['status'] || 'Pending';
+
+                            if (!candidate_name || !position) continue;
+
+                            const payload = {
+                                candidate_name,
+                                position,
+                                experience,
+                                applied_date,
+                                round,
+                                interview_date,
+                                interviewer,
+                                status
+                            };
+
+                            try {
+                                const res = await fetch(API_URL, {
+                                    method: 'POST',
+                                    headers: { 'Content-Type': 'application/json' },
+                                    body: JSON.stringify(payload)
+                                });
+                                if (res.ok) successCount++;
+                                else errorCount++;
+                            } catch (err) {
+                                errorCount++;
+                            }
+                        }
+
+                        alert(`Import completed! Successfully imported: ${successCount}. Errors/Skipped: ${errorCount}.`);
+                        $('#uploadModal').modal('hide');
+                        loadData();
+                    } catch (err) {
+                        console.error(err);
+                        alert("Error parsing the Excel file.");
+                    } finally {
+                        btnUpload.innerText = originalText;
+                        btnUpload.disabled = false;
+                        fileInput.value = '';
+                    }
+                };
+                reader.readAsArrayBuffer(file);
+            } catch (err) {
+                console.error(err);
+                alert("Error reading file.");
+                btnUpload.innerText = originalText;
+                btnUpload.disabled = false;
+            }
         }
 
         window.onload = loadData;
