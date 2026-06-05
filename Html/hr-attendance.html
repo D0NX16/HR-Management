@@ -182,19 +182,6 @@
                 </div>
                 <div class="hright">
                     <div class="dropdown">
-                        <a href="javascript:void(0)" class="nav-link icon theme_btn" data-toggle="tooltip"
-                            data-placement="right" title="Themes">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <path
-                                    d="M5 3m0 2a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2z" />
-                                <path d="M19 6h1a2 2 0 0 1 2 2a5 5 0 0 1 -5 5l-5 0v2" />
-                                <path
-                                    d="M10 15m0 1a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1z" />
-                            </svg>
-                        </a>
                         <a href="javascript:void(0)" class="nav-link icon settingbar" data-toggle="tooltip"
                             data-placement="right" title="Settings">
                             <svg class="fa-spin" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -436,7 +423,8 @@
                         <li class="list-group-item mb-2">
                             <p>Default Theme <span
                                     class="badge badge-success font-13 font-weight-normal ml-1">New</span></p>
-                            <a href="../index.html"><img src="../assets/images/themes/default.png" class="img-fluid" /></a>
+                            <a href="../index.html"><img src="../assets/images/themes/default.png"
+                                    class="img-fluid" /></a>
                         </li>
                         <li class="list-group-item mb-2">
                             <p>Night Mode Theme</p>
@@ -664,10 +652,11 @@
                             <li id="sidebar-users"><a href="./hr-users.html">Users</a></li>
                             <li id="sidebar-departments"><a href="./hr-departments.html">Departments</a></li>
                             <li id="sidebar-employee"><a href="./hr-employee.html">Employee</a></li>
-                            <li id="sidebar-attendance" class="active"><a href="./hr-attendance.html">Attendance</a></li>
+                            <li id="sidebar-attendance" class="active"><a href="./hr-attendance.html">Attendance</a>
+                            </li>
                             <li id="sidebar-payroll"><a href="./hr-payroll.html">Payroll</a></li>
                             <li id="sidebar-expenses"><a href="./hr-expenses.html">Expenses</a></li>
-                            <li id="sidebar-performance" class="active"><a href="./hr-employee_perfomance.html">Emp
+                            <li id="sidebar-performance"><a href="./hr-employee_perfomance.html">Emp
                                     Performance</a></li>
                             <li id="sidebar-appraisal"><a href="./hr-appraisal_flow.html">Appraisal Flow</a></li>
 
@@ -683,7 +672,8 @@
                                     <li><a href="./hr-resigned-candidates.html">Resigned Candidates</a></li>
                                 </ul>
                             </li>
-                            <li id="sidebar-admin-reports" class="active"><a href="./hr-admin-reports.html">Admin Report</a></li>
+                            <li id="sidebar-admin-reports"><a href="./hr-admin-reports.html">Admin
+                                    Report</a></li>
                             <li id="sidebar-other-portals"><a href="./other-portals.html">Other Portals</a></li>
                             <li id="sidebar-payment-bills"><a href="./hr-payment-bills.html">Payment Bills</a></li>
                             <li id="sidebar-employee-task"><a href="./employee-Task.html">Employee Task</a></li>
@@ -716,12 +706,14 @@
                                 </ul>
                             </li>
 
-                              <li id="sidebar-vendor-directory"><a href="./vendor_directory.html">Vendor Directory</a></li>
-                              <li id="sidebar-business-report"><a href="./business_report.html">Business Report</a></li>
-                              <li id="sidebar-compliance-tracker"><a href="./compliance_tracker.html">Compliance Tracker</a></li>
-                              <li id="sidebar-inventory"><a href="./inventory.html">Inventory Tracker</a></li>
-                              <li id="sidebar-meeting"><a href="./meeting.html">Meeting Tracker</a></li>
-                              <li id="sidebar-software-access"><a href="./software_access.html">Software Access</a></li>
+                            <li id="sidebar-vendor-directory"><a href="./vendor_directory.html">Vendor Directory</a>
+                            </li>
+                            <li id="sidebar-business-report"><a href="./business_report.html">Business Report</a></li>
+                            <li id="sidebar-compliance-tracker"><a href="./compliance_tracker.html">Compliance
+                                    Tracker</a></li>
+                            <li id="sidebar-inventory"><a href="./inventory.html">Inventory Tracker</a></li>
+                            <li id="sidebar-meeting"><a href="./meeting.html">Meeting Tracker</a></li>
+                            <li id="sidebar-software-access"><a href="./software_access.html">Software Access</a></li>
 
                         </ul>
                     </li>
@@ -1002,8 +994,8 @@
     <script src="../assets/js/core.js"></script>
     <script>
 
- 
- document.addEventListener('DOMContentLoaded', () => {
+
+        document.addEventListener('DOMContentLoaded', () => {
             // 1. Retrieve User Details
             const loggedInUserName = localStorage.getItem('loggedInUserName');
             const loggedInUserRole = localStorage.getItem('loggedInUserRole'); // Ensure this is saved during login
@@ -1019,12 +1011,12 @@
             }
 
             // 3. Define Menu Permissions
-   const allMenuIds = [
-                 'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+            const allMenuIds = [
+                'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
                 'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
                 'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
                 'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report',
-                'sticky-actions' , 'hide-feature' ,'sidebar-asset-list','sidebar-bills-parent','sidebar-vendor-directory','sidebar-business-report','sidebar-compliance-tracker','sidebar-inventory','sidebar-meeting','sidebar-software-access'
+                'sticky-actions', 'hide-feature', 'sidebar-asset-list', 'sidebar-bills-parent', 'sidebar-vendor-directory', 'sidebar-business-report', 'sidebar-compliance-tracker', 'sidebar-inventory', 'sidebar-meeting', 'sidebar-software-access'
             ];
 
             const rolePermissions = {
@@ -1032,45 +1024,45 @@
                     'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
                     'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
                     'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals', 'sidebar-meeting',
-                    'sidebar-payment-bills', 'sidebar-leave-request' ,'sticky-actions' , 'hide-feature' ,'sidebar-daily-report' ],
+                    'sidebar-payment-bills', 'sidebar-leave-request', 'sticky-actions', 'hide-feature', 'sidebar-daily-report'],
                 'ADMIN': [
-                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-attendance', 'sidebar-admin-reports', 
-                    'sidebar-payment-bills', 'sidebar-leave-request' ,'hide-feature','sticky-actions','sidebar-asset-list','sidebar-bills-parent', 'sidebar-payroll','sidebar-business-report','sidebar-vendor-directory','sidebar-compliance-tracker','sidebar-meeting','sidebar-inventory','sidebar-software-access','sidebar-daily-report'],
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-attendance', 'sidebar-admin-reports',
+                    'sidebar-payment-bills', 'sidebar-leave-request', 'hide-feature', 'sticky-actions', 'sidebar-asset-list', 'sidebar-bills-parent', 'sidebar-payroll', 'sidebar-business-report', 'sidebar-vendor-directory', 'sidebar-compliance-tracker', 'sidebar-meeting', 'sidebar-inventory', 'sidebar-software-access', 'sidebar-daily-report'],
                 'EMPLOYEE': [
-                    'sidebar-hrms', 'sidebar-departments', 'sidebar-employee-task', 'sidebar-leave-request','sticky-actions' , 'hide-feature'],
+                    'sidebar-hrms', 'sidebar-departments', 'sidebar-employee-task', 'sidebar-leave-request', 'sticky-actions', 'hide-feature'],
 
-                'GENERAL MANAGER':['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
-                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
-                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
-                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report','sidebar-asset-list','sidebar-bills-parent','sidebar-vendor-directory','sidebar-business-report','sidebar-compliance-tracker','sidebar-inventory','sidebar-meeting','sidebar-software-access'], 
+                'GENERAL MANAGER': ['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                    'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                    'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                    'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report', 'sidebar-asset-list', 'sidebar-bills-parent', 'sidebar-vendor-directory', 'sidebar-business-report', 'sidebar-compliance-tracker', 'sidebar-inventory', 'sidebar-meeting', 'sidebar-software-access'],
 
                 'PROJECT MANAGER': [
-                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-departments', 'sidebar-employee', 
-                    'sidebar-performance', 'sidebar-leave-request' ,'sticky-actions' , 'hide-feature'
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-departments', 'sidebar-employee',
+                    'sidebar-performance', 'sidebar-leave-request', 'sticky-actions', 'hide-feature'
                 ],
 
-                   'AGM':['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
-                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
-                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
-                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report','sidebar-asset-list','sidebar-bills-parent','sidebar-vendor-directory','sidebar-business-report','sidebar-compliance-tracker','sidebar-inventory','sidebar-meeting','sidebar-software-access'],
+                'AGM': ['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                    'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                    'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                    'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report', 'sidebar-asset-list', 'sidebar-bills-parent', 'sidebar-vendor-directory', 'sidebar-business-report', 'sidebar-compliance-tracker', 'sidebar-inventory', 'sidebar-meeting', 'sidebar-software-access'],
 
 
-                'VP' :['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
-                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
-                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
-                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report','sidebar-asset-list','sidebar-bills-parent','sidebar-vendor-directory','sidebar-business-report','sidebar-compliance-tracker','sidebar-inventory','sidebar-meeting','sidebar-software-access'], 
+                'VP': ['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                    'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                    'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                    'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report', 'sidebar-asset-list', 'sidebar-bills-parent', 'sidebar-vendor-directory', 'sidebar-business-report', 'sidebar-compliance-tracker', 'sidebar-inventory', 'sidebar-meeting', 'sidebar-software-access'],
 
-                'CEO' :['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
-                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
-                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
-                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report','sidebar-asset-list','sidebar-bills-parent','sidebar-vendor-directory','sidebar-business-report','sidebar-compliance-tracker','sidebar-inventory','sidebar-meeting','sidebar-software-access']
+                'CEO': ['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                    'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                    'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                    'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report', 'sidebar-asset-list', 'sidebar-bills-parent', 'sidebar-vendor-directory', 'sidebar-business-report', 'sidebar-compliance-tracker', 'sidebar-inventory', 'sidebar-meeting', 'sidebar-software-access']
             };
 
 
             // 4. Function to Filter Menu
             function filterMenuByRole(role) {
                 // Normalize role string (handle 'Admin', 'admin', 'ADMIN')
-                   const normalizedRole = role ? role.toUpperCase().trim() : '';
+                const normalizedRole = role ? role.toUpperCase().trim() : '';
 
                 const allowedMenus = rolePermissions[normalizedRole] || [];
 
@@ -1123,7 +1115,7 @@
 
         document.addEventListener('DOMContentLoaded', function () {
             const dateInput = document.getElementById('attendanceDate');
-            
+
             // Set Default Date
             const today = getTodayString();
             dateInput.value = today;
@@ -1156,7 +1148,7 @@
                 // Calculate if we should lock the table
                 const today = getTodayString();
                 const isPastDate = date < today; // True if selected date is yesterday or earlier
-                  const role = (localStorage.getItem('loggedInUserRole') || '').toUpperCase().trim();
+                const role = (localStorage.getItem('loggedInUserRole') || '').toUpperCase().trim();
 
 
                 employees.forEach(emp => {
@@ -1169,15 +1161,15 @@
                     const isA = status === 'Absent' ? 'active btn-danger' : 'btn-outline-danger';
                     const isL = status === 'Leave' ? 'active btn-warning' : 'btn-outline-warning';
 
-      let actionButtons = '';
+                    let actionButtons = '';
 
-         if (role !== 'GENERAL MANAGER' && role !== 'VP' && role !== 'CEO') {
-        actionButtons = `
+                    if (role !== 'GENERAL MANAGER' && role !== 'VP' && role !== 'CEO') {
+                        actionButtons = `
              <button class="btn btn-primary btn-sm save-btn" onclick="saveRow('${emp.employee_id}')">
                                 <i class="fa fa-save"></i> Save
                             </button>
         `;
-    }              
+                    }
                     const row = `
 
                     
