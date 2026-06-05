@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en" dir="ltr">
 
 <head>
@@ -20,6 +20,7 @@
 
     <!-- Core css -->
     <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/mobile-responsive.css" />
     <link rel="stylesheet" href="../assets/css/theme1.css" />
 
     <!-- Style Override to prevent broken icon boxes -->
@@ -30,6 +31,141 @@
 
         .fa {
             font-family: 'FontAwesome' !important;
+        }
+
+        /* ================================================ */
+        /* MOBILE RESPONSIVENESS — HR Appraisal Flow Page    */
+        /* ================================================ */
+
+        /* --- Page Title: prevent truncation, allow wrapping --- */
+        @media (max-width: 767px) {
+            .page-header {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                padding: 10px 12px !important;
+                gap: 8px;
+            }
+
+            .page-header .left {
+                width: 100%;
+            }
+
+            .page-header .left h1.page-title {
+                font-size: 17px !important;
+                white-space: normal !important;
+                word-break: break-word;
+                margin-bottom: 0;
+            }
+
+            .page-header .right {
+                width: 100%;
+            }
+        }
+
+        /* --- Controls Bar: wrap cycle select + buttons into column on mobile --- */
+        @media (max-width: 767px) {
+            /* The container holding select + buttons */
+            .d-md-flex.justify-content-between.align-items-center {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 12px;
+            }
+
+            /* header-action: stack controls vertically */
+            .header-action.d-flex.align-items-center {
+                flex-direction: column !important;
+                align-items: stretch !important;
+                width: 100%;
+                gap: 8px;
+            }
+
+            /* Cycle select: full width, remove hard-coded 220px */
+            #cycleSelect {
+                width: 100% !important;
+                font-size: 14px !important;
+            }
+
+            /* The wrapper div around the select */
+            .header-action .mr-2 {
+                width: 100%;
+                margin-right: 0 !important;
+            }
+
+            /* "New Cycle" and "Start Workflow" buttons: full width */
+            .header-action .btn {
+                width: 100%;
+                margin-right: 0 !important;
+                text-align: center;
+                font-size: 14px !important;
+                padding: 8px 12px !important;
+            }
+        }
+
+        /* --- Container padding fix on mobile (overrides inline padding-left:0) --- */
+        @media (max-width: 767px) {
+            .container-fluid[style*="padding-left"] {
+                padding-left: 10px !important;
+                padding-right: 10px !important;
+            }
+        }
+
+        /* --- Table: reduce font and padding, keep horizontally scrollable --- */
+        @media (max-width: 767px) {
+            .table-responsive {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .table th,
+            .table td {
+                padding: 8px 10px !important;
+                font-size: 13px !important;
+                white-space: nowrap;
+                vertical-align: middle !important;
+            }
+
+            /* Action buttons inside table rows */
+            .table .btn-sm {
+                padding: 3px 7px !important;
+                font-size: 12px !important;
+            }
+        }
+
+        /* --- Section body top margin --- */
+        @media (max-width: 767px) {
+            .section-body.mt-3 {
+                margin-top: 8px !important;
+            }
+        }
+
+        /* --- Container padding on phones --- */
+        @media (max-width: 575px) {
+            .section-body .container-fluid {
+                padding-left: 10px !important;
+                padding-right: 10px !important;
+            }
+        }
+
+        /* --- Modals: full-width friendly on mobile --- */
+        @media (max-width: 575px) {
+            .modal-dialog {
+                margin: 10px !important;
+            }
+
+            /* Create Cycle modal: date fields stack vertically */
+            .modal-body .row .col-md-6 {
+                flex: 0 0 100% !important;
+                max-width: 100% !important;
+            }
+
+            .modal-footer {
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .modal-footer .btn {
+                flex: 1 1 auto;
+            }
         }
     </style>
 </head>

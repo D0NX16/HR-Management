@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="./assets/plugins/bootstrap/css/bootstrap.min.css" />
 
     <!-- Fonts -->
+    <link href="./assets/css/font-awesome.min.css" rel="stylesheet" />
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
@@ -578,7 +579,7 @@
                             <li id="sidebar-payment-bills"><a href="./Html/hr-payment-bills.html">Payment Bills</a></li>
                             <li id="sidebar-employee-task"><a href="./Html/employee-Task.html">Employee Task</a></li>
                             <li id="sidebar-leave-request"><a href="./Html/leave-Request.html">Leave Request</a></li>
-                            <li id="sidebar-daily-report"><a href="./Html/daily-task.html">Daily Report</a></li>
+                            <li id="sidebar-hrms-daily-report"><a href="./Html/daily-task.html">Daily Report</a></li>
 
                             <!-- Asset List -->
                             <li id="sidebar-asset-list">
@@ -623,135 +624,160 @@
                         </ul>
                     </li>
                     <!-- Auditor -->
-                <li id="sidebar-auditor">
-                    <a href="javascript:void(0)" class="has-arrow arrow-c"><i class="fa-solid fa-rocket"
-                            style="color: #74c0fc;"></i><span>Auditor</span></a>
-                    <ul>
-                        <li id="sidebar-working">
-                            <a><span>Operational Dashboard</span></a>
-                            <ul>
-                                <li id="sidebar-client-id"><a href="./clientID.html"><span>Client ID</span></a></li>
-                                <li id="sidebar-quotation-id"><a href="./quotationID.html"><span>Quotation ID</span></a>
-                                </li>
-                                <li id="sidebar-proforma"><a href="./proforma.html"><span>Proforma Voice</span></a></li>
-                                <li id="sidebar-document-tracker"><a href="./documentCollection.html"><span>Document
-                                            Tracker</span></a></li>
-                                <li id="sidebar-backend-id"><a href="./backend_id.html"><span>Backend ID</span></a></li>
-                                <li id="sidebar-history-license"><a href="./history-license.html"><span>History of
-                                            license</span></a></li>
-                                <li id="sidebar-output"><a href="./outputSheet.html?dept=Auditor"><span>Daily
-                                            Report</span></a></li>
-                                <li id="sidebar-enquiry"><a href="./enquiry.html"><span>Enquiry</span></a></li>
-                                <li id="sidebar-audit-quotation"><a href="./audit_quotation.html"><span>Quotation
-                                        </span></a></li>
-                                <li id="sidebar-audit-appointments"><a
-                                        href="./audit_appointments.html"><span>Appoinment</span></a></li>
-                                <li id="sidebar-operators"><a href="./operators.html"><span>My Operator</span></a></li>
-                                <li id="sidebar-pg-enquiry"><a href="./pg_enquiry.html"><span>PG-Enquiry</span></a></li>
-                                <li id="sidebar-sm-enquiries"><a href="./sm_enquiries.html"><span>SM-Enquiries</span></a>
-                                </li>
-                                <li id="sidebar-audit-weekly-report"><a href="./audit_weekly_report.html"><span>Weekly
-                                            Report Sheet</span></a></li>
-                                <li id="sidebar-phone-audit-report"><a href="./phone_audit_report.html"><span>Phone
-                                            Audit</span></a></li>
-                                <li class="active" id="sidebar-audit-base"><a
-                                        href="./audit_base.html"><span>Base</span></a></li>
-                                <li id="sidebar-advisor-entry"><a href="./advisor_entry_sheet.html"><span>Advisor
-                                            Entry</span></a></li>
-                                <li id="sidebar-social-report" class="active"><a
-                                        href="./social-media-report.html?dept=Auditor"><span>Social Media
-                                            Report</span></a></li>
-                                <li id="sidebar-advisor-performance-tracker"><a
-                                        href="./advisor_performance_tracker.html"><span>Advisor Performance
-                                            Tracker</span></a></li>
-                                <li id="sidebar-performance-tracker"><a
-                                        href="./performance_tracker.html"><span>Performance Tracker</span></a></li>
-                            </ul>
-                        </li>
+                    <li id="sidebar-auditor">
+                        <a href="javascript:void(0)" class="has-arrow arrow-c"><i class="fa-solid fa-rocket"
+                                style="color: #74c0fc;"></i><span>Auditor</span></a>
+                        <ul>
+                            <li id="sidebar-working">
+                                <a><span>Operational Dashboard</span></a>
+                                <ul>
+                                    <li id="sidebar-client-id"><a href="./Html/clientID.html"><span>Client ID</span></a>
+                                    </li>
+                                    <li id="sidebar-quotation-id"><a href="./Html/quotationID.html"><span>Quotation
+                                                ID</span></a>
+                                    </li>
+                                    <li id="sidebar-proforma"><a href="./Html/proforma.html"><span>Proforma
+                                                Voice</span></a></li>
+                                    <li id="sidebar-document-tracker"><a
+                                            href="./Html/documentCollection.html"><span>Document
+                                                Tracker</span></a></li>
+                                    <li id="sidebar-backend-id"><a href="./Html/backend_id.html"><span>Backend
+                                                ID</span></a></li>
+                                    <li id="sidebar-history-license"><a href="./Html/history-license.html"><span>History
+                                                of
+                                                license</span></a></li>
+                                    <li id="sidebar-output"><a href="./Html/outputSheet.html?dept=Auditor"><span>Daily
+                                                Report</span></a></li>
+                                    <li id="sidebar-enquiry"><a href="./Html/enquiry.html"><span>Enquiry</span></a></li>
+                                    <li id="sidebar-audit-quotation"><a
+                                            href="./Html/audit_quotation.html"><span>Quotation
+                                            </span></a></li>
+                                    <li id="sidebar-audit-appointments"><a
+                                            href="./Html/audit_appointments.html"><span>Appoinment</span></a></li>
+                                    <li id="sidebar-operators"><a href="./Html/operators.html"><span>My
+                                                Operator</span></a></li>
+                                    <li id="sidebar-pg-enquiry"><a
+                                            href="./Html/pg_enquiry.html"><span>PG-Enquiry</span></a></li>
+                                    <li id="sidebar-sm-enquiries"><a
+                                            href="./Html/sm_enquiries.html"><span>SM-Enquiries</span></a>
+                                    </li>
+                                    <li id="sidebar-audit-weekly-report"><a
+                                            href="./Html/audit_weekly_report.html"><span>Weekly
+                                                Report Sheet</span></a></li>
+                                    <li id="sidebar-phone-audit-report"><a
+                                            href="./Html/phone_audit_report.html"><span>Phone
+                                                Audit</span></a></li>
+                                    <li class="active" id="sidebar-audit-base"><a
+                                            href="./Html/audit_base.html"><span>Base</span></a></li>
+                                    <li id="sidebar-advisor-entry"><a
+                                            href="./Html/advisor_entry_sheet.html"><span>Advisor
+                                                Entry</span></a></li>
+                                    <li id="sidebar-social-report" class="active"><a
+                                            href="./Html/social-media-report.html?dept=Auditor"><span>Social Media
+                                                Report</span></a></li>
+                                    <li id="sidebar-advisor-performance-tracker"><a
+                                            href="./Html/advisor_performance_tracker.html"><span>Advisor Performance
+                                                Tracker</span></a></li>
+                                    <li id="sidebar-performance-tracker"><a
+                                            href="./Html/performance_tracker.html"><span>Performance Tracker</span></a>
+                                    </li>
+                                </ul>
+                            </li>
 
-                        <li id="sidebar-backend-report">
-                            <a href="./hac_backend.html"><span>HAC Backend Report</span></a>
-                        </li>
+                            <li id="sidebar-backend-report">
+                                <a href="./Html/hac_backend.html"><span>HAC Backend Report</span></a>
+                            </li>
 
-                        <li id="sidebar-financial-report">
-                            <a><span>Financial Report</span></a>
-                            <ul>
-                                <li id="sidebar-bill-supply"><a href="./bill-supply.html"><span>Bill of supply</span></a>
-                                </li>
-                                <li id="sidebar-accounting-log"><a href="./accounting_log.html"><span>Accounting
-                                            Log</span></a></li>
-                            </ul>
-                        </li>
+                            <li id="sidebar-financial-report">
+                                <a><span>Financial Report</span></a>
+                                <ul>
+                                    <li id="sidebar-bill-supply"><a href="./Html/bill-supply.html"><span>Bill of
+                                                supply</span></a>
+                                    </li>
+                                    <li id="sidebar-accounting-log"><a
+                                            href="./Html/accounting_log.html"><span>Accounting
+                                                Log</span></a></li>
+                                </ul>
+                            </li>
 
-                        <li id="sidebar-sop">
-                            <a><span>SOP Tracker</span></a>
-                            <ul>
-                                <li id="sidebar-qc"><a href="Qc-sheet.html"><span>QC - SHEET</span></a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
+                            <li id="sidebar-sop">
+                                <a><span>SOP Tracker</span></a>
+                                <ul>
+                                    <li id="sidebar-qc"><a href="./Html/Qc-sheet.html"><span>QC - SHEET</span></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
 
-                <li id="sidebar-massmedia">
-                    <a href="javascript:void(0)" class="has-arrow arrow-c">
-                        <i class="fa-solid fa-rocket" style="color: #74c0fc;"></i>
-                        <span>Mass Media</span>
-                    </a>
-                    <ul>
-                        <li>
-                            <a href="javascript:void(0)">Operational Dashboard</a>
-                            <ul>
-                                <li id="sidebar-daily-report"><a href="./outputSheet.html?dept=MassMedia">Mass Media
-                                        Output</a></li>
-                                <li id="sidebar-media-social-report" class="active"><a
-                                        href="./social-media-report.html?dept=MassMedia">Social Media
-                                        Report</a></li>
-                                <li id="sidebar-media-enquiry"><a href="./media_enquiry.html">Enquiry</a></li>
-                                <li id="sidebar-category"><a href="./category.html">Category</a></li>
-                                <li id="sidebar-office-visit"><a href="./office_vists.html">Office Visit</a></li>
-                                <li id="sidebar-applied-visit"><a href="./applied_visit.html">Applied Visit</a></li>
-                                <li id="sidebar-nomination-tracker"><a href="./nomination_tracker.html">Nomination
-                                        Tracker</a></li>
-                            </ul>
-                        </li>
-                        <li id="sidebar-media-accounting-log">
-                            <a href="javascript:void(0)">Financial Report</a>
-                            <ul>
-                                <li ><a href="./media_accounting_log.html">Accounting Log</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li id="sidebar-landmark">
-                    <a href="javascript:void(0)" class="has-arrow arrow-c">
-                        <i class="fa-solid fa-rocket" style="color: #74c0fc;"></i>
-                        <span>LandMark</span>
-                    </a>
-                    <ul>
-                        <li>
-                            <a href="javascript:void(0)">Operational Dashboard</a>
-                            <ul>
-                                <li id="landmark-output"><a href="./outputSheet.html?dept=Landmark">Landmark Output</a>
-                                </li>
-                                <li id="landmark-social" class="active"><a href="./social-media-report.html?dept=Landmark">Social Media
-                                        Report</a></li>
-                                <li id="landmark-enquiry"><a href="./landmark_enquiry.html">Enquiry</a></li>
-                                <li id="landmark-office"><a href="./landmark_office_visit.html">Office visit</a></li>
-                                <li id="landmark-site"><a href="./site_visit.html">Site Visit</a></li>
-                                <li id="landmark-document-tracker"><a href="./landmark_document_tracker.html">Document
-                                        Tracker</a></li>
-                                <li id="landmark-applied-mark"><a href="./landmark_applied_list.html">Applied List</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li id="landmark-accounting-log">
-                            <a href="javascript:void(0)">Financial Report</a>
-                            <ul>
-                                <li><a href="./landmark_accounting_log.html">Accounting Log</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
+                    <li id="sidebar-massmedia">
+                        <a href="javascript:void(0)" class="has-arrow arrow-c">
+                            <i class="fa-solid fa-rocket" style="color: #74c0fc;"></i>
+                            <span>Mass Media</span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0)">Operational Dashboard</a>
+                                <ul>
+                                    <li id="sidebar-daily-report"><a href="./Html/outputSheet.html?dept=MassMedia">Mass
+                                            Media
+                                            Output</a></li>
+                                    <li id="sidebar-media-social-report"><a
+                                            href="./Html/social-media-report.html?dept=MassMedia">Social Media
+                                            Report</a></li>
+                                    <li id="sidebar-media-enquiry"><a href="./Html/media_enquiry.html">Enquiry</a></li>
+                                    <li id="sidebar-category"><a href="./Html/category.html">Category</a></li>
+                                    <li id="sidebar-office-visit"><a href="./Html/office_vists.html">Office Visit</a>
+                                    </li>
+                                    <li id="sidebar-applied-visit"><a href="./Html/applied_visit.html">Applied Visit</a>
+                                    </li>
+                                    <li id="sidebar-nomination-tracker"><a
+                                            href="./Html/nomination_tracker.html">Nomination
+                                            Tracker</a></li>
+                                </ul>
+                            </li>
+                            <li id="sidebar-media-accounting-log">
+                                <a href="javascript:void(0)">Financial Report</a>
+                                <ul>
+                                    <li><a href="./Html/media_accounting_log.html">Accounting Log</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="sidebar-landmark">
+                        <a href="javascript:void(0)" class="has-arrow arrow-c">
+                            <i class="fa-solid fa-rocket" style="color: #74c0fc;"></i>
+                            <span>LandMark</span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0)">Operational Dashboard</a>
+                                <ul>
+                                    <li id="landmark-output"><a href="./Html/outputSheet.html?dept=Landmark">Landmark
+                                            Output</a>
+                                    </li>
+                                    <li id="landmark-social" class="active"><a
+                                            href="./Html/social-media-report.html?dept=Landmark">Social Media
+                                            Report</a></li>
+                                    <li id="landmark-enquiry"><a href="./Html/landmark_enquiry.html">Enquiry</a></li>
+                                    <li id="landmark-office"><a href="./Html/landmark_office_visit.html">Office
+                                            visit</a></li>
+                                    <li id="landmark-site"><a href="./Html/site_visit.html">Site Visit</a></li>
+                                    <li id="landmark-document-tracker"><a
+                                            href="./Html/landmark_document_tracker.html">Document
+                                            Tracker</a></li>
+                                    <li id="landmark-applied-mark"><a href="./Html/landmark_applied_list.html">Applied
+                                            List</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li id="landmark-accounting-log">
+                                <a href="javascript:void(0)">Financial Report</a>
+                                <ul>
+                                    <li><a href="./Html/landmark_accounting_log.html">Accounting Log</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
 
                     <!-- Discussion -->
                     <li id="sidebar-management">
@@ -778,7 +804,7 @@
                         <div class="right">
                             <div class="notification d-flex">
                                 <div class="dropdown d-flex">
-                                    <a class="nav-link icon d-none d-md-flex btn btn-default btn-icon ml-1"
+                                    <a class="nav-link icon d-flex btn btn-default btn-icon ml-1"
                                         data-toggle="dropdown">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -806,7 +832,7 @@
                                 </div>
 
                                 <div class="dropdown d-flex">
-                                    <a class="nav-link icon d-none d-md-flex btn btn-default btn-icon ml-1"
+                                    <a class="nav-link icon d-flex btn btn-default btn-icon ml-1"
                                         data-toggle="dropdown">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -1084,6 +1110,8 @@
     <script src="./assets/bundles/c3.bundle.js"></script>
 
     <script src="./assets/js/core.js"></script>
+    <script src="./Html/assets/js/page/index.js"></script>
+    <script src="./Html/assets/js/page/theme1-js.js"></script>
     <script>
         /* ---------------------------------------------------------
            1. FORCE LOGIN CHECK (RUN FIRST)
@@ -1144,8 +1172,8 @@
                 'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
                 'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
                 'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
-                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
-               'sidebar-management' , 'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
+                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-asset-list', 'sidebar-bills-parent', 'sidebar-vendor-directory', 'sidebar-business-report', 'sidebar-compliance-tracker', 'sidebar-inventory', 'sidebar-meeting', 'sidebar-software-access', 'sidebar-hrms-daily-report',
+                'sidebar-management', 'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
                 'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
                 'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
                 'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
@@ -1159,10 +1187,10 @@
                     'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
                     'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
                     'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals', 'sidebar-meeting',
-                    'sidebar-payment-bills', 'sidebar-leave-request', 'sticky-actions', 'hide-feature', 'sidebar-daily-report'],
+                    'sidebar-payment-bills', 'sidebar-leave-request', 'sticky-actions', 'hide-feature', 'sidebar-hrms-daily-report'],
                 'ADMIN': [
                     'sidebar-hrms', 'sidebar-dashboard', 'sidebar-attendance', 'sidebar-admin-reports',
-                    'sidebar-payment-bills', 'sidebar-leave-request', 'sidebar-asset-list', 'sidebar-bills-parent', 'sidebar-payroll', 'sidebar-business-report', 'sidebar-vendor-directory', 'sidebar-compliance-tracker', 'sidebar-meeting', 'sidebar-inventory', 'sidebar-software-access', 'sidebar-daily-report'],
+                    'sidebar-payment-bills', 'sidebar-leave-request', 'sidebar-asset-list', 'sidebar-bills-parent', 'sidebar-payroll', 'sidebar-business-report', 'sidebar-vendor-directory', 'sidebar-compliance-tracker', 'sidebar-meeting', 'sidebar-inventory', 'sidebar-software-access', 'sidebar-hrms-daily-report'],
                 'EMPLOYEE': [
                     'sidebar-hrms', 'sidebar-departments', 'sidebar-employee-task', 'sidebar-leave-request'],
                 'GENERAL MANAGER': allSidebarIds,
@@ -1215,6 +1243,7 @@
                     'sidebar-hrms', 'sidebar-dashboard', 'sticky-actions', 'hide-feature', 'landmark-output', "sidebar-landmark",
                     'landmark-social', 'landmark-enquiry', "landmark-office", "landmark-site", "landmark-document-tracker", "landmark-applied-mark", 'landmark-accounting-log'
                 ],
+
                 'LAND TEAM LEADER': [
                     'sidebar-hrms', 'sidebar-dashboard', 'sticky-actions', 'hide-feature', 'landmark-output', "sidebar-landmark",
                     'landmark-social', 'landmark-enquiry', "landmark-office", "landmark-site", "landmark-document-tracker", "landmark-applied-mark", 'landmark-accounting-log'
@@ -1224,62 +1253,62 @@
                     'landmark-social', 'landmark-enquiry', "landmark-office", "landmark-site", "landmark-document-tracker", "landmark-applied-mark"],
 
                 'GENERAL MANAGER': [
-                'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
-                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
-                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
-                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
-               'sidebar-management' , 'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
-                'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
-                'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
-                'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
-                'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
-                'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log', 'sidebar-media-accounting-log',
-                'sidebar-sop', 'sidebar-qc', 'sticky-actions', 'hide-feature', 'sidebar-social-report','sidebar-media-social-report' , 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker', "sidebar-massmedia","sidebar-daily-report","sidebar-media-enquiry","sidebar-category","sidebar-office-visit","sidebar-applied-visit","sidebar-nomination-tracker","sidebar-landmark","landmark-output","landmark-social","landmark-enquiry","landmark-office","landmark-site","landmark-document-tracker","landmark-applied-mark","landmark-accounting-log"
-            ],
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                    'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                    'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                    'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
+                    'sidebar-management', 'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
+                    'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
+                    'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
+                    'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
+                    'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
+                    'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log', 'sidebar-media-accounting-log',
+                    'sidebar-sop', 'sidebar-qc', 'sticky-actions', 'hide-feature', 'sidebar-social-report', 'sidebar-media-social-report', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker', "sidebar-massmedia", "sidebar-daily-report", "sidebar-media-enquiry", "sidebar-category", "sidebar-office-visit", "sidebar-applied-visit", "sidebar-nomination-tracker", "sidebar-landmark", "landmark-output", "landmark-social", "landmark-enquiry", "landmark-office", "landmark-site", "landmark-document-tracker", "landmark-applied-mark", "landmark-accounting-log"
+                ],
 
 
                 'AGM': allSidebarIds[
-                'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
-                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
-                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
-                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
-               'sidebar-management' , 'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
-                'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
-                'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
-                'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
-                'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
-                'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log', 'sidebar-media-accounting-log',
-                'sidebar-sop', 'sidebar-qc', 'sticky-actions', 'hide-feature', 'sidebar-social-report','sidebar-media-social-report' , 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker', "sidebar-massmedia","sidebar-daily-report","sidebar-media-enquiry","sidebar-category","sidebar-office-visit","sidebar-applied-visit","sidebar-nomination-tracker","sidebar-landmark","landmark-output","landmark-social","landmark-enquiry","landmark-office","landmark-site","landmark-document-tracker","landmark-applied-mark","landmark-accounting-log"
-            ],
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                    'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                    'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                    'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
+                    'sidebar-management', 'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
+                    'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
+                    'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
+                    'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
+                    'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
+                    'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log', 'sidebar-media-accounting-log',
+                    'sidebar-sop', 'sidebar-qc', 'sticky-actions', 'hide-feature', 'sidebar-social-report', 'sidebar-media-social-report', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker', "sidebar-massmedia", "sidebar-daily-report", "sidebar-media-enquiry", "sidebar-category", "sidebar-office-visit", "sidebar-applied-visit", "sidebar-nomination-tracker", "sidebar-landmark", "landmark-output", "landmark-social", "landmark-enquiry", "landmark-office", "landmark-site", "landmark-document-tracker", "landmark-applied-mark", "landmark-accounting-log"
+                ],
 
 
                 'VP': [
-                'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
-                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
-                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
-                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
-               'sidebar-management' , 'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
-                'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
-                'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
-                'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
-                'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
-                'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log', 'sidebar-media-accounting-log',
-                'sidebar-sop', 'sidebar-qc', 'sticky-actions', 'hide-feature', 'sidebar-social-report','sidebar-media-social-report' , 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker', "sidebar-massmedia","sidebar-daily-report","sidebar-media-enquiry","sidebar-category","sidebar-office-visit","sidebar-applied-visit","sidebar-nomination-tracker","sidebar-landmark","landmark-output","landmark-social","landmark-enquiry","landmark-office","landmark-site","landmark-document-tracker","landmark-applied-mark","landmark-accounting-log"
-            ],
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                    'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                    'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                    'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
+                    'sidebar-management', 'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
+                    'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
+                    'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
+                    'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
+                    'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
+                    'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log', 'sidebar-media-accounting-log',
+                    'sidebar-sop', 'sidebar-qc', 'sticky-actions', 'hide-feature', 'sidebar-social-report', 'sidebar-media-social-report', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker', "sidebar-massmedia", "sidebar-daily-report", "sidebar-media-enquiry", "sidebar-category", "sidebar-office-visit", "sidebar-applied-visit", "sidebar-nomination-tracker", "sidebar-landmark", "landmark-output", "landmark-social", "landmark-enquiry", "landmark-office", "landmark-site", "landmark-document-tracker", "landmark-applied-mark", "landmark-accounting-log"
+                ],
 
                 'CEO': [
-                'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
-                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
-                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
-                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
-               'sidebar-management' , 'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
-                'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
-                'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
-                'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
-                'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
-                'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log', 'sidebar-media-accounting-log',
-                'sidebar-sop', 'sidebar-qc', 'sticky-actions', 'hide-feature', 'sidebar-social-report','sidebar-media-social-report' , 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker', "sidebar-massmedia","sidebar-daily-report","sidebar-media-enquiry","sidebar-category","sidebar-office-visit","sidebar-applied-visit","sidebar-nomination-tracker","sidebar-landmark","landmark-output","landmark-social","landmark-enquiry","landmark-office","landmark-site","landmark-document-tracker","landmark-applied-mark","landmark-accounting-log"
-            ]
+                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                    'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                    'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                    'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
+                    'sidebar-management', 'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
+                    'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
+                    'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
+                    'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
+                    'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
+                    'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log', 'sidebar-media-accounting-log',
+                    'sidebar-sop', 'sidebar-qc', 'sticky-actions', 'hide-feature', 'sidebar-social-report', 'sidebar-media-social-report', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker', "sidebar-massmedia", "sidebar-daily-report", "sidebar-media-enquiry", "sidebar-category", "sidebar-office-visit", "sidebar-applied-visit", "sidebar-nomination-tracker", "sidebar-landmark", "landmark-output", "landmark-social", "landmark-enquiry", "landmark-office", "landmark-site", "landmark-document-tracker", "landmark-applied-mark", "landmark-accounting-log"
+                ]
             };
 
             /* ---------------------------------------------------------
@@ -1352,7 +1381,8 @@
                 applyPermissions(loggedInUserRole, allSidebarIds, sidebarPermissions);
                 applyPermissions(loggedInUserRole, allMainMenuIds, mainMenuPermissions);
             }
-            fetchPaymentNotifications();
+
+            fetchPaymentNotifications(); c
             fetchLeaveNotifications();
         });
 

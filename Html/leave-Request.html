@@ -20,6 +20,7 @@
 
     <!-- Core css -->
     <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/mobile-responsive.css" />
     <link rel="stylesheet" href="../assets/css/theme1.css" />
 
 </head>
@@ -365,7 +366,8 @@
                         <li class="list-group-item mb-2">
                             <p>Default Theme <span
                                     class="badge badge-success font-13 font-weight-normal ml-1">New</span></p>
-                            <a href="../index.html"><img src="../assets/images/themes/default.png" class="img-fluid" /></a>
+                            <a href="../index.html"><img src="../assets/images/themes/default.png"
+                                    class="img-fluid" /></a>
                         </li>
                         <li class="list-group-item mb-2">
                             <p>Night Mode Theme</p>
@@ -616,7 +618,8 @@
                             <li id="sidebar-other-portals"><a href="./other-portals.html">Other Portals</a></li>
                             <li id="sidebar-payment-bills"><a href="./hr-payment-bills.html">Payment Bills</a></li>
                             <li id="sidebar-employee-task"><a href="./employee-Task.html">Employee Task</a></li>
-                            <li id="sidebar-leave-request" class="active"><a href="./leave-Request.html">Leave Request</a></li>
+                            <li id="sidebar-leave-request" class="active"><a href="./leave-Request.html">Leave
+                                    Request</a></li>
                             <li id="sidebar-daily-report"><a href="./daily-task.html">Daily Report</a></li>
 
                             <!-- Asset List -->
@@ -645,12 +648,14 @@
                                 </ul>
                             </li>
 
-                              <li id="sidebar-vendor-directory"><a href="./vendor_directory.html">Vendor Directory</a></li>
-                              <li id="sidebar-business-report"><a href="./business_report.html">Business Report</a></li>
-                              <li id="sidebar-compliance-tracker"><a href="./compliance_tracker.html">Compliance Tracker</a></li>
-                              <li id="sidebar-inventory"><a href="./inventory.html">Inventory Tracker</a></li>
-                              <li id="sidebar-meeting"><a href="./meeting.html">Meeting Tracker</a></li>
-                              <li id="sidebar-software-access"><a href="./software_access.html">Software Access</a></li>
+                            <li id="sidebar-vendor-directory"><a href="./vendor_directory.html">Vendor Directory</a>
+                            </li>
+                            <li id="sidebar-business-report"><a href="./business_report.html">Business Report</a></li>
+                            <li id="sidebar-compliance-tracker"><a href="./compliance_tracker.html">Compliance
+                                    Tracker</a></li>
+                            <li id="sidebar-inventory"><a href="./inventory.html">Inventory Tracker</a></li>
+                            <li id="sidebar-meeting"><a href="./meeting.html">Meeting Tracker</a></li>
+                            <li id="sidebar-software-access"><a href="./software_access.html">Software Access</a></li>
 
                         </ul>
                     </li>
@@ -844,410 +849,422 @@
                             </div>
                         </div>
                     </div>
-                   
+
                 </div>
             </div>
             <div class="card">
-    <div class="card-header border-bottom">
-        <h3 class="card-title">Leave Request</h3>
-                  <div class="card-options">
-<button class="btn btn-primary btn-sm ml-2 " id="hideAddBtn" data-toggle="modal" data-target="#leaveRequestModal" onclick="resetTaskModal()">
-    <i class="fe fe-plus"></i> Add Request
-</button>
+                <div class="card-header border-bottom">
+                    <h3 class="card-title">Leave Request</h3>
+                    <div class="card-options">
+                        <button class="btn btn-primary btn-sm ml-2 " id="hideAddBtn" data-toggle="modal"
+                            data-target="#leaveRequestModal" onclick="resetTaskModal()">
+                            <i class="fe fe-plus"></i> Add Request
+                        </button>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-<div class="card-body">
-    <div class="table-responsive">
-        <table class="table table-hover table-striped mb-0 text-nowrap">
-           <thead>
-    <tr>
-        <th>Employee Name</th>
-        <th>Branch / Dept / Role</th> <!-- Added Role here -->
-        <th>Leave Details</th> 
-        <th>Days</th>
-        <th>Reason / Remarks</th> 
-        <th>Approved By</th>
-        <th>Status</th>
-        <th>Action</th>
-    </tr>
-</thead>
-            <tbody id="taskTableBody">
-                <tr>
-                    <td colspan="7" class="text-center text-muted">Loading...</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
-
-<!-- Leave Request Modal -->
-<div class="modal fade" id="leaveRequestModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-             <div class="modal-header">
-                <h5 class="modal-title">Leave Request</h5>
-                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover table-striped mb-0 text-nowrap">
+                        <thead>
+                            <tr>
+                                <th>S.No</th>
+                                <th>Employee ID</th>
+                                <th>Employee Name</th>
+                                <th>Department / Division</th>
+                                <th>Leave Type</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>No.of Days Leave</th>
+                                <th>Reason</th>
+                                <th>Approval Status</th>
+                                <th>Approved By</th>
+                                <th>Branch</th>
+                                <th>Remarks</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="taskTableBody">
+                            <tr>
+                                <td colspan="14" class="text-center text-muted">Loading...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-            <div class="modal-body">
-                <form id="leaveRequestForm">
-                    <!-- Hidden Fields for Mapping -->
-                    <input type="hidden" id="loggedInUserId"> 
-                    <input type="hidden" id="editingLeaveId">
-                    
-                    <div class="row">
-                        <div class="col-md-6 form-group">
-                            <label>Employee ID</label>
-                            <!-- READONLY: Fetched from DB -->
-                            <input type="text" id="employeeId" class="form-control" readonly>
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Employee Name</label>
-                            <!-- READONLY: Fetched from DB -->
-                            <input type="text" id="employeeName" class="form-control" readonly>
-                        </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-md-6 form-group">
-                            <label>Department</label>
-                            <input type="text" id="department" class="form-control" readonly>
+            <!-- Leave Request Modal -->
+            <div class="modal fade" id="leaveRequestModal" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Leave Request</h5>
+                            <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
                         </div>
-                        <div class="col-md-6 form-group">
-                            <label>Role</label>
-                            <input type="text" id="role" class="form-control" readonly>
-                        </div>
-                    </div>
+                        <div class="modal-body">
+                            <form id="leaveRequestForm">
+                                <!-- Hidden Fields for Mapping -->
+                                <input type="hidden" id="loggedInUserId">
+                                <input type="hidden" id="editingLeaveId">
 
-                    <div class="row">
-                        <div class="col-md-6 form-group">
-                            <label>Leave Type *</label>
-                            <select id="leaveType" class="form-control">
-                                <option value="Casual">Casual</option>
-                                <option value="Sick">Sick</option>
-                                <option value="Earned">Earned</option>
-                                <option value="Loss of Pay">Loss of Pay</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Status</label>
-                            <!-- DISABLED: Employee cannot change this -->
-                            <select id="leaveStatus" class="form-control" disabled>
-                                <option value="Pending" selected>Pending</option>
-                                <option value="Approved">Approved</option>
-                                <option value="Rejected">Rejected</option>
-                            </select>
-                        </div>
-                    </div>
+                                <div class="row">
+                                    <div class="col-md-6 form-group">
+                                        <label>Employee ID *</label>
+                                        <input type="text" id="employeeId" class="form-control"
+                                            placeholder="Enter Employee ID">
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <label>Employee Name *</label>
+                                        <input type="text" id="employeeName" class="form-control"
+                                            placeholder="Enter Employee Name">
+                                    </div>
+                                </div>
 
-                    <div class="row">
-                        <div class="col-md-6 form-group">
-                            <label>Start Date *</label>
-                            <input type="date" id="startDate" class="form-control">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>End Date *</label>
-                            <input type="date" id="endDate" class="form-control">
-                        </div>
-                    </div>
+                                <div class="row">
+                                    <div class="col-md-6 form-group">
+                                        <label>Department / Division</label>
+                                        <input type="text" id="department" class="form-control"
+                                            placeholder="Enter Department">
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <label>Role</label>
+                                        <input type="text" id="role" class="form-control" placeholder="Enter Role">
+                                    </div>
+                                </div>
 
-                    <div class="form-group">
-                        <label>Reason</label>
-                        <textarea id="leaveReason" class="form-control" rows="3"></textarea>
+                                <div class="row">
+                                    <div class="col-md-6 form-group">
+                                        <label>Leave Type *</label>
+                                        <select id="leaveType" class="form-control">
+                                            <option value="Casual">Casual</option>
+                                            <option value="Sick">Sick</option>
+                                            <option value="Earned">Earned</option>
+                                            <option value="Loss of Pay">Loss of Pay</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <label>Status</label>
+                                        <!-- DISABLED: Employee cannot change this -->
+                                        <select id="leaveStatus" class="form-control" disabled>
+                                            <option value="Pending" selected>Pending</option>
+                                            <option value="Approved">Approved</option>
+                                            <option value="Rejected">Rejected</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 form-group">
+                                        <label>Start Date *</label>
+                                        <input type="date" id="startDate" class="form-control">
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <label>End Date *</label>
+                                        <input type="date" id="endDate" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Reason</label>
+                                    <textarea id="leaveReason" class="form-control" rows="3"></textarea>
+                                </div>
+                                <!-- Inside the Leave Request Modal Form -->
+                                <div class="row">
+                                    <div class="col-md-6 form-group">
+                                        <label>Branch</label>
+                                        <input type="text" id="branch" class="form-control" placeholder="Enter Branch">
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <label>No. of Days</label>
+                                        <input type="text" id="noOfDays" class="form-control" readonly value="0">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Remarks</label>
+                                    <textarea id="remarks" class="form-control" rows="2"
+                                        placeholder="Optional notes..."></textarea>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button class="btn btn-primary" onclick="submitLeaveRequest()">Submit Request</button>
+                        </div>
                     </div>
-                    <!-- Inside the Leave Request Modal Form -->
-<div class="row">
-    <div class="col-md-6 form-group">
-        <label>Branch</label>
-        <input type="text" id="branch" class="form-control" readonly>
-    </div>
-    <div class="col-md-6 form-group">
-        <label>No. of Days</label>
-        <input type="text" id="noOfDays" class="form-control" readonly value="0">
-    </div>
-</div>
-<div class="form-group">
-    <label>Remarks</label>
-    <textarea id="remarks" class="form-control" rows="2" placeholder="Optional notes..."></textarea>
-</div>
-                </form>
+                </div>
             </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button class="btn btn-primary" onclick="submitLeaveRequest()">Submit Request</button>
-            </div>
-        </div>
-    </div>
-</div>
-                    
-<!-- Add this line before your custom script -->
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="../assets/bundles/lib.vendor.bundle.js"></script>
-    <script src="../assets/js/core.js"></script>
 
-<script>
-const API_BASE = 'http://localhost:3000/api/leave-requests';
-const loggedInUserId = localStorage.getItem('loggedInUserId'); 
+            <!-- Add this line before your custom script -->
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+            <script src="../assets/bundles/lib.vendor.bundle.js"></script>
+            <script src="../assets/js/core.js"></script>
+
+            <script>
+                const API_BASE = 'http://localhost:3000/api/leave-requests';
+                const loggedInUserId = localStorage.getItem('loggedInUserId');
 
 
-// Global variable to store the logged-in user's role
-let currentUserRole = ''; 
+                // Global variable to store the logged-in user's role
+                let currentUserRole = '';
+                let currentEmployeeId = ''; // Store logged-in user's employee_id for table matching
 
-document.addEventListener('DOMContentLoaded', () => {
-    if (!loggedInUserId) {
-        swal("Error", "Please login first", "error");
-        return;
-    }
-    loadMyLeaveData();
-});
-
-
-    document.addEventListener('DOMContentLoaded', () => {
-            // 1. Retrieve User Details
-            const loggedInUserName = localStorage.getItem('loggedInUserName');
-            const loggedInUserRole = localStorage.getItem('loggedInUserRole'); // Ensure this is saved during login
-
-            const welcomeMessageElement = document.getElementById('welcomeMessage');
-
-            // 2. Set Welcome Message
-            if (loggedInUserName && welcomeMessageElement) {
-                welcomeMessageElement.textContent = `${loggedInUserName} (${loggedInUserRole})`;
-            } else if (welcomeMessageElement) {
-                welcomeMessageElement.textContent = 'Guest!';
-                // Optional: window.location.href = 'login.html';
-            }
-
-            // 3. Define Menu Permissions
-            // Keys must match the IDs we added to the HTML <li> tags
- const allMenuIds = [
-                 'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
-                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
-                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
-                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report',
-                'sticky-actions' , 'hide-feature' ,'sidebar-asset-list','sidebar-bills-parent','sidebar-vendor-directory','sidebar-business-report','sidebar-compliance-tracker','sidebar-inventory','sidebar-meeting','sidebar-software-access'
-            ];
-
-            const rolePermissions = {
-                'HR': [
-                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
-                    'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
-                    'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals', 'sidebar-meeting',
-                    'sidebar-payment-bills', 'sidebar-leave-request' ,'sticky-actions' , 'hide-feature' ,'sidebar-daily-report' ],
-                'ADMIN': [
-                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-attendance', 'sidebar-admin-reports', 
-                    'sidebar-payment-bills', 'sidebar-leave-request' ,'hide-feature','sticky-actions','sidebar-asset-list','sidebar-bills-parent', 'sidebar-payroll','sidebar-business-report','sidebar-vendor-directory','sidebar-compliance-tracker','sidebar-meeting','sidebar-inventory','sidebar-software-access','sidebar-daily-report'],
-                'EMPLOYEE': [
-                    'sidebar-hrms', 'sidebar-departments', 'sidebar-employee-task', 'sidebar-leave-request','sticky-actions' , 'hide-feature'],
-
-                'GENERAL MANAGER':['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
-                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
-                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
-                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report','sidebar-asset-list','sidebar-bills-parent','sidebar-vendor-directory','sidebar-business-report','sidebar-compliance-tracker','sidebar-inventory','sidebar-meeting','sidebar-software-access'], 
-
-                'PROJECT MANAGER': [
-                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-departments', 'sidebar-employee', 
-                    'sidebar-performance', 'sidebar-leave-request' ,'sticky-actions' , 'hide-feature'
-                ],
-
-                   'AGM':['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
-                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
-                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
-                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report','sidebar-asset-list','sidebar-bills-parent','sidebar-vendor-directory','sidebar-business-report','sidebar-compliance-tracker','sidebar-inventory','sidebar-meeting','sidebar-software-access'],
+                document.addEventListener('DOMContentLoaded', () => {
+                    if (!loggedInUserId) {
+                        swal("Error", "Please login first", "error");
+                        return;
+                    }
+                    loadMyLeaveData();
+                });
 
 
-                'VP' :['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
-                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
-                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
-                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report','sidebar-asset-list','sidebar-bills-parent','sidebar-vendor-directory','sidebar-business-report','sidebar-compliance-tracker','sidebar-inventory','sidebar-meeting','sidebar-software-access'], 
+                document.addEventListener('DOMContentLoaded', () => {
+                    // 1. Retrieve User Details
+                    const loggedInUserName = localStorage.getItem('loggedInUserName');
+                    const loggedInUserRole = localStorage.getItem('loggedInUserRole'); // Ensure this is saved during login
 
-                'CEO' :['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
-                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
-                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
-                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report','sidebar-asset-list','sidebar-bills-parent','sidebar-vendor-directory','sidebar-business-report','sidebar-compliance-tracker','sidebar-inventory','sidebar-meeting','sidebar-software-access']
-            };
+                    const welcomeMessageElement = document.getElementById('welcomeMessage');
 
-            // 4. Function to Filter Menu
-            function filterMenuByRole(role) {
-                // Normalize role string (handle 'Admin', 'admin', 'ADMIN')
-                 const normalizedRole = role ? role.toUpperCase().trim() : '';
+                    // 2. Set Welcome Message
+                    if (loggedInUserName && welcomeMessageElement) {
+                        welcomeMessageElement.textContent = `${loggedInUserName} (${loggedInUserRole})`;
+                    } else if (welcomeMessageElement) {
+                        welcomeMessageElement.textContent = 'Guest!';
+                        // Optional: window.location.href = 'login.html';
+                    }
 
-                const allowedMenus = rolePermissions[normalizedRole] || [];
+                    // 3. Define Menu Permissions
+                    // Keys must match the IDs we added to the HTML <li> tags
+                    const allMenuIds = [
+                        'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                        'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                        'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                        'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report',
+                        'sticky-actions', 'hide-feature', 'sidebar-asset-list', 'sidebar-bills-parent', 'sidebar-vendor-directory', 'sidebar-business-report', 'sidebar-compliance-tracker', 'sidebar-inventory', 'sidebar-meeting', 'sidebar-software-access'
+                    ];
 
-                allMenuIds.forEach(id => {
-                    const el = document.getElementById(id);
-                    if (el) {
-                        if (allowedMenus.includes(id)) {
-                            el.style.display = 'block'; // Show
-                        } else {
-                            el.style.display = 'none';  // Hide
+                    const rolePermissions = {
+                        'HR': [
+                            'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                            'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                            'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals', 'sidebar-meeting',
+                            'sidebar-payment-bills', 'sidebar-leave-request', 'sticky-actions', 'hide-feature', 'sidebar-daily-report'],
+                        'ADMIN': [
+                            'sidebar-hrms', 'sidebar-dashboard', 'sidebar-attendance', 'sidebar-admin-reports',
+                            'sidebar-payment-bills', 'sidebar-leave-request', 'hide-feature', 'sticky-actions', 'sidebar-asset-list', 'sidebar-bills-parent', 'sidebar-payroll', 'sidebar-business-report', 'sidebar-vendor-directory', 'sidebar-compliance-tracker', 'sidebar-meeting', 'sidebar-inventory', 'sidebar-software-access', 'sidebar-daily-report'],
+                        'EMPLOYEE': [
+                            'sidebar-hrms', 'sidebar-departments', 'sidebar-employee-task', 'sidebar-leave-request', 'sticky-actions', 'hide-feature'],
+
+                        'GENERAL MANAGER': ['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                            'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                            'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                            'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report', 'sidebar-asset-list', 'sidebar-bills-parent', 'sidebar-vendor-directory', 'sidebar-business-report', 'sidebar-compliance-tracker', 'sidebar-inventory', 'sidebar-meeting', 'sidebar-software-access'],
+
+                        'PROJECT MANAGER': [
+                            'sidebar-hrms', 'sidebar-dashboard', 'sidebar-departments', 'sidebar-employee',
+                            'sidebar-performance', 'sidebar-leave-request', 'sticky-actions', 'hide-feature'
+                        ],
+
+                        'AGM': ['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                            'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                            'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                            'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report', 'sidebar-asset-list', 'sidebar-bills-parent', 'sidebar-vendor-directory', 'sidebar-business-report', 'sidebar-compliance-tracker', 'sidebar-inventory', 'sidebar-meeting', 'sidebar-software-access'],
+
+
+                        'VP': ['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                            'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                            'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                            'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report', 'sidebar-asset-list', 'sidebar-bills-parent', 'sidebar-vendor-directory', 'sidebar-business-report', 'sidebar-compliance-tracker', 'sidebar-inventory', 'sidebar-meeting', 'sidebar-software-access'],
+
+                        'CEO': ['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
+                            'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
+                            'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
+                            'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request', 'sidebar-daily-report', 'sidebar-asset-list', 'sidebar-bills-parent', 'sidebar-vendor-directory', 'sidebar-business-report', 'sidebar-compliance-tracker', 'sidebar-inventory', 'sidebar-meeting', 'sidebar-software-access']
+                    };
+
+                    // 4. Function to Filter Menu
+                    function filterMenuByRole(role) {
+                        // Normalize role string (handle 'Admin', 'admin', 'ADMIN')
+                        const normalizedRole = role ? role.toUpperCase().trim() : '';
+
+                        const allowedMenus = rolePermissions[normalizedRole] || [];
+
+                        allMenuIds.forEach(id => {
+                            const el = document.getElementById(id);
+                            if (el) {
+                                if (allowedMenus.includes(id)) {
+                                    el.style.display = 'block'; // Show
+                                } else {
+                                    el.style.display = 'none';  // Hide
+                                }
+                            }
+                        });
+                    }
+
+                    // 5. Execute Filter
+                    if (loggedInUserRole) {
+                        filterMenuByRole(loggedInUserRole);
+                    } else {
+                        // If no role found (not logged in), hide sensitive menus or redirect
+                        // For now, let's hide everything except dashboard
+                        allMenuIds.forEach(id => {
+                            if (id !== 'menu-dashboard') {
+                                const el = document.getElementById(id);
+                                if (el) el.style.display = 'none';
+                            }
+                        });
+                    }
+
+                    // 6. Sign Out Logic
+                    const signOutButton = document.querySelector('a[href="Html/Login.html"].dropdown-item');
+                    if (signOutButton) {
+                        signOutButton.addEventListener('click', () => {
+                            localStorage.removeItem('loggedInUserName');
+                            localStorage.removeItem('loggedInUserId');
+                            localStorage.removeItem('loggedInUserRole'); // Clear role on logout
+                        });
+                    }
+                });
+
+
+                function calculateDays() {
+                    const start = document.getElementById('startDate').value;
+                    const end = document.getElementById('endDate').value;
+                    if (start && end) {
+                        const d1 = new Date(start);
+                        const d2 = new Date(end);
+                        const diffTime = d2 - d1;
+                        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1;
+                        document.getElementById('noOfDays').value = diffDays > 0 ? diffDays : 0;
+                    }
+                }
+                // Add event listeners inside DOMContentLoaded
+                document.getElementById('startDate').addEventListener('change', calculateDays);
+                document.getElementById('endDate').addEventListener('change', calculateDays);
+
+
+                // ==========================================
+                // 1. FETCH DATA
+                // ==========================================
+                async function loadMyLeaveData() {
+                    try {
+                        const response = await fetch(`${API_BASE}/user/${loggedInUserId}`);
+
+                        if (!response.ok) {
+                            let errorMsg = 'Failed to load leave data';
+                            try {
+                                const errData = await response.json();
+                                errorMsg = errData.error || errorMsg;
+                            } catch (e) { }
+                            console.error("API Error:", response.status, errorMsg);
+                            document.getElementById('taskTableBody').innerHTML = `<tr><td colspan="14" class="text-center text-danger">${errorMsg}</td></tr>`;
+                            return;
                         }
+
+                        const data = await response.json();
+
+                        // Store the role globally so we can use it in renderTable
+                        currentUserRole = data.profile.role || '';
+                        currentEmployeeId = data.profile.employee_id; // Store for table row matching
+
+                        renderTable(data.leaves);
+
+                        const hideAddBtn = document.getElementById('hideAddBtn');
+
+                        if (hideAddBtn) {
+                            const role = currentUserRole.toUpperCase();
+                            console.log(role)
+
+                            // Hide Add button for GM / HR / Admin
+                            if (role === 'GENERAL MANAGER' || role === 'GM' || role === 'HR' || role === 'ADMIN') {
+                                hideAddBtn.style.display = 'none';
+                                console.log("if" + role)
+                            } else {
+                                hideAddBtn.style.display = 'inline-block';
+                                console.log("else" + role)
+                            }
+                        }
+                    } catch (error) {
+                        console.error("Fetch error:", error);
+                        document.getElementById('taskTableBody').innerHTML = `<tr><td colspan="14" class="text-center text-danger">Could not connect to server. Please try again.</td></tr>`;
                     }
-                });
-            }
+                }
 
-            // 5. Execute Filter
-            if (loggedInUserRole) {
-                filterMenuByRole(loggedInUserRole);
-            } else {
-                // If no role found (not logged in), hide sensitive menus or redirect
-                // For now, let's hide everything except dashboard
-                allMenuIds.forEach(id => {
-                    if (id !== 'menu-dashboard') {
-                        const el = document.getElementById(id);
-                        if (el) el.style.display = 'none';
+                document.addEventListener('DOMContentLoaded', () => {
+                    disablePastDates();
+                });
+
+                function disablePastDates() {
+                    const today = new Date();
+                    today.setHours(0, 0, 0, 0);
+
+                    const yyyy = today.getFullYear();
+                    const mm = String(today.getMonth() + 1).padStart(2, '0');
+                    const dd = String(today.getDate()).padStart(2, '0');
+                    const todayStr = `${yyyy}-${mm}-${dd}`;
+
+                    const startDate = document.getElementById('startDate');
+                    const endDate = document.getElementById('endDate');
+
+                    // ❌ Disable yesterday & past
+                    startDate.min = todayStr;
+                    endDate.min = todayStr;
+
+                    // ❌ End date cannot be before start date
+                    startDate.addEventListener('change', () => {
+                        endDate.min = startDate.value;
+                    });
+                }
+
+
+
+                // ==========================================
+                // 2. RENDER TABLE (Logic for Employee vs GM)
+                // ==========================================
+                function renderTable(leaves) {
+                    const tbody = document.getElementById('taskTableBody');
+                    tbody.innerHTML = '';
+
+                    const myEmployeeId = currentEmployeeId;
+
+                    // Check if current user is GM/Admin
+                    const isGM = (currentUserRole === 'General Manager' || currentUserRole === 'GM' || currentUserRole === 'HR');
+
+                    if (leaves.length === 0) {
+                        tbody.innerHTML = `<tr><td colspan="14" class="text-center">No leave requests found.</td></tr>`;
+                        return;
                     }
-                });
-            }
 
-            // 6. Sign Out Logic
-            const signOutButton = document.querySelector('a[href="Html/Login.html"].dropdown-item');
-            if (signOutButton) {
-                signOutButton.addEventListener('click', () => {
-                    localStorage.removeItem('loggedInUserName');
-                    localStorage.removeItem('loggedInUserId');
-                    localStorage.removeItem('loggedInUserRole'); // Clear role on logout
-                });
-            }
-        });
+                    leaves.forEach((leave, index) => {
+                        const start = new Date(leave.start_date).toISOString().split('T')[0];
+                        const end = new Date(leave.end_date).toISOString().split('T')[0];
 
+                        let badgeClass = 'badge-warning';
+                        if (leave.status === 'Approved') badgeClass = 'badge-success';
+                        if (leave.status === 'Rejected') badgeClass = 'badge-danger';
 
-        function calculateDays() {
-    const start = document.getElementById('startDate').value;
-    const end = document.getElementById('endDate').value;
-    if (start && end) {
-        const d1 = new Date(start);
-        const d2 = new Date(end);
-        const diffTime = d2 - d1;
-        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1; 
-        document.getElementById('noOfDays').value = diffDays > 0 ? diffDays : 0;
-    }
-}
-// Add event listeners inside DOMContentLoaded
-document.getElementById('startDate').addEventListener('change', calculateDays);
-document.getElementById('endDate').addEventListener('change', calculateDays);
+                        const reasonEscaped = leave.reason ? leave.reason.replace(/'/g, "\\'") : "";
+                        const remarksEscaped = leave.remarks ? leave.remarks.replace(/'/g, "\\'") : "";
+                        const isMyRequest = String(leave.employee_id).trim() === String(myEmployeeId).trim();
 
+                        let actionButtons = '';
 
-// ==========================================
-// 1. FETCH DATA
-// ==========================================
-async function loadMyLeaveData() {
-    try {
-        const response = await fetch(`${API_BASE}/user/${loggedInUserId}`);
-        const data = await response.json();
+                        // --- BUTTON LOGIC START ---
 
-        if (response.ok) {
-            // Store the role globally so we can use it in renderTable
-            currentUserRole = data.profile.role; 
-
-            // Fill hidden fields
-            document.getElementById('employeeId').value = data.profile.employee_id;
-            document.getElementById('employeeName').value = data.profile.employee_name; 
-            document.getElementById('department').value = data.profile.department || 'IT'; 
-            document.getElementById('role').value = data.profile.role || 'Employee';
-            document.getElementById('branch').value = data.profile.branch || 'Main Branch';
-
-            renderTable(data.leaves);
-
-            const hideAddBtn = document.getElementById('hideAddBtn');
-
-if (hideAddBtn) {
-    const role = currentUserRole.toUpperCase();
-    console.log(role)
-
-    // Hide Add button for GM / HR / Admin
-    if (role === 'GENERAL MANAGER' || role === 'GM' || role === 'HR' || role === 'ADMIN') {
-        hideAddBtn.style.display = 'none';
-         console.log("if"+role)
-    } else {
-        hideAddBtn.style.display = 'inline-block';
-         console.log("else"+role)
-    }
-}
-        } else {
-            document.getElementById('taskTableBody').innerHTML = `<tr><td colspan="7" class="text-center text-danger">${data.error}</td></tr>`;
-        }
-    } catch (error) {
-        console.error("Fetch error:", error);
-    }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    disablePastDates();
-});
-
-function disablePastDates() {
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-
-    const yyyy = today.getFullYear();
-    const mm = String(today.getMonth() + 1).padStart(2, '0');
-    const dd = String(today.getDate()).padStart(2, '0');
-    const todayStr = `${yyyy}-${mm}-${dd}`;
-
-    const startDate = document.getElementById('startDate');
-    const endDate = document.getElementById('endDate');
-
-    // ❌ Disable yesterday & past
-    startDate.min = todayStr;
-    endDate.min = todayStr;
-
-    // ❌ End date cannot be before start date
-    startDate.addEventListener('change', () => {
-        endDate.min = startDate.value;
-    });
-}
-
-
-
-// ==========================================
-// 2. RENDER TABLE (Logic for Employee vs GM)
-// ==========================================
-function renderTable(leaves) {
-    const tbody = document.getElementById('taskTableBody');
-    tbody.innerHTML = '';
-    
-    const myEmployeeId = document.getElementById('employeeId').value;
-    
-    // Check if current user is GM/Admin
-    const isGM = (currentUserRole === 'General Manager' || currentUserRole === 'GM' || currentUserRole === 'HR');
-
-    if (leaves.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="7" class="text-center">No leave requests found.</td></tr>`;
-        return;
-    }
-
-    leaves.forEach(leave => {
-        const start = new Date(leave.start_date).toISOString().split('T')[0];
-        const end = new Date(leave.end_date).toISOString().split('T')[0];
-
-        let badgeClass = 'badge-warning';
-        if(leave.status === 'Approved') badgeClass = 'badge-success';
-        if(leave.status === 'Rejected') badgeClass = 'badge-danger';
-
-        const reasonEscaped = leave.reason ? leave.reason.replace(/'/g, "\\'") : "";
-        const isMyRequest = String(leave.employee_id).trim() === String(myEmployeeId).trim();
-
-        let actionButtons = '';
-
-        // --- BUTTON LOGIC START ---
-
-        // SCENARIO 1: I am the Employee, and it is Pending (I can Edit/Delete)
-        if (isMyRequest && leave.status === 'Pending') {
-            actionButtons = `
+                        // SCENARIO 1: I am the Employee, and it is Pending (I can Edit/Delete)
+                        if (isMyRequest && leave.status === 'Pending') {
+                            actionButtons = `
                 <button class="btn btn-primary btn-sm" 
-                    onclick="openEditModal(${leave.id}, '${leave.leave_type}', '${start}', '${end}', '${reasonEscaped}')">
+                    onclick="openEditModal(${leave.id}, '${leave.leave_type}', '${start}', '${end}', '${reasonEscaped}', '${remarksEscaped}')">
                     <i class="fa fa-edit"></i>
                 </button>
                 <button class="btn btn-danger btn-sm" onclick="deleteLeave(${leave.id})">
                     <i class="fa fa-trash"></i>
                 </button>
             `;
-        } 
-        // SCENARIO 2: I am the GM, and it is Pending (I can Approve/Reject)
-        // We hide these buttons if it's already approved/rejected
-        else if (isGM && leave.status === 'Pending') {
-    
-            actionButtons = `
+                        }
+                        // SCENARIO 2: I am the GM, and it is Pending (I can Approve/Reject)
+                        else if (isGM && leave.status === 'Pending') {
+                            actionButtons = `
                 <button class="btn btn-success btn-sm" title="Approve" onclick="updateStatus(${leave.id}, 'Approved')">
                     <i class="fa fa-check"></i>
                 </button>
@@ -1255,182 +1272,183 @@ function renderTable(leaves) {
                     <i class="fa fa-times"></i>
                 </button>
             `;
-        }
-        // SCENARIO 3: Request is processed (Locked)
-        else if (leave.status !== 'Pending') {
-             actionButtons = `<span class="text-muted"><i class="fa fa-lock"></i> ${leave.status}</span>`;
-        } 
-        // SCENARIO 4: View Only (Fallback)
-        else {
-            actionButtons = `<span class="text-muted"><i class="fa fa-eye"></i> Pending</span>`;
-        }
+                        }
+                        // SCENARIO 3: Request is processed (Locked)
+                        else if (leave.status !== 'Pending') {
+                            actionButtons = `<span class="text-muted"><i class="fa fa-lock"></i> ${leave.status}</span>`;
+                        }
+                        // SCENARIO 4: View Only (Fallback)
+                        else {
+                            actionButtons = `<span class="text-muted"><i class="fa fa-eye"></i> Pending</span>`;
+                        }
 
-        // --- BUTTON LOGIC END ---
+                        // --- BUTTON LOGIC END ---
 
-        const row = `
+                        const row = `
             <tr>
-                <td>
-                    <strong>${leave.employee_name}</strong><br>
-                    <small class="text-muted">${leave.employee_id}</small>
-                </td>
-                <td>
-                    ${leave.branch || 'Main'}<br>
-                    <small class="text-muted">${leave.department} / ${leave.role}</small> 
-                </td>
-                <td>
-                    <strong>${leave.leave_type}</strong><br>
-                    <span class="text-muted" style="font-size:11px">${start} to ${end}</span>
-                </td>
-                <td class="text-center">
-                    <span class="badge badge-info">${leave.no_of_days || 0}</span>
-                </td>
-                <td>
-                    <div style="max-width: 200px; white-space: normal;">
-                        <strong>Reason:</strong> ${leave.reason}<br>
-                        <small class="text-primary"><strong>Rem:</strong> ${leave.remarks || '-'}</small>
-                    </div>
-                </td>
-                <td>${leave.approved_by_role || '-'}</td>
+                <td>${index + 1}</td>
+                <td>${leave.employee_id}</td>
+                <td>${leave.employee_name}</td>
+                <td>${leave.department || '-'}${leave.role ? ' / ' + leave.role : ''}</td>
+                <td>${leave.leave_type}</td>
+                <td>${start}</td>
+                <td>${end}</td>
+                <td class="text-center"><span class="badge badge-info">${leave.no_of_days || 0}</span></td>
+                <td><div style="max-width: 200px; white-space: normal;">${leave.reason || '-'}</div></td>
                 <td><span class="badge ${badgeClass}">${leave.status}</span></td>
+                <td>${leave.approved_by_role || '-'}</td>
+                <td>${leave.branch || '-'}</td>
+                <td><div style="max-width: 200px; white-space: normal;">${leave.remarks || '-'}</div></td>
                 <td>${actionButtons}</td>
             </tr>
         `;
-        tbody.innerHTML += row;
-    });
-}
+                        tbody.innerHTML += row;
+                    });
+                }
 
-// ==========================================
-// 3. UPDATE STATUS (GM Action)
-// ==========================================
-async function updateStatus(id, newStatus) {
-    const confirmation = await swal({
-        title: `Mark as ${newStatus}?`,
-        text: `Are you sure you want to ${newStatus.toLowerCase()} this request?`,
-        icon: "warning",
-        buttons: true,
-        dangerMode: newStatus === 'Rejected',
-    });
+                // ==========================================
+                // 3. UPDATE STATUS (GM Action)
+                // ==========================================
+                async function updateStatus(id, newStatus) {
+                    const confirmation = await swal({
+                        title: `Mark as ${newStatus}?`,
+                        text: `Are you sure you want to ${newStatus.toLowerCase()} this request?`,
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: newStatus === 'Rejected',
+                    });
 
-    if (confirmation) {
-        try {
-            const response = await fetch(`${API_BASE}/status/${id}`, {
-                method: 'PUT',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    status: newStatus,
-                    approved_by_role: currentUserRole // "General Manager"
-                })
-            });
+                    if (confirmation) {
+                        try {
+                            const response = await fetch(`${API_BASE}/status/${id}`, {
+                                method: 'PUT',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({
+                                    status: newStatus,
+                                    approved_by_role: currentUserRole // "General Manager"
+                                })
+                            });
 
-            if (response.ok) {
-                swal("Success", `Request ${newStatus}`, "success");
-                loadMyLeaveData(); // Refresh table
-            } else {
-                swal("Error", "Failed to update status", "error");
-            }
-        } catch (error) {
-            console.error(error);
-            swal("Error", "Server error", "error");
-        }
-    }
-}
+                            if (response.ok) {
+                                swal("Success", `Request ${newStatus}`, "success");
+                                loadMyLeaveData(); // Refresh table
+                            } else {
+                                swal("Error", "Failed to update status", "error");
+                            }
+                        } catch (error) {
+                            console.error(error);
+                            swal("Error", "Server error", "error");
+                        }
+                    }
+                }
 
-// ==========================================
-// 4. OPEN EDIT MODAL (Employee Action)
-// ==========================================
-function openEditModal(id, type, start, end, reason) {
-    document.getElementById('editingLeaveId').value = id;
-    document.getElementById('leaveType').value = type;
-    document.getElementById('startDate').value = start;
-    document.getElementById('endDate').value = end;
-    document.getElementById('leaveReason').value = reason;
-    document.getElementById('leaveStatus').value = 'Pending';
-    $('#leaveRequestModal').modal('show');
-}
+                // ==========================================
+                // 4. OPEN EDIT MODAL (Employee Action)
+                // ==========================================
+                function openEditModal(id, type, start, end, reason, remarks) {
+                    document.getElementById('editingLeaveId').value = id;
+                    document.getElementById('leaveType').value = type;
+                    document.getElementById('startDate').value = start;
+                    document.getElementById('endDate').value = end;
+                    document.getElementById('leaveReason').value = reason;
+                    document.getElementById('remarks').value = remarks || '';
+                    document.getElementById('leaveStatus').value = 'Pending';
+                    calculateDays();
+                    $('#leaveRequestModal').modal('show');
+                }
 
-// ==========================================
-// 5. SUBMIT REQUEST (Create/Edit)
-// ==========================================
-async function submitLeaveRequest() {
-    const editId = document.getElementById('editingLeaveId').value;
-    
-    const payload = {
-        employee_id: document.getElementById('employeeId').value,
-        employee_name: document.getElementById('employeeName').value,
-        department: document.getElementById('department').value,
-        role: document.getElementById('role').value,
-         branch: document.getElementById('branch').value, 
-    no_of_days: document.getElementById('noOfDays').value, 
-    remarks: document.getElementById('remarks').value, 
-        leave_type: document.getElementById('leaveType').value,
-        start_date: document.getElementById('startDate').value,
-        end_date: document.getElementById('endDate').value,
-        reason: document.getElementById('leaveReason').value
-    };
+                // ==========================================
+                // 5. SUBMIT REQUEST (Create/Edit)
+                // ==========================================
+                async function submitLeaveRequest() {
+                    const editId = document.getElementById('editingLeaveId').value;
 
-    if(!payload.start_date || !payload.end_date) {
-        swal("Warning", "Please select dates", "warning");
-        return;
-    }
+                    const payload = {
+                        user_id: loggedInUserId,
+                        employee_id: document.getElementById('employeeId').value,
+                        employee_name: document.getElementById('employeeName').value,
+                        department: document.getElementById('department').value,
+                        role: document.getElementById('role').value,
+                        branch: document.getElementById('branch').value,
+                        no_of_days: document.getElementById('noOfDays').value,
+                        remarks: document.getElementById('remarks').value,
+                        leave_type: document.getElementById('leaveType').value,
+                        start_date: document.getElementById('startDate').value,
+                        end_date: document.getElementById('endDate').value,
+                        reason: document.getElementById('leaveReason').value
+                    };
 
-    try {
-        let url = `${API_BASE}/create`;
-        let method = 'POST';
+                    if (!payload.start_date || !payload.end_date) {
+                        swal("Warning", "Please select dates", "warning");
+                        return;
+                    }
 
-        if (editId) {
-            url = `${API_BASE}/update/${editId}`;
-            method = 'PUT';
-        }
+                    try {
+                        let url = `${API_BASE}/create`;
+                        let method = 'POST';
 
-        const res = await fetch(url, {
-            method: method,
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-        });
+                        if (editId) {
+                            url = `${API_BASE}/update/${editId}`;
+                            method = 'PUT';
+                        }
 
-        const result = await res.json();
+                        const res = await fetch(url, {
+                            method: method,
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
 
-        if (res.ok) {
-            swal("Success", editId ? "Request Updated!" : "Request Sent!", "success");
-            $('#leaveRequestModal').modal('hide');
-            loadMyLeaveData(); 
-            resetTaskModal(); 
-        } else {
-            swal("Error", result.error, "error");
-        }
-    } catch (e) {
-        console.error(e);
-    }
-}
+                        const result = await res.json();
 
-// ==========================================
-// 6. DELETE REQUEST
-// ==========================================
-function deleteLeave(id) {
-    swal({
-        title: "Are you sure?",
-        text: "Delete this request?",
-        icon: "warning",
-        buttons: true,
-        dangerMode: true,
-    })
-    .then(async (willDelete) => {
-        if (willDelete) {
-            await fetch(`${API_BASE}/${id}`, { method: 'DELETE' });
-            loadMyLeaveData();
-            swal("Deleted!", "Request deleted.", "success");
-        }
-    });
-}
+                        if (res.ok) {
+                            swal("Success", editId ? "Request Updated!" : "Request Sent!", "success");
+                            $('#leaveRequestModal').modal('hide');
+                            loadMyLeaveData();
+                            resetTaskModal();
+                        } else {
+                            swal("Error", result.error, "error");
+                        }
+                    } catch (e) {
+                        console.error(e);
+                    }
+                }
 
-function resetTaskModal() {
-    document.getElementById('editingLeaveId').value = '';
-    document.getElementById('startDate').value = '';
-    document.getElementById('endDate').value = '';
-    document.getElementById('leaveReason').value = '';
-    document.getElementById('leaveStatus').value = 'Pending';
-}
-</script>
+                // ==========================================
+                // 6. DELETE REQUEST
+                // ==========================================
+                function deleteLeave(id) {
+                    swal({
+                        title: "Are you sure?",
+                        text: "Delete this request?",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true,
+                    })
+                        .then(async (willDelete) => {
+                            if (willDelete) {
+                                await fetch(`${API_BASE}/${id}`, { method: 'DELETE' });
+                                loadMyLeaveData();
+                                swal("Deleted!", "Request deleted.", "success");
+                            }
+                        });
+                }
+
+                function resetTaskModal() {
+                    document.getElementById('editingLeaveId').value = '';
+                    document.getElementById('employeeId').value = '';
+                    document.getElementById('employeeName').value = '';
+                    document.getElementById('department').value = '';
+                    document.getElementById('role').value = '';
+                    document.getElementById('branch').value = '';
+                    document.getElementById('startDate').value = '';
+                    document.getElementById('endDate').value = '';
+                    document.getElementById('leaveReason').value = '';
+                    document.getElementById('remarks').value = '';
+                    document.getElementById('noOfDays').value = '0';
+                    document.getElementById('leaveStatus').value = 'Pending';
+                }
+            </script>
 
 </body>
+
 </html>

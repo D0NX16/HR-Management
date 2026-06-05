@@ -20,7 +20,7 @@
 [data-icon]:before {
   font-family: "simple-Line-Icons";
   content: attr(data-icon);
-  speak: none;
+  speak-as: none;
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
@@ -192,7 +192,7 @@
 .icon-volume-off,
 .icon-users {
   font-family: "Simple-Line-Icons";
-  speak: none;
+  speak-as: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -7147,7 +7147,7 @@ a:hover {
   transition: all 0.3s ease-out;
   display: block;
   vertical-align: middle;
-  *vertical-align: auto;
+  vertical-align: auto;
   zoom: 1;
   display: block;
   -webkit-border-radius: 0;
@@ -7624,7 +7624,7 @@ blockquote cite {
   text-align: right;
 }
 blockquote cite:before {
-  content: "— ";
+  content: "ï¿½ ";
 }
 code {
   background: rgba(41, 43, 48, 0.025);
@@ -7830,9 +7830,9 @@ img {
 .nav-tabs .nav-item i {
   display: inline-block;
   vertical-align: middle;
-  *vertical-align: auto;
-  *zoom: 1;
-  *display: inline;
+  vertical-align: auto;
+  zoom: 1;
+  display: inline;
   line-height: 1;
   width: 0.875rem;
   vertical-align: baseline;
@@ -8268,9 +8268,9 @@ img {
 .card-title small {
   display: block;
   vertical-align: middle;
-  *vertical-align: auto;
-  *zoom: 1;
-  *display: block;
+  vertical-align: auto;
+  zoom: 1;
+  display: block;
   text-transform: initial;
   font-weight: 400;
   color: #9aa0ac;
@@ -8562,7 +8562,7 @@ a.card-tabs-item.active {
   vertical-align: -1px;
 }
 .list-inline-dots .list-inline-item + .list-inline-item:before {
-  content: "· ";
+  content: "ï¿½ ";
   margin-left: -2px;
   margin-right: 3px;
 }

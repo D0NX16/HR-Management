@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en" dir="ltr">
 
 <head>
@@ -21,7 +21,142 @@
 
     <!-- Core css -->
     <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/mobile-responsive.css" />
     <link rel="stylesheet" href="../assets/css/theme1.css" />
+
+    <!-- ================================================ -->
+    <!-- MOBILE RESPONSIVENESS — HR Reports Page           -->
+    <!-- ================================================ -->
+    <style>
+        /* --- Page Header Bar: stack title + search on mobile --- */
+        @media (max-width: 767px) {
+            .page-header {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 8px;
+                padding: 10px 12px !important;
+            }
+
+            .page-header .left {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .page-header .left h1.page-title {
+                font-size: 16px !important;
+                margin-bottom: 0;
+                flex: 0 0 auto;
+            }
+
+            /* Search input full width */
+            .page-header .left .input-group {
+                flex: 1 1 100%;
+            }
+
+            .page-header .right {
+                width: 100%;
+            }
+        }
+
+        /* --- Card Header: wrap title + 3 buttons — core fix from the image --- */
+        @media (max-width: 767px) {
+            .card-header {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                align-items: flex-start !important;
+                gap: 10px;
+                padding: 12px 14px !important;
+            }
+
+            .card-header .card-title {
+                font-size: 15px !important;
+                margin-bottom: 0 !important;
+                flex: 1 1 auto;
+                white-space: normal;
+            }
+
+            /* card-options: wrap buttons to next rows */
+            .card-header .card-options {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                gap: 8px !important;
+                width: 100% !important;
+            }
+
+            /* Each button: equal width, no overflow */
+            .card-header .card-options .btn {
+                flex: 1 1 calc(50% - 8px) !important;
+                min-width: 120px;
+                text-align: center;
+                font-size: 13px !important;
+                padding: 7px 10px !important;
+                white-space: nowrap;
+            }
+        }
+
+        /* On very small screens, stack buttons full width */
+        @media (max-width: 400px) {
+            .card-header .card-options .btn {
+                flex: 1 1 100% !important;
+            }
+        }
+
+        /* --- Statistics widgets: ensure 2 per row on small screens --- */
+        @media (max-width: 575px) {
+            .col-lg-3.col-md-6.col-sm-12 {
+                flex: 0 0 50% !important;
+                max-width: 50% !important;
+            }
+        }
+
+        /* --- Table: reduce font and padding, keep scrollable --- */
+        @media (max-width: 767px) {
+            .table-responsive {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .table th,
+            .table td {
+                padding: 8px 10px !important;
+                font-size: 13px !important;
+                white-space: nowrap;
+                vertical-align: middle !important;
+            }
+
+            .table .btn-sm {
+                padding: 3px 7px !important;
+                font-size: 12px !important;
+            }
+        }
+
+        /* --- Container horizontal padding --- */
+        @media (max-width: 575px) {
+            .section-body .container-fluid {
+                padding-left: 10px !important;
+                padding-right: 10px !important;
+            }
+        }
+
+        /* --- Modals: full-width on mobile --- */
+        @media (max-width: 575px) {
+            .modal-dialog {
+                margin: 10px !important;
+            }
+
+            .modal-footer {
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .modal-footer .btn {
+                flex: 1 1 auto;
+            }
+        }
+    </style>
 </head>
 
 <body class="font-jakarta theme1">

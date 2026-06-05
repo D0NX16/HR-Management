@@ -1,0 +1,380 @@
+/* ============================================================
+   SHARED MOBILE RESPONSIVENESS — HR Management System
+   Applied to ALL pages via a single link tag injection.
+   Zero impact on desktop (all rules inside @media queries).
+   ============================================================ */
+
+/* -------------------------------------------------------
+   1. PAGE HEADER BAR (top dark bar with title + search)
+   ------------------------------------------------------- */
+@media (max-width: 767px) {
+    .page-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 8px;
+        padding: 10px 12px !important;
+    }
+
+    .page-header .left {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .page-header .left h1.page-title {
+        font-size: 17px !important;
+        white-space: normal !important;
+        word-break: break-word;
+        margin-bottom: 0;
+        flex: 0 0 auto;
+    }
+
+    .page-header .left .input-group {
+        flex: 1 1 100%;
+        width: 100% !important;
+    }
+
+    /* Hide Year/Month/Week dropdown on mobile */
+    .page-header .left .custom-select.xs-hide {
+        display: none !important;
+    }
+
+    .page-header .right {
+        width: 100%;
+    }
+}
+
+/* -------------------------------------------------------
+   2. PAGE HEADER ACTION BAR (Export, Upload, Add buttons)
+   ------------------------------------------------------- */
+@media (max-width: 767px) {
+    .page-header-bar {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 10px;
+        padding: 10px 12px !important;
+    }
+
+    .page-header-bar > div:first-child {
+        width: 100%;
+    }
+
+    .btn-action-bar {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+        width: 100% !important;
+    }
+
+    .btn-action-bar .btn {
+        flex: 1 1 auto;
+        min-width: 120px;
+        font-size: 13px !important;
+        padding: 6px 10px !important;
+    }
+
+    .breadcrumb {
+        font-size: 13px;
+        margin-bottom: 0;
+        padding: 4px 0;
+        background: transparent;
+    }
+}
+
+/* -------------------------------------------------------
+   3. CARD HEADER (title + action buttons inside cards)
+   ------------------------------------------------------- */
+@media (max-width: 767px) {
+    .card-header,
+    .card-header.border-bottom {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: flex-start !important;
+        gap: 10px;
+        padding: 12px 14px !important;
+    }
+
+    .card-header .card-title {
+        font-size: 15px !important;
+        margin-bottom: 0 !important;
+        flex: 1 1 auto;
+        white-space: normal;
+        line-height: 1.4;
+    }
+
+    .card-header .card-options {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+        width: 100% !important;
+        align-items: center;
+    }
+
+    /* Buttons inside card-options: 2 per row */
+    .card-header .card-options .btn {
+        flex: 1 1 calc(50% - 8px) !important;
+        min-width: 110px;
+        text-align: center;
+        font-size: 13px !important;
+        padding: 6px 10px !important;
+        white-space: nowrap;
+        margin-right: 0 !important;
+    }
+
+    /* Date input in card header */
+    .card-header .card-options input[type="date"] {
+        width: 100% !important;
+        flex: 1 1 auto;
+        font-size: 14px !important;
+        margin-right: 0 !important;
+    }
+}
+
+/* Very small screens: stack all card-header buttons full width */
+@media (max-width: 400px) {
+    .card-header .card-options .btn {
+        flex: 1 1 100% !important;
+    }
+
+    .card-header .card-options {
+        flex-direction: column !important;
+    }
+}
+
+/* -------------------------------------------------------
+   4. FULLY STACKED CARD HEADER on phones (≤575px)
+      title on top, button(s) full width below
+   ------------------------------------------------------- */
+@media (max-width: 575px) {
+    .card-header,
+    .card-header.border-bottom {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+
+    .card-header .card-options {
+        width: 100% !important;
+    }
+
+    /* Single prominent button (e.g. "Add Department") */
+    .card-header .card-options > .btn:only-child {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* -------------------------------------------------------
+   5. APPRAISAL / CUSTOM CONTROLS BAR
+      (cycle select + New Cycle + Start Workflow)
+   ------------------------------------------------------- */
+@media (max-width: 767px) {
+    .d-md-flex.justify-content-between.align-items-center {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 12px;
+    }
+
+    .header-action.d-flex.align-items-center {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        width: 100%;
+        gap: 8px;
+    }
+
+    #cycleSelect {
+        width: 100% !important;
+        font-size: 14px !important;
+    }
+
+    .header-action .mr-2 {
+        width: 100%;
+        margin-right: 0 !important;
+    }
+
+    .header-action .btn {
+        width: 100%;
+        margin-right: 0 !important;
+        text-align: center;
+        font-size: 14px !important;
+        padding: 8px 12px !important;
+    }
+}
+
+/* -------------------------------------------------------
+   6. LEGEND / KEY SECTION (I-O-M-E-A-Q)
+   ------------------------------------------------------- */
+@media (max-width: 575px) {
+    .alert.d-flex.flex-wrap {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px 12px;
+        padding: 10px 12px !important;
+    }
+
+    .alert.d-flex.flex-wrap > div:first-child {
+        grid-column: 1 / -1;
+        margin-bottom: 4px !important;
+    }
+
+    .alert.d-flex.flex-wrap > div {
+        margin: 0 !important;
+        font-size: 13px;
+    }
+}
+
+/* -------------------------------------------------------
+   7. TABLE — reduce font/padding, keep scrollable
+   ------------------------------------------------------- */
+@media (max-width: 767px) {
+    .table-responsive {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+        max-height: 55vh;
+        font-size: 12px;
+    }
+
+    .table th,
+    .table td {
+        padding: 7px 9px !important;
+        font-size: 12px !important;
+        white-space: nowrap;
+        vertical-align: middle !important;
+    }
+
+    .table .btn-sm,
+    .table select {
+        padding: 3px 6px !important;
+        font-size: 11px !important;
+    }
+
+    /* Sticky thead */
+    thead th {
+        position: sticky;
+        top: 0;
+        background-color: #f4f7f6;
+        z-index: 10;
+        box-shadow: 0 2px 2px -1px rgba(0,0,0,0.1);
+    }
+}
+
+/* -------------------------------------------------------
+   8. CONTAINER PADDING
+   ------------------------------------------------------- */
+@media (max-width: 575px) {
+    .container-fluid {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    .section-body .container-fluid {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    .table-card {
+        margin: 0 -4px;
+    }
+}
+
+/* -------------------------------------------------------
+   9. CONTAINER inline style override (padding-left: 0)
+   ------------------------------------------------------- */
+@media (max-width: 767px) {
+    .container-fluid[style*="padding-left"] {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+}
+
+/* -------------------------------------------------------
+   10. STATISTICS WIDGET CARDS (col-lg-3 col-md-6 col-sm-12)
+       Force 2-per-row on phones
+   ------------------------------------------------------- */
+@media (max-width: 575px) {
+    .col-lg-3.col-md-6.col-sm-12 {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+    }
+}
+
+/* -------------------------------------------------------
+   11. SECTION BODY MARGIN
+   ------------------------------------------------------- */
+@media (max-width: 767px) {
+    .section-body.mt-3 {
+        margin-top: 8px !important;
+    }
+}
+
+/* -------------------------------------------------------
+   12. MODALS — full-screen friendly on mobile
+   ------------------------------------------------------- */
+@media (max-width: 575px) {
+    .modal-dialog {
+        margin: 8px !important;
+        max-width: calc(100% - 16px) !important;
+    }
+
+    .modal-dialog.modal-xl,
+    .modal-dialog.modal-lg {
+        margin: 8px !important;
+        max-width: calc(100% - 16px) !important;
+    }
+
+    .modal-body .row .col-md-3,
+    .modal-body .row .col-md-6 {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+    }
+
+    .modal-footer {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .modal-footer .btn {
+        flex: 1 1 auto;
+    }
+}
+
+/* On very small modal screens stack all columns full width */
+@media (max-width: 400px) {
+    .modal-body .row .col-md-3,
+    .modal-body .row .col-md-6 {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+}
+
+/* -------------------------------------------------------
+   13. SIDEBAR NAV MENU — metismenu colors (shared)
+   ------------------------------------------------------- */
+.metismenu ul a {
+    color: #4d5052 !important;
+}
+
+.metismenu .active > a {
+    color: #3d78e3 !important;
+}
+
+.metismenu .active ul li.active > a {
+    color: #3d78e3 !important;
+    font-weight: 600;
+    background: transparent;
+}
+
+.metismenu ul a:hover {
+    color: #3d78e3 !important;
+}
+
+/* -------------------------------------------------------
+   14. CUSTOM SCROLLBAR (shared)
+   ------------------------------------------------------- */
+.table-responsive::-webkit-scrollbar { height: 10px; width: 8px; }
+.table-responsive::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px; }
+.table-responsive::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 4px; }
+.table-responsive::-webkit-scrollbar-thumb:hover { background: #a8a8a8; }
+.table-responsive { cursor: grab; }
+.table-responsive:active { cursor: grabbing; }

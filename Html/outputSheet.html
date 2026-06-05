@@ -1,4 +1,4 @@
-<!doctype html> 
+﻿<!doctype html> 
 <html lang="en" dir="ltr">  
 <head>     
     <meta charset="UTF-8">     
@@ -24,7 +24,8 @@
     <link rel="stylesheet" href="../assets/plugins/charts-c3/c3.min.css" />      
     
     <!-- Core css -->     
-    <link rel="stylesheet" href="../assets/css/main.css" />     
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/mobile-responsive.css" />     
     <link rel="stylesheet" href="../assets/css/theme1.css" />     
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>  
 
@@ -68,6 +69,134 @@
         /* 4. Hover effect for sub-items */
         .metismenu ul a:hover {
           color: #3d78e3 !important;
+        }
+
+        /* ============================================== */
+        /* MOBILE RESPONSIVENESS STYLES                   */
+        /* ============================================== */
+
+        /* --- Page Header Bar: stack breadcrumb + buttons vertically on mobile --- */
+        @media (max-width: 767px) {
+            .page-header-bar {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 10px;
+                padding: 10px 12px !important;
+            }
+
+            /* Breadcrumb takes full width */
+            .page-header-bar > div:first-child {
+                width: 100%;
+            }
+
+            /* Action buttons bar: wrap and full width */
+            .btn-action-bar {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                gap: 8px !important;
+                width: 100% !important;
+            }
+
+            .btn-action-bar .btn {
+                flex: 1 1 auto;
+                min-width: 120px;
+                font-size: 13px !important;
+                padding: 6px 10px !important;
+            }
+
+            /* Breadcrumb text size */
+            .breadcrumb {
+                font-size: 13px;
+                margin-bottom: 0;
+                padding: 4px 0;
+                background: transparent;
+            }
+        }
+
+        /* --- Legend / Key section: 2-column grid on mobile --- */
+        @media (max-width: 575px) {
+            .alert.d-flex.flex-wrap {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr;
+                gap: 6px 12px;
+                padding: 10px 12px !important;
+            }
+
+            /* Keep the "I-O-M-E-A-Q Key:" label spanning full width */
+            .alert.d-flex.flex-wrap > div:first-child {
+                grid-column: 1 / -1;
+                margin-bottom: 4px !important;
+            }
+
+            .alert.d-flex.flex-wrap > div {
+                margin: 0 !important;
+                font-size: 13px;
+            }
+        }
+
+        /* --- Table: reduce font size and padding on mobile --- */
+        @media (max-width: 767px) {
+            .table-responsive {
+                max-height: 55vh;
+                font-size: 12px;
+            }
+
+            .table td, .table th {
+                padding: 6px 8px !important;
+                font-size: 12px !important;
+            }
+
+            /* Make action buttons in table rows smaller */
+            .table .btn-sm {
+                padding: 3px 6px !important;
+                font-size: 11px !important;
+            }
+        }
+
+        /* --- Container fluid: reduce horizontal padding on mobile --- */
+        @media (max-width: 575px) {
+            .container-fluid {
+                padding-left: 8px !important;
+                padding-right: 8px !important;
+            }
+
+            .table-card {
+                margin: 0 -4px;
+            }
+        }
+
+        /* --- Modal: full-screen friendly on small screens --- */
+        @media (max-width: 575px) {
+            .modal-dialog {
+                margin: 8px !important;
+            }
+
+            .modal-body .row .col-md-3,
+            .modal-body .row .col-md-6 {
+                flex: 0 0 50% !important;
+                max-width: 50% !important;
+            }
+
+            .modal-body .row .col-md-3:nth-child(odd):last-child {
+                flex: 0 0 100% !important;
+                max-width: 100% !important;
+            }
+
+            .modal-footer {
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .modal-footer .btn {
+                flex: 1 1 auto;
+            }
+        }
+
+        /* --- Export modal date inputs stack vertically --- */
+        @media (max-width: 575px) {
+            #exportModal .modal-body .form-group {
+                margin-bottom: 12px;
+            }
         }
     </style>
 </head>  

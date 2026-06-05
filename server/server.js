@@ -90,16 +90,12 @@ const meeting_tracker=require('./meeting');
 const software_access_register=require('./software_access');
 const petrol_allowance=require('./petrol_Allowance');
 const employee_tasks=require('./daily-task');
-
-
-
-
-
+const interviewTrackerRouter = require('./interview_tracker');
 
 app.use(cors());
 app.use(express.json());
 app.use('/uploads', express.static('uploads'));
-app.use(express.static('public')); // Serve frontend
+app.use(express.static(path.join(__dirname, '..')));
 app.use(hrtimesheetRouter);
 app.use(interviewSchedulesRouter);
 app.use(expensesRouter);
@@ -180,6 +176,7 @@ app.use('/api/meeting-tracker',meeting_tracker);
 app.use('/api/software-access',software_access_register);
 app.use('/api/petrol-allowances',petrol_allowance);
 app.use('/api/employee-tasks',employee_tasks);
+app.use('/api/interview-tracker', interviewTrackerRouter);
 
 // --- USER AUTHENTICATION ROUTES ---
 
@@ -1243,6 +1240,10 @@ app.post('/api/employees/upload-excel', upload.single('file'), async (req, res) 
         if (connection) connection.release();
         if (req.file) fs.unlinkSync(req.file.path);
     }
+});
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'index.html'));
 });
 
 // ✅ Start server

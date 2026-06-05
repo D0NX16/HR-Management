@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en" dir="ltr">
 
 
@@ -22,6 +22,7 @@
 
     <!-- Core css -->
     <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/mobile-responsive.css" />
     <link rel="stylesheet" href="../assets/css/theme1.css" />
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
@@ -37,6 +38,111 @@
 
         .fa {
             font-family: 'FontAwesome' !important;
+        }
+
+        /* ================================================ */
+        /* MOBILE RESPONSIVENESS — HR Departments Page       */
+        /* ================================================ */
+
+        /* --- Card Header: keep title + button on same row, allow wrap gracefully --- */
+        @media (max-width: 767px) {
+            .card-header.border-bottom {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                align-items: center !important;
+                gap: 10px;
+                padding: 12px 14px !important;
+            }
+
+            .card-header .card-title {
+                font-size: 16px !important;
+                margin-bottom: 0 !important;
+                flex: 1 1 auto;
+                white-space: nowrap;
+            }
+
+            .card-header .card-options {
+                flex-shrink: 0;
+            }
+
+            /* "Add Department" button: compact on mobile */
+            .card-header .card-options .btn {
+                font-size: 13px !important;
+                padding: 6px 12px !important;
+                white-space: nowrap;
+            }
+        }
+
+        /* --- Table: reduce text and padding, keep it scrollable --- */
+        @media (max-width: 767px) {
+            .table-responsive {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .table th,
+            .table td {
+                padding: 8px 10px !important;
+                font-size: 13px !important;
+                white-space: nowrap;
+                vertical-align: middle !important;
+            }
+
+            /* Action buttons in table rows */
+            .table .btn-sm {
+                padding: 3px 7px !important;
+                font-size: 12px !important;
+            }
+        }
+
+        /* --- Container: tighten horizontal padding on phones --- */
+        @media (max-width: 575px) {
+            .section-body .container-fluid {
+                padding-left: 10px !important;
+                padding-right: 10px !important;
+            }
+
+            .card {
+                margin-bottom: 12px;
+            }
+
+            /* Stack card header title & button vertically on very small screens */
+            .card-header.border-bottom {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+            }
+
+            .card-header .card-options {
+                width: 100%;
+            }
+
+            .card-header .card-options .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* --- Modal: full-width on mobile --- */
+        @media (max-width: 575px) {
+            .modal-dialog {
+                margin: 10px !important;
+            }
+
+            .modal-footer {
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .modal-footer .btn {
+                flex: 1 1 auto;
+            }
+        }
+
+        /* --- Page section body top margin --- */
+        @media (max-width: 767px) {
+            .section-body.mt-3 {
+                margin-top: 8px !important;
+            }
         }
     </style>
 </head>

@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en" dir="ltr">
 
 <head>
@@ -20,6 +20,7 @@
 
     <!-- Core css -->
     <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/mobile-responsive.css" />
     <link rel="stylesheet" href="../assets/css/theme1.css" />
 
     <!-- Style Override to prevent broken icon boxes -->
@@ -30,6 +31,138 @@
 
         .fa {
             font-family: 'FontAwesome' !important;
+        }
+
+        /* ================================================ */
+        /* MOBILE RESPONSIVENESS — HR Attendance Page        */
+        /* ================================================ */
+
+        /* --- Page Top Bar: stack title + search on mobile --- */
+        @media (max-width: 767px) {
+            .page-header {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 10px;
+                padding: 10px 12px !important;
+            }
+
+            .page-header .left {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .page-header .left h1.page-title {
+                font-size: 18px !important;
+                margin-bottom: 0;
+                flex: 0 0 auto;
+            }
+
+            /* Search input stretches full width */
+            .page-header .left .input-group {
+                flex: 1 1 100%;
+                width: 100% !important;
+            }
+
+            /* Hide year/month/week dropdown on very small screens */
+            .page-header .left .custom-select.xs-hide {
+                display: none !important;
+            }
+
+            .page-header .right {
+                width: 100%;
+            }
+        }
+
+        /* --- Card Header: stack title + date + export button vertically --- */
+        @media (max-width: 767px) {
+            .card-header {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                align-items: flex-start !important;
+                gap: 10px;
+                padding: 12px 14px !important;
+            }
+
+            .card-header .card-title {
+                font-size: 15px !important;
+                margin-bottom: 0 !important;
+                flex: 1 1 auto;
+                line-height: 1.4;
+            }
+
+            .card-header .card-options {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                gap: 8px;
+                width: 100% !important;
+                align-items: center;
+            }
+
+            /* Date input: full width on mobile, remove hard-coded width */
+            .card-header .card-options input[type="date"] {
+                width: 100% !important;
+                flex: 1 1 auto;
+                font-size: 14px !important;
+                margin-right: 0 !important;
+            }
+
+            /* Export button: full width */
+            .card-header .card-options .btn {
+                flex: 1 1 100%;
+                text-align: center;
+                font-size: 13px !important;
+                padding: 6px 12px !important;
+            }
+        }
+
+        /* --- Table: reduce font and padding, keep horizontally scrollable --- */
+        @media (max-width: 767px) {
+            .table-responsive {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .table th,
+            .table td {
+                padding: 8px 10px !important;
+                font-size: 13px !important;
+                white-space: nowrap;
+                vertical-align: middle !important;
+            }
+
+            /* Status badge buttons in table */
+            .table .btn-sm,
+            .table select {
+                padding: 3px 7px !important;
+                font-size: 12px !important;
+            }
+        }
+
+        /* --- Container: tighten horizontal padding on phones --- */
+        @media (max-width: 575px) {
+            .section-body .container-fluid {
+                padding-left: 10px !important;
+                padding-right: 10px !important;
+            }
+        }
+
+        /* --- Modal: full-width on mobile --- */
+        @media (max-width: 575px) {
+            .modal-dialog {
+                margin: 10px !important;
+            }
+
+            .modal-footer {
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .modal-footer .btn {
+                flex: 1 1 auto;
+            }
         }
     </style>
 </head>

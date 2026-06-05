@@ -16,6 +16,7 @@
 
     <!-- Core css -->
     <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/mobile-responsive.css" />
     <link rel="stylesheet" href="../assets/css/theme1.css" />
 
     <!-- SweetAlert2 for nicer alerts -->
@@ -129,11 +130,11 @@ document.addEventListener('DOMContentLoaded', () => {
         signInButton.disabled = true;
 
         try {
-            const response = await fetch('http://localhost:3000/api/login', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email, password })
-            });
+          const response = await fetch('http://localhost:3000/api/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, password })
+});
 
             const data = await response.json();
             
@@ -175,7 +176,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 </script>
-
 
 </body>
 
