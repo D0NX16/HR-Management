@@ -437,3 +437,11 @@ window.anchor= {
         'gray-900':          '#1C1D1E',
     }
 };
+
+// Auto-load bill reminders on every page
+document.addEventListener('DOMContentLoaded', function() {
+    const script = document.createElement('script');
+    const isHtmlDir = window.location.pathname.toLowerCase().includes('/html/');
+    script.src = (isHtmlDir ? '../' : './') + 'assets/js/bill-reminders.js';
+    document.body.appendChild(script);
+});

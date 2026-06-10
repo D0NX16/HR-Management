@@ -746,128 +746,84 @@
             // ---------------------------------------------------------
             // 3. SIDEBAR MENU PERMISSIONS (Existing Logic)
             // ---------------------------------------------------------
+  const allSidebarIds = [
+                        'sidebar-hrms', 'sidebar-dashboard',
+                        'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
+                        'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
+                        'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
+                        'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
+                        'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
+                        'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
+                        'sidebar-sop', 'sidebar-qc', 'sticky-actions', 'hide-feature', 'sidebar-social-report', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker'
+                    ];
 
-            const allSidebarIds = [
-                'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
-                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
-                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
-                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
-                'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
-                'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
-                'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
-                'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
-                'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
-                'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
-                'sidebar-sop', 'sidebar-qc', 'sticky-actions', 'hide-feature', ' sidebar-social-report ', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker', 'sidebar-management'
-            ];
+                    const sidebarPermissions = {
+                        'GENERAL MANAGER': ['sidebar-hrms', 'sidebar-dashboard',
+                        'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
+                        'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
+                        'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
+                        'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
+                        'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
+                        'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
+                        'sidebar-sop', 'sidebar-qc', 'sidebar-social-report', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker'],
 
-            const sidebarPermissions = {
-                'HR': [
-                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
-                    'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
-                    'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
-                    'sidebar-payment-bills', 'sidebar-leave-request', 'sticky-actions', 'hide-feature'],
-                'ADMIN': [
-                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-attendance', 'sidebar-admin-reports',
-                    'sidebar-payment-bills', 'sidebar-leave-request'],
-                'EMPLOYEE': [
-                    'sidebar-hrms', 'sidebar-departments', 'sidebar-employee-task', 'sidebar-leave-request'],
-
-                'GENERAL MANAGER': ['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
-                    'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
-                    'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
-                    'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
-                    'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
-                    'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
-                    'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
-                    'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
-                    'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
-                    'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
-                    'sidebar-sop', 'sidebar-qc', ' sidebar-social-report ', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker', 'sidebar-management'],
-
-                'PROJECT MANAGER': [
-                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-departments', 'sidebar-employee',
-                    'sidebar-performance', 'sidebar-leave-request', 'sticky-actions', 'hide-feature'
-                ],
-                'ADVISOR': [
-                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-working', 'sidebar-financial-report',
-                    'sidebar-client-id', 'sidebar-quotation-id', 'sidebar-proforma', 'sidebar-document-tracker',
-                    'sidebar-backend-id', 'sidebar-bill-supply', 'sidebar-history-license', 'sidebar-backend-report',
-                    'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments', 'sidebar-operators',
-                    'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report', 'sidebar-phone-audit-report',
-                    'sidebar-audit-base', 'sidebar-advisor-entry', 'sidebar-output', 'sticky-actions', 'hide-feature', ' sidebar-social-report ', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker'
-                ],
-                'AUDIT PROJECT MANAGER': [
-                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-working', 'sidebar-financial-report',
-                    'sidebar-sop', 'sidebar-backend-report', 'sidebar-enquiry', 'sidebar-audit-quotation',
-                    'sidebar-audit-appointments', 'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries',
-                    'sidebar-audit-weekly-report', 'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-qc',
-                    'sidebar-advisor-entry', 'sidebar-output', 'sidebar-bill-supply', 'sidebar-accounting-log', 'sticky-actions', 'hide-feature', ' sidebar-social-report ', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker'
-                ],
-                'BACKEND PROJECT MANAGER': [
-                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-backend-report', 'sticky-actions', 'hide-feature'
-                ],
-                'TEAM LEADER': [
-                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-financial-report',
-                    'sidebar-accounting-log', 'sidebar-bill-supply', 'sticky-actions', 'hide-feature'
-                ],
-                'BACK OFFICE EXECUTIVE': [
-                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-backend-report',
-                    'sidebar-sop', 'sidebar-qc', 'sticky-actions', 'hide-feature'
-                ],
-                'VP': ['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
-                    'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
-                    'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
-                    'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
-                    'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
-                    'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
-                    'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
-                    'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
-                    'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
-                    'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
-                    'sidebar-sop', 'sidebar-qc', ' sidebar-social-report ', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker', 'sidebar-management'],
-
-                'CEO': ['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
-                    'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
-                    'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
-                    'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
-                    'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
-                    'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
-                    'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
-                    'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
-                    'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
-                    'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
-                    'sidebar-sop', 'sidebar-qc', ' sidebar-social-report ', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker', 'sidebar-management']
-            };
+                        'ADVISOR': [
+                            'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-working', 'sidebar-financial-report',
+                            'sidebar-client-id', 'sidebar-quotation-id', 'sidebar-proforma', 'sidebar-document-tracker',
+                            'sidebar-backend-id', 'sidebar-bill-supply', 'sidebar-history-license', 'sidebar-backend-report',
+                            'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments', 'sidebar-operators',
+                            'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report', 'sidebar-phone-audit-report',
+                            'sidebar-audit-base', 'sidebar-advisor-entry', 'sidebar-output', 'sticky-actions', 'hide-feature', 'sidebar-social-report', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker'
+                        ],
+                        'AUDIT PROJECT MANAGER': [
+                            'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-working', 'sidebar-financial-report',
+                            'sidebar-sop', 'sidebar-backend-report', 'sidebar-enquiry', 'sidebar-audit-quotation',
+                            'sidebar-audit-appointments', 'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries',
+                            'sidebar-audit-weekly-report', 'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-qc',
+                            'sidebar-advisor-entry', 'sidebar-output', 'sidebar-bill-supply', 'sidebar-accounting-log', 'sticky-actions', 'hide-feature', 'sidebar-social-report', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker'
+                        ],
+                        'BACKEND PROJECT MANAGER': [
+                            'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-backend-report', 'sticky-actions', 'hide-feature'
+                        ],
+                        'TEAM LEADER': [
+                            'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-financial-report',
+                            'sidebar-accounting-log', 'sidebar-bill-supply', 'sticky-actions', 'hide-feature'
+                        ],
+                        'BACK OFFICE EXECUTIVE': [
+                            'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-backend-report',
+                            'sidebar-sop', 'sidebar-qc', 'sticky-actions', 'hide-feature'
+                        ],
+                        'VP': ['sidebar-hrms', 'sidebar-dashboard',
+                        'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
+                        'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
+                        'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
+                        'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
+                        'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
+                        'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
+                        'sidebar-sop', 'sidebar-qc', 'sidebar-social-report', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker'],
 
 
-            // ---------------------------------------------------------
-            // 4. MAIN DASHBOARD MENU PERMISSIONS (New Logic)
-            // ---------------------------------------------------------
-            const allMainMenuIds = [
-                'main-menu-user', 'main-menu-department', 'main-menu-employees',
-                'main-menu-attendance', 'main-menu-payroll', 'main-menu-expenses',
-                'main-menu-performance', 'main-menu-appraisal', 'main-menu-hr-report',
-                'main-menu-admin-report', 'main-menu-other-portal', 'main-menu-payment-bill', 'main-menu-employee-task', 'main-menu-leave-request'
-            ];
+                        'AGM':['sidebar-hrms', 'sidebar-dashboard',
+                        'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
+                        'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
+                        'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
+                        'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
+                        'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
+                        'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
+                        'sidebar-sop', 'sidebar-qc', 'sidebar-social-report', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker'],
 
-            const mainMenuPermissions = {
-                'HR': ['main-menu-user', 'main-menu-department', 'main-menu-employees',
-                    'main-menu-attendance', 'main-menu-payroll', 'main-menu-expenses',
-                    'main-menu-performance', 'main-menu-appraisal', 'main-menu-hr-report',
-                    'main-menu-admin-report', 'main-menu-other-portal', 'main-menu-payment-bill', 'main-menu-leave-request'],
+                        'CEO': ['sidebar-hrms', 'sidebar-dashboard',
+                        'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
+                        'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
+                        'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
+                        'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
+                        'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
+                        'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
+                        'sidebar-sop', 'sidebar-qc', 'sidebar-social-report', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker']
+                    };
 
-                'ADMIN': ['main-menu-attendance', 'main-menu-admin-report', 'main-menu-payment-bill', 'main-menu-leave-request'],
 
-                'EMPLOYEE': ['main-menu-department', 'main-menu-employee-task', 'main-menu-leave-request'],
-
-                'GENERAL MANAGER': ['main-menu-user', 'main-menu-department', 'main-menu-employees',
-                    'main-menu-attendance', 'main-menu-payroll', 'main-menu-expenses',
-                    'main-menu-performance', 'main-menu-appraisal', 'main-menu-hr-report',
-                    'main-menu-admin-report', 'main-menu-other-portal', 'main-menu-payment-bill', 'main-menu-employee-task', 'main-menu-leave-request'],
-
-                'PROJECT MANAGER': ['main-menu-department', 'main-menu-employees', 'main-menu-performance', 'main-menu-leave-request']
-            };
+           
 
             // ---------------------------------------------------------
             // 5. Function to Filter Any Menu List
@@ -917,7 +873,7 @@
             }
         });
 
-        const API_URL = 'http://localhost:3000/api/history-licenses';
+        const API_URL = 'https://kgpl.net/api/history-licenses';
 
         function parseDateForInput(dateString) {
             if (!dateString) return '';

@@ -1,4 +1,4 @@
-$(function () {
+﻿$(function () {
     "use strict";
 
     // Initialize Datepickers
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // 1. Fetch and Render Employees
     async function fetchAndRenderEmployees() {
         try {
-            const response = await fetch('http://localhost:3000/api/employees');
+            const response = await fetch('https://kgpl.net/api/employees');
             if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
             
             const employees = await response.json();
@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function () {
             try {
                 // Fetch specific employee (better than fetching all) if your API supports it, 
                 // otherwise fetch all and find:
-                const response = await fetch('http://localhost:3000/api/employees'); 
+                const response = await fetch('https://kgpl.net/api/employees'); 
                 const employees = await response.json();
                 const employeeToView = employees.find(emp => emp.employee_id === employeeId);
 
@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (event.target.closest('.edit-employee')) {
             const employeeId = event.target.closest('.edit-employee').dataset.employeeId;
             try {
-                const response = await fetch('http://localhost:3000/api/employees'); 
+                const response = await fetch('https://kgpl.net/api/employees'); 
                 const employees = await response.json();
                 const employeeToEdit = employees.find(emp => emp.employee_id === employeeId);
 
@@ -255,7 +255,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const employeeId = event.target.closest('.delete-employee').dataset.employeeId;
             if (confirm(`Are you sure you want to delete employee ID: ${employeeId}?`)) {
                 try {
-                    const response = await fetch(`http://localhost:3000/api/employees/${employeeId}`, {
+                    const response = await fetch(`https://kgpl.net/api/employees/${employeeId}`, {
                         method: 'DELETE',
                     });
                     const result = await response.json();
@@ -346,8 +346,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         try {
             const url = isEditMode 
-                ? `http://localhost:3000/api/employees/${currentEmployeeId}` 
-                : 'http://localhost:3000/api/employees/add';    
+                ? `https://kgpl.net/api/employees/${currentEmployeeId}` 
+                : 'https://kgpl.net/api/employees/add';    
             
             const method = isEditMode ? 'PUT' : 'POST';
 
@@ -398,7 +398,7 @@ document.addEventListener('DOMContentLoaded', function () {
             formData.append('file', file);
 
             $.ajax({
-                url: 'http://localhost:3000/api/employees/upload-excel',
+                url: 'https://kgpl.net/api/employees/upload-excel',
                 type: 'POST',
                 data: formData,
                 processData: false,

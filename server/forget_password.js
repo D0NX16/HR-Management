@@ -1,4 +1,4 @@
-// const express = require('express');
+﻿// const express = require('express');
 // const crypto = require('crypto');
 // const bcrypt = require('bcrypt');
 // const nodemailer = require('nodemailer');
@@ -28,7 +28,7 @@
 //             if (updateErr) return res.status(500).json({ error: 'Database error' });
 
 //             // Create Reset Link (Make sure this matches your Live Server port, e.g., 5500)
-//             const resetLink = `http://localhost:3000/Html/reset-password.html?token=${resetToken}`;
+//             const resetLink = `https://kgpl.net/Html/reset-password.html?token=${resetToken}`;
 
 //             // Send Email using Nodemailer
 //             let transporter = nodemailer.createTransport({

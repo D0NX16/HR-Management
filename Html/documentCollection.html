@@ -32,28 +32,28 @@
     <link rel="stylesheet" href="../assets/css/theme1.css" />
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
-       <style>
+    <style>
         /* 1. Default text color for sub-menu items (Dark Gray) */
-.metismenu ul a {
-  color: #4d5052 !important; 
-}
+        .metismenu ul a {
+            color: #4d5052 !important;
+        }
 
-/* 2. Make the Parent active item Blue */
-.metismenu .active > a {
-  color: #3d78e3 !important;
-}
+        /* 2. Make the Parent active item Blue */
+        .metismenu .active>a {
+            color: #3d78e3 !important;
+        }
 
-/* 3. Make ONLY the specific active sub-menu item Blue */
-.metismenu .active ul li.active > a {
-  color: #3d78e3 !important;
-  font-weight: 600;
-  background: transparent;
-}
+        /* 3. Make ONLY the specific active sub-menu item Blue */
+        .metismenu .active ul li.active>a {
+            color: #3d78e3 !important;
+            font-weight: 600;
+            background: transparent;
+        }
 
-/* 4. Hover effect for sub-items */
-.metismenu ul a:hover {
-  color: #3d78e3 !important;
-}
+        /* 4. Hover effect for sub-items */
+        .metismenu ul a:hover {
+            color: #3d78e3 !important;
+        }
     </style>
 
 </head>
@@ -470,74 +470,91 @@
     <div id="left-sidebar" class="sidebar ">
         <h5 class="brand-name">Kalsun Groups <a href="javascript:void(0)" class="menu_option float-right"><i
                     class="fa-solid fa-table-cells-large" style="color: #000000;"></i></a></h5>
-            <nav id="left-sidebar-nav" class="sidebar-nav">
-                <ul class="metismenu">
-                    <li class="g_heading">Directories</li>
-                    <li>
-                        <a href="javascript:void(0)" class="has-arrow arrow-c" id="sidebar-hrms"><i
-                                class="fa-solid fa-rocket" style="color: #74c0fc;"></i><span>HRMS</span></a>
-                        <ul>
-                            <li id="sidebar-dashboard"><a href="../index.html"><span>Dashboard</span></a></li>
-                        </ul>
-                    </li>
+        <nav id="left-sidebar-nav" class="sidebar-nav">
+            <ul class="metismenu">
+                <li class="g_heading">Directories</li>
+                <li>
+                    <a href="javascript:void(0)" class="has-arrow arrow-c" id="sidebar-hrms"><i
+                            class="fa-solid fa-rocket" style="color: #74c0fc;"></i><span>HRMS</span></a>
+                    <ul>
+                        <li id="sidebar-dashboard"><a href="../index.html"><span>Dashboard</span></a></li>
+                    </ul>
+                </li>
 
-                    <li id="sidebar-auditor">
-                        <a href="javascript:void(0)" class="has-arrow arrow-c"><i class="fa-solid fa-rocket"
-                                style="color: #74c0fc;"></i><span>Auditor</span></a>
-                        <ul>
-                            <li id="sidebar-working">
-                                <a><span>Operational Dashboard</span></a>
-                                <ul>
-                                    <li id="sidebar-client-id"><a href="clientID.html"><span>Client ID</span></a></li>
-                                    <li id="sidebar-quotation-id"><a href="quotationID.html"><span>Quotation ID</span></a></li>
-                                    <li id="sidebar-proforma"><a href="proforma.html"><span>Proforma Voice</span></a></li>
-                                    <li class="active" id="sidebar-document-tracker"><a href="documentCollection.html"><span>Document Tracker</span></a></li>
-                                    <li id="sidebar-backend-id"><a href="backend_id.html"><span>Backend ID</span></a></li>
-                                    <li id="sidebar-history-license"><a href="history-license.html"><span>History of license</span></a></li>
-                                    <li id="sidebar-output"><a href="outputSheet.html?dept='Auditor"><span>Daily Report</span></a></li>
-                                    <li id="sidebar-enquiry"><a href="enquiry.html"><span>Enquiry</span></a></li>
-                                    <li id="sidebar-audit-quotation"><a href="audit_quotation.html"><span>Quotation </span></a></li>
-                                    <li id="sidebar-audit-appointments"><a href="audit_appointments.html"><span>Appoinment</span></a></li>
-                                    <li id="sidebar-operators"><a href="operators.html"><span>My Operator</span></a></li>
-                                    <li id="sidebar-pg-enquiry"><a href="pg_enquiry.html"><span>PG-Enquiry</span></a></li>
-                                    <li id="sidebar-sm-enquiries"><a href="sm_enquiries.html"><span>SM-Enquiries</span></a></li>
-                                    <li id="sidebar-audit-weekly-report"><a href="audit_weekly_report.html"><span>Weekly Report Sheet</span></a></li>
-                                    <li id="sidebar-phone-audit-report"><a href="phone_audit_report.html"><span>Phone Audit</span></a></li>
-                                    <li id="sidebar-audit-base"><a href="audit_base.html"><span>Base</span></a></li>
-                                   <li id="sidebar-advisor-entry"><a href="advisor_entry_sheet.html"><span>Advisor Entry</span></a></li>
-                                    <li id="sidebar-social-report"><a href="social-media-report.html?dept='Auditor"><span>Social Media Report</span></a></li>
-                                    <li id="sidebar-advisor-performance-tracker"><a href="advisor_performance_tracker.html"><span>Advisor Performance Tracker</span></a></li>
-                                    <li id="sidebar-performance-tracker"><a href="performance_tracker.html"><span>Performance Tracker</span></a></li>
-                                </ul>
-                            </li>
+                <li id="sidebar-auditor">
+                    <a href="javascript:void(0)" class="has-arrow arrow-c"><i class="fa-solid fa-rocket"
+                            style="color: #74c0fc;"></i><span>Auditor</span></a>
+                    <ul>
+                        <li id="sidebar-working">
+                            <a><span>Operational Dashboard</span></a>
+                            <ul>
+                                <li id="sidebar-client-id"><a href="clientID.html"><span>Client ID</span></a></li>
+                                <li id="sidebar-quotation-id"><a href="quotationID.html"><span>Quotation ID</span></a>
+                                </li>
+                                <li id="sidebar-proforma"><a href="proforma.html"><span>Proforma Voice</span></a></li>
+                                <li class="active" id="sidebar-document-tracker"><a
+                                        href="documentCollection.html"><span>Document Tracker</span></a></li>
+                                <li id="sidebar-backend-id"><a href="backend_id.html"><span>Backend ID</span></a></li>
+                                <li id="sidebar-history-license"><a href="history-license.html"><span>History of
+                                            license</span></a></li>
+                                <li id="sidebar-output"><a href="outputSheet.html?dept='Auditor"><span>Daily
+                                            Report</span></a></li>
+                                <li id="sidebar-enquiry"><a href="enquiry.html"><span>Enquiry</span></a></li>
+                                <li id="sidebar-audit-quotation"><a href="audit_quotation.html"><span>Quotation
+                                        </span></a></li>
+                                <li id="sidebar-audit-appointments"><a
+                                        href="audit_appointments.html"><span>Appoinment</span></a></li>
+                                <li id="sidebar-operators"><a href="operators.html"><span>My Operator</span></a></li>
+                                <li id="sidebar-pg-enquiry"><a href="pg_enquiry.html"><span>PG-Enquiry</span></a></li>
+                                <li id="sidebar-sm-enquiries"><a href="sm_enquiries.html"><span>SM-Enquiries</span></a>
+                                </li>
+                                <li id="sidebar-audit-weekly-report"><a href="audit_weekly_report.html"><span>Weekly
+                                            Report Sheet</span></a></li>
+                                <li id="sidebar-phone-audit-report"><a href="phone_audit_report.html"><span>Phone
+                                            Audit</span></a></li>
+                                <li id="sidebar-audit-base"><a href="audit_base.html"><span>Base</span></a></li>
+                                <li id="sidebar-advisor-entry"><a href="advisor_entry_sheet.html"><span>Advisor
+                                            Entry</span></a></li>
+                                <li id="sidebar-social-report"><a
+                                        href="social-media-report.html?dept='Auditor"><span>Social Media
+                                            Report</span></a></li>
+                                <li id="sidebar-advisor-performance-tracker"><a
+                                        href="advisor_performance_tracker.html"><span>Advisor Performance
+                                            Tracker</span></a></li>
+                                <li id="sidebar-performance-tracker"><a
+                                        href="performance_tracker.html"><span>Performance Tracker</span></a></li>
+                            </ul>
+                        </li>
 
-                            <li id="sidebar-backend-report">
-                                <a href="hac_backend.html"><span>HAC Backend Report</span></a>
-                            </li>
+                        <li id="sidebar-backend-report">
+                            <a href="hac_backend.html"><span>HAC Backend Report</span></a>
+                        </li>
 
-                            <li id="sidebar-financial-report">
-                                <a><span>Financial Report</span></a>
-                                <ul>
-                                    <li id="sidebar-bill-supply"><a href="bill-supply.html"><span>Bill of supply</span></a></li> 
-                                    <li id="sidebar-accounting-log"><a href="accounting_log.html"><span>Accounting Log</span></a></li>             
-                                </ul>
-                            </li>
+                        <li id="sidebar-financial-report">
+                            <a><span>Financial Report</span></a>
+                            <ul>
+                                <li id="sidebar-bill-supply"><a href="bill-supply.html"><span>Bill of supply</span></a>
+                                </li>
+                                <li id="sidebar-accounting-log"><a href="accounting_log.html"><span>Accounting
+                                            Log</span></a></li>
+                            </ul>
+                        </li>
 
-                            <li id="sidebar-sop">
-                                <a><span>SOP Tracker</span></a>
-                                <ul>    
-                                    <li id="sidebar-qc"><a href="Qc-sheet.html"><span>QC - SHEET</span></a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
+                        <li id="sidebar-sop">
+                            <a><span>SOP Tracker</span></a>
+                            <ul>
+                                <li id="sidebar-qc"><a href="Qc-sheet.html"><span>QC - SHEET</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
     </div>
     </div>
 
     <!-- ===== MAIN PAGE CONTENT ===== -->
-      <div class="page">
+    <div class="page">
         <div class="page-header-bar">
             <div>
                 <nav aria-label="breadcrumb">
@@ -548,17 +565,19 @@
                 </nav>
             </div>
             <div class="btn-action-bar" id="hide-feature">
-                <input type="file" id="excelFileInput" accept=".xlsx, .xls" style="display:none" onchange="handleExcelUpload(event)">
+                <input type="file" id="excelFileInput" accept=".xlsx, .xls" style="display:none"
+                    onchange="handleExcelUpload(event)">
                 <button class="btn btn-success btn-sm" onclick="document.getElementById('excelFileInput').click()">
                     <i class="fa fa-upload mr-1"></i> Import Excel
                 </button>
-                <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#docModal" onclick="resetForm()">
+                <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#docModal"
+                    onclick="resetForm()">
                     <i class="fa fa-plus mr-1"></i> Add Document
                 </button>
             </div>
         </div>
 
- <div class="container-fluid">
+        <div class="container-fluid">
             <div class="table-card">
                 <div class="table-responsive">
                     <table class="table mb-0 table-hover table-striped" id="docTable">
@@ -579,7 +598,9 @@
                             </tr>
                         </thead>
                         <tbody id="docTableBody">
-                            <tr class="empty-state"><td colspan="12">Loading...</td></tr>
+                            <tr class="empty-state">
+                                <td colspan="12">Loading...</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -600,26 +621,43 @@
                     <input type="hidden" id="doc_id">
                     <div class="modal-body">
                         <div class="row">
-                            <div class="col-md-3 mb-3"><label class="form-label-sm">Date</label><input type="date" class="form-control form-control-sm" id="f_doc_date" required></div>
-                            <div class="col-md-3 mb-3"><label class="form-label-sm">Client ID</label><input type="text" class="form-control form-control-sm" id="f_client_id" required></div>
-                            <div class="col-md-3 mb-3"><label class="form-label-sm">Company Name</label><input type="text" class="form-control form-control-sm" id="f_company_name" required></div>
-                            <div class="col-md-3 mb-3"><label class="form-label-sm">Backend ID</label><input type="text" class="form-control form-control-sm" id="f_backend_id"></div>
-                            <div class="col-md-3 mb-3"><label class="form-label-sm">Date Received</label><input type="date" class="form-control form-control-sm" id="f_date_received"></div>
-                            <div class="col-md-3 mb-3"><label class="form-label-sm">Received Mode</label><input type="text" class="form-control form-control-sm" id="f_received_mode"></div>
-                            <div class="col-md-3 mb-3"><label class="form-label-sm">Date Enclosed</label><input type="date" class="form-control form-control-sm" id="f_date_enclosed"></div>
-                            <div class="col-md-3 mb-3"><label class="form-label-sm">CT Person Name</label><input type="text" class="form-control form-control-sm" id="f_ct_person_name"></div>
-                            <div class="col-md-6 mb-3"><label class="form-label-sm">Description</label><textarea class="form-control form-control-sm" id="f_description" rows="2"></textarea></div>
-                            <div class="col-md-6 mb-3"><label class="form-label-sm">List of Documents Received</label><textarea class="form-control form-control-sm" id="f_docs_received_list" rows="2"></textarea></div>
-                            <div class="col-md-3 mb-3"><label class="form-label-sm">CP Number</label><input type="text" class="form-control form-control-sm" id="f_cp_number"></div>
-                            <div class="col-md-3 mb-3"><label class="form-label-sm">CP Email ID</label><input type="email" class="form-control form-control-sm" id="f_cp_email"></div>
-                            <div class="col-md-3 mb-3"><label class="form-label-sm">Designation</label><input type="text" class="form-control form-control-sm" id="f_ct_designation"></div>
-                            <div class="col-md-3 mb-3"><label class="form-label-sm">Advisor Name</label><input type="text" class="form-control form-control-sm" id="f_advisor_name"></div>
-                            <div class="col-md-3 mb-3"><label class="form-label-sm">Advisor Contact</label><input type="text" class="form-control form-control-sm" id="f_advisor_contact"></div>
+                            <div class="col-md-3 mb-3"><label class="form-label-sm">Date</label><input type="date"
+                                    class="form-control form-control-sm" id="f_doc_date" required></div>
+                            <div class="col-md-3 mb-3"><label class="form-label-sm">Client ID</label><input type="text"
+                                    class="form-control form-control-sm" id="f_client_id" required></div>
+                            <div class="col-md-3 mb-3"><label class="form-label-sm">Company Name</label><input
+                                    type="text" class="form-control form-control-sm" id="f_company_name" required></div>
+                            <div class="col-md-3 mb-3"><label class="form-label-sm">Backend ID</label><input type="text"
+                                    class="form-control form-control-sm" id="f_backend_id"></div>
+                            <div class="col-md-3 mb-3"><label class="form-label-sm">Date Received</label><input
+                                    type="date" class="form-control form-control-sm" id="f_date_received"></div>
+                            <div class="col-md-3 mb-3"><label class="form-label-sm">Received Mode</label><input
+                                    type="text" class="form-control form-control-sm" id="f_received_mode"></div>
+                            <div class="col-md-3 mb-3"><label class="form-label-sm">Date Enclosed</label><input
+                                    type="date" class="form-control form-control-sm" id="f_date_enclosed"></div>
+                            <div class="col-md-3 mb-3"><label class="form-label-sm">CT Person Name</label><input
+                                    type="text" class="form-control form-control-sm" id="f_ct_person_name"></div>
+                            <div class="col-md-6 mb-3"><label class="form-label-sm">Description</label><textarea
+                                    class="form-control form-control-sm" id="f_description" rows="2"></textarea></div>
+                            <div class="col-md-6 mb-3"><label class="form-label-sm">List of Documents
+                                    Received</label><textarea class="form-control form-control-sm"
+                                    id="f_docs_received_list" rows="2"></textarea></div>
+                            <div class="col-md-3 mb-3"><label class="form-label-sm">CP Number</label><input type="text"
+                                    class="form-control form-control-sm" id="f_cp_number"></div>
+                            <div class="col-md-3 mb-3"><label class="form-label-sm">CP Email ID</label><input
+                                    type="email" class="form-control form-control-sm" id="f_cp_email"></div>
+                            <div class="col-md-3 mb-3"><label class="form-label-sm">Designation</label><input
+                                    type="text" class="form-control form-control-sm" id="f_ct_designation"></div>
+                            <div class="col-md-3 mb-3"><label class="form-label-sm">Advisor Name</label><input
+                                    type="text" class="form-control form-control-sm" id="f_advisor_name"></div>
+                            <div class="col-md-3 mb-3"><label class="form-label-sm">Advisor Contact</label><input
+                                    type="text" class="form-control form-control-sm" id="f_advisor_contact"></div>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-save mr-1"></i>Save Document</button>
+                        <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-save mr-1"></i>Save
+                            Document</button>
                     </div>
                 </form>
             </div>
@@ -627,7 +665,7 @@
     </div>
 
     <!-- Scripts -->
-   <script src="../assets/bundles/lib.vendor.bundle.js"></script>
+    <script src="../assets/bundles/lib.vendor.bundle.js"></script>
     <script src="../assets/bundles/apexcharts.bundle.js"></script>
     <script src="../assets/bundles/counterup.bundle.js"></script>
     <script src="../assets/bundles/knobjs.bundle.js"></script>
@@ -636,228 +674,182 @@
     <script src="../assets/js/page/index.js"></script>
     <script src="../assets/js/page/theme1-js.js"></script>
 
-      <script>
+    <script>
 
 
-  document.addEventListener('DOMContentLoaded', () => {
-        // ---------------------------------------------------------
-        // 1. Retrieve User Details
-        // ---------------------------------------------------------
-        const loggedInUserName = localStorage.getItem('loggedInUserName');
-        // Ensure role is saved during login (e.g., 'ADMIN', 'HR', 'EMPLOYEE')
-        const loggedInUserRole = localStorage.getItem('loggedInUserRole'); 
-        
-        const welcomeMessageElement = document.getElementById('welcomeMessage');
+        document.addEventListener('DOMContentLoaded', () => {
+            // ---------------------------------------------------------
+            // 1. Retrieve User Details
+            // ---------------------------------------------------------
+            const loggedInUserName = localStorage.getItem('loggedInUserName');
+            // Ensure role is saved during login (e.g., 'ADMIN', 'HR', 'EMPLOYEE')
+            const loggedInUserRole = localStorage.getItem('loggedInUserRole');
 
-        // ---------------------------------------------------------
-        // 2. Set Welcome Message
-        // ---------------------------------------------------------
-        if (loggedInUserName && welcomeMessageElement) {
-            // Show Name and Role if available
-            welcomeMessageElement.textContent = `${loggedInUserName} (${loggedInUserRole || 'User'})`;
-        } else if (welcomeMessageElement) {
-            welcomeMessageElement.textContent = 'Guest!';
-        }
+            const welcomeMessageElement = document.getElementById('welcomeMessage');
 
-        // ---------------------------------------------------------
-        // 3. SIDEBAR MENU PERMISSIONS (Existing Logic)
-        // ---------------------------------------------------------
+            // ---------------------------------------------------------
+            // 2. Set Welcome Message
+            // ---------------------------------------------------------
+            if (loggedInUserName && welcomeMessageElement) {
+                // Show Name and Role if available
+                welcomeMessageElement.textContent = `${loggedInUserName} (${loggedInUserRole || 'User'})`;
+            } else if (welcomeMessageElement) {
+                welcomeMessageElement.textContent = 'Guest!';
+            }
 
-  const allSidebarIds = [
-                'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
-                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
-                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
-                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
-                'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
-                'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
-                'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
-                'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
-                'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
-                'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
-                'sidebar-sop', 'sidebar-qc' , 'sticky-actions' , 'hide-feature' , ' sidebar-social-report ', 'sidebar-advisor-performance-tracker' , 'sidebar-performance-tracker', 'sidebar-management'
-            ];
+            // ---------------------------------------------------------
+            // 3. SIDEBAR MENU PERMISSIONS (Existing Logic)
+            // ---------------------------------------------------------
 
-            const sidebarPermissions = {
-                'HR': [
-                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
-                    'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
-                    'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals', 
-                    'sidebar-payment-bills', 'sidebar-leave-request' ,'sticky-actions' , 'hide-feature' ],
-                'ADMIN': [
-                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-attendance', 'sidebar-admin-reports', 
-                    'sidebar-payment-bills', 'sidebar-leave-request'],
-                'EMPLOYEE': [
-                    'sidebar-hrms', 'sidebar-departments', 'sidebar-employee-task', 'sidebar-leave-request' ],
+              const allSidebarIds = [
+                        'sidebar-hrms', 'sidebar-dashboard',
+                        'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
+                        'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
+                        'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
+                        'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
+                        'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
+                        'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
+                        'sidebar-sop', 'sidebar-qc', 'sticky-actions', 'hide-feature', 'sidebar-social-report', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker'
+                    ];
 
-                'GENERAL MANAGER':['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
-                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
-                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
-                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
-                'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
-                'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
-                'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
-                'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
-                'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
-                'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
-                'sidebar-sop', 'sidebar-qc' , ' sidebar-social-report ', 'sidebar-advisor-performance-tracker' , 'sidebar-performance-tracker', 'sidebar-management'], 
+                    const sidebarPermissions = {
+                        'GENERAL MANAGER': ['sidebar-hrms', 'sidebar-dashboard',
+                        'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
+                        'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
+                        'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
+                        'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
+                        'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
+                        'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
+                        'sidebar-sop', 'sidebar-qc', 'sidebar-social-report', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker'],
 
-                'PROJECT MANAGER': [
-                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-departments', 'sidebar-employee', 
-                    'sidebar-performance', 'sidebar-leave-request' ,'sticky-actions' , 'hide-feature'
-                ],
-                'ADVISOR': [
-                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-working', 'sidebar-financial-report',
-                    'sidebar-client-id', 'sidebar-quotation-id', 'sidebar-proforma', 'sidebar-document-tracker', 
-                    'sidebar-backend-id', 'sidebar-bill-supply', 'sidebar-history-license', 'sidebar-backend-report', 
-                    'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments', 'sidebar-operators', 
-                    'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report', 'sidebar-phone-audit-report', 
-                    'sidebar-audit-base', 'sidebar-advisor-entry', 'sidebar-output' ,'sticky-actions' , 'hide-feature' , ' sidebar-social-report ', 'sidebar-advisor-performance-tracker' , 'sidebar-performance-tracker'
-                ],
-                'AUDIT PROJECT MANAGER': [
-                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-working', 'sidebar-financial-report', 
-                    'sidebar-sop', 'sidebar-backend-report', 'sidebar-enquiry', 'sidebar-audit-quotation', 
-                    'sidebar-audit-appointments', 'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 
-                    'sidebar-audit-weekly-report', 'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-qc', 
-                    'sidebar-advisor-entry', 'sidebar-output', 'sidebar-bill-supply', 'sidebar-accounting-log' , 'sticky-actions' , 'hide-feature' , ' sidebar-social-report ', 'sidebar-advisor-performance-tracker' , 'sidebar-performance-tracker' 
-                ],
-                'BACKEND PROJECT MANAGER': [
-                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-backend-report' , 'sticky-actions' , 'hide-feature' 
-                ],
-                'TEAM LEADER': [
-                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-financial-report', 
-                    'sidebar-accounting-log', 'sidebar-bill-supply' , 'sticky-actions' , 'hide-feature' 
-                ],
-                'BACK OFFICE EXECUTIVE': [
-                    'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-backend-report', 
-                    'sidebar-sop', 'sidebar-qc' ,'sticky-actions' , 'hide-feature'
-                ] ,
-                'VP' :['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
-                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
-                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
-                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
-                'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
-                'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
-                'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
-                'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
-                'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
-                'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
-                'sidebar-sop', 'sidebar-qc' , ' sidebar-social-report ', 'sidebar-advisor-performance-tracker' , 'sidebar-performance-tracker', 'sidebar-management'], 
-
-                'CEO' :['sidebar-hrms', 'sidebar-dashboard', 'sidebar-users', 'sidebar-departments', 'sidebar-employee',
-                'sidebar-attendance', 'sidebar-payroll', 'sidebar-expenses', 'sidebar-performance',
-                'sidebar-appraisal', 'sidebar-hr-reports', 'sidebar-admin-reports', 'sidebar-other-portals',
-                'sidebar-payment-bills', 'sidebar-employee-task', 'sidebar-leave-request',
-                'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
-                'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
-                'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
-                'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
-                'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
-                'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
-                'sidebar-sop', 'sidebar-qc' , ' sidebar-social-report ', 'sidebar-advisor-performance-tracker' , 'sidebar-performance-tracker', 'sidebar-management']
-            };
+                        'ADVISOR': [
+                            'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-working', 'sidebar-financial-report',
+                            'sidebar-client-id', 'sidebar-quotation-id', 'sidebar-proforma', 'sidebar-document-tracker',
+                            'sidebar-backend-id', 'sidebar-bill-supply', 'sidebar-history-license', 'sidebar-backend-report',
+                            'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments', 'sidebar-operators',
+                            'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report', 'sidebar-phone-audit-report',
+                            'sidebar-audit-base', 'sidebar-advisor-entry', 'sidebar-output', 'sticky-actions', 'hide-feature', 'sidebar-social-report', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker'
+                        ],
+                        'AUDIT PROJECT MANAGER': [
+                            'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-working', 'sidebar-financial-report',
+                            'sidebar-sop', 'sidebar-backend-report', 'sidebar-enquiry', 'sidebar-audit-quotation',
+                            'sidebar-audit-appointments', 'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries',
+                            'sidebar-audit-weekly-report', 'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-qc',
+                            'sidebar-advisor-entry', 'sidebar-output', 'sidebar-bill-supply', 'sidebar-accounting-log', 'sticky-actions', 'hide-feature', 'sidebar-social-report', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker'
+                        ],
+                        'BACKEND PROJECT MANAGER': [
+                            'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-backend-report', 'sticky-actions', 'hide-feature'
+                        ],
+                        'TEAM LEADER': [
+                            'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-financial-report',
+                            'sidebar-accounting-log', 'sidebar-bill-supply', 'sticky-actions', 'hide-feature'
+                        ],
+                        'BACK OFFICE EXECUTIVE': [
+                            'sidebar-hrms', 'sidebar-dashboard', 'sidebar-auditor', 'sidebar-backend-report',
+                            'sidebar-sop', 'sidebar-qc', 'sticky-actions', 'hide-feature'
+                        ],
+                        'VP': ['sidebar-hrms', 'sidebar-dashboard',
+                        'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
+                        'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
+                        'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
+                        'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
+                        'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
+                        'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
+                        'sidebar-sop', 'sidebar-qc', 'sidebar-social-report', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker'],
 
 
-        // ---------------------------------------------------------
-        // 4. MAIN DASHBOARD MENU PERMISSIONS (New Logic)
-        // ---------------------------------------------------------
-        const allMainMenuIds = [
-            'main-menu-user', 'main-menu-department', 'main-menu-employees',
-            'main-menu-attendance', 'main-menu-payroll', 'main-menu-expenses',
-            'main-menu-performance', 'main-menu-appraisal', 'main-menu-hr-report', 
-            'main-menu-admin-report', 'main-menu-other-portal', 'main-menu-payment-bill','main-menu-employee-task','main-menu-leave-request'
-        ];
+                        'AGM':['sidebar-hrms', 'sidebar-dashboard',
+                        'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
+                        'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
+                        'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
+                        'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
+                        'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
+                        'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
+                        'sidebar-sop', 'sidebar-qc', 'sidebar-social-report', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker'],
 
-        const mainMenuPermissions = {
-            'HR': ['main-menu-user', 'main-menu-department', 'main-menu-employees',
-            'main-menu-attendance', 'main-menu-payroll', 'main-menu-expenses',
-            'main-menu-performance', 'main-menu-appraisal', 'main-menu-hr-report', 
-            'main-menu-admin-report', 'main-menu-other-portal', 'main-menu-payment-bill','main-menu-leave-request'],
-            
-            'ADMIN': ['main-menu-attendance', 'main-menu-admin-report', 'main-menu-payment-bill','main-menu-leave-request'],
-            
-            'EMPLOYEE': [  'main-menu-department','main-menu-employee-task','main-menu-leave-request'],
-            
-            'GENERAL MANAGER': ['main-menu-user', 'main-menu-department', 'main-menu-employees',
-            'main-menu-attendance', 'main-menu-payroll', 'main-menu-expenses',
-            'main-menu-performance', 'main-menu-appraisal', 'main-menu-hr-report', 
-            'main-menu-admin-report', 'main-menu-other-portal', 'main-menu-payment-bill','main-menu-employee-task','main-menu-leave-request'],
-            
-            'PROJECT MANAGER': ['main-menu-department', 'main-menu-employees', 'main-menu-performance','main-menu-leave-request']
-        };
+                        'CEO': ['sidebar-hrms', 'sidebar-dashboard',
+                        'sidebar-auditor', 'sidebar-working', 'sidebar-client-id', 'sidebar-quotation-id',
+                        'sidebar-proforma', 'sidebar-document-tracker', 'sidebar-backend-id', 'sidebar-history-license',
+                        'sidebar-output', 'sidebar-enquiry', 'sidebar-audit-quotation', 'sidebar-audit-appointments',
+                        'sidebar-operators', 'sidebar-pg-enquiry', 'sidebar-sm-enquiries', 'sidebar-audit-weekly-report',
+                        'sidebar-phone-audit-report', 'sidebar-audit-base', 'sidebar-advisor-entry',
+                        'sidebar-backend-report', 'sidebar-financial-report', 'sidebar-bill-supply', 'sidebar-accounting-log',
+                        'sidebar-sop', 'sidebar-qc', 'sidebar-social-report', 'sidebar-advisor-performance-tracker', 'sidebar-performance-tracker']
+                    };
 
-        // ---------------------------------------------------------
-        // 5. Function to Filter Any Menu List
-        // ---------------------------------------------------------
-        function applyPermissions(role, allIds, permissionMap) {
-            // Normalize role string (handle 'Admin', 'admin', 'ADMIN')
-         const normalizedRole = role ? role.trim().toUpperCase() : '';
-            const allowedItems = permissionMap[normalizedRole] || [];
+            // ---------------------------------------------------------
+            // 5. Function to Filter Any Menu List
+            // ---------------------------------------------------------
+            function applyPermissions(role, allIds, permissionMap) {
+                // Normalize role string (handle 'Admin', 'admin', 'ADMIN')
+                const normalizedRole = role ? role.trim().toUpperCase() : '';
+                const allowedItems = permissionMap[normalizedRole] || [];
 
-            allIds.forEach(id => {
-                const el = document.getElementById(id);
-                if (el) {
-                    if (allowedItems.includes(id)) {
-                        el.style.display = ''; // Reset to default (block/flex/etc)
-                    } else {
-                        el.style.display = 'none';  // Hide
-                    }
-                }
-            });
-        }
-
-        // ---------------------------------------------------------
-        // 6. Execute Filters
-        // ---------------------------------------------------------
-        if (loggedInUserRole) {
-            // Filter Sidebar
-            applyPermissions(loggedInUserRole, allSidebarIds, sidebarPermissions);
-            // Filter Main Dashboard Menu
-         
-        } else {
-            // If Not Logged In: Hide everything except Dashboard
-            // Hide Sidebar items (except dashboard)
-            allSidebarIds.forEach(id => {
-                if (id !== 'menu-dashboard') {
+                allIds.forEach(id => {
                     const el = document.getElementById(id);
-                    if (el) el.style.display = 'none';
-                }
-            });
-        }
+                    if (el) {
+                        if (allowedItems.includes(id)) {
+                            el.style.display = ''; // Reset to default (block/flex/etc)
+                        } else {
+                            el.style.display = 'none';  // Hide
+                        }
+                    }
+                });
+            }
 
-        // ---------------------------------------------------------
-        // 7. Sign Out Logic
-        // ---------------------------------------------------------
-    function logout() {
-    localStorage.clear();
-    window.location.replace('Html/Login.html');
-}
-    });
+            // ---------------------------------------------------------
+            // 6. Execute Filters
+            // ---------------------------------------------------------
+            if (loggedInUserRole) {
+                // Filter Sidebar
+                applyPermissions(loggedInUserRole, allSidebarIds, sidebarPermissions);
+                // Filter Main Dashboard Menu
 
-        const API_DOC = 'http://localhost:3000/api/documents'; // Ensure this matches your server.js route
+            } else {
+                // If Not Logged In: Hide everything except Dashboard
+                // Hide Sidebar items (except dashboard)
+                allSidebarIds.forEach(id => {
+                    if (id !== 'menu-dashboard') {
+                        const el = document.getElementById(id);
+                        if (el) el.style.display = 'none';
+                    }
+                });
+            }
+
+            // ---------------------------------------------------------
+            // 7. Sign Out Logic
+            // ---------------------------------------------------------
+            function logout() {
+                localStorage.clear();
+                window.location.replace('Html/Login.html');
+            }
+        });
+
+        const API_DOC = 'https://kgpl.net/api/documents'; // Ensure this matches your server.js route
 
         async function loadDocs() {
             try {
                 const res = await fetch(API_DOC);
                 const data = await res.json();
                 let html = '';
-                
+
                 if (!data.length) {
                     document.getElementById('docTableBody').innerHTML = '<tr class="empty-state"><td colspan="12" class="text-center">No documents found.</td></tr>';
                     return;
                 }
-            
+
                 const role = (localStorage.getItem('loggedInUserRole') || '').toUpperCase().trim();
 
                 data.forEach(d => {
 
-                         let actionButtons = '';
+                    let actionButtons = '';
 
-         if (role !== 'GENERAL MANAGER' && role !== 'VP' && role !== 'CEO') {
-        actionButtons = `
+                    if (role !== 'GENERAL MANAGER' && role !== 'VP' && role !== 'CEO') {
+                        actionButtons = `
             <button class="btn btn-sm btn-info mr-1" onclick='editDoc(${JSON.stringify(d)})' title="Edit"><i class="fa fa-edit"></i></button>
             <button class="btn btn-sm btn-danger" onclick='deleteDoc(${d.id})' title="Delete"><i class="fa fa-trash"></i></button>
         `;
-    }              
+                    }
 
                     html += `<tr>
                     <td>${d.doc_date ? d.doc_date.split('T')[0] : '—'}</td>
@@ -914,9 +906,9 @@
                 });
                 const result = await res.json();
                 if (!res.ok) throw new Error(result.error);
-                
+
                 alert(result.message);
-                
+
                 // Hide modal and fix black screen bug
                 $('#docModal').modal('hide');
                 setTimeout(() => {
@@ -989,18 +981,19 @@
                 const result = await res.json();
                 if (res.ok) {
                     alert(result.message);
-                    loadDocs(); 
+                    loadDocs();
                 } else {
                     alert("Error: " + result.error);
                 }
             } catch (err) {
                 alert("Failed to upload Excel file.");
             } finally {
-                event.target.value = ''; 
+                event.target.value = '';
             }
         }
 
         window.onload = loadDocs;
     </script>
 </body>
+
 </html>

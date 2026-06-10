@@ -1,4 +1,4 @@
-const express = require('express');
+﻿const express = require('express');
 const router = express.Router();
 const pool = require('./db');
 const path = require('path');
@@ -26,7 +26,7 @@ const upload = multer({ storage: storage });
 
 
 // 1. GET ALL
-// URL: GET http://localhost:3000/api/hr_daily_reports/
+// URL: GET https://kgpl.net/api/hr_daily_reports/
 router.get('/', async (req, res) => {
     let connection;
     try {
@@ -42,7 +42,7 @@ router.get('/', async (req, res) => {
 });
 
 // 2. ADD NEW
-// URL: POST http://localhost:3000/api/hr_daily_reports/
+// URL: POST https://kgpl.net/api/hr_daily_reports/
 router.post('/', async (req, res) => {
     let connection;
     try {
@@ -79,7 +79,7 @@ router.post('/', async (req, res) => {
 });
 
 // 3. DELETE
-// URL: DELETE http://localhost:3000/api/hr_daily_reports/:id
+// URL: DELETE https://kgpl.net/api/hr_daily_reports/:id
 router.delete('/:id', async (req, res) => {
     let connection;
     try {
@@ -100,7 +100,7 @@ router.delete('/:id', async (req, res) => {
 });
 
 // 4. UPDATE
-// URL: PUT http://localhost:3000/api/hr_daily_reports/:id
+// URL: PUT https://kgpl.net/api/hr_daily_reports/:id
 router.put('/:id', async (req, res) => {
     let connection;
     try {

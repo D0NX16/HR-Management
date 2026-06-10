@@ -1,6 +1,6 @@
-$(document).ready(function() {
+﻿$(document).ready(function() {
     // 1. Configuration
-    const API_BASE_URL = 'http://localhost:3000/api'; 
+    const API_BASE_URL = 'https://kgpl.net/api'; 
     
     // Selectors mapped to your HTML IDs
     const $nameInput = $('#add-user-name');

@@ -1,4 +1,4 @@
-const express = require('express');
+﻿const express = require('express');
 const router = express.Router();
 const pool = require('./db');
 const path = require('path');
@@ -25,7 +25,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage }); 
 
 // 1. GET ALL REPORTS
-// URL: GET http://localhost:3000/api/HrInterviewReport/reports
+// URL: GET https://kgpl.net/api/HrInterviewReport/reports
 router.get('/reports', async (req, res) => { 
     let connection;
     try {
@@ -43,7 +43,7 @@ router.get('/reports', async (req, res) => {
 });
 
 // 2. ADD NEW REPORT
-// URL: POST http://localhost:3000/api/HrInterviewReport/reports
+// URL: POST https://kgpl.net/api/HrInterviewReport/reports
 router.post('/reports', async (req, res) => {
     let connection;
     try {
@@ -80,7 +80,7 @@ router.post('/reports', async (req, res) => {
 });
 
 // 3. UPDATE REPORT
-// URL: PUT http://localhost:3000/api/HrInterviewReport/reports/:id
+// URL: PUT https://kgpl.net/api/HrInterviewReport/reports/:id
 router.put('/reports/:id', async (req, res) => {
     let connection;
     try {
@@ -110,7 +110,7 @@ router.put('/reports/:id', async (req, res) => {
 });
 
 // 4. DELETE REPORT
-// URL: DELETE http://localhost:3000/api/HrInterviewReport/reports/:id
+// URL: DELETE https://kgpl.net/api/HrInterviewReport/reports/:id
 router.delete('/reports/:id', async (req, res) => {
     let connection;
     try {
